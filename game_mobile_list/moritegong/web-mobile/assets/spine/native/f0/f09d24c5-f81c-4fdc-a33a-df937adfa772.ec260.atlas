@@ -1,0 +1,13 @@
+
+gth.png
+size: 35, 37
+format: Alpha
+filter: Linear, Linear
+repeat: none
+gth
+  rotate: false
+  xy: 2, 2
+  size: 31, 33
+  orig: 33, 35
+  offset: 1, 1
+  index: -1

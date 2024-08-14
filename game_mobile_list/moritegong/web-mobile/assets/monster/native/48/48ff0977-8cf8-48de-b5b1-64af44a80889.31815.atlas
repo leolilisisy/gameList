@@ -1,0 +1,83 @@
+
+bxg.png
+size: 256, 128
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+dddd
+  rotate: false
+  xy: 107, 76
+  size: 70, 8
+  orig: 70, 8
+  offset: 0, 0
+  index: -1
+xx
+  rotate: false
+  xy: 107, 64
+  size: 10, 10
+  orig: 10, 10
+  offset: 0, 0
+  index: -1
+影子
+  rotate: true
+  xy: 55, 63
+  size: 54, 50
+  orig: 54, 50
+  offset: 0, 0
+  index: -1
+手2
+  rotate: true
+  xy: 77, 6
+  size: 38, 33
+  orig: 38, 33
+  offset: 0, 0
+  index: -1
+手2(2)
+  rotate: true
+  xy: 112, 6
+  size: 38, 31
+  orig: 38, 31
+  offset: 0, 0
+  index: -1
+椭圆 1
+  rotate: false
+  xy: 55, 46
+  size: 67, 15
+  orig: 67, 15
+  offset: 0, 0
+  index: -1
+盖子
+  rotate: false
+  xy: 2, 2
+  size: 73, 36
+  orig: 73, 36
+  offset: 0, 0
+  index: -1
+盖身
+  rotate: false
+  xy: 107, 86
+  size: 74, 31
+  orig: 74, 31
+  offset: 0, 0
+  index: -1
+眼睛
+  rotate: false
+  xy: 124, 62
+  size: 32, 12
+  orig: 32, 13
+  offset: 0, 1
+  index: -1
+舌头
+  rotate: false
+  xy: 145, 26
+  size: 32, 34
+  orig: 32, 34
+  offset: 0, 0
+  index: -1
+遮挡
+  rotate: true
+  xy: 2, 40
+  size: 77, 51
+  orig: 77, 51
+  offset: 0, 0
+  index: -1

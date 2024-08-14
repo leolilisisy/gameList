@@ -1,0 +1,13 @@
+
+qipao_ico_new.png
+size: 64,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+气泡/qipao_enen
+  rotate: false
+  xy: 2, 2
+  size: 41, 59
+  orig: 41, 59
+  offset: 0, 0
+  index: -1

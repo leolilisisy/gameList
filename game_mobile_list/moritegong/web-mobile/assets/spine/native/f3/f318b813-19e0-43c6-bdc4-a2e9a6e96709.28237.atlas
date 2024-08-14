@@ -1,0 +1,62 @@
+
+xylc.png
+size: 512, 512
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+Soft
+  rotate: false
+  xy: 181, 147
+  size: 130, 130
+  orig: 132, 132
+  offset: 1, 1
+  index: -1
+Star_005
+  rotate: false
+  xy: 2, 100
+  size: 177, 177
+  orig: 177, 177
+  offset: 0, 0
+  index: -1
+aa1
+  rotate: true
+  xy: 181, 112
+  size: 33, 32
+  orig: 39, 40
+  offset: 3, 4
+  index: -1
+aa2
+  rotate: false
+  xy: 215, 126
+  size: 18, 19
+  orig: 23, 23
+  offset: 2, 2
+  index: -1
+ddf
+  rotate: false
+  xy: 2, 279
+  size: 228, 228
+  orig: 230, 230
+  offset: 1, 1
+  index: -1
+qq
+  rotate: false
+  xy: 190, 2
+  size: 108, 108
+  orig: 110, 110
+  offset: 1, 1
+  index: -1
+w2
+  rotate: false
+  xy: 2, 6
+  size: 92, 92
+  orig: 94, 94
+  offset: 1, 1
+  index: -1
+xz
+  rotate: false
+  xy: 96, 6
+  size: 92, 92
+  orig: 92, 92
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,27 @@
+
+loading_zhuanquan.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+loading_ziyuan/loading_dian
+  rotate: false
+  xy: 2, 2
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+loading_ziyuan/loading_quan
+  rotate: false
+  xy: 2, 24
+  size: 145, 145
+  orig: 145, 145
+  offset: 0, 0
+  index: -1
+loading_ziyuan/loading_quandi
+  rotate: false
+  xy: 149, 24
+  size: 145, 145
+  orig: 145, 145
+  offset: 0, 0
+  index: -1

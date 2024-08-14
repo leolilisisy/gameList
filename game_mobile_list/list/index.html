@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爱游戏爱分享</title>
+<style>
+    body {
+        background-image: url("img/bg.png");
+        background-position: center;
+        background-repeat: no-repeat; 
+        background-attachment: fixed;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #333;
+        text-align: center;
+    }
+    header {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 20px;
+        position: relative;
+    }
+    header h1 {
+        margin: 0;
+        font-size: 2em;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+        gap: 20px;
+    }
+    .gameImgDiv {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        flex: 1 1 calc(25% - 40px);
+        max-width: calc(25% - 50px);
+        text-align: center;
+        box-sizing: border-box;
+    }
+    /* .gameImg {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        object-fit: cover;
+        border-bottom: 1px solid rgb(137, 137, 137);
+    } */
+    .gameImg {
+        width: 100%;
+        height: 100%;
+        max-width: 250px; /* 限制最大宽度 */
+        max-height: 200px; /* 限制最大高度 */
+        object-fit: contain; /* 保持图片比例并填充容器 */
+        aspect-ratio: auto; /* 使图片保持其宽高比 */
+    }
+    h2 {
+        margin: 5px 0;
+        padding: 5px;
+        background-color: #eee;
+        font-size: 1.2em;
+        color: #555;
+    }
+    footer {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 10px;
+        position: static;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-info {
+        margin-top: 20px;
+        font-size: 1em;
+        color: #fff;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .gameImgDiv {
+            flex: 1 1 calc(50% - 40px);
+            max-width: calc(50% - 40px);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gameImgDiv {
+            flex: 1 1 calc(100% - 40px);
+            max-width: calc(100% - 40px);
+        }
+    }
+</style>
+</head>
+<body>
+
+    <header>
+        <h1>小游戏拾贝</h1>
+    </header>
+
+    <div class="container">
+        <div class="gameImgDiv">   
+            <a href="https://game.aooowu.com/snake/web-mobile/index.html">
+                <img src="img/snake.jpg" class="gameImg" alt="贪吃蛇">
+                <h2>贪吃蛇</h2>
+            </a>
+        </div> 
+        <div class="gameImgDiv">
+            <a href="https://game.aooowu.com/tututu/web-mobile/index.html">
+                <img src="img/tututu.png" class="gameImg" alt="突！突！突！">
+                <h2>突！突！突！</h2>
+            </a>
+        </div>
+        <div class="gameImgDiv">
+            <a href="https://game.aooowu.com/ysdh/web-mobile/index.html">
+                <img src="img/daheng.png" class="gameImg" alt="大亨">
+                <h2>大亨</h2>
+            </a>
+        </div>
+        <div class="gameImgDiv">   
+            <a href="https://game.aooowu.com/globalTycoon/web-mobile/index.html">
+                <img src="img/world.jpg" class="gameImg" alt="世界村">
+                <h2>世界村</h2>
+            </a>
+        </div> 
+        <div class="gameImgDiv">
+            <a href="https://game.aooowu.com/fight/web-mobile/index.html">
+                <img src="img/fight.jpg" class="gameImg" alt="全军出击">
+                <h2>全军出击</h2>
+            </a>
+        </div>
+        <div class="gameImgDiv">
+            <a href="https://game.aooowu.com/daluosi/web-mobile/index.html">
+                <img src="img/rose.jpg" class="gameImg" alt="打螺丝">
+                <h2>打螺丝</h2>
+            </a>
+        </div>
+        <div class="gameImgDiv">   
+            <a href="https://game.aooowu.com/dancing/web-mobile/index.html">
+                <img src="img/music.jpg" class="gameImg" alt="音乐刀锋">
+                <h2>音乐刀锋</h2>
+            </a>
+        </div> 
+        <div class="gameImgDiv">   
+            <a href="https://game.aooowu.com/jieya/web-mobile/index.html">
+                <img src="img/jieya.jpg" class="gameImg" alt="解压馆">
+                <h2>解压馆</h2>
+            </a>
+        </div> 
+        <div class="gameImgDiv">
+            <a href="https://game.aooowu.com/moritegong/web-mobile/index.html">
+                <img src="img/tegong.jpg" class="gameImg" alt="特工队">
+                <h2>特工队</h2>
+            </a>
+        </div>
+        <div class="gameImgDiv">
+            <a href="https://game.aooowu.com/savedog/web-mobile/index.html">
+                <img src="img/savedog.jpg" class="gameImg" alt="解救狗狗">
+                <h2>解救狗狗</h2>
+            </a>
+        </div>
+        <div class="gameImgDiv">   
+            <a href="https://game.aooowu.com/dxcyxtgd/web-mobile/index.html">
+                <img src="img/gecao.jpg" class="gameImg" alt="地下城">
+                <h2>地下城</h2>
+            </a>
+        </div> 
+        <div class="gameImgDiv">   
+            <a href="https://lansehuanxiang.com/game_list/toujinzi/web-mobile/">
+                <img src="img/jinzi.png" class="gameImg" alt="偷金块">
+                <h2>偷金块</h2>
+            </a>
+        </div> 
+    </div>
+
+    
+    <footer>
+        <p>光年拾贝科技有限公司</p>
+        <p class="contact-info">微信号: ken_13683686679</p>
+    </footer>
+
+</body>
+</html>

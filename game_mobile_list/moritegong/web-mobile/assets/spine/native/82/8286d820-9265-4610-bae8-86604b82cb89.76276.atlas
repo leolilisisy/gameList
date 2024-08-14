@@ -1,0 +1,48 @@
+
+bxLight.png
+size: 512, 256
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+Glow_022
+  rotate: true
+  xy: 417, 2
+  size: 192, 78
+  orig: 192, 192
+  offset: 0, 57
+  index: -1
+Glow_023
+  rotate: false
+  xy: 2, 2
+  size: 192, 192
+  orig: 192, 192
+  offset: 0, 0
+  index: -1
+Glow_024
+  rotate: false
+  xy: 196, 70
+  size: 192, 75
+  orig: 192, 192
+  offset: 0, 111
+  index: -1
+Trail_025
+  rotate: true
+  xy: 390, 97
+  size: 48, 24
+  orig: 48, 24
+  offset: 0, 0
+  index: -1
+Traild
+  rotate: true
+  xy: 196, 21
+  size: 47, 168
+  orig: 48, 195
+  offset: 0, 6
+  index: -1
+fff
+  rotate: true
+  xy: 196, 147
+  size: 47, 219
+  orig: 48, 228
+  offset: 0, 9
+  index: -1

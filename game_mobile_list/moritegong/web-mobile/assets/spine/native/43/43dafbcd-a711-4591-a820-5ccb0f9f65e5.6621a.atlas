@@ -1,0 +1,461 @@
+
+pata.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+1
+  rotate: false
+  xy: 724, 420
+  size: 526, 452
+  orig: 529, 454
+  offset: 1, 1
+  index: -1
+351
+  rotate: true
+  xy: 1087, 991
+  size: 52, 60
+  orig: 55, 62
+  offset: 1, 1
+  index: -1
+5
+  rotate: true
+  xy: 1712, 241
+  size: 231, 277
+  orig: 233, 279
+  offset: 1, 1
+  index: -1
+6
+  rotate: false
+  xy: 1087, 179
+  size: 389, 239
+  orig: 391, 241
+  offset: 1, 1
+  index: -1
+7
+  rotate: true
+  xy: 94, 2
+  size: 16, 26
+  orig: 18, 29
+  offset: 1, 1
+  index: -1
+8
+  rotate: true
+  xy: 122, 2
+  size: 16, 26
+  orig: 18, 29
+  offset: 1, 1
+  index: -1
+9
+  rotate: true
+  xy: 150, 2
+  size: 16, 26
+  orig: 18, 29
+  offset: 1, 1
+  index: -1
+99
+  rotate: true
+  xy: 178, 2
+  size: 16, 26
+  orig: 18, 29
+  offset: 1, 1
+  index: -1
+da
+  rotate: true
+  xy: 939, 1462
+  size: 51, 97
+  orig: 51, 97
+  offset: 0, 0
+  index: -1
+ganzi1
+  rotate: true
+  xy: 1087, 1210
+  size: 234, 62
+  orig: 237, 64
+  offset: 1, 1
+  index: -1
+qi1
+  rotate: false
+  xy: 1130, 1556
+  size: 36, 34
+  orig: 39, 36
+  offset: 1, 1
+  index: -1
+qi2
+  rotate: false
+  xy: 1038, 1452
+  size: 61, 61
+  orig: 63, 63
+  offset: 1, 1
+  index: -1
+qi3
+  rotate: true
+  xy: 1087, 1540
+  size: 23, 24
+  orig: 26, 26
+  offset: 1, 1
+  index: -1
+s
+  rotate: true
+  xy: 1113, 1446
+  size: 108, 53
+  orig: 115, 55
+  offset: 1, 1
+  index: -1
+tong
+  rotate: false
+  xy: 1087, 1045
+  size: 78, 74
+  orig: 80, 78
+  offset: 1, 2
+  index: -1
+发光
+  rotate: false
+  xy: 1087, 1591
+  size: 41, 39
+  orig: 47, 43
+  offset: 3, 1
+  index: -1
+图层 555
+  rotate: false
+  xy: 2, 2
+  size: 57, 16
+  orig: 59, 18
+  offset: 1, 1
+  index: -1
+图层 557
+  rotate: false
+  xy: 1102, 6
+  size: 29, 17
+  orig: 31, 19
+  offset: 1, 1
+  index: -1
+图层 558
+  rotate: false
+  xy: 275, 2
+  size: 12, 16
+  orig: 14, 18
+  offset: 1, 1
+  index: -1
+图层 559
+  rotate: false
+  xy: 1133, 4
+  size: 23, 19
+  orig: 26, 23
+  offset: 2, 2
+  index: -1
+图层 560
+  rotate: true
+  xy: 301, 6
+  size: 12, 11
+  orig: 14, 14
+  offset: 1, 1
+  index: -1
+图层 561
+  rotate: false
+  xy: 61, 2
+  size: 31, 16
+  orig: 33, 19
+  offset: 1, 2
+  index: -1
+图层 562
+  rotate: false
+  xy: 1087, 1515
+  size: 24, 23
+  orig: 26, 25
+  offset: 1, 1
+  index: -1
+图层 563
+  rotate: false
+  xy: 724, 1452
+  size: 132, 61
+  orig: 135, 63
+  offset: 2, 1
+  index: -1
+图层 564
+  rotate: false
+  xy: 1131, 1592
+  size: 38, 41
+  orig: 44, 45
+  offset: 3, 3
+  index: -1
+图层 565
+  rotate: true
+  xy: 235, 3
+  size: 15, 19
+  orig: 18, 22
+  offset: 1, 2
+  index: -1
+图层 566
+  rotate: false
+  xy: 1138, 1747
+  size: 25, 32
+  orig: 29, 35
+  offset: 2, 2
+  index: -1
+图层 567
+  rotate: false
+  xy: 349, 8
+  size: 9, 10
+  orig: 16, 13
+  offset: 2, 2
+  index: -1
+图层 568
+  rotate: true
+  xy: 206, 7
+  size: 11, 27
+  orig: 13, 29
+  offset: 1, 1
+  index: -1
+图层 569
+  rotate: false
+  xy: 360, 10
+  size: 8, 8
+  orig: 11, 11
+  offset: 1, 2
+  index: -1
+图层 570
+  rotate: false
+  xy: 1138, 1855
+  size: 31, 35
+  orig: 34, 38
+  offset: 2, 1
+  index: -1
+图层 571
+  rotate: false
+  xy: 1087, 1121
+  size: 79, 87
+  orig: 84, 90
+  offset: 1, 2
+  index: -1
+图层 572
+  rotate: false
+  xy: 1138, 1781
+  size: 23, 38
+  orig: 25, 40
+  offset: 1, 1
+  index: -1
+图层 573
+  rotate: true
+  xy: 256, 2
+  size: 16, 17
+  orig: 18, 20
+  offset: 1, 1
+  index: -1
+图层 574
+  rotate: false
+  xy: 1138, 1892
+  size: 24, 46
+  orig: 28, 48
+  offset: 2, 1
+  index: -1
+图层 575
+  rotate: false
+  xy: 1138, 1712
+  size: 24, 33
+  orig: 26, 35
+  offset: 1, 1
+  index: -1
+图层 576
+  rotate: false
+  xy: 289, 3
+  size: 10, 15
+  orig: 14, 17
+  offset: 2, 1
+  index: -1
+图层 577
+  rotate: false
+  xy: 325, 8
+  size: 10, 10
+  orig: 12, 13
+  offset: 1, 1
+  index: -1
+图层 578
+  rotate: false
+  xy: 314, 6
+  size: 9, 12
+  orig: 12, 15
+  offset: 1, 2
+  index: -1
+图层 579
+  rotate: false
+  xy: 337, 8
+  size: 10, 10
+  orig: 13, 12
+  offset: 1, 1
+  index: -1
+图层 580
+  rotate: false
+  xy: 953, 25
+  size: 216, 93
+  orig: 218, 95
+  offset: 1, 1
+  index: -1
+图层 581
+  rotate: true
+  xy: 939, 1036
+  size: 414, 134
+  orig: 416, 136
+  offset: 1, 1
+  index: -1
+图层 582
+  rotate: false
+  xy: 2, 20
+  size: 685, 364
+  orig: 687, 366
+  offset: 1, 1
+  index: -1
+图层 583
+  rotate: false
+  xy: 1629, 474
+  size: 298, 254
+  orig: 301, 257
+  offset: 1, 1
+  index: -1
+图层 584
+  rotate: true
+  xy: 1478, 111
+  size: 340, 232
+  orig: 342, 234
+  offset: 1, 1
+  index: -1
+图层 585
+  rotate: false
+  xy: 724, 1525
+  size: 104, 112
+  orig: 106, 114
+  offset: 1, 1
+  index: -1
+图层 586
+  rotate: true
+  xy: 724, 874
+  size: 574, 179
+  orig: 577, 181
+  offset: 2, 1
+  index: -1
+图层110
+  rotate: false
+  xy: 1138, 1940
+  size: 28, 51
+  orig: 31, 53
+  offset: 1, 1
+  index: -1
+图层167
+  rotate: true
+  xy: 1087, 1632
+  size: 80, 42
+  orig: 83, 45
+  offset: 1, 1
+  index: -1
+图层176
+  rotate: false
+  xy: 1087, 1714
+  size: 49, 332
+  orig: 52, 334
+  offset: 2, 1
+  index: -1
+图层396
+  rotate: false
+  xy: 689, 16
+  size: 262, 102
+  orig: 264, 104
+  offset: 1, 1
+  index: -1
+图层61
+  rotate: false
+  xy: 2, 386
+  size: 720, 1660
+  orig: 722, 1662
+  offset: 1, 1
+  index: -1
+图层组17
+  rotate: true
+  xy: 1252, 453
+  size: 224, 375
+  orig: 226, 378
+  offset: 1, 2
+  index: -1
+图层组30
+  rotate: true
+  xy: 689, 120
+  size: 264, 396
+  orig: 266, 398
+  offset: 1, 1
+  index: -1
+图层组64
+  rotate: true
+  xy: 830, 1543
+  size: 94, 90
+  orig: 97, 92
+  offset: 2, 1
+  index: -1
+图层组70
+  rotate: false
+  xy: 1252, 679
+  size: 277, 312
+  orig: 279, 315
+  offset: 1, 2
+  index: -1
+圆角矩形 2 拷贝
+  rotate: true
+  xy: 953, 3
+  size: 20, 147
+  orig: 22, 149
+  offset: 1, 1
+  index: -1
+地板
+  rotate: false
+  xy: 1171, 993
+  size: 720, 1053
+  orig: 722, 1055
+  offset: 1, 1
+  index: -1
+灯光
+  rotate: true
+  xy: 1131, 1635
+  size: 75, 35
+  orig: 78, 38
+  offset: 1, 1
+  index: -1
+红灯
+  rotate: true
+  xy: 1138, 1821
+  size: 32, 30
+  orig: 35, 32
+  offset: 2, 1
+  index: -1
+组 485
+  rotate: true
+  xy: 724, 1639
+  size: 407, 237
+  orig: 409, 241
+  offset: 1, 3
+  index: -1
+绿灯
+  rotate: false
+  xy: 1087, 1565
+  size: 32, 24
+  orig: 34, 26
+  offset: 1, 1
+  index: -1
+脸
+  rotate: false
+  xy: 858, 1450
+  size: 79, 63
+  orig: 81, 66
+  offset: 1, 2
+  index: -1
+警报
+  rotate: false
+  xy: 1531, 730
+  size: 328, 261
+  orig: 328, 261
+  offset: 0, 0
+  index: -1
+钢笔3
+  rotate: true
+  xy: 1138, 1993
+  size: 53, 29
+  orig: 56, 31
+  offset: 2, 1
+  index: -1

@@ -1,0 +1,153 @@
+
+donghua_dating_btn_guang.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+gebo
+  rotate: false
+  xy: 376, 122
+  size: 33, 30
+  orig: 33, 30
+  offset: 0, 0
+  index: -1
+jiangbei_guang_01
+  rotate: false
+  xy: 2, 16
+  size: 104, 97
+  orig: 104, 97
+  offset: 0, 0
+  index: -1
+jiangbei_guang_02
+  rotate: false
+  xy: 171, 154
+  size: 104, 97
+  orig: 104, 97
+  offset: 0, 0
+  index: -1
+jiangbei_guang_03
+  rotate: false
+  xy: 277, 154
+  size: 104, 97
+  orig: 104, 97
+  offset: 0, 0
+  index: -1
+jiangbei_guang_04
+  rotate: false
+  xy: 383, 154
+  size: 104, 97
+  orig: 104, 97
+  offset: 0, 0
+  index: -1
+jiangbei_guang_05
+  rotate: false
+  xy: 489, 154
+  size: 104, 97
+  orig: 104, 97
+  offset: 0, 0
+  index: -1
+jiangbei_guang_06
+  rotate: false
+  xy: 595, 154
+  size: 104, 97
+  orig: 104, 97
+  offset: 0, 0
+  index: -1
+jiangbei_guang_07
+  rotate: false
+  xy: 701, 154
+  size: 104, 97
+  orig: 104, 97
+  offset: 0, 0
+  index: -1
+jiangbei_guang_08
+  rotate: false
+  xy: 807, 154
+  size: 104, 97
+  orig: 104, 97
+  offset: 0, 0
+  index: -1
+jinruyouxibtn_jinbei
+  rotate: false
+  xy: 913, 154
+  size: 104, 97
+  orig: 104, 97
+  offset: 0, 0
+  index: -1
+jinruyouxibtn_xiaoren
+  rotate: false
+  xy: 2, 115
+  size: 167, 136
+  orig: 167, 136
+  offset: 0, 0
+  index: -1
+jinruyouxibtn_xing
+  rotate: false
+  xy: 171, 118
+  size: 149, 34
+  orig: 149, 34
+  offset: 0, 0
+  index: -1
+suipian_01
+  rotate: true
+  xy: 162, 101
+  size: 12, 6
+  orig: 12, 6
+  offset: 0, 0
+  index: -1
+suipian_02
+  rotate: false
+  xy: 108, 37
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+suipian_03
+  rotate: false
+  xy: 411, 144
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+suipian_04
+  rotate: false
+  xy: 11, 7
+  size: 7, 7
+  orig: 7, 7
+  offset: 0, 0
+  index: -1
+suipian_05
+  rotate: true
+  xy: 162, 90
+  size: 9, 4
+  orig: 9, 4
+  offset: 0, 0
+  index: -1
+suipian_06
+  rotate: false
+  xy: 2, 2
+  size: 7, 12
+  orig: 7, 12
+  offset: 0, 0
+  index: -1
+yanjing01
+  rotate: false
+  xy: 108, 81
+  size: 52, 32
+  orig: 52, 32
+  offset: 0, 0
+  index: -1
+yanjing02
+  rotate: false
+  xy: 322, 120
+  size: 52, 32
+  orig: 52, 32
+  offset: 0, 0
+  index: -1
+yanjing03
+  rotate: false
+  xy: 108, 47
+  size: 52, 32
+  orig: 52, 32
+  offset: 0, 0
+  index: -1

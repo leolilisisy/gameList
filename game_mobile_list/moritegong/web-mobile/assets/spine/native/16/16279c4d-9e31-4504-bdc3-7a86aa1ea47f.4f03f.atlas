@@ -1,0 +1,118 @@
+
+fhjm.png
+size: 1024, 1024
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+f1
+  rotate: false
+  xy: 528, 925
+  size: 59, 59
+  orig: 65, 65
+  offset: 3, 3
+  index: -1
+k1
+  rotate: false
+  xy: 589, 968
+  size: 16, 16
+  orig: 18, 18
+  offset: 1, 1
+  index: -1
+yj
+  rotate: true
+  xy: 528, 875
+  size: 48, 57
+  orig: 50, 59
+  offset: 1, 1
+  index: -1
+形状 2614
+  rotate: true
+  xy: 715, 134
+  size: 107, 105
+  orig: 112, 107
+  offset: 1, 1
+  index: -1
+形状 2615
+  rotate: false
+  xy: 715, 27
+  size: 104, 105
+  orig: 108, 111
+  offset: 3, 1
+  index: -1
+矩形 2590
+  rotate: true
+  xy: 602, 2
+  size: 509, 111
+  orig: 525, 113
+  offset: 9, 1
+  index: -1
+矩形 2593
+  rotate: false
+  xy: 2, 986
+  size: 604, 20
+  orig: 623, 22
+  offset: 10, 1
+  index: -1
+矩形 2594
+  rotate: false
+  xy: 608, 993
+  size: 402, 13
+  orig: 412, 15
+  offset: 5, 1
+  index: -1
+矩形 2598
+  rotate: false
+  xy: 602, 598
+  size: 344, 7
+  orig: 353, 9
+  offset: 4, 1
+  index: -1
+矩形 2598 拷贝
+  rotate: true
+  xy: 1012, 424
+  size: 582, 7
+  orig: 592, 9
+  offset: 9, 1
+  index: -1
+矩形 2599
+  rotate: true
+  xy: 995, 424
+  size: 567, 11
+  orig: 582, 13
+  offset: 7, 1
+  index: -1
+矩形 2599 拷贝
+  rotate: true
+  xy: 589, 456
+  size: 510, 11
+  orig: 518, 13
+  offset: 1, 1
+  index: -1
+矩形 2603 拷贝
+  rotate: true
+  xy: 2, 461
+  size: 523, 524
+  orig: 550, 550
+  offset: 14, 13
+  index: -1
+矩形 2603 拷贝 2
+  rotate: true
+  xy: 608, 607
+  size: 384, 385
+  orig: 384, 385
+  offset: 0, 0
+  index: -1
+组 497
+  rotate: true
+  xy: 715, 243
+  size: 268, 269
+  orig: 270, 271
+  offset: 1, 1
+  index: -1
+购买复活
+  rotate: false
+  xy: 602, 513
+  size: 326, 83
+  orig: 329, 86
+  offset: 2, 2
+  index: -1

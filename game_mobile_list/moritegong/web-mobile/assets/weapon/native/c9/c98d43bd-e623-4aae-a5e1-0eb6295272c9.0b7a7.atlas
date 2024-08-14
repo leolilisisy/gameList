@@ -1,0 +1,223 @@
+
+tiechui.png
+size: 512, 256
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+4-1
+  rotate: true
+  xy: 0, 183
+  size: 73, 44
+  orig: 73, 44
+  offset: 0, 0
+  index: -1
+battleAttackSkill_40013
+  rotate: true
+  xy: 45, 1
+  size: 48, 35
+  orig: 66, 57
+  offset: 3, 2
+  index: -1
+battleAttackSkill_40014
+  rotate: false
+  xy: 239, 59
+  size: 40, 41
+  orig: 66, 57
+  offset: 13, 2
+  index: -1
+battleAttackSkill_40015
+  rotate: false
+  xy: 220, 209
+  size: 46, 47
+  orig: 66, 57
+  offset: 10, 1
+  index: -1
+battleAttackSkill_40016
+  rotate: true
+  xy: 82, 0
+  size: 51, 50
+  orig: 66, 57
+  offset: 8, 1
+  index: -1
+battleAttackSkill_40017
+  rotate: true
+  xy: 115, 80
+  size: 56, 53
+  orig: 66, 57
+  offset: 5, 0
+  index: -1
+battleAttackSkill_40018
+  rotate: true
+  xy: 58, 129
+  size: 61, 55
+  orig: 66, 57
+  offset: 2, 0
+  index: -1
+battleAttackSkill_40019
+  rotate: true
+  xy: 0, 51
+  size: 63, 55
+  orig: 66, 57
+  offset: 1, 1
+  index: -1
+battleAttackSkill_40020
+  rotate: true
+  xy: 46, 192
+  size: 64, 56
+  orig: 66, 57
+  offset: 1, 1
+  index: -1
+battleAttackSkill_40021
+  rotate: true
+  xy: 0, 116
+  size: 65, 56
+  orig: 66, 57
+  offset: 0, 1
+  index: -1
+d0
+  rotate: true
+  xy: 199, 58
+  size: 20, 19
+  orig: 60, 61
+  offset: 22, 22
+  index: -1
+d1
+  rotate: true
+  xy: 260, 174
+  size: 33, 28
+  orig: 60, 61
+  offset: 13, 17
+  index: -1
+d2
+  rotate: true
+  xy: 225, 102
+  size: 46, 44
+  orig: 60, 61
+  offset: 9, 9
+  index: -1
+d3
+  rotate: false
+  xy: 134, 2
+  size: 50, 50
+  orig: 60, 61
+  offset: 7, 5
+  index: -1
+d4
+  rotate: false
+  xy: 164, 199
+  size: 54, 57
+  orig: 60, 61
+  offset: 5, 1
+  index: -1
+d5
+  rotate: false
+  xy: 57, 53
+  size: 56, 61
+  orig: 60, 61
+  offset: 4, 0
+  index: -1
+d6
+  rotate: false
+  xy: 104, 197
+  size: 58, 59
+  orig: 60, 61
+  offset: 2, 0
+  index: -1
+d7
+  rotate: true
+  xy: 115, 138
+  size: 57, 56
+  orig: 60, 61
+  offset: 1, 4
+  index: -1
+d8
+  rotate: true
+  xy: 170, 80
+  size: 56, 53
+  orig: 60, 61
+  offset: 0, 4
+  index: -1
+fdcv01
+  rotate: true
+  xy: 220, 58
+  size: 20, 17
+  orig: 34, 49
+  offset: 13, 24
+  index: -1
+fdcv02
+  rotate: true
+  xy: 268, 228
+  size: 28, 26
+  orig: 34, 49
+  offset: 4, 17
+  index: -1
+fdcv03
+  rotate: true
+  xy: 271, 144
+  size: 28, 26
+  orig: 34, 49
+  offset: 3, 17
+  index: -1
+fdcv04
+  rotate: false
+  xy: 170, 55
+  size: 27, 23
+  orig: 34, 49
+  offset: 2, 17
+  index: -1
+fdcv05
+  rotate: false
+  xy: 140, 55
+  size: 28, 23
+  orig: 34, 49
+  offset: 0, 18
+  index: -1
+fdcv06
+  rotate: true
+  xy: 115, 54
+  size: 24, 23
+  orig: 34, 49
+  offset: 4, 18
+  index: -1
+jk0
+  rotate: false
+  xy: 0, 1
+  size: 43, 48
+  orig: 43, 61
+  offset: 0, 0
+  index: -1
+jk1
+  rotate: false
+  xy: 227, 1
+  size: 39, 55
+  orig: 43, 61
+  offset: 2, 1
+  index: -1
+jk2
+  rotate: false
+  xy: 173, 142
+  size: 36, 55
+  orig: 43, 61
+  offset: 4, 1
+  index: -1
+jk3
+  rotate: false
+  xy: 186, 0
+  size: 39, 53
+  orig: 43, 61
+  offset: 3, 4
+  index: -1
+jk4
+  rotate: true
+  xy: 268, 18
+  size: 39, 29
+  orig: 43, 61
+  offset: 3, 28
+  index: -1
+椭圆 4
+  rotate: false
+  xy: 211, 150
+  size: 47, 47
+  orig: 47, 47
+  offset: 0, 0
+  index: -1

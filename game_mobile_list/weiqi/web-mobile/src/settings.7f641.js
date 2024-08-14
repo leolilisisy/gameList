@@ -1,0 +1,1 @@
+window._CCSettings={platform:"web-mobile",groupList:["default"],collisionMatrix:[[true]],hasResourcesBundle:true,hasStartSceneBundle:false,remoteBundles:[],subpackages:[],launchScene:"db://assets/goChess/scene/gochess.fire",orientation:"",jsList:[],bundleVers:{internal:"f1413",resources:"191fc",main:"1f983"}};

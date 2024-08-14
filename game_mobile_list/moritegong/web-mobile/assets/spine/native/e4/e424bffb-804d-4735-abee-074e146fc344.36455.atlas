@@ -1,0 +1,90 @@
+
+sb.png
+size: 1024, 1024
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+2l
+  rotate: false
+  xy: 2, 364
+  size: 720, 131
+  orig: 722, 133
+  offset: 1, 1
+  index: -1
+L
+  rotate: false
+  xy: 552, 62
+  size: 98, 98
+  orig: 100, 100
+  offset: 1, 1
+  index: -1
+e
+  rotate: true
+  xy: 552, 162
+  size: 100, 98
+  orig: 102, 100
+  offset: 1, 1
+  index: -1
+g
+  rotate: true
+  xy: 2, 2
+  size: 360, 431
+  orig: 360, 471
+  offset: 0, 40
+  index: -1
+o
+  rotate: false
+  xy: 435, 117
+  size: 115, 98
+  orig: 117, 100
+  offset: 1, 1
+  index: -1
+s
+  rotate: false
+  xy: 514, 264
+  size: 111, 98
+  orig: 113, 100
+  offset: 1, 1
+  index: -1
+sj
+  rotate: false
+  xy: 968, 578
+  size: 22, 22
+  orig: 25, 24
+  offset: 1, 1
+  index: -1
+wk
+  rotate: false
+  xy: 2, 497
+  size: 720, 248
+  orig: 722, 250
+  offset: 1, 1
+  index: -1
+zz
+  rotate: false
+  xy: 724, 497
+  size: 242, 248
+  orig: 260, 260
+  offset: 6, 6
+  index: -1
+组 93
+  rotate: true
+  xy: 724, 356
+  size: 139, 117
+  orig: 142, 119
+  offset: 1, 1
+  index: -1
+组 94
+  rotate: true
+  xy: 435, 217
+  size: 145, 77
+  orig: 147, 79
+  offset: 1, 1
+  index: -1
+组 95
+  rotate: true
+  xy: 968, 602
+  size: 143, 49
+  orig: 146, 51
+  offset: 1, 1
+  index: -1

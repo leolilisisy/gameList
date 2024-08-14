@@ -1,0 +1,97 @@
+
+boom.png
+size: 988, 590
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+penshe_00000
+  rotate: true
+  xy: 744, 96
+  size: 55, 56
+  orig: 300, 300
+  offset: 122, 120
+  index: -1
+penshe_00001
+  rotate: true
+  xy: 590, 5
+  size: 146, 152
+  orig: 300, 300
+  offset: 85, 72
+  index: -1
+penshe_00002
+  rotate: true
+  xy: 802, 10
+  size: 164, 171
+  orig: 300, 300
+  offset: 74, 62
+  index: -1
+penshe_00003
+  rotate: true
+  xy: 802, 176
+  size: 188, 184
+  orig: 300, 300
+  offset: 58, 58
+  index: -1
+penshe_00004
+  rotate: false
+  xy: 590, 153
+  size: 210, 210
+  orig: 300, 300
+  offset: 45, 45
+  index: -1
+penshe_00005
+  rotate: false
+  xy: 721, 366
+  size: 222, 222
+  orig: 300, 300
+  offset: 39, 39
+  index: -1
+penshe_00007
+  rotate: false
+  xy: 370, 132
+  size: 218, 218
+  orig: 300, 300
+  offset: 41, 41
+  index: -1
+penshe_00009
+  rotate: false
+  xy: 256, 352
+  size: 236, 236
+  orig: 300, 300
+  offset: 32, 32
+  index: -1
+penshe_00012
+  rotate: false
+  xy: 2, 336
+  size: 252, 252
+  orig: 300, 300
+  offset: 24, 24
+  index: -1
+penshe_00017
+  rotate: true
+  xy: 148, 112
+  size: 222, 220
+  orig: 300, 300
+  offset: 45, 40
+  index: -1
+penshe_00020
+  rotate: false
+  xy: 494, 365
+  size: 225, 223
+  orig: 300, 300
+  offset: 43, 39
+  index: -1
+zhadan
+  rotate: false
+  xy: 148, 30
+  size: 79, 80
+  orig: 79, 80
+  offset: 0, 0
+  index: -1
+图层 8 拷贝
+  rotate: false
+  xy: 2, 2
+  size: 144, 332
+  orig: 144, 332
+  offset: 0, 0
+  index: -1

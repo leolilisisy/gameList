@@ -1,0 +1,69 @@
+
+weiji.png
+size: 2048, 256
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+1
+  rotate: false
+  xy: 1240, 157
+  size: 315, 88
+  orig: 319, 91
+  offset: 2, 2
+  index: -1
+2
+  rotate: false
+  xy: 920, 157
+  size: 318, 88
+  orig: 322, 91
+  offset: 2, 2
+  index: -1
+lll1
+  rotate: true
+  xy: 2, 63
+  size: 182, 830
+  orig: 200, 830
+  offset: 0, 0
+  index: -1
+sd
+  rotate: true
+  xy: 834, 144
+  size: 101, 84
+  orig: 107, 90
+  offset: 3, 2
+  index: -1
+xx1
+  rotate: false
+  xy: 2, 40
+  size: 720, 21
+  orig: 722, 23
+  offset: 1, 1
+  index: -1
+xx2
+  rotate: false
+  xy: 2, 17
+  size: 720, 21
+  orig: 722, 23
+  offset: 1, 1
+  index: -1
+敌群来袭
+  rotate: false
+  xy: 1556, 79
+  size: 382, 76
+  orig: 382, 76
+  offset: 0, 0
+  index: -1
+组 48
+  rotate: false
+  xy: 834, 45
+  size: 720, 97
+  orig: 722, 99
+  offset: 1, 1
+  index: -1
+首领来袭
+  rotate: false
+  xy: 1556, 2
+  size: 379, 75
+  orig: 379, 75
+  offset: 0, 0
+  index: -1

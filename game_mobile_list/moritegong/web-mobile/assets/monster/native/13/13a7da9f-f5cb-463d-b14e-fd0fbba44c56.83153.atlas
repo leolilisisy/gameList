@@ -1,0 +1,160 @@
+
+dunbing.png
+size: 205, 268
+format: Alpha
+filter: Linear, Linear
+repeat: none
+a1
+  rotate: true
+  xy: 191, 248
+  size: 18, 12
+  orig: 26, 24
+  offset: 2, 1
+  index: -1
+a2
+  rotate: true
+  xy: 182, 187
+  size: 23, 21
+  orig: 26, 24
+  offset: 1, 2
+  index: -1
+a3
+  rotate: false
+  xy: 177, 164
+  size: 21, 21
+  orig: 26, 24
+  offset: 2, 2
+  index: -1
+a4
+  rotate: false
+  xy: 177, 142
+  size: 21, 20
+  orig: 26, 24
+  offset: 2, 2
+  index: -1
+a5
+  rotate: true
+  xy: 191, 212
+  size: 23, 11
+  orig: 26, 24
+  offset: 2, 3
+  index: -1
+bd
+  rotate: true
+  xy: 32, 5
+  size: 63, 78
+  orig: 63, 78
+  offset: 0, 0
+  index: -1
+body2
+  rotate: true
+  xy: 112, 5
+  size: 63, 77
+  orig: 63, 77
+  offset: 0, 0
+  index: -1
+dun
+  rotate: true
+  xy: 2, 75
+  size: 31, 72
+  orig: 31, 72
+  offset: 0, 0
+  index: -1
+q2
+  rotate: false
+  xy: 93, 109
+  size: 82, 82
+  orig: 82, 82
+  offset: 0, 0
+  index: -1
+q22
+  rotate: false
+  xy: 2, 108
+  size: 82, 82
+  orig: 82, 82
+  offset: 0, 0
+  index: -1
+sf
+  rotate: true
+  xy: 191, 29
+  size: 76, 9
+  orig: 76, 9
+  offset: 0, 0
+  index: -1
+shou1
+  rotate: true
+  xy: 177, 107
+  size: 15, 16
+  orig: 15, 16
+  offset: 0, 0
+  index: -1
+shou11
+  rotate: false
+  xy: 167, 90
+  size: 15, 15
+  orig: 15, 15
+  offset: 0, 0
+  index: -1
+td
+  rotate: false
+  xy: 177, 124
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+yj
+  rotate: true
+  xy: 191, 237
+  size: 9, 12
+  orig: 9, 12
+  offset: 0, 0
+  index: -1
+zj
+  rotate: true
+  xy: 191, 237
+  size: 9, 12
+  orig: 9, 12
+  offset: 0, 0
+  index: -1
+地扩+地裂_01
+  rotate: false
+  xy: 86, 70
+  size: 79, 37
+  orig: 96, 40
+  offset: 10, 0
+  index: -1
+地扩+地裂_03
+  rotate: false
+  xy: 98, 229
+  size: 91, 37
+  orig: 96, 40
+  offset: 4, 0
+  index: -1
+地扩+地裂_05
+  rotate: false
+  xy: 2, 229
+  size: 94, 37
+  orig: 96, 40
+  offset: 2, 0
+  index: -1
+地扩+地裂_07
+  rotate: false
+  xy: 2, 192
+  size: 89, 35
+  orig: 96, 40
+  offset: 3, 0
+  index: -1
+地扩+地裂_09
+  rotate: false
+  xy: 93, 193
+  size: 87, 34
+  orig: 96, 40
+  offset: 3, 0
+  index: -1
+地扩+地裂_21
+  rotate: true
+  xy: 2, 2
+  size: 66, 28
+  orig: 96, 40
+  offset: 19, 4
+  index: -1

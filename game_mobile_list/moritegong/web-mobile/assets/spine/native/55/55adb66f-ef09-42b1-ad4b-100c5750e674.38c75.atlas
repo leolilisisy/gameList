@@ -1,0 +1,83 @@
+
+pd.png
+size: 256, 128
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+x1
+  rotate: true
+  xy: 136, 87
+  size: 36, 23
+  orig: 36, 24
+  offset: 0, 0
+  index: -1
+x10
+  rotate: false
+  xy: 107, 35
+  size: 35, 40
+  orig: 35, 40
+  offset: 0, 0
+  index: -1
+x11
+  rotate: false
+  xy: 2, 18
+  size: 61, 105
+  orig: 61, 105
+  offset: 0, 0
+  index: -1
+x2
+  rotate: false
+  xy: 104, 77
+  size: 30, 46
+  orig: 30, 46
+  offset: 0, 0
+  index: -1
+x3
+  rotate: true
+  xy: 144, 58
+  size: 27, 26
+  orig: 27, 26
+  offset: 0, 0
+  index: -1
+x4
+  rotate: true
+  xy: 133, 4
+  size: 29, 39
+  orig: 29, 39
+  offset: 0, 0
+  index: -1
+x5
+  rotate: false
+  xy: 107, 2
+  size: 24, 31
+  orig: 24, 31
+  offset: 0, 0
+  index: -1
+x6
+  rotate: true
+  xy: 65, 67
+  size: 56, 37
+  orig: 56, 38
+  offset: 0, 0
+  index: -1
+x7
+  rotate: false
+  xy: 65, 15
+  size: 40, 50
+  orig: 40, 50
+  offset: 0, 0
+  index: -1
+x8
+  rotate: false
+  xy: 144, 37
+  size: 19, 19
+  orig: 19, 19
+  offset: 0, 0
+  index: -1
+x9
+  rotate: false
+  xy: 2, 3
+  size: 29, 13
+  orig: 29, 14
+  offset: 0, 0
+  index: -1

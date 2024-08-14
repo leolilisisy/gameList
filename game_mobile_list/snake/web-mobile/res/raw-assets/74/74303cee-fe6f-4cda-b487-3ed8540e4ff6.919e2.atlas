@@ -1,0 +1,111 @@
+
+junei_tishi_baozi.png
+size: 805,285
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ACE
+  rotate: false
+  xy: 2, 2
+  size: 208, 50
+  orig: 229, 50
+  offset: 11, 0
+  index: -1
+DoubleKill
+  rotate: true
+  xy: 88, 62
+  size: 221, 40
+  orig: 229, 50
+  offset: 4, 5
+  index: -1
+FirstBlood
+  rotate: true
+  xy: 174, 68
+  size: 215, 40
+  orig: 229, 50
+  offset: 7, 5
+  index: -1
+PentaKill
+  rotate: true
+  xy: 259, 75
+  size: 208, 40
+  orig: 229, 50
+  offset: 11, 5
+  index: -1
+QuataryKill
+  rotate: true
+  xy: 2, 54
+  size: 229, 42
+  orig: 229, 50
+  offset: 0, 4
+  index: -1
+ShutDown
+  rotate: true
+  xy: 46, 60
+  size: 223, 40
+  orig: 229, 50
+  offset: 4, 7
+  index: -1
+TripleKill
+  rotate: true
+  xy: 216, 75
+  size: 208, 41
+  orig: 229, 50
+  offset: 11, 5
+  index: -1
+hong
+  rotate: false
+  xy: 301, 77
+  size: 304, 59
+  orig: 304, 59
+  offset: 0, 0
+  index: -1
+lan
+  rotate: false
+  xy: 212, 6
+  size: 326, 60
+  orig: 326, 60
+  offset: 0, 0
+  index: -1
+legendary
+  rotate: true
+  xy: 130, 64
+  size: 219, 42
+  orig: 229, 50
+  offset: 5, 4
+  index: -1
+texiao_1/guanghuan__00000
+  rotate: true
+  xy: 694, 172
+  size: 111, 109
+  orig: 180, 180
+  offset: 38, 18
+  index: -1
+texiao_1/guanghuan__00001
+  rotate: false
+  xy: 431, 141
+  size: 137, 142
+  orig: 180, 180
+  offset: 23, 15
+  index: -1
+texiao_1/guanghuan__00002
+  rotate: false
+  xy: 607, 10
+  size: 129, 133
+  orig: 180, 180
+  offset: 28, 15
+  index: -1
+texiao_1/guanghuan__00003
+  rotate: true
+  xy: 570, 145
+  size: 138, 122
+  orig: 180, 180
+  offset: 23, 29
+  index: -1
+texiao_1/guanghuan__00004
+  rotate: true
+  xy: 301, 138
+  size: 145, 128
+  orig: 180, 180
+  offset: 20, 26
+  index: -1

@@ -1,0 +1,1 @@
+{"__type__":"cc.AnimationClip","_name":"rotationLoop","_duration":2.5,"sample":30,"wrapMode":2,"curveData":{"props":{"angle":[{"frame":0,"value":0},{"frame":2.5,"value":-360}]}}}

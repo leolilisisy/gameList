@@ -1,0 +1,76 @@
+
+shouzhi.png
+size: 498, 235
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+1/1
+  rotate: false
+  xy: 457, 123
+  size: 36, 36
+  orig: 36, 38
+  offset: 0, 1
+  index: -1
+1/2
+  rotate: true
+  xy: 457, 161
+  size: 72, 39
+  orig: 76, 43
+  offset: 2, 1
+  index: -1
+1/3
+  rotate: false
+  xy: 260, 18
+  size: 149, 87
+  orig: 153, 92
+  offset: 3, 2
+  index: -1
+1/4
+  rotate: false
+  xy: 2, 29
+  size: 175, 96
+  orig: 180, 99
+  offset: 2, 1
+  index: -1
+1/5
+  rotate: false
+  xy: 2, 127
+  size: 181, 106
+  orig: 188, 111
+  offset: 4, 2
+  index: -1
+1/6
+  rotate: false
+  xy: 185, 112
+  size: 134, 121
+  orig: 189, 127
+  offset: 52, 3
+  index: -1
+1/7
+  rotate: false
+  xy: 321, 107
+  size: 134, 126
+  orig: 191, 135
+  offset: 54, 6
+  index: -1
+D8
+  rotate: false
+  xy: 179, 29
+  size: 79, 81
+  orig: 79, 81
+  offset: 0, 0
+  index: -1
+waiquan
+  rotate: false
+  xy: 411, 29
+  size: 76, 76
+  orig: 80, 80
+  offset: 2, 2
+  index: -1
+形状 4
+  rotate: false
+  xy: 2, 2
+  size: 112, 25
+  orig: 112, 25
+  offset: 0, 0
+  index: -1

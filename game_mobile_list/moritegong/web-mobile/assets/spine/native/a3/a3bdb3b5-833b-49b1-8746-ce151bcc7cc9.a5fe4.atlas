@@ -1,0 +1,146 @@
+
+hcjm.png
+size: 1345, 1543
+format: Alpha
+filter: Linear, Linear
+repeat: none
+ADA
+  rotate: false
+  xy: 700, 736
+  size: 271, 271
+  orig: 273, 273
+  offset: 1, 1
+  index: -1
+VVV
+  rotate: false
+  xy: 710, 1276
+  size: 633, 265
+  orig: 633, 265
+  offset: 0, 0
+  index: -1
+acz
+  rotate: true
+  xy: 1117, 520
+  size: 151, 152
+  orig: 151, 152
+  offset: 0, 0
+  index: -1
+f1
+  rotate: true
+  xy: 816, 15
+  size: 656, 299
+  orig: 658, 301
+  offset: 1, 1
+  index: -1
+f2
+  rotate: true
+  xy: 2, 23
+  size: 684, 327
+  orig: 692, 335
+  offset: 4, 4
+  index: -1
+g1
+  rotate: false
+  xy: 816, 673
+  size: 500, 61
+  orig: 500, 72
+  offset: 0, 11
+  index: -1
+g2
+  rotate: true
+  xy: 1271, 173
+  size: 498, 70
+  orig: 500, 72
+  offset: 1, 1
+  index: -1
+s1
+  rotate: true
+  xy: 331, 2
+  size: 35, 28
+  orig: 37, 30
+  offset: 1, 1
+  index: -1
+s2
+  rotate: true
+  xy: 331, 2
+  size: 35, 28
+  orig: 37, 30
+  offset: 1, 1
+  index: -1
+s3
+  rotate: true
+  xy: 331, 2
+  size: 35, 28
+  orig: 37, 30
+  offset: 1, 1
+  index: -1
+ssj
+  rotate: true
+  xy: 973, 736
+  size: 271, 234
+  orig: 271, 234
+  offset: 0, 0
+  index: -1
+sssss
+  rotate: true
+  xy: 1117, 367
+  size: 151, 152
+  orig: 151, 152
+  offset: 0, 0
+  index: -1
+图层 3077
+  rotate: false
+  xy: 2, 1025
+  size: 704, 396
+  orig: 707, 400
+  offset: 1, 2
+  index: -1
+图层 3079
+  rotate: true
+  xy: 331, 39
+  size: 668, 183
+  orig: 670, 186
+  offset: 1, 1
+  index: -1
+圆角矩形 3025
+  rotate: false
+  xy: 2, 1423
+  size: 706, 118
+  orig: 708, 120
+  offset: 1, 1
+  index: -1
+圆角矩形 3071 拷贝
+  rotate: true
+  xy: 1117, 214
+  size: 151, 152
+  orig: 153, 154
+  offset: 1, 1
+  index: -1
+灰色 拷贝
+  rotate: true
+  xy: 1117, 66
+  size: 146, 147
+  orig: 146, 147
+  offset: 0, 0
+  index: -1
+矩形 3032
+  rotate: true
+  xy: 516, 49
+  size: 658, 298
+  orig: 660, 300
+  offset: 1, 1
+  index: -1
+矩形 3032 拷贝 5
+  rotate: false
+  xy: 708, 1009
+  size: 633, 265
+  orig: 635, 267
+  offset: 1, 1
+  index: -1
+组 529
+  rotate: false
+  xy: 2, 709
+  size: 696, 314
+  orig: 698, 316
+  offset: 1, 1
+  index: -1

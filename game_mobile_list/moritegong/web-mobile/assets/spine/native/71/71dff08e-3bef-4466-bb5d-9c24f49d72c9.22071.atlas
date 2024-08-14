@@ -1,0 +1,146 @@
+
+role.png
+size: 993, 724
+format: Alpha
+filter: Linear, Linear
+repeat: none
+dddf
+  rotate: false
+  xy: 261, 2
+  size: 245, 260
+  orig: 283, 311
+  offset: 12, 25
+  index: -1
+g
+  rotate: false
+  xy: 576, 268
+  size: 111, 116
+  orig: 115, 118
+  offset: 2, 1
+  index: -1
+lll
+  rotate: false
+  xy: 2, 2
+  size: 257, 260
+  orig: 283, 311
+  offset: 0, 25
+  index: -1
+vv1
+  rotate: true
+  xy: 663, 414
+  size: 183, 141
+  orig: 184, 143
+  offset: 0, 1
+  index: -1
+vv2
+  rotate: false
+  xy: 322, 265
+  size: 141, 119
+  orig: 141, 119
+  offset: 0, 0
+  index: -1
+vv3
+  rotate: true
+  xy: 465, 267
+  size: 117, 109
+  orig: 117, 109
+  offset: 0, 0
+  index: -1
+x1
+  rotate: false
+  xy: 663, 708
+  size: 14, 14
+  orig: 14, 14
+  offset: 0, 0
+  index: -1
+刘海
+  rotate: true
+  xy: 803, 274
+  size: 71, 106
+  orig: 71, 106
+  offset: 0, 0
+  index: -1
+图层 12
+  rotate: false
+  xy: 322, 386
+  size: 263, 336
+  orig: 263, 364
+  offset: 0, 13
+  index: -1
+图层 9
+  rotate: false
+  xy: 508, 12
+  size: 311, 253
+  orig: 311, 268
+  offset: 0, 15
+  index: -1
+图层416
+  rotate: false
+  xy: 821, 8
+  size: 64, 84
+  orig: 64, 84
+  offset: 0, 0
+  index: -1
+图层416(2)
+  rotate: false
+  xy: 737, 328
+  size: 64, 84
+  orig: 64, 84
+  offset: 0, 0
+  index: -1
+泡泡
+  rotate: false
+  xy: 911, 265
+  size: 80, 80
+  orig: 80, 80
+  offset: 0, 0
+  index: -1
+眼睛1
+  rotate: true
+  xy: 908, 130
+  size: 133, 51
+  orig: 133, 51
+  offset: 0, 0
+  index: -1
+眼睛2
+  rotate: true
+  xy: 689, 274
+  size: 138, 46
+  orig: 140, 48
+  offset: 1, 1
+  index: -1
+眼镜
+  rotate: false
+  xy: 689, 599
+  size: 297, 123
+  orig: 297, 123
+  offset: 0, 0
+  index: -1
+衣摆1
+  rotate: false
+  xy: 821, 94
+  size: 85, 178
+  orig: 85, 178
+  offset: 0, 0
+  index: -1
+衣摆2
+  rotate: true
+  xy: 806, 347
+  size: 250, 182
+  orig: 250, 182
+  offset: 0, 0
+  index: -1
+身体
+  rotate: false
+  xy: 2, 264
+  size: 318, 458
+  orig: 318, 458
+  offset: 0, 0
+  index: -1
+领子
+  rotate: true
+  xy: 587, 389
+  size: 333, 74
+  orig: 334, 74
+  offset: 0, 0
+  index: -1

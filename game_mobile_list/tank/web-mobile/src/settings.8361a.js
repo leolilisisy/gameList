@@ -1,0 +1,1 @@
+window._CCSettings={platform:"web-mobile",groupList:["default","UI","TankModel"],collisionMatrix:[[true],[false,false],[false,false,false]],hasResourcesBundle:true,hasStartSceneBundle:false,remoteBundles:[],subpackages:[],launchScene:"db://assets/scene/Launcher.fire",orientation:"",jsList:[],bundleVers:{internal:"b25de",resources:"653b2",main:"3ed69"}};

@@ -1,0 +1,20 @@
+
+yd.png
+size: 512, 256
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+GuideBattle_Hand
+  rotate: false
+  xy: 354, 64
+  size: 77, 90
+  orig: 77, 90
+  offset: 0, 0
+  index: -1
+yidongyindao
+  rotate: false
+  xy: 2, 2
+  size: 350, 152
+  orig: 350, 152
+  offset: 0, 0
+  index: -1
