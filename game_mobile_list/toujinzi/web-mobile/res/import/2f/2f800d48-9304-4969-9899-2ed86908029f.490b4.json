@@ -1,0 +1,1 @@
+{"__type__":"cc.AnimationClip","_name":"win_animation","_duration":1,"curveData":{"paths":{"Img_Bg":{"props":{"scale":[{"frame":0,"value":{"__type__":"cc.Vec2","x":1,"y":1}},{"frame":0.5,"value":{"__type__":"cc.Vec2","x":1.5,"y":1.5}},{"frame":1,"value":{"__type__":"cc.Vec2","x":1,"y":1}}]}}}}}
