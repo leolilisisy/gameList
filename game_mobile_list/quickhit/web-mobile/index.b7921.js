@@ -1,4 +1,4 @@
-System.register(["./application.e3cc3.js"], function (_export, _context) {
+System.register(["./application.806fe.js"], function (_export, _context) {
   "use strict";
 
   var Application, canvas, $p, bcr, application;
@@ -6,8 +6,8 @@ System.register(["./application.e3cc3.js"], function (_export, _context) {
     return System["import"](url);
   }
   return {
-    setters: [function (_applicationE3cc3Js) {
-      Application = _applicationE3cc3Js.Application;
+    setters: [function (_application806feJs) {
+      Application = _application806feJs.Application;
     }],
     execute: function () {
       canvas = document.getElementById('GameCanvas');
