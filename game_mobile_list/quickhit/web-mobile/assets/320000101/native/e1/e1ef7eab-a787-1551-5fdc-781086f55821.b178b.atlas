@@ -1,0 +1,20 @@
+
+bigwin.png
+size: 868,868
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fangsheguang_00095
+  rotate: false
+  xy: 2, 2
+  size: 256, 256
+  orig: 256, 256
+  offset: 0, 0
+  index: -1
+light
+  rotate: false
+  xy: 2, 260
+  size: 607, 606
+  orig: 607, 606
+  offset: 0, 0
+  index: -1

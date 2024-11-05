@@ -1,0 +1,97 @@
+
+1002_symbol_1003.png
+size: 286,521
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: true
+  xy: 134, 199
+  size: 142, 110
+  orig: 144, 112
+  offset: 1, 1
+  index: -1
+1_00
+  rotate: false
+  xy: 1, 1
+  size: 138, 107
+  orig: 144, 112
+  offset: 3, 3
+  index: -1
+2
+  rotate: false
+  xy: 140, 1
+  size: 136, 114
+  orig: 138, 116
+  offset: 1, 1
+  index: -1
+3
+  rotate: true
+  xy: 180, 414
+  size: 106, 90
+  orig: 108, 92
+  offset: 1, 1
+  index: -1
+4
+  rotate: false
+  xy: 134, 116
+  size: 130, 82
+  orig: 132, 84
+  offset: 1, 1
+  index: -1
+5
+  rotate: true
+  xy: 245, 218
+  size: 124, 40
+  orig: 126, 42
+  offset: 1, 1
+  index: -1
+guangdian_00
+  rotate: true
+  xy: 180, 343
+  size: 70, 72
+  orig: 102, 102
+  offset: 16, 15
+  index: -1
+huan_00
+  rotate: false
+  xy: 1, 342
+  size: 178, 178
+  orig: 202, 201
+  offset: 12, 12
+  index: -1
+quan_00
+  rotate: false
+  xy: 1, 109
+  size: 132, 232
+  orig: 199, 293
+  offset: 35, 24
+  index: -1
+xx1
+  rotate: false
+  xy: 245, 199
+  size: 18, 18
+  orig: 20, 20
+  offset: 1, 1
+  index: -1
+xx2
+  rotate: true
+  xy: 253, 400
+  size: 13, 11
+  orig: 15, 13
+  offset: 1, 1
+  index: -1
+xx3
+  rotate: false
+  xy: 253, 389
+  size: 10, 10
+  orig: 12, 12
+  offset: 1, 1
+  index: -1
+xx4
+  rotate: false
+  xy: 264, 200
+  size: 16, 17
+  orig: 18, 19
+  offset: 1, 1
+  index: -1

@@ -1,0 +1,146 @@
+
+1002_kuang.png
+size: 1443,1531
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bian/bian_00
+  rotate: false
+  xy: 1, 314
+  size: 717, 155
+  orig: 720, 255
+  offset: 0, 53
+  index: -1
+bian/bian_01
+  rotate: false
+  xy: 1, 1
+  size: 718, 156
+  orig: 720, 255
+  offset: 0, 53
+  index: -1
+bian/bian_02
+  rotate: false
+  xy: 720, 1
+  size: 720, 156
+  orig: 720, 255
+  offset: 0, 53
+  index: -1
+bian/bian_03
+  rotate: false
+  xy: 719, 779
+  size: 720, 153
+  orig: 720, 255
+  offset: 0, 53
+  index: -1
+bian/bian_04
+  rotate: false
+  xy: 722, 1086
+  size: 720, 149
+  orig: 720, 255
+  offset: 0, 54
+  index: -1
+bian/bian_05
+  rotate: false
+  xy: 722, 1236
+  size: 720, 148
+  orig: 720, 255
+  offset: 0, 54
+  index: -1
+bian/bian_06
+  rotate: false
+  xy: 1, 1387
+  size: 720, 143
+  orig: 720, 255
+  offset: 0, 53
+  index: -1
+bian/bian_07
+  rotate: false
+  xy: 722, 1385
+  size: 720, 145
+  orig: 720, 255
+  offset: 0, 53
+  index: -1
+bian/bian_08
+  rotate: false
+  xy: 1, 1239
+  size: 720, 147
+  orig: 720, 255
+  offset: 0, 53
+  index: -1
+bian/bian_09
+  rotate: false
+  xy: 1, 1090
+  size: 720, 148
+  orig: 720, 255
+  offset: 0, 54
+  index: -1
+bian/bian_10
+  rotate: false
+  xy: 1, 939
+  size: 720, 150
+  orig: 720, 255
+  offset: 0, 54
+  index: -1
+bian/bian_11
+  rotate: false
+  xy: 722, 933
+  size: 720, 152
+  orig: 720, 255
+  offset: 0, 54
+  index: -1
+bian/bian_12
+  rotate: false
+  xy: 1, 470
+  size: 719, 154
+  orig: 720, 255
+  offset: 0, 53
+  index: -1
+bian/bian_13
+  rotate: false
+  xy: 719, 314
+  size: 717, 155
+  orig: 720, 255
+  offset: 0, 53
+  index: -1
+bian/bian_14
+  rotate: false
+  xy: 1, 158
+  size: 716, 155
+  orig: 720, 255
+  offset: 0, 54
+  index: -1
+bian/bian_15
+  rotate: false
+  xy: 1, 631
+  size: 715, 154
+  orig: 720, 255
+  offset: 0, 54
+  index: -1
+bian/bian_16
+  rotate: false
+  xy: 718, 158
+  size: 716, 155
+  orig: 720, 255
+  offset: 0, 54
+  index: -1
+bian/bian_17
+  rotate: false
+  xy: 1, 786
+  size: 717, 152
+  orig: 720, 255
+  offset: 0, 54
+  index: -1
+bian/bian_18
+  rotate: false
+  xy: 717, 625
+  size: 718, 153
+  orig: 720, 255
+  offset: 0, 54
+  index: -1
+bian/bian_19
+  rotate: false
+  xy: 721, 470
+  size: 718, 154
+  orig: 720, 255
+  offset: 0, 53
+  index: -1

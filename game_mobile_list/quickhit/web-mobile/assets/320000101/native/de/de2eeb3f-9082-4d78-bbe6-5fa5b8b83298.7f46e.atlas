@@ -1,0 +1,76 @@
+
+1002_fg_sc.png
+size: 865,621
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg
+  rotate: true
+  xy: 1, 1
+  size: 315, 297
+  orig: 318, 297
+  offset: 3, 0
+  index: -1
+d
+  rotate: true
+  xy: 713, 360
+  size: 260, 99
+  orig: 318, 297
+  offset: 29, 30
+  index: -1
+fang_00
+  rotate: false
+  xy: 1, 317
+  size: 623, 303
+  orig: 720, 1440
+  offset: 47, 348
+  index: -1
+guangdian_00
+  rotate: false
+  xy: 688, 119
+  size: 176, 182
+  orig: 256, 256
+  offset: 40, 37
+  index: -1
+lanzi
+  rotate: true
+  xy: 625, 302
+  size: 318, 87
+  orig: 318, 297
+  offset: 0, 108
+  index: -1
+tiaoguang_00
+  rotate: false
+  xy: 299, 16
+  size: 300, 300
+  orig: 300, 300
+  offset: 0, 0
+  index: -1
+u
+  rotate: true
+  xy: 600, 58
+  size: 243, 87
+  orig: 318, 297
+  offset: 38, 173
+  index: -1
+xx1
+  rotate: false
+  xy: 713, 323
+  size: 38, 36
+  orig: 318, 297
+  offset: 13, 191
+  index: -1
+xx2
+  rotate: false
+  xy: 813, 587
+  size: 40, 33
+  orig: 318, 297
+  offset: 271, 53
+  index: -1
+xx3
+  rotate: false
+  xy: 600, 18
+  size: 41, 39
+  orig: 318, 297
+  offset: 273, 77
+  index: -1

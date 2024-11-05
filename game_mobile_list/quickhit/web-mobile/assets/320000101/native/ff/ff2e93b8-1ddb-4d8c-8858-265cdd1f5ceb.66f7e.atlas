@@ -1,0 +1,48 @@
+
+1002_fg_collect_flash.png
+size: 513,536
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dajisd/dajisd_00
+  rotate: false
+  xy: 1, 131
+  size: 379, 134
+  orig: 429, 135
+  offset: 10, 0
+  index: -1
+dajisd/dajisd_01
+  rotate: false
+  xy: 1, 401
+  size: 383, 134
+  orig: 429, 135
+  offset: 10, 0
+  index: -1
+dajisd/dajisd_02
+  rotate: false
+  xy: 1, 1
+  size: 383, 129
+  orig: 429, 135
+  offset: 10, 0
+  index: -1
+dajisd/dajisd_03
+  rotate: false
+  xy: 1, 266
+  size: 380, 134
+  orig: 429, 135
+  offset: 10, 0
+  index: -1
+dajisd/dajisd_04
+  rotate: true
+  xy: 385, 256
+  size: 279, 127
+  orig: 429, 135
+  offset: 10, 0
+  index: -1
+dajisd/dajisd_05
+  rotate: true
+  xy: 385, 80
+  size: 175, 117
+  orig: 429, 135
+  offset: 10, 2
+  index: -1

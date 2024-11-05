@@ -1,0 +1,90 @@
+
+1002_fg_kuang_small.png
+size: 1881,722
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shandian/shandian_00
+  rotate: true
+  xy: 497, 1
+  size: 720, 160
+  orig: 720, 240
+  offset: 0, 35
+  index: -1
+shandian/shandian_01
+  rotate: true
+  xy: 1276, 1
+  size: 720, 151
+  orig: 720, 240
+  offset: 0, 35
+  index: -1
+shandian/shandian_02
+  rotate: true
+  xy: 1428, 1
+  size: 720, 150
+  orig: 720, 240
+  offset: 0, 29
+  index: -1
+shandian/shandian_03
+  rotate: true
+  xy: 1579, 1
+  size: 720, 150
+  orig: 720, 240
+  offset: 0, 30
+  index: -1
+shandian/shandian_04
+  rotate: true
+  xy: 1123, 1
+  size: 720, 152
+  orig: 720, 240
+  offset: 0, 34
+  index: -1
+shandian/shandian_05
+  rotate: true
+  xy: 1730, 1
+  size: 720, 150
+  orig: 720, 240
+  offset: 0, 36
+  index: -1
+shandian/shandian_06
+  rotate: true
+  xy: 815, 1
+  size: 720, 153
+  orig: 720, 240
+  offset: 0, 26
+  index: -1
+shandian/shandian_07
+  rotate: true
+  xy: 658, 1
+  size: 720, 156
+  orig: 720, 240
+  offset: 0, 27
+  index: -1
+shandian/shandian_08
+  rotate: true
+  xy: 969, 1
+  size: 720, 153
+  orig: 720, 240
+  offset: 0, 32
+  index: -1
+shandian/shandian_09
+  rotate: true
+  xy: 1, 1
+  size: 720, 168
+  orig: 720, 240
+  offset: 0, 38
+  index: -1
+shandian/shandian_10
+  rotate: true
+  xy: 170, 1
+  size: 720, 163
+  orig: 720, 240
+  offset: 0, 48
+  index: -1
+shandian/shandian_11
+  rotate: true
+  xy: 334, 1
+  size: 720, 162
+  orig: 720, 240
+  offset: 0, 49
+  index: -1

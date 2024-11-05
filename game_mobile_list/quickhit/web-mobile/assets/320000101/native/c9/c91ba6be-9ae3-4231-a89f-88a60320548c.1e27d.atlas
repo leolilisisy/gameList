@@ -1,0 +1,27 @@
+
+1002_symbol_2005.png
+size: 95,98
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bar_00
+  rotate: false
+  xy: 1, 1
+  size: 76, 25
+  orig: 118, 99
+  offset: 21, 36
+  index: -1
+bar_di_00
+  rotate: false
+  xy: 1, 27
+  size: 80, 28
+  orig: 118, 99
+  offset: 19, 35
+  index: -1
+di_00
+  rotate: false
+  xy: 1, 56
+  size: 93, 41
+  orig: 118, 99
+  offset: 12, 28
+  index: -1

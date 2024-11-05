@@ -1,0 +1,55 @@
+
+1002_upgrade.png
+size: 511,1015
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1002_qh_jutb1
+  rotate: false
+  xy: 0, 0
+  size: 343, 130
+  orig: 343, 130
+  offset: 0, 0
+  index: -1
+1002_qh_jutb2
+  rotate: false
+  xy: 0, 131
+  size: 511, 260
+  orig: 511, 260
+  offset: 0, 0
+  index: -1
+fang_00
+  rotate: true
+  xy: 0, 392
+  size: 623, 303
+  orig: 720, 1440
+  offset: 47, 348
+  index: -1
+guangdian_00
+  rotate: false
+  xy: 304, 567
+  size: 176, 182
+  orig: 256, 256
+  offset: 40, 37
+  index: -1
+sd/sd_00
+  rotate: true
+  xy: 304, 750
+  size: 265, 152
+  orig: 327, 215
+  offset: 24, 13
+  index: -1
+sd/sd_01
+  rotate: false
+  xy: 344, 15
+  size: 147, 115
+  orig: 327, 215
+  offset: 39, 77
+  index: -1
+sd/sd_02
+  rotate: false
+  xy: 304, 419
+  size: 179, 147
+  orig: 327, 215
+  offset: 130, 53
+  index: -1

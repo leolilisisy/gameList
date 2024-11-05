@@ -1,0 +1,55 @@
+
+1002_qucikhit_winner.png
+size: 1734,244
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+dian_00
+  rotate: false
+  xy: 1, 102
+  size: 667, 141
+  orig: 720, 206
+  offset: 26, 24
+  index: -1
+dian_01
+  rotate: false
+  xy: 669, 122
+  size: 666, 121
+  orig: 720, 206
+  offset: 26, 33
+  index: -1
+shandian/shandian_00
+  rotate: false
+  xy: 401, 1
+  size: 398, 100
+  orig: 424, 121
+  offset: 6, 1
+  index: -1
+shandian/shandian_01
+  rotate: false
+  xy: 1199, 21
+  size: 397, 100
+  orig: 424, 121
+  offset: 8, 5
+  index: -1
+shandian/shandian_02
+  rotate: false
+  xy: 1336, 143
+  size: 397, 100
+  orig: 424, 121
+  offset: 10, 4
+  index: -1
+shandian/shandian_03
+  rotate: false
+  xy: 800, 21
+  size: 398, 100
+  orig: 424, 121
+  offset: 10, 4
+  index: -1
+shandian/shandian_04
+  rotate: false
+  xy: 1, 1
+  size: 399, 100
+  orig: 418, 130
+  offset: 7, 12
+  index: -1

@@ -1,0 +1,41 @@
+
+1002_symbol_2004.png
+size: 107,143
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1002_symbol_2004_5
+  rotate: false
+  xy: 66, 1
+  size: 40, 60
+  orig: 118, 99
+  offset: 38, 18
+  index: -1
+5di_00
+  rotate: true
+  xy: 1, 4
+  size: 44, 64
+  orig: 118, 99
+  offset: 36, 16
+  index: -1
+bar_00
+  rotate: true
+  xy: 72, 66
+  size: 76, 25
+  orig: 118, 99
+  offset: 21, 36
+  index: -1
+bar_di_00
+  rotate: true
+  xy: 43, 62
+  size: 80, 28
+  orig: 118, 99
+  offset: 19, 35
+  index: -1
+di_00
+  rotate: true
+  xy: 1, 49
+  size: 93, 41
+  orig: 118, 99
+  offset: 12, 28
+  index: -1

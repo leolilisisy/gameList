@@ -1,0 +1,27 @@
+
+1002_yuzhongjiang.png
+size: 1402,348
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1kuang_00
+  rotate: false
+  xy: 1, 1
+  size: 665, 346
+  orig: 720, 1440
+  offset: 27, 328
+  index: -1
+2kuang_00
+  rotate: false
+  xy: 667, 11
+  size: 653, 336
+  orig: 720, 1440
+  offset: 33, 333
+  index: -1
+hei_00
+  rotate: true
+  xy: 1321, 188
+  size: 159, 80
+  orig: 180, 360
+  offset: 11, 85
+  index: -1
