@@ -2,62 +2,81 @@
 <html>
 <head>
   <meta charset="utf-8">
-
   <title>Cocos Creator | GameFrame</title>
-
-  <!--http://www.html5rocks.com/en/mobile/mobifying/-->
   <meta name="viewport"
         content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,minimal-ui=true"/>
-
-  <!--https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="format-detection" content="telephone=no">
-
-  <!-- force webkit on 360 -->
   <meta name="renderer" content="webkit"/>
   <meta name="force-rendering" content="webkit"/>
-  <!-- force edge on IE -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
   <meta name="msapplication-tap-highlight" content="no">
-
-  <!-- force full screen on some browser -->
   <meta name="full-screen" content="yes"/>
   <meta name="x5-fullscreen" content="true"/>
   <meta name="360-fullscreen" content="true"/>
-
-  <!--fix fireball/issues/3568 -->
-  <!--<meta name="browsermode" content="application">-->
   <meta name="x5-page-mode" content="app">
 
-  <!--<link rel="apple-touch-icon" href=".png" />-->
-  <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
-
   <link rel="stylesheet" type="text/css" href="style.f76d1.css"/>
-
+  
+  <!-- 添加基础路径配置 -->
+  <script>
+    window.DEPLOY_BASE_PATH = 'https://leolilisisy.github.io/gameList/game_mobile_list/devil/web-mobile/';
+    // 添加资源加载函数
+    function loadScript(src) {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = window.DEPLOY_BASE_PATH + src;
+        script.onload = resolve;
+        script.onerror = reject;
+        script.charset = 'utf-8';
+        document.head.appendChild(script);
+      });
+    }
+  </script>
 </head>
 <body>
   <div id="GameDiv" cc_exact_fit_screen="true">
-      <div id="Cocos3dGameContainer">
-        <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
-      </div>
+    <div id="Cocos3dGameContainer">
+      <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
     </div>
-  
+  </div>
 
-<!-- Polyfills bundle. -->
+  <script>
+    // 按顺序加载所需文件
+    async function loadGame() {
+      try {
+        // 加载 polyfills
+        await loadScript('src/polyfills.bundle.5adbf.js');
+        // 加载 system
+        await loadScript('src/system.bundle.d6bec.js');
+        
+        // 加载 import map
+        const response = await fetch(window.DEPLOY_BASE_PATH + 'src/import-map.3297c.json');
+        const importMap = await response.json();
+        
+        // 修改 import map 中的路径
+        Object.keys(importMap.imports).forEach(key => {
+          if (importMap.imports[key].startsWith('./')) {
+            importMap.imports[key] = window.DEPLOY_BASE_PATH + importMap.imports[key].slice(2);
+          }
+        });
+        
+        // 应用 import map
+        const script = document.createElement('script');
+        script.type = 'systemjs-importmap';
+        script.text = JSON.stringify(importMap);
+        document.head.appendChild(script);
+        
+        // 加载主程序
+        await System.import(window.DEPLOY_BASE_PATH + 'index.742f3.js');
+      } catch (err) {
+        console.error('Failed to load game:', err);
+      }
+    }
 
-<script src="src/polyfills.bundle.5adbf.js" charset="utf-8"> </script>
-
-
-<!-- SystemJS support. -->
-<script src="src/system.bundle.543e6.js" charset="utf-8"> </script>
-
-<!-- Import map -->
-<script src="src/import-map.ed290.json" type="systemjs-importmap" charset="utf-8"> </script>
-
-<script>
-    System.import('./index.fe8d1.js').catch(function(err) { console.error(err); })
-</script>
-
+    // 启动游戏加载
+    loadGame();
+  </script>
 </body>
 </html>
