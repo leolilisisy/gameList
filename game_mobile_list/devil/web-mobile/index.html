@@ -49,10 +49,10 @@
         // 加载 polyfills
         await loadScript('src/polyfills.bundle.5adbf.js');
         // 加载 system
-        await loadScript('src/system.bundle.d6bec.js');
+        await loadScript('src/system.bundle.543e6.js');
         
         // 加载 import map
-        const response = await fetch(window.DEPLOY_BASE_PATH + 'src/import-map.3297c.json');
+        const response = await fetch(window.DEPLOY_BASE_PATH + 'src/import-map.ed290.json');
         const importMap = await response.json();
         
         // 修改 import map 中的路径
@@ -69,7 +69,7 @@
         document.head.appendChild(script);
         
         // 加载主程序
-        await System.import(window.DEPLOY_BASE_PATH + 'index.742f3.js');
+        await System.import(window.DEPLOY_BASE_PATH + 'index.fe8d1.js');
       } catch (err) {
         console.error('Failed to load game:', err);
       }
