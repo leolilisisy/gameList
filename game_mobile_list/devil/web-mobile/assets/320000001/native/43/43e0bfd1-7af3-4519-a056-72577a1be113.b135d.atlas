@@ -1,0 +1,76 @@
+
+eff_coin.png
+size: 592,74
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+jinbi1/jinbi1_00000
+  rotate: true
+  xy: 0, 0
+  size: 74, 73
+  orig: 100, 100
+  offset: 12, 13
+  index: -1
+jinbi1/jinbi1_00002
+  rotate: false
+  xy: 147, 2
+  size: 72, 72
+  orig: 100, 100
+  offset: 13, 13
+  index: -1
+jinbi1/jinbi1_00004
+  rotate: false
+  xy: 220, 1
+  size: 65, 73
+  orig: 100, 100
+  offset: 18, 12
+  index: -1
+jinbi1/jinbi1_00006
+  rotate: false
+  xy: 526, 1
+  size: 40, 73
+  orig: 100, 100
+  offset: 30, 12
+  index: -1
+jinbi1/jinbi1_00008
+  rotate: false
+  xy: 567, 1
+  size: 25, 73
+  orig: 100, 100
+  offset: 43, 12
+  index: -1
+jinbi1/jinbi1_00010
+  rotate: false
+  xy: 484, 2
+  size: 41, 72
+  orig: 100, 100
+  offset: 34, 13
+  index: -1
+jinbi1/jinbi1_00012
+  rotate: false
+  xy: 286, 1
+  size: 65, 73
+  orig: 100, 100
+  offset: 18, 13
+  index: -1
+jinbi1/jinbi1_00014
+  rotate: false
+  xy: 352, 1
+  size: 65, 73
+  orig: 100, 100
+  offset: 18, 12
+  index: -1
+jinbi1/jinbi1_00016
+  rotate: false
+  xy: 418, 1
+  size: 65, 73
+  orig: 100, 100
+  offset: 18, 13
+  index: -1
+jinbi1/jinbi1_00018
+  rotate: false
+  xy: 74, 0
+  size: 72, 74
+  orig: 100, 100
+  offset: 14, 13
+  index: -1

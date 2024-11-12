@@ -1,0 +1,272 @@
+
+crazy_wild.png
+size: 466,228
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/crazy_wild_00000
+  rotate: false
+  xy: 2, 216
+  size: 34, 10
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00001
+  rotate: false
+  xy: 38, 209
+  size: 34, 17
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00002
+  rotate: false
+  xy: 74, 199
+  size: 34, 27
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00003
+  rotate: true
+  xy: 146, 192
+  size: 34, 38
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00004
+  rotate: true
+  xy: 186, 192
+  size: 34, 50
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00005
+  rotate: true
+  xy: 238, 192
+  size: 34, 64
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00006
+  rotate: true
+  xy: 304, 192
+  size: 34, 73
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00007
+  rotate: true
+  xy: 379, 192
+  size: 34, 85
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00008
+  rotate: true
+  xy: 128, 156
+  size: 34, 92
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00009
+  rotate: true
+  xy: 222, 156
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00010
+  rotate: true
+  xy: 320, 156
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00011
+  rotate: true
+  xy: 49, 120
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00012
+  rotate: true
+  xy: 147, 120
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00013
+  rotate: true
+  xy: 245, 120
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00014
+  rotate: true
+  xy: 343, 120
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00015
+  rotate: true
+  xy: 48, 84
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00016
+  rotate: true
+  xy: 146, 84
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00017
+  rotate: true
+  xy: 244, 84
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00018
+  rotate: true
+  xy: 342, 84
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00019
+  rotate: true
+  xy: 2, 48
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00020
+  rotate: true
+  xy: 100, 48
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00021
+  rotate: true
+  xy: 198, 48
+  size: 34, 95
+  orig: 34, 96
+  offset: 0, 1
+  index: -1
+images/crazy_wild_00022
+  rotate: true
+  xy: 295, 48
+  size: 34, 87
+  orig: 34, 96
+  offset: 0, 9
+  index: -1
+images/crazy_wild_00023
+  rotate: true
+  xy: 384, 48
+  size: 34, 78
+  orig: 34, 96
+  offset: 0, 18
+  index: -1
+images/crazy_wild_00024
+  rotate: true
+  xy: 2, 173
+  size: 34, 68
+  orig: 34, 96
+  offset: 0, 28
+  index: -1
+images/crazy_wild_00025
+  rotate: true
+  xy: 72, 159
+  size: 34, 54
+  orig: 34, 96
+  offset: 0, 42
+  index: -1
+images/crazy_wild_00026
+  rotate: true
+  xy: 418, 156
+  size: 34, 43
+  orig: 34, 96
+  offset: 0, 53
+  index: -1
+images/crazy_wild_00027
+  rotate: false
+  xy: 110, 195
+  size: 34, 31
+  orig: 34, 96
+  offset: 0, 65
+  index: -1
+images/crazy_wild_smoke_00000
+  rotate: true
+  xy: 2, 129
+  size: 42, 45
+  orig: 50, 55
+  offset: 3, 7
+  index: -1
+images/crazy_wild_smoke_00001
+  rotate: true
+  xy: 53, 3
+  size: 43, 46
+  orig: 50, 55
+  offset: 3, 7
+  index: -1
+images/crazy_wild_smoke_00002
+  rotate: true
+  xy: 201, 2
+  size: 44, 45
+  orig: 50, 55
+  offset: 3, 7
+  index: -1
+images/crazy_wild_smoke_00003
+  rotate: true
+  xy: 101, 3
+  size: 43, 47
+  orig: 50, 55
+  offset: 4, 5
+  index: -1
+images/crazy_wild_smoke_00004
+  rotate: true
+  xy: 248, 2
+  size: 44, 47
+  orig: 50, 55
+  offset: 4, 5
+  index: -1
+images/crazy_wild_smoke_00005
+  rotate: true
+  xy: 150, 3
+  size: 43, 49
+  orig: 50, 55
+  offset: 4, 5
+  index: -1
+images/crazy_wild_smoke_00006
+  rotate: true
+  xy: 2, 4
+  size: 42, 49
+  orig: 50, 55
+  offset: 5, 4
+  index: -1
+images/crazy_wild_smoke_00007
+  rotate: true
+  xy: 297, 2
+  size: 44, 48
+  orig: 50, 55
+  offset: 3, 5
+  index: -1
+images/crazy_wild_smoke_00008
+  rotate: true
+  xy: 347, 2
+  size: 44, 45
+  orig: 50, 55
+  offset: 3, 8
+  index: -1
+images/crazy_wild_smoke_00009
+  rotate: true
+  xy: 2, 85
+  size: 42, 44
+  orig: 50, 55
+  offset: 3, 8
+  index: -1

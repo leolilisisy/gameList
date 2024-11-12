@@ -1,0 +1,76 @@
+
+1001_symbol_biankuang.png
+size: 384,295
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/fire_banbian4_00
+  rotate: true
+  xy: 243, 236
+  size: 57, 137
+  orig: 63, 150
+  offset: 6, 7
+  index: -1
+images/fire_banbian4_01
+  rotate: true
+  xy: 243, 177
+  size: 57, 138
+  orig: 63, 150
+  offset: 6, 7
+  index: -1
+images/fire_banbian4_02
+  rotate: true
+  xy: 2, 62
+  size: 58, 138
+  orig: 63, 150
+  offset: 5, 7
+  index: -1
+images/fire_banbian4_03
+  rotate: true
+  xy: 2, 2
+  size: 58, 138
+  orig: 63, 150
+  offset: 5, 7
+  index: -1
+images/fire_banbian4_04
+  rotate: true
+  xy: 243, 118
+  size: 57, 138
+  orig: 63, 150
+  offset: 6, 7
+  index: -1
+images/fire_banbian_00
+  rotate: true
+  xy: 2, 238
+  size: 55, 239
+  orig: 63, 250
+  offset: 8, 5
+  index: -1
+images/fire_banbian_01
+  rotate: true
+  xy: 142, 60
+  size: 56, 240
+  orig: 63, 250
+  offset: 7, 5
+  index: -1
+images/fire_banbian_02
+  rotate: true
+  xy: 2, 180
+  size: 56, 239
+  orig: 63, 250
+  offset: 7, 5
+  index: -1
+images/fire_banbian_03
+  rotate: true
+  xy: 2, 122
+  size: 56, 239
+  orig: 63, 250
+  offset: 7, 5
+  index: -1
+images/fire_banbian_04
+  rotate: true
+  xy: 142, 2
+  size: 56, 240
+  orig: 63, 250
+  offset: 7, 5
+  index: -1

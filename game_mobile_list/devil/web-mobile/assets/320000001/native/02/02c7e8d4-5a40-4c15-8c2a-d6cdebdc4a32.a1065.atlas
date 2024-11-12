@@ -1,0 +1,398 @@
+
+respin.png
+size: 2032,637
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/jinbi1_00000
+  rotate: false
+  xy: 738, 205
+  size: 37, 37
+  orig: 50, 50
+  offset: 6, 6
+  index: -1
+images/jinbi1_00002
+  rotate: false
+  xy: 1680, 200
+  size: 37, 37
+  orig: 50, 50
+  offset: 6, 6
+  index: -1
+images/jinbi1_00004
+  rotate: false
+  xy: 214, 134
+  size: 33, 37
+  orig: 50, 50
+  offset: 9, 6
+  index: -1
+images/jinbi1_00006
+  rotate: true
+  xy: 917, 7
+  size: 20, 37
+  orig: 50, 50
+  offset: 15, 6
+  index: -1
+images/jinbi1_00008
+  rotate: true
+  xy: 656, 5
+  size: 13, 37
+  orig: 50, 50
+  offset: 21, 6
+  index: -1
+images/jinbi1_00010
+  rotate: true
+  xy: 838, 6
+  size: 21, 37
+  orig: 50, 50
+  offset: 17, 6
+  index: -1
+images/jinbi1_00012
+  rotate: false
+  xy: 214, 95
+  size: 33, 37
+  orig: 50, 50
+  offset: 9, 6
+  index: -1
+images/jinbi1_00014
+  rotate: false
+  xy: 214, 56
+  size: 33, 37
+  orig: 50, 50
+  offset: 9, 6
+  index: -1
+images/jinbi1_00016
+  rotate: false
+  xy: 214, 17
+  size: 33, 37
+  orig: 50, 50
+  offset: 9, 6
+  index: -1
+images/jinbi1_00018
+  rotate: false
+  xy: 700, 204
+  size: 36, 38
+  orig: 50, 50
+  offset: 7, 6
+  index: -1
+images/respin_baozha_00
+  rotate: true
+  xy: 782, 272
+  size: 52, 54
+  orig: 180, 100
+  offset: 53, 12
+  index: -1
+images/respin_baozha_01
+  rotate: false
+  xy: 700, 244
+  size: 80, 80
+  orig: 180, 100
+  offset: 43, 11
+  index: -1
+images/respin_baozha_02
+  rotate: true
+  xy: 616, 204
+  size: 120, 82
+  orig: 180, 100
+  offset: 29, 10
+  index: -1
+images/respin_baozha_03
+  rotate: false
+  xy: 1680, 239
+  size: 155, 85
+  orig: 180, 100
+  offset: 12, 7
+  index: -1
+images/respin_baozha_04
+  rotate: true
+  xy: 2, 2
+  size: 169, 87
+  orig: 180, 100
+  offset: 3, 6
+  index: -1
+images/respin_baozha_05
+  rotate: false
+  xy: 1676, 365
+  size: 174, 90
+  orig: 180, 100
+  offset: 1, 4
+  index: -1
+images/respin_baozha_06
+  rotate: true
+  xy: 1657, 457
+  size: 178, 88
+  orig: 180, 100
+  offset: 0, 3
+  index: -1
+images/respin_baozha_07
+  rotate: false
+  xy: 1852, 369
+  size: 176, 87
+  orig: 180, 100
+  offset: 0, 3
+  index: -1
+images/respin_baozha_08
+  rotate: false
+  xy: 1852, 283
+  size: 175, 84
+  orig: 180, 100
+  offset: 0, 4
+  index: -1
+images/respin_baozha_09
+  rotate: false
+  xy: 1837, 200
+  size: 175, 81
+  orig: 180, 100
+  offset: 0, 5
+  index: -1
+images/respin_baozha_10
+  rotate: true
+  xy: 1747, 458
+  size: 177, 74
+  orig: 180, 100
+  offset: 0, 5
+  index: -1
+images/respin_baozha_11
+  rotate: true
+  xy: 1581, 456
+  size: 179, 74
+  orig: 180, 100
+  offset: 0, 4
+  index: -1
+images/respin_baozha_12
+  rotate: true
+  xy: 1505, 455
+  size: 180, 74
+  orig: 180, 100
+  offset: 0, 4
+  index: -1
+images/respin_baozha_13
+  rotate: true
+  xy: 1823, 458
+  size: 177, 74
+  orig: 180, 100
+  offset: 1, 5
+  index: -1
+images/respin_baozha_14
+  rotate: true
+  xy: 1680, 25
+  size: 173, 71
+  orig: 180, 100
+  offset: 3, 6
+  index: -1
+images/respin_baozha_15
+  rotate: true
+  xy: 1753, 66
+  size: 171, 71
+  orig: 180, 100
+  offset: 4, 6
+  index: -1
+images/respin_baozha_16
+  rotate: true
+  xy: 1899, 459
+  size: 176, 68
+  orig: 180, 100
+  offset: 0, 7
+  index: -1
+images/respin_baozha_17
+  rotate: true
+  xy: 1969, 460
+  size: 175, 61
+  orig: 180, 100
+  offset: 0, 9
+  index: -1
+images/respin_baozha_18
+  rotate: false
+  xy: 1847, 143
+  size: 172, 55
+  orig: 180, 100
+  offset: 1, 14
+  index: -1
+images/respin_baozha_19
+  rotate: true
+  xy: 162, 4
+  size: 167, 50
+  orig: 180, 100
+  offset: 2, 17
+  index: -1
+images/respin_chazi
+  rotate: true
+  xy: 616, 326
+  size: 309, 798
+  orig: 309, 799
+  offset: 0, 1
+  index: -1
+images/respin_chazi_fire_00
+  rotate: true
+  xy: 633, 2
+  size: 16, 21
+  orig: 50, 75
+  offset: 17, 0
+  index: -1
+images/respin_chazi_fire_01
+  rotate: true
+  xy: 207, 173
+  size: 28, 41
+  orig: 50, 75
+  offset: 10, 0
+  index: -1
+images/respin_chazi_fire_02
+  rotate: true
+  xy: 1740, 326
+  size: 37, 59
+  orig: 50, 75
+  offset: 6, 0
+  index: -1
+images/respin_chazi_fire_03
+  rotate: false
+  xy: 1868, 74
+  size: 39, 67
+  orig: 50, 75
+  offset: 4, 0
+  index: -1
+images/respin_chazi_fire_04
+  rotate: false
+  xy: 1847, 3
+  size: 39, 68
+  orig: 50, 75
+  offset: 3, 0
+  index: -1
+images/respin_chazi_fire_05
+  rotate: false
+  xy: 1826, 73
+  size: 40, 68
+  orig: 50, 75
+  offset: 3, 0
+  index: -1
+images/respin_chazi_fire_06
+  rotate: false
+  xy: 1888, 6
+  size: 39, 66
+  orig: 50, 75
+  offset: 4, 1
+  index: -1
+images/respin_chazi_fire_07
+  rotate: false
+  xy: 1753, 3
+  size: 40, 61
+  orig: 50, 75
+  offset: 3, 2
+  index: -1
+images/respin_chazi_fire_08
+  rotate: true
+  xy: 1676, 326
+  size: 37, 62
+  orig: 50, 75
+  offset: 6, 1
+  index: -1
+images/respin_chazi_fire_09
+  rotate: false
+  xy: 1909, 78
+  size: 50, 63
+  orig: 50, 75
+  offset: 0, 5
+  index: -1
+images/respin_chazi_fire_10
+  rotate: false
+  xy: 782, 204
+  size: 50, 66
+  orig: 50, 75
+  offset: 0, 9
+  index: -1
+images/respin_chazi_fire_11
+  rotate: false
+  xy: 1795, 4
+  size: 50, 60
+  orig: 50, 75
+  offset: 0, 15
+  index: -1
+images/respin_chazi_fire_12
+  rotate: true
+  xy: 1961, 99
+  size: 42, 57
+  orig: 50, 75
+  offset: 4, 18
+  index: -1
+images/respin_chazi_fire_13
+  rotate: true
+  xy: 1801, 332
+  size: 31, 49
+  orig: 50, 75
+  offset: 9, 26
+  index: -1
+images/respin_chazi_fire_14
+  rotate: true
+  xy: 877, 7
+  size: 20, 38
+  orig: 50, 75
+  offset: 14, 34
+  index: -1
+images/respin_coin64
+  rotate: true
+  xy: 91, 3
+  size: 168, 69
+  orig: 168, 69
+  offset: 0, 0
+  index: -1
+images/respin_coin65
+  rotate: true
+  xy: 1416, 454
+  size: 181, 87
+  orig: 181, 87
+  offset: 0, 0
+  index: -1
+images/respin_coin66
+  rotate: true
+  xy: 509, 10
+  size: 191, 122
+  orig: 191, 122
+  offset: 0, 0
+  index: -1
+images/respin_coin67
+  rotate: false
+  xy: 633, 20
+  size: 203, 182
+  orig: 203, 182
+  offset: 0, 0
+  index: -1
+images/respin_coin68
+  rotate: true
+  xy: 250, 9
+  size: 192, 257
+  orig: 192, 257
+  offset: 0, 0
+  index: -1
+images/respin_fanmian
+  rotate: true
+  xy: 1416, 326
+  size: 126, 128
+  orig: 150, 150
+  offset: 12, 11
+  index: -1
+images/respin_glow1
+  rotate: true
+  xy: 207, 203
+  size: 432, 407
+  orig: 437, 437
+  offset: 2, 23
+  index: -1
+images/respin_glow3
+  rotate: false
+  xy: 838, 29
+  size: 840, 295
+  orig: 840, 354
+  offset: 0, 31
+  index: -1
+images/respin_glow4
+  rotate: false
+  xy: 2, 173
+  size: 203, 462
+  orig: 205, 465
+  offset: 0, 2
+  index: -1
+images/respin_zhegnmian
+  rotate: true
+  xy: 1546, 327
+  size: 126, 128
+  orig: 150, 150
+  offset: 12, 11
+  index: -1

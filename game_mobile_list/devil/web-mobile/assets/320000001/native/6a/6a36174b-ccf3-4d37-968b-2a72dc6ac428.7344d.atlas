@@ -1,0 +1,111 @@
+
+big_win.png
+size: 1854,795
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/1001_qp_devil92
+  rotate: true
+  xy: 1400, 504
+  size: 291, 454
+  orig: 291, 454
+  offset: 0, 0
+  index: -1
+images/1001_win_big
+  rotate: false
+  xy: 736, 0
+  size: 617, 285
+  orig: 617, 285
+  offset: 0, 0
+  index: -1
+images/1001_win_d3
+  rotate: true
+  xy: 1705, 148
+  size: 82, 111
+  orig: 82, 111
+  offset: 0, 0
+  index: -1
+images/1001_win_d4
+  rotate: false
+  xy: 1592, 135
+  size: 112, 97
+  orig: 112, 97
+  offset: 0, 0
+  index: -1
+images/1001_win_d5
+  rotate: false
+  xy: 1712, 231
+  size: 98, 111
+  orig: 98, 111
+  offset: 0, 0
+  index: -1
+images/1001_win_d6
+  rotate: false
+  xy: 1706, 43
+  size: 79, 104
+  orig: 79, 104
+  offset: 0, 0
+  index: -1
+images/1001_win_d7
+  rotate: false
+  xy: 1592, 233
+  size: 119, 109
+  orig: 119, 109
+  offset: 0, 0
+  index: -1
+images/1001_win_d8
+  rotate: false
+  xy: 1592, 40
+  size: 113, 94
+  orig: 113, 94
+  offset: 0, 0
+  index: -1
+images/1001_win_d9
+  rotate: false
+  xy: 712, 286
+  size: 699, 210
+  orig: 699, 210
+  offset: 0, 0
+  index: -1
+images/1001_win_depic
+  rotate: false
+  xy: 721, 497
+  size: 678, 298
+  orig: 678, 298
+  offset: 0, 0
+  index: -1
+images/1001_win_mega
+  rotate: false
+  xy: 0, 502
+  size: 720, 293
+  orig: 720, 293
+  offset: 0, 0
+  index: -1
+images/1001_win_super
+  rotate: false
+  xy: 0, 216
+  size: 711, 285
+  orig: 711, 285
+  offset: 0, 0
+  index: -1
+images/1001_win_uitra
+  rotate: false
+  xy: 0, 12
+  size: 735, 203
+  orig: 735, 203
+  offset: 0, 0
+  index: -1
+images/1001_win_win
+  rotate: false
+  xy: 1412, 343
+  size: 399, 160
+  orig: 399, 160
+  offset: 0, 0
+  index: -1
+images/p_star
+  rotate: false
+  xy: 1354, 41
+  size: 237, 244
+  orig: 256, 256
+  offset: 10, 3
+  index: -1

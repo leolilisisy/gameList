@@ -1,0 +1,20 @@
+
+big_win_glow.png
+size: 1118,572
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/1001_win_d1
+  rotate: true
+  xy: 1, 41
+  size: 530, 682
+  orig: 552, 711
+  offset: 10, 15
+  index: -1
+images/1001_win_d2
+  rotate: true
+  xy: 684, 1
+  size: 570, 433
+  orig: 571, 467
+  offset: 0, 0
+  index: -1

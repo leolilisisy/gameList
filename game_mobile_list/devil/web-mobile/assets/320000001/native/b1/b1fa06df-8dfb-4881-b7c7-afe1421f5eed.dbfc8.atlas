@@ -1,0 +1,97 @@
+
+qipange_fire.png
+size: 1513,154
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/qpg_fire_00
+  rotate: false
+  xy: 254, 8
+  size: 250, 46
+  orig: 250, 64
+  offset: 0, 0
+  index: -1
+images/qpg_fire_01
+  rotate: false
+  xy: 2, 3
+  size: 250, 51
+  orig: 250, 64
+  offset: 0, 0
+  index: -1
+images/qpg_fire_02
+  rotate: false
+  xy: 1261, 41
+  size: 250, 54
+  orig: 250, 64
+  offset: 0, 0
+  index: -1
+images/qpg_fire_03
+  rotate: false
+  xy: 1009, 38
+  size: 250, 57
+  orig: 250, 64
+  offset: 0, 0
+  index: -1
+images/qpg_fire_04
+  rotate: false
+  xy: 757, 33
+  size: 250, 62
+  orig: 250, 64
+  offset: 0, 0
+  index: -1
+images/qpg_fire_05
+  rotate: false
+  xy: 506, 88
+  size: 249, 64
+  orig: 250, 64
+  offset: 1, 0
+  index: -1
+images/qpg_fire_06
+  rotate: false
+  xy: 506, 88
+  size: 249, 64
+  orig: 250, 64
+  offset: 1, 0
+  index: -1
+images/qpg_fire_07
+  rotate: false
+  xy: 2, 88
+  size: 250, 64
+  orig: 250, 64
+  offset: 0, 0
+  index: -1
+images/qpg_fire_08
+  rotate: false
+  xy: 254, 88
+  size: 250, 64
+  orig: 250, 64
+  offset: 0, 0
+  index: -1
+images/qpgg1
+  rotate: true
+  xy: 506, 2
+  size: 29, 384
+  orig: 30, 384
+  offset: 0, 0
+  index: -1
+images/qpgg2
+  rotate: true
+  xy: 1009, 6
+  size: 30, 385
+  orig: 31, 385
+  offset: 1, 0
+  index: -1
+images/qpgg3
+  rotate: false
+  xy: 2, 56
+  size: 716, 30
+  orig: 718, 32
+  offset: 1, 2
+  index: -1
+images/qpgg4
+  rotate: false
+  xy: 757, 97
+  size: 720, 55
+  orig: 720, 57
+  offset: 0, 0
+  index: -1

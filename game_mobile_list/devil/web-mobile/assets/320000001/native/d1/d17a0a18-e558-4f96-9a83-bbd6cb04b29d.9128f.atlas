@@ -1,0 +1,202 @@
+
+crazy_wild_1.png
+size: 398,198
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/crazy_wild_00000
+  rotate: false
+  xy: 326, 5
+  size: 34, 10
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00001
+  rotate: false
+  xy: 254, 3
+  size: 34, 17
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00002
+  rotate: false
+  xy: 362, 61
+  size: 34, 27
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00003
+  rotate: false
+  xy: 290, 3
+  size: 34, 38
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00004
+  rotate: false
+  xy: 362, 90
+  size: 34, 50
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00005
+  rotate: false
+  xy: 326, 62
+  size: 34, 64
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00006
+  rotate: false
+  xy: 290, 43
+  size: 34, 73
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00007
+  rotate: false
+  xy: 254, 22
+  size: 34, 85
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00008
+  rotate: false
+  xy: 218, 7
+  size: 34, 92
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00009
+  rotate: false
+  xy: 2, 100
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00010
+  rotate: false
+  xy: 2, 2
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00011
+  rotate: false
+  xy: 38, 100
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00012
+  rotate: false
+  xy: 38, 2
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00013
+  rotate: false
+  xy: 74, 100
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00014
+  rotate: false
+  xy: 74, 2
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00015
+  rotate: false
+  xy: 110, 100
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00016
+  rotate: false
+  xy: 110, 2
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00017
+  rotate: false
+  xy: 146, 100
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00018
+  rotate: false
+  xy: 146, 2
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00019
+  rotate: false
+  xy: 182, 100
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00020
+  rotate: false
+  xy: 182, 2
+  size: 34, 96
+  orig: 34, 96
+  offset: 0, 0
+  index: -1
+images/crazy_wild_00021
+  rotate: false
+  xy: 218, 101
+  size: 34, 95
+  orig: 34, 96
+  offset: 0, 1
+  index: -1
+images/crazy_wild_00022
+  rotate: false
+  xy: 254, 109
+  size: 34, 87
+  orig: 34, 96
+  offset: 0, 9
+  index: -1
+images/crazy_wild_00023
+  rotate: false
+  xy: 290, 118
+  size: 34, 78
+  orig: 34, 96
+  offset: 0, 18
+  index: -1
+images/crazy_wild_00024
+  rotate: false
+  xy: 326, 128
+  size: 34, 68
+  orig: 34, 96
+  offset: 0, 28
+  index: -1
+images/crazy_wild_00025
+  rotate: false
+  xy: 362, 142
+  size: 34, 54
+  orig: 34, 96
+  offset: 0, 42
+  index: -1
+images/crazy_wild_00026
+  rotate: false
+  xy: 326, 17
+  size: 34, 43
+  orig: 34, 96
+  offset: 0, 53
+  index: -1
+images/crazy_wild_00027
+  rotate: false
+  xy: 362, 28
+  size: 34, 31
+  orig: 34, 96
+  offset: 0, 65
+  index: -1

@@ -1,0 +1,454 @@
+
+1001_respin.png
+size: 2001,1859
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+D1_00
+  rotate: true
+  xy: 780, 1384
+  size: 120, 58
+  orig: 128, 128
+  offset: 2, 4
+  index: -1
+U1_00
+  rotate: false
+  xy: 643, 6
+  size: 115, 63
+  orig: 128, 128
+  offset: 8, 62
+  index: -1
+guangdian_00
+  rotate: true
+  xy: 0, 0
+  size: 176, 182
+  orig: 256, 256
+  offset: 40, 37
+  index: -1
+images/coin/coin_00
+  rotate: false
+  xy: 780, 1331
+  size: 52, 52
+  orig: 56, 56
+  offset: 2, 2
+  index: -1
+images/coin/coin_01
+  rotate: false
+  xy: 780, 1278
+  size: 52, 52
+  orig: 56, 56
+  offset: 3, 2
+  index: -1
+images/coin/coin_02
+  rotate: true
+  xy: 780, 1175
+  size: 49, 52
+  orig: 56, 56
+  offset: 6, 2
+  index: -1
+images/coin/coin_03
+  rotate: false
+  xy: 748, 1069
+  size: 45, 52
+  orig: 56, 56
+  offset: 9, 2
+  index: -1
+images/coin/coin_04
+  rotate: true
+  xy: 1529, 3
+  size: 40, 54
+  orig: 56, 56
+  offset: 12, 1
+  index: -1
+images/coin/coin_05
+  rotate: true
+  xy: 1897, 1283
+  size: 33, 54
+  orig: 56, 56
+  offset: 15, 1
+  index: -1
+images/coin/coin_06
+  rotate: false
+  xy: 1977, 337
+  size: 24, 54
+  orig: 56, 56
+  offset: 19, 1
+  index: -1
+images/coin/coin_07
+  rotate: false
+  xy: 794, 1067
+  size: 14, 54
+  orig: 56, 56
+  offset: 23, 1
+  index: -1
+images/coin/coin_08
+  rotate: false
+  xy: 290, 650
+  size: 14, 54
+  orig: 56, 56
+  offset: 19, 1
+  index: -1
+images/coin/coin_09
+  rotate: false
+  xy: 1977, 282
+  size: 24, 54
+  orig: 56, 56
+  offset: 13, 1
+  index: -1
+images/coin/coin_10
+  rotate: false
+  xy: 1720, 187
+  size: 33, 54
+  orig: 56, 56
+  offset: 8, 1
+  index: -1
+images/coin/coin_11
+  rotate: true
+  xy: 1584, 3
+  size: 40, 54
+  orig: 56, 56
+  offset: 4, 1
+  index: -1
+images/coin/coin_12
+  rotate: false
+  xy: 1710, 90
+  size: 45, 52
+  orig: 56, 56
+  offset: 2, 2
+  index: -1
+images/coin/coin_13
+  rotate: false
+  xy: 748, 1122
+  size: 49, 52
+  orig: 56, 56
+  offset: 1, 2
+  index: -1
+images/coin/coin_14
+  rotate: false
+  xy: 780, 1225
+  size: 52, 52
+  orig: 56, 56
+  offset: 1, 2
+  index: -1
+images/huo/huo_00
+  rotate: true
+  xy: 841, 1570
+  size: 289, 527
+  orig: 1014, 1195
+  offset: 359, 332
+  index: -1
+images/huo/huo_01
+  rotate: false
+  xy: 0, 177
+  size: 289, 527
+  orig: 1014, 1195
+  offset: 359, 332
+  index: -1
+images/huo/huo_02
+  rotate: true
+  xy: 1369, 1570
+  size: 289, 527
+  orig: 1014, 1195
+  offset: 359, 332
+  index: -1
+images/huo/huo_03
+  rotate: true
+  xy: 310, 777
+  size: 289, 527
+  orig: 1014, 1195
+  offset: 359, 332
+  index: -1
+images/huo/huo_04
+  rotate: true
+  xy: 310, 487
+  size: 289, 527
+  orig: 1014, 1195
+  offset: 359, 332
+  index: -1
+images/huo/huo_05
+  rotate: true
+  xy: 290, 197
+  size: 289, 527
+  orig: 1014, 1195
+  offset: 359, 332
+  index: -1
+images/huo/huo_06
+  rotate: true
+  xy: 841, 1280
+  size: 289, 527
+  orig: 1014, 1195
+  offset: 359, 332
+  index: -1
+images/huo/huo_07
+  rotate: true
+  xy: 1369, 1280
+  size: 289, 527
+  orig: 1014, 1195
+  offset: 359, 332
+  index: -1
+images/huo/huo_08
+  rotate: false
+  xy: 838, 752
+  size: 289, 527
+  orig: 1014, 1195
+  offset: 359, 332
+  index: -1
+images/huo/huo_09
+  rotate: false
+  xy: 1128, 752
+  size: 289, 527
+  orig: 1014, 1195
+  offset: 359, 332
+  index: -1
+images/huo/huo_10
+  rotate: false
+  xy: 1418, 752
+  size: 289, 527
+  orig: 1014, 1195
+  offset: 359, 332
+  index: -1
+images/huo/huo_11
+  rotate: true
+  xy: 838, 462
+  size: 289, 527
+  orig: 1014, 1195
+  offset: 359, 332
+  index: -1
+images/huo/huo_12
+  rotate: true
+  xy: 818, 172
+  size: 289, 527
+  orig: 1014, 1195
+  offset: 359, 332
+  index: -1
+images/huo/huo_13
+  rotate: false
+  xy: 1708, 752
+  size: 289, 527
+  orig: 1014, 1195
+  offset: 359, 332
+  index: -1
+images/huo/huo_14
+  rotate: true
+  xy: 1366, 462
+  size: 289, 527
+  orig: 1014, 1195
+  offset: 359, 332
+  index: -1
+images/respin_baozha_00
+  rotate: false
+  xy: 1244, 26
+  size: 63, 65
+  orig: 180, 100
+  offset: 48, 7
+  index: -1
+images/respin_baozha_01
+  rotate: false
+  xy: 1143, 0
+  size: 100, 91
+  orig: 180, 100
+  offset: 28, 8
+  index: -1
+images/respin_baozha_02
+  rotate: true
+  xy: 1882, 247
+  size: 144, 94
+  orig: 180, 100
+  offset: 12, 6
+  index: -1
+images/respin_baozha_03
+  rotate: true
+  xy: 183, 6
+  size: 170, 97
+  orig: 180, 100
+  offset: 4, 3
+  index: -1
+images/respin_baozha_04
+  rotate: true
+  xy: 1894, 392
+  size: 178, 99
+  orig: 180, 100
+  offset: 0, 1
+  index: -1
+images/respin_baozha_05
+  rotate: true
+  xy: 1897, 1679
+  size: 180, 100
+  orig: 180, 100
+  offset: 0, 0
+  index: -1
+images/respin_baozha_06
+  rotate: true
+  xy: 1894, 571
+  size: 180, 100
+  orig: 180, 100
+  offset: 0, 0
+  index: -1
+images/respin_baozha_07
+  rotate: true
+  xy: 1897, 1498
+  size: 180, 100
+  orig: 180, 100
+  offset: 0, 0
+  index: -1
+images/respin_baozha_08
+  rotate: true
+  xy: 1897, 1317
+  size: 180, 99
+  orig: 180, 100
+  offset: 0, 0
+  index: -1
+images/respin_baozha_09
+  rotate: false
+  xy: 1539, 143
+  size: 180, 98
+  orig: 180, 100
+  offset: 0, 0
+  index: -1
+images/respin_baozha_10
+  rotate: false
+  xy: 1529, 44
+  size: 180, 98
+  orig: 180, 100
+  offset: 0, 0
+  index: -1
+images/respin_baozha_11
+  rotate: false
+  xy: 290, 108
+  size: 180, 88
+  orig: 180, 100
+  offset: 0, 0
+  index: -1
+images/respin_baozha_12
+  rotate: false
+  xy: 962, 84
+  size: 180, 87
+  orig: 180, 100
+  offset: 0, 0
+  index: -1
+images/respin_baozha_13
+  rotate: false
+  xy: 471, 105
+  size: 180, 91
+  orig: 180, 100
+  offset: 0, 0
+  index: -1
+images/respin_baozha_14
+  rotate: false
+  xy: 462, 14
+  size: 180, 90
+  orig: 180, 100
+  offset: 0, 0
+  index: -1
+images/respin_baozha_15
+  rotate: false
+  xy: 281, 16
+  size: 180, 91
+  orig: 180, 100
+  offset: 0, 0
+  index: -1
+images/respin_baozha_16
+  rotate: false
+  xy: 781, 81
+  size: 180, 90
+  orig: 180, 100
+  offset: 0, 0
+  index: -1
+images/respin_baozha_17
+  rotate: false
+  xy: 962, 4
+  size: 180, 79
+  orig: 180, 100
+  offset: 0, 0
+  index: -1
+images/respin_baozha_18
+  rotate: false
+  xy: 1143, 92
+  size: 180, 79
+  orig: 180, 100
+  offset: 0, 2
+  index: -1
+images/respin_baozha_19
+  rotate: false
+  xy: 781, 0
+  size: 180, 80
+  orig: 180, 100
+  offset: 0, 3
+  index: -1
+images/respin_chazi
+  rotate: false
+  xy: 0, 705
+  size: 309, 799
+  orig: 309, 799
+  offset: 0, 0
+  index: -1
+images/respin_coin66
+  rotate: true
+  xy: 1759, 270
+  size: 191, 122
+  orig: 191, 122
+  offset: 0, 0
+  index: -1
+images/respin_coin67
+  rotate: true
+  xy: 1346, 0
+  size: 203, 182
+  orig: 203, 182
+  offset: 0, 0
+  index: -1
+images/respin_coin68
+  rotate: false
+  xy: 1346, 204
+  size: 192, 257
+  orig: 192, 257
+  offset: 0, 0
+  index: -1
+images/respin_fanmian
+  rotate: true
+  xy: 652, 70
+  size: 126, 128
+  orig: 150, 150
+  offset: 12, 11
+  index: -1
+images/respin_glow1
+  rotate: false
+  xy: 310, 1067
+  size: 437, 437
+  orig: 437, 437
+  offset: 0, 0
+  index: -1
+images/respin_glow3
+  rotate: false
+  xy: 0, 1505
+  size: 840, 354
+  orig: 840, 354
+  offset: 0, 0
+  index: -1
+images/respin_zhegnmian
+  rotate: false
+  xy: 1871, 118
+  size: 126, 128
+  orig: 150, 150
+  offset: 12, 11
+  index: -1
+images/xian_00
+  rotate: true
+  xy: 748, 1177
+  size: 327, 31
+  orig: 863, 168
+  offset: 260, 63
+  index: -1
+kssx_00
+  rotate: false
+  xy: 1539, 242
+  size: 219, 219
+  orig: 219, 219
+  offset: 0, 0
+  index: -1
+xx_011
+  rotate: true
+  xy: 1759, 174
+  size: 95, 111
+  orig: 128, 128
+  offset: 17, 9
+  index: -1

@@ -1,0 +1,111 @@
+
+respin_feature.png
+size: 1444,1206
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/zch/zch_00
+  rotate: true
+  xy: 1, 967
+  size: 238, 374
+  orig: 240, 480
+  offset: 2, 1
+  index: -1
+images/zch/zch_01
+  rotate: true
+  xy: 857, 965
+  size: 240, 372
+  orig: 240, 480
+  offset: 0, 0
+  index: -1
+images/zch/zch_02
+  rotate: true
+  xy: 1, 724
+  size: 240, 448
+  orig: 240, 480
+  offset: 0, 0
+  index: -1
+images/zch/zch_03
+  rotate: true
+  xy: 450, 724
+  size: 240, 480
+  orig: 240, 480
+  offset: 0, 0
+  index: -1
+images/zch/zch_04
+  rotate: true
+  xy: 931, 724
+  size: 240, 480
+  orig: 240, 480
+  offset: 0, 0
+  index: -1
+images/zch/zch_05
+  rotate: true
+  xy: 1, 483
+  size: 240, 480
+  orig: 240, 480
+  offset: 0, 0
+  index: -1
+images/zch/zch_06
+  rotate: true
+  xy: 482, 483
+  size: 240, 480
+  orig: 240, 480
+  offset: 0, 0
+  index: -1
+images/zch/zch_07
+  rotate: true
+  xy: 963, 483
+  size: 240, 480
+  orig: 240, 480
+  offset: 0, 0
+  index: -1
+images/zch/zch_08
+  rotate: true
+  xy: 1, 242
+  size: 240, 480
+  orig: 240, 480
+  offset: 0, 0
+  index: -1
+images/zch/zch_09
+  rotate: true
+  xy: 482, 242
+  size: 240, 480
+  orig: 240, 480
+  offset: 0, 0
+  index: -1
+images/zch/zch_10
+  rotate: true
+  xy: 963, 242
+  size: 240, 480
+  orig: 240, 480
+  offset: 0, 0
+  index: -1
+images/zch/zch_11
+  rotate: true
+  xy: 1, 1
+  size: 240, 480
+  orig: 240, 480
+  offset: 0, 0
+  index: -1
+images/zch/zch_12
+  rotate: true
+  xy: 482, 1
+  size: 240, 480
+  orig: 240, 480
+  offset: 0, 0
+  index: -1
+images/zch/zch_13
+  rotate: true
+  xy: 963, 1
+  size: 240, 480
+  orig: 240, 480
+  offset: 0, 0
+  index: -1
+images/zch/zch_14
+  rotate: true
+  xy: 376, 965
+  size: 240, 480
+  orig: 240, 480
+  offset: 0, 0
+  index: -1

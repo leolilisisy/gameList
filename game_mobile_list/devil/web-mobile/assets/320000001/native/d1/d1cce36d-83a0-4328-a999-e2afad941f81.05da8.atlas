@@ -1,0 +1,20 @@
+
+1001_symbol_2005.png
+size: 184,78
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/1001_symbol_2005
+  rotate: false
+  xy: 1, 5
+  size: 138, 72
+  orig: 138, 128
+  offset: 0, 28
+  index: -1
+images/1001_symbol_2005_glow
+  rotate: true
+  xy: 140, 1
+  size: 76, 43
+  orig: 76, 43
+  offset: 0, 0
+  index: -1

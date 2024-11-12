@@ -1,0 +1,153 @@
+
+1001_symbol_1002.png
+size: 1698,518
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/1001_symbol_1002
+  rotate: false
+  xy: 942, 100
+  size: 148, 150
+  orig: 150, 150
+  offset: 1, 0
+  index: -1
+images/1002_ce
+  rotate: true
+  xy: 490, 1
+  size: 12, 126
+  orig: 12, 126
+  offset: 0, 0
+  index: -1
+images/1002_gold
+  rotate: true
+  xy: 1566, 262
+  size: 126, 128
+  orig: 150, 150
+  offset: 12, 11
+  index: -1
+images/1002_gold_a
+  rotate: true
+  xy: 1566, 135
+  size: 126, 128
+  orig: 150, 150
+  offset: 12, 11
+  index: -1
+images/1002_pingmian
+  rotate: false
+  xy: 1343, 10
+  size: 124, 124
+  orig: 150, 150
+  offset: 13, 15
+  index: -1
+images/223241f7es7b28s2rz2077
+  rotate: true
+  xy: 1468, 19
+  size: 115, 114
+  orig: 128, 128
+  offset: 7, 6
+  index: -1
+images/fx_glow038_00kong
+  rotate: false
+  xy: 1566, 389
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+images/guangdian_00
+  rotate: false
+  xy: 942, 7
+  size: 88, 92
+  orig: 128, 128
+  offset: 20, 18
+  index: -1
+images/lan
+  rotate: false
+  xy: 1583, 20
+  size: 114, 114
+  orig: 128, 128
+  offset: 7, 7
+  index: -1
+images/xinhuo/xinhuo_03
+  rotate: false
+  xy: 721, 22
+  size: 220, 226
+  orig: 314, 357
+  offset: 49, 71
+  index: -1
+images/xinhuo/xinhuo_04
+  rotate: false
+  xy: 490, 14
+  size: 230, 234
+  orig: 314, 357
+  offset: 43, 65
+  index: -1
+images/xinhuo/xinhuo_05
+  rotate: false
+  xy: 249, 5
+  size: 240, 242
+  orig: 314, 357
+  offset: 38, 59
+  index: -1
+images/xinhuo/xinhuo_06
+  rotate: true
+  xy: 1, 1
+  size: 246, 247
+  orig: 314, 357
+  offset: 35, 57
+  index: -1
+images/xinhuo/xinhuo_07
+  rotate: true
+  xy: 1091, 2
+  size: 254, 251
+  orig: 314, 357
+  offset: 30, 55
+  index: -1
+images/xinhuo/xinhuo_08
+  rotate: true
+  xy: 1049, 257
+  size: 260, 256
+  orig: 314, 357
+  offset: 27, 51
+  index: -1
+images/xinhuo/xinhuo_09
+  rotate: true
+  xy: 526, 249
+  size: 268, 260
+  orig: 314, 357
+  offset: 23, 49
+  index: -1
+images/xinhuo/xinhuo_10
+  rotate: true
+  xy: 1, 248
+  size: 269, 261
+  orig: 314, 357
+  offset: 22, 48
+  index: -1
+images/xinhuo/xinhuo_11
+  rotate: true
+  xy: 263, 249
+  size: 268, 262
+  orig: 314, 357
+  offset: 22, 47
+  index: -1
+images/xinhuo/xinhuo_12
+  rotate: true
+  xy: 787, 251
+  size: 266, 261
+  orig: 314, 357
+  offset: 23, 46
+  index: -1
+images/xinhuo/xinhuo_13
+  rotate: false
+  xy: 1306, 258
+  size: 259, 259
+  orig: 314, 357
+  offset: 26, 48
+  index: -1
+images/yuanhuan
+  rotate: false
+  xy: 1343, 139
+  size: 118, 118
+  orig: 118, 118
+  offset: 0, 0
+  index: -1

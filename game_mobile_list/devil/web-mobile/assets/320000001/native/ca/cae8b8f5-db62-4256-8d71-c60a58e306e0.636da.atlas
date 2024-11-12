@@ -1,0 +1,167 @@
+
+1001_bigwin_light.png
+size: 1989,577
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg_00_00
+  rotate: false
+  xy: 1, 137
+  size: 438, 439
+  orig: 780, 585
+  offset: 171, 73
+  index: -1
+guangdian_00
+  rotate: false
+  xy: 440, 212
+  size: 352, 364
+  orig: 512, 512
+  offset: 80, 74
+  index: -1
+huo/huo_08
+  rotate: true
+  xy: 1861, 38
+  size: 252, 127
+  orig: 289, 167
+  offset: 20, 18
+  index: -1
+huo/huo_09
+  rotate: true
+  xy: 1808, 291
+  size: 285, 130
+  orig: 289, 167
+  offset: 4, 16
+  index: -1
+huo/huo_10
+  rotate: true
+  xy: 1321, 289
+  size: 287, 128
+  orig: 289, 167
+  offset: 2, 16
+  index: -1
+huo/huo_11
+  rotate: true
+  xy: 926, 289
+  size: 287, 131
+  orig: 289, 167
+  offset: 2, 14
+  index: -1
+huo/huo_12
+  rotate: true
+  xy: 998, 1
+  size: 287, 131
+  orig: 289, 167
+  offset: 2, 13
+  index: -1
+huo/huo_13
+  rotate: true
+  xy: 1058, 289
+  size: 287, 131
+  orig: 289, 167
+  offset: 2, 14
+  index: -1
+huo/huo_14
+  rotate: false
+  xy: 1, 2
+  size: 287, 134
+  orig: 289, 167
+  offset: 2, 12
+  index: -1
+huo/huo_15
+  rotate: false
+  xy: 289, 4
+  size: 287, 132
+  orig: 289, 167
+  offset: 2, 14
+  index: -1
+huo/huo_16
+  rotate: false
+  xy: 577, 79
+  size: 287, 132
+  orig: 289, 167
+  offset: 2, 14
+  index: -1
+huo/huo_17
+  rotate: true
+  xy: 793, 289
+  size: 287, 132
+  orig: 289, 167
+  offset: 2, 14
+  index: -1
+huo/huo_18
+  rotate: true
+  xy: 865, 1
+  size: 287, 132
+  orig: 289, 167
+  offset: 2, 14
+  index: -1
+huo/huo_19
+  rotate: true
+  xy: 1130, 1
+  size: 287, 131
+  orig: 289, 167
+  offset: 2, 14
+  index: -1
+huo/huo_20
+  rotate: true
+  xy: 1190, 289
+  size: 287, 130
+  orig: 289, 167
+  offset: 2, 14
+  index: -1
+huo/huo_21
+  rotate: true
+  xy: 1262, 1
+  size: 287, 129
+  orig: 289, 167
+  offset: 2, 15
+  index: -1
+huo/huo_22
+  rotate: true
+  xy: 1392, 1
+  size: 287, 128
+  orig: 289, 167
+  offset: 2, 15
+  index: -1
+huo/huo_23
+  rotate: true
+  xy: 1450, 289
+  size: 287, 128
+  orig: 289, 167
+  offset: 2, 15
+  index: -1
+huo/huo_24
+  rotate: true
+  xy: 1521, 1
+  size: 287, 124
+  orig: 289, 167
+  offset: 2, 17
+  index: -1
+huo/huo_25
+  rotate: true
+  xy: 1579, 289
+  size: 287, 120
+  orig: 289, 167
+  offset: 2, 20
+  index: -1
+huo/huo_26
+  rotate: true
+  xy: 1646, 1
+  size: 287, 114
+  orig: 289, 167
+  offset: 2, 24
+  index: -1
+huo/huo_27
+  rotate: true
+  xy: 1700, 289
+  size: 287, 107
+  orig: 289, 167
+  offset: 2, 29
+  index: -1
+huo/huo_28
+  rotate: true
+  xy: 1761, 1
+  size: 287, 99
+  orig: 289, 167
+  offset: 2, 34
+  index: -1

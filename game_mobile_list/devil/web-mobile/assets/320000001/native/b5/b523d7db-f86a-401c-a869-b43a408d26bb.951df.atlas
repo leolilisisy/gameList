@@ -1,0 +1,111 @@
+
+1001_symbol_bgfire.png
+size: 1037,198
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/bg_frie_01
+  rotate: false
+  xy: 71, 2
+  size: 67, 194
+  orig: 70, 200
+  offset: 2, 1
+  index: -1
+images/bg_frie_02
+  rotate: false
+  xy: 140, 2
+  size: 67, 194
+  orig: 70, 200
+  offset: 2, 1
+  index: -1
+images/bg_frie_03
+  rotate: false
+  xy: 209, 2
+  size: 67, 194
+  orig: 70, 200
+  offset: 2, 1
+  index: -1
+images/bg_frie_04
+  rotate: false
+  xy: 278, 2
+  size: 67, 194
+  orig: 70, 200
+  offset: 2, 1
+  index: -1
+images/bg_frie_05
+  rotate: false
+  xy: 347, 2
+  size: 67, 194
+  orig: 70, 200
+  offset: 2, 1
+  index: -1
+images/bg_frie_06
+  rotate: false
+  xy: 416, 2
+  size: 67, 194
+  orig: 70, 200
+  offset: 2, 1
+  index: -1
+images/bg_frie_07
+  rotate: false
+  xy: 485, 2
+  size: 67, 194
+  orig: 70, 200
+  offset: 2, 1
+  index: -1
+images/bg_frie_08
+  rotate: false
+  xy: 554, 2
+  size: 67, 194
+  orig: 70, 200
+  offset: 2, 1
+  index: -1
+images/bg_frie_09
+  rotate: false
+  xy: 623, 2
+  size: 67, 194
+  orig: 70, 200
+  offset: 2, 1
+  index: -1
+images/bg_frie_10
+  rotate: false
+  xy: 692, 2
+  size: 67, 194
+  orig: 70, 200
+  offset: 2, 1
+  index: -1
+images/bg_frie_11
+  rotate: false
+  xy: 761, 2
+  size: 67, 194
+  orig: 70, 200
+  offset: 2, 1
+  index: -1
+images/bg_frie_12
+  rotate: false
+  xy: 830, 2
+  size: 67, 194
+  orig: 70, 200
+  offset: 2, 1
+  index: -1
+images/bg_frie_13
+  rotate: false
+  xy: 899, 2
+  size: 67, 194
+  orig: 70, 200
+  offset: 2, 1
+  index: -1
+images/bg_frie_14
+  rotate: false
+  xy: 968, 2
+  size: 67, 194
+  orig: 70, 200
+  offset: 2, 1
+  index: -1
+images/bg_frie_15
+  rotate: false
+  xy: 2, 2
+  size: 67, 194
+  orig: 70, 200
+  offset: 2, 1
+  index: -1

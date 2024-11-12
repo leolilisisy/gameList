@@ -1,0 +1,76 @@
+
+crazy_wild_2.png
+size: 100,228
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/crazy_wild_smoke_00000
+  rotate: true
+  xy: 2, 3
+  size: 42, 45
+  orig: 50, 55
+  offset: 3, 7
+  index: -1
+images/crazy_wild_smoke_00001
+  rotate: true
+  xy: 52, 91
+  size: 43, 46
+  orig: 50, 55
+  offset: 3, 7
+  index: -1
+images/crazy_wild_smoke_00002
+  rotate: true
+  xy: 53, 182
+  size: 44, 45
+  orig: 50, 55
+  offset: 3, 7
+  index: -1
+images/crazy_wild_smoke_00003
+  rotate: true
+  xy: 51, 46
+  size: 43, 47
+  orig: 50, 55
+  offset: 4, 5
+  index: -1
+images/crazy_wild_smoke_00004
+  rotate: true
+  xy: 2, 47
+  size: 44, 47
+  orig: 50, 55
+  offset: 4, 5
+  index: -1
+images/crazy_wild_smoke_00005
+  rotate: true
+  xy: 2, 183
+  size: 43, 49
+  orig: 50, 55
+  offset: 4, 5
+  index: -1
+images/crazy_wild_smoke_00006
+  rotate: true
+  xy: 2, 139
+  size: 42, 49
+  orig: 50, 55
+  offset: 5, 4
+  index: -1
+images/crazy_wild_smoke_00007
+  rotate: true
+  xy: 2, 93
+  size: 44, 48
+  orig: 50, 55
+  offset: 3, 5
+  index: -1
+images/crazy_wild_smoke_00008
+  rotate: true
+  xy: 53, 136
+  size: 44, 45
+  orig: 50, 55
+  offset: 3, 8
+  index: -1
+images/crazy_wild_smoke_00009
+  rotate: true
+  xy: 49, 2
+  size: 42, 44
+  orig: 50, 55
+  offset: 3, 8
+  index: -1

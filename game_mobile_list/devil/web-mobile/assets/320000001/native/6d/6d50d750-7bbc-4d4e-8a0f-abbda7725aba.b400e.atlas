@@ -1,0 +1,83 @@
+
+winner_line.png
+size: 432,432
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/baidian
+  rotate: false
+  xy: 2, 2
+  size: 80, 62
+  orig: 87, 62
+  offset: 3, 0
+  index: -1
+images/winner_huohuo_00
+  rotate: false
+  xy: 2, 371
+  size: 343, 59
+  orig: 345, 60
+  offset: 1, 0
+  index: -1
+images/winner_huohuo_01
+  rotate: false
+  xy: 2, 371
+  size: 343, 59
+  orig: 345, 60
+  offset: 1, 0
+  index: -1
+images/winner_huohuo_02
+  rotate: false
+  xy: 2, 310
+  size: 343, 59
+  orig: 345, 60
+  offset: 1, 0
+  index: -1
+images/winner_huohuo_03
+  rotate: false
+  xy: 2, 249
+  size: 343, 59
+  orig: 345, 60
+  offset: 1, 0
+  index: -1
+images/winner_huohuo_04
+  rotate: false
+  xy: 2, 188
+  size: 343, 59
+  orig: 345, 60
+  offset: 1, 0
+  index: -1
+images/winner_huohuo_05
+  rotate: false
+  xy: 2, 127
+  size: 343, 59
+  orig: 345, 60
+  offset: 1, 0
+  index: -1
+images/winner_huohuo_06
+  rotate: false
+  xy: 2, 66
+  size: 343, 59
+  orig: 345, 60
+  offset: 1, 0
+  index: -1
+images/winner_huohuo_07
+  rotate: false
+  xy: 2, 66
+  size: 343, 59
+  orig: 345, 60
+  offset: 1, 0
+  index: -1
+images/winner_huohuo_08
+  rotate: true
+  xy: 347, 87
+  size: 343, 59
+  orig: 345, 60
+  offset: 1, 0
+  index: -1
+images/winner_zi
+  rotate: false
+  xy: 84, 15
+  size: 161, 49
+  orig: 161, 49
+  offset: 0, 0
+  index: -1
