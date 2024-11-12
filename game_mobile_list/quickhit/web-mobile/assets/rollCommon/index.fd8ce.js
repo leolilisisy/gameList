@@ -86,3 +86,4 @@ System.register("chunks:///_virtual/UILabelScreenSwitch.ts",["./rollupPluginModL
     };
     });
 });
+//# sourceMappingURL=index.js.map
