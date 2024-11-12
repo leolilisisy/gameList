@@ -21,12 +21,21 @@
   
   <!-- 添加基础路径配置 -->
   <script>
+    // 修正基础路径，确保包含 web-mobile
     window.DEPLOY_BASE_PATH = 'https://leolilisisy.github.io/gameList/game_mobile_list/devil/web-mobile/';
-    // 添加资源加载函数
+    
+    // 添加一个专门的引擎文件路径
+    window.COCOS_JS_PATH = window.DEPLOY_BASE_PATH + 'cocos-js/';
+    
     function loadScript(src) {
       return new Promise((resolve, reject) => {
         const script = document.createElement('script');
-        script.src = window.DEPLOY_BASE_PATH + src;
+        // 如果是 cocos-js 目录下的文件，使用 COCOS_JS_PATH
+        if (src.includes('cocos-js/')) {
+          script.src = window.COCOS_JS_PATH + src.split('cocos-js/')[1];
+        } else {
+          script.src = window.DEPLOY_BASE_PATH + src;
+        }
         script.onload = resolve;
         script.onerror = reject;
         script.charset = 'utf-8';
@@ -43,12 +52,10 @@
   </div>
 
   <script>
-    // 按顺序加载所需文件
     async function loadGame() {
       try {
-        // 加载 polyfills
+        // 加载基础文件
         await loadScript('src/polyfills.bundle.5adbf.js');
-        // 加载 system
         await loadScript('src/system.bundle.543e6.js');
         
         // 加载 import map
@@ -57,12 +64,17 @@
         
         // 修改 import map 中的路径
         Object.keys(importMap.imports).forEach(key => {
-          if (importMap.imports[key].startsWith('./')) {
-            importMap.imports[key] = window.DEPLOY_BASE_PATH + importMap.imports[key].slice(2);
+          const value = importMap.imports[key];
+          if (value.includes('cocos-js/')) {
+            // 对于 cocos-js 目录下的文件使用专门的路径
+            importMap.imports[key] = window.COCOS_JS_PATH + value.split('cocos-js/')[1];
+          } else if (value.startsWith('./')) {
+            // 对于其他相对路径文件
+            importMap.imports[key] = window.DEPLOY_BASE_PATH + value.slice(2);
           }
         });
         
-        // 应用 import map
+        // 应用修改后的 import map
         const script = document.createElement('script');
         script.type = 'systemjs-importmap';
         script.text = JSON.stringify(importMap);
@@ -75,7 +87,6 @@
       }
     }
 
-    // 启动游戏加载
     loadGame();
   </script>
 </body>
