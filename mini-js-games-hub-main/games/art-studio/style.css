@@ -1,0 +1,446 @@
+/* Art Studio Game Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+.game-container {
+    display: flex;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* Toolbar Styles */
+.toolbar {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tool-section {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    border: 2px solid #e9ecef;
+}
+
+.tool-section h3 {
+    margin-bottom: 10px;
+    color: #495057;
+    font-size: 1.1em;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 5px;
+}
+
+.tool-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.tool-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.tool-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.tool-btn.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.tool-icon {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+
+.tool-label {
+    font-size: 0.8em;
+    text-align: center;
+}
+
+/* Color Palette */
+.color-palette {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.color-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #dee2e6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.color-btn:hover {
+    transform: scale(1.1);
+}
+
+.color-btn.selected {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.3);
+}
+
+.color-picker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.color-picker input[type="color"] {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.color-picker label {
+    font-size: 0.9em;
+    color: #6c757d;
+}
+
+/* Brush Size */
+.brush-size {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brush-size input[type="range"] {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: #dee2e6;
+    outline: none;
+}
+
+.brush-size input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+}
+
+#size-value {
+    min-width: 40px;
+    text-align: center;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.action-btn {
+    padding: 10px 15px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.action-btn:hover {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+    transform: translateY(-1px);
+}
+
+/* Stamp Palette */
+.stamp-palette {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.stamp-btn {
+    padding: 10px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.stamp-btn:hover {
+    background: #f8f9fa;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Canvas Area */
+.canvas-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.canvas-container {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    background: white;
+}
+
+#art-canvas {
+    display: block;
+    background: white;
+    cursor: crosshair;
+}
+
+.canvas-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: transparent;
+}
+
+.canvas-info {
+    display: flex;
+    gap: 20px;
+    background: #f8f9fa;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-label {
+    font-weight: bold;
+    color: #495057;
+}
+
+#current-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #dee2e6;
+    display: inline-block;
+}
+
+/* Instructions */
+.instructions {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.instructions h3 {
+    margin-bottom: 15px;
+    color: #495057;
+    text-align: center;
+}
+
+.instructions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.instructions li:last-child {
+    border-bottom: none;
+}
+
+.instructions strong {
+    color: #007bff;
+}
+
+/* Message Display */
+.message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    max-width: 300px;
+}
+
+.message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.message.success {
+    background: #28a745;
+}
+
+.message.error {
+    background: #dc3545;
+}
+
+.message.info {
+    background: #17a2b8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .game-container {
+        flex-direction: column;
+    }
+
+    .toolbar {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .tool-section {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .canvas-info {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    #art-canvas {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .tool-group {
+        grid-template-columns: 1fr;
+    }
+
+    .color-palette {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .stamp-palette {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .canvas-info {
+        font-size: 0.9em;
+    }
+}
+
+/* Animation for tool selection */
+@keyframes toolSelect {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.tool-btn.active {
+    animation: toolSelect 0.3s ease;
+}
+
+/* Drawing cursor styles */
+.brush-cursor {
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="black" stroke-width="2"/></svg>') 10 10, crosshair;
+}
+
+.eraser-cursor {
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><rect x="2" y="8" width="16" height="4" fill="white" stroke="black" stroke-width="1"/><rect x="4" y="6" width="12" height="8" fill="none" stroke="black" stroke-width="1"/></svg>') 10 10, crosshair;
+}
+
+.fill-cursor {
+    cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M10 2 L18 10 L14 14 L10 10 L6 14 L2 10 Z" fill="none" stroke="black" stroke-width="2"/><circle cx="10" cy="8" r="2" fill="black"/></svg>') 10 10, pointer;
+}

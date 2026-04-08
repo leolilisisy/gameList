@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at center, #111, #000);
+  color: white;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.game-container {
+  text-align: center;
+}
+
+h1 {
+  text-shadow: 0 0 15px limegreen, 0 0 30px greenyellow;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-around;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.game-area {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  border: 3px solid limegreen;
+  background: rgba(30, 30, 30, 0.9);
+  overflow: hidden;
+  box-shadow: 0 0 20px limegreen, inset 0 0 20px #0f0;
+}
+
+.character {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.character.zombie {
+  background-image: url('https://i.ibb.co/3StQXcD/zombie.png');
+  filter: drop-shadow(0 0 10px limegreen);
+}
+
+.character.human {
+  background-image: url('https://i.ibb.co/vX3qCZ2/human.png');
+  filter: drop-shadow(0 0 10px red);
+}
+
+.character:hover {
+  transform: scale(1.1);
+}
+
+.controls {
+  margin-top: 10px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #0f0;
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 15px #0f0;
+  transition: all 0.2s;
+}
+
+button:hover {
+  background-color: #8fff8f;
+  box-shadow: 0 0 30px #0f0;
+}
+
+#message {
+  margin-top: 10px;
+  font-size: 20px;
+  text-shadow: 0 0 10px yellow;
+}

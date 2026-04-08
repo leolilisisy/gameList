@@ -1,0 +1,14 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#fff;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+.game-wrap{background:#000;border-radius:15px;padding:20px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.3);max-width:850px;width:100%;color:#fff}
+h1{color:#fff;margin-bottom:15px;font-size:1.8em}
+canvas{background:#fff;display:block;margin:0 auto;border-radius:10px;max-width:100%;height:auto;border:2px solid #000}
+.info{margin-top:15px}
+.controls{display:flex;gap:10px;justify-content:center;margin-bottom:10px}
+button{padding:8px 16px;border:none;border-radius:8px;background:#fff;color:#000;font-size:14px;cursor:pointer;transition:all 0.3s ease}
+button:hover{background:#ccc}
+footer{font-size:12px;color:#666;margin-top:15px}
+@media (max-width: 600px) {
+  .game-wrap{padding:15px}
+  canvas{width:100%;height:auto}
+}

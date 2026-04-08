@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grid Filler | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Grid Filler 🟦</h1>
+    <p class="instructions">Move the marker to fill all tiles without revisiting. Avoid obstacles!</p>
+    <div class="grid"></div>
+    <div class="controls">
+      <button id="start-btn">Start</button>
+      <button id="pause-btn">Pause</button>
+      <button id="resume-btn">Resume</button>
+      <button id="restart-btn">Restart</button>
+    </div>
+    <p id="status"></p>
+  </div>
+
+  <!-- Sound Effects -->
+  <audio id="move-sound" src="https://freesound.org/data/previews/66/66717_931655-lq.mp3"></audio>
+  <audio id="win-sound" src="https://freesound.org/data/previews/341/341695_6243356-lq.mp3"></audio>
+  <audio id="lose-sound" src="https://freesound.org/data/previews/256/256113_3263906-lq.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

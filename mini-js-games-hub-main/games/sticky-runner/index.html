@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sticky Runner — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <header class="game-header">
+      <div class="brand">
+        <span class="brand-icon">🧲</span>
+        <h1>Sticky Runner</h1>
+      </div>
+
+      <div class="controls">
+        <div class="scoreboard">
+          <div>Score <span id="score">0</span></div>
+          <div>Best <span id="best">0</span></div>
+        </div>
+
+        <div class="btn-row">
+          <button id="playBtn" class="btn primary">Play</button>
+          <button id="pauseBtn" class="btn" disabled>Pause</button>
+          <button id="restartBtn" class="btn" disabled>Restart</button>
+          <button id="muteBtn" class="btn">🔊</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <!-- decorative background image (online hosted) -->
+      <div class="bg-image" aria-hidden="true"></div>
+
+      <!-- track line with glowing bulbs -->
+      <div class="track">
+        <div id="bulbs" class="bulbs" aria-hidden="true"></div>
+      </div>
+
+      <!-- canvas for game -->
+      <canvas id="gameCanvas" width="1000" height="320" role="img" aria-label="Sticky Runner gameplay"></canvas>
+
+      <!-- overlay messages -->
+      <div id="overlay" class="overlay hidden">
+        <div class="overlay-card">
+          <h2 id="overlay-title">Sticky Runner</h2>
+          <p id="overlay-sub">Flip between floor and ceiling. Press <strong>Space</strong> or tap to flip.</p>
+          <div class="overlay-actions">
+            <button id="overlay-play" class="btn primary">Play</button>
+            <button id="overlay-restart" class="btn">Restart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- bottom HUD -->
+      <div class="hud">
+        <div class="hud-left">
+          <span>Press <kbd>Space</kbd> to flip</span>
+          <span>•</span>
+          <span>Tap screen on mobile</span>
+        </div>
+        <div class="hud-right">
+          <label class="label">Difficulty</label>
+          <input id="difficulty" type="range" min="1" max="5" value="2" />
+        </div>
+      </div>
+    </main>
+
+    <footer class="game-footer">
+      <small>Built with ❤️ — HTML • CSS • JS</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

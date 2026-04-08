@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luma Maze</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>✨ Luma Maze</h1>
+    <p id="message">Guide the glowing orb to the goal!</p>
+
+    <div id="maze">
+      <div id="player"></div>
+      <div id="goal"></div>
+      <canvas id="trail"></canvas>
+    </div>
+
+    <div class="controls">
+      <button id="startBtn">Start</button>
+      <button id="restartBtn" disabled>Restart</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

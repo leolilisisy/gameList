@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lantern Path — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="title">
+        <img class="logo" src="https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=64&q=60" alt="lantern"/>
+        <h1>Lantern Path</h1>
+      </div>
+      <div class="controls">
+        <label class="toggle">
+          <input id="soundToggle" type="checkbox" checked />
+          <span>🔊</span>
+        </label>
+        <button id="startBtn" class="btn primary">Start</button>
+        <button id="pauseBtn" class="btn">Pause</button>
+        <button id="restartBtn" class="btn">Restart</button>
+        <select id="levelSelect" class="select"></select>
+      </div>
+    </header>
+
+    <main class="game-wrap">
+      <div class="sidebar">
+        <div class="panel">
+          <h2>How to play</h2>
+          <ol>
+            <li>Click / tap tiles to place lanterns.</li>
+            <li>Each lantern lights a radius around it — light every path tile to win.</li>
+            <li>Lanterns are limited per level. Plan placements.</li>
+            <li>Obstacles block light; some levels include them.</li>
+          </ol>
+        </div>
+
+        <div class="panel meta">
+          <div><strong>Level</strong> <span id="levelNum">1</span></div>
+          <div><strong>Lanterns left</strong> <span id="lanternsLeft">—</span></div>
+          <div><strong>Status</strong> <span id="gameStatus">Idle</span></div>
+          <div class="actions">
+            <button id="undoBtn" class="btn">Undo</button>
+            <button id="hintBtn" class="btn">Hint</button>
+            <button id="nextBtn" class="btn primary">Next Level</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="board-outer">
+        <div id="board" class="board" aria-live="polite"></div>
+        <div class="hud">
+          <div class="message" id="message">Place lanterns to light the path.</div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div>Made with ✨ — Lantern Path</div>
+      <div class="credits">Graphics: Unsplash • Sound: WebAudio</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

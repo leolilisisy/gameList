@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Circuit | Mini JS Games Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="circuit-container">
+    <h1>Color Circuit 🔥</h1>
+    <p>Connect all nodes of the same color to complete the circuit!</p>
+
+    <div class="controls">
+        <button id="start-btn">Start</button>
+        <button id="pause-btn">Pause</button>
+        <button id="restart-btn">Restart</button>
+        <button id="reset-btn">Reset</button>
+    </div>
+
+    <canvas id="circuit-canvas"></canvas>
+
+    <p id="message"></p>
+</div>
+
+<!-- Sounds -->
+<audio id="connect-sound" src="https://freesound.org/data/previews/341/341695_6244-lq.mp3"></audio>
+<audio id="success-sound" src="https://freesound.org/data/previews/331/331912_3248244-lq.mp3"></audio>
+<audio id="error-sound" src="https://freesound.org/data/previews/256/256113_4486188-lq.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>

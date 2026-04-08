@@ -1,0 +1,614 @@
+/* Music Composer Game Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: white;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+.composer-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+}
+
+/* Control Panel */
+.control-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.control-section {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+    border: 2px solid #e9ecef;
+}
+
+.control-section h3 {
+    margin-bottom: 10px;
+    color: #495057;
+    font-size: 1.1em;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 5px;
+}
+
+.composition-controls,
+.save-load-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.control-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.control-btn.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.record-btn.active {
+    background: #dc3545;
+    border-color: #dc3545;
+    animation: pulse 1s infinite;
+}
+
+.play-btn.active {
+    background: #28a745;
+    border-color: #28a745;
+}
+
+.btn-icon {
+    font-size: 1.2em;
+}
+
+.btn-text {
+    font-weight: bold;
+}
+
+/* Instrument Selector */
+.instrument-selector select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    background: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+/* Tempo Control */
+.tempo-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tempo-control input[type="range"] {
+    flex: 1;
+    height: 6px;
+    border-radius: 3px;
+    background: #dee2e6;
+    outline: none;
+}
+
+.tempo-control input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+}
+
+#tempo-value {
+    min-width: 70px;
+    text-align: center;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* Stats Display */
+.stats-display {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.stat-label {
+    font-weight: bold;
+    color: #495057;
+}
+
+/* Piano Section */
+.piano-section {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.octave-selector {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f8f9fa;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 2px solid #dee2e6;
+}
+
+.octave-btn {
+    padding: 8px 12px;
+    border: 2px solid #dee2e6;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2em;
+}
+
+.octave-btn:hover {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+#current-octave {
+    font-weight: bold;
+    color: #495057;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* Piano Keyboard */
+.piano-keyboard {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 150px;
+    background: #2c3e50;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.3);
+}
+
+.white-key {
+    position: absolute;
+    bottom: 10px;
+    width: 60px;
+    height: 130px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+    font-weight: bold;
+    color: #666;
+    user-select: none;
+    transition: all 0.1s ease;
+}
+
+.white-key:hover {
+    background: #f8f8f8;
+}
+
+.white-key:active,
+.white-key.active {
+    background: #e8e8e8;
+    transform: scale(0.98);
+}
+
+.white-key:nth-child(1) { left: 10px; }
+.white-key:nth-child(2) { left: 80px; }
+.white-key:nth-child(3) { left: 150px; }
+.white-key:nth-child(4) { left: 220px; }
+.white-key:nth-child(5) { left: 290px; }
+.white-key:nth-child(6) { left: 360px; }
+.white-key:nth-child(7) { left: 430px; }
+
+.black-key {
+    position: absolute;
+    top: 10px;
+    width: 35px;
+    height: 90px;
+    background: #333;
+    border-radius: 0 0 3px 3px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 5px;
+    font-size: 0.8em;
+    color: white;
+    font-weight: bold;
+    user-select: none;
+    transition: all 0.1s ease;
+    z-index: 10;
+}
+
+.black-key:hover {
+    background: #555;
+}
+
+.black-key:active,
+.black-key.active {
+    background: #111;
+    transform: scale(0.95);
+}
+
+/* Composition Display */
+.composition-display {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    border: 2px solid #e9ecef;
+}
+
+.composition-display h3 {
+    margin-bottom: 15px;
+    color: #495057;
+    text-align: center;
+}
+
+.note-sequence {
+    min-height: 80px;
+    background: white;
+    border-radius: 8px;
+    border: 2px solid #dee2e6;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-composition {
+    color: #6c757d;
+    font-style: italic;
+    text-align: center;
+}
+
+.note-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.note-item {
+    background: #007bff;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.note-item .note-name {
+    min-width: 25px;
+    text-align: center;
+}
+
+.note-item .note-duration {
+    font-size: 0.8em;
+    opacity: 0.8;
+}
+
+.composition-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+}
+
+.action-btn:hover {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+    transform: translateY(-2px);
+}
+
+/* Presets Section */
+.presets-section {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    border: 2px solid #e9ecef;
+}
+
+.presets-section h3 {
+    margin-bottom: 15px;
+    color: #495057;
+    text-align: center;
+}
+
+.preset-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+}
+
+.preset-btn {
+    padding: 12px 15px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.preset-btn:hover {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+    transform: translateY(-2px);
+}
+
+/* Instructions */
+.instructions {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.instructions h3 {
+    margin-bottom: 15px;
+    color: #495057;
+    text-align: center;
+}
+
+.instructions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+    padding: 8px 0;
+    border-bottom: 1px solid #f8f9fa;
+}
+
+.instructions li:last-child {
+    border-bottom: none;
+}
+
+.instructions strong {
+    color: #007bff;
+}
+
+/* Message Display */
+.message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    max-width: 300px;
+}
+
+.message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.message.success {
+    background: #28a745;
+}
+
+.message.error {
+    background: #dc3545;
+}
+
+.message.info {
+    background: #17a2b8;
+}
+
+.message.warning {
+    background: #ffc107;
+    color: #212529;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .composer-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+
+    .piano-section {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .composition-display {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .presets-section {
+        grid-column: 1;
+        grid-row: 4;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .piano-keyboard {
+        max-width: 100%;
+        height: 120px;
+    }
+
+    .white-key {
+        width: 45px;
+        height: 100px;
+    }
+
+    .white-key:nth-child(1) { left: 10px; }
+    .white-key:nth-child(2) { left: 60px; }
+    .white-key:nth-child(3) { left: 110px; }
+    .white-key:nth-child(4) { left: 160px; }
+    .white-key:nth-child(5) { left: 210px; }
+    .white-key:nth-child(6) { left: 260px; }
+    .white-key:nth-child(7) { left: 310px; }
+
+    .black-key {
+        width: 25px;
+        height: 70px;
+    }
+
+    .black-key[data-note="C#"] { left: 45px; }
+    .black-key[data-note="D#"] { left: 95px; }
+    .black-key[data-note="F#"] { left: 205px; }
+    .black-key[data-note="G#"] { left: 255px; }
+    .black-key[data-note="A#"] { left: 305px; }
+
+    .preset-buttons {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .control-panel {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .control-section {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .piano-keyboard {
+        height: 100px;
+    }
+
+    .white-key {
+        width: 35px;
+        height: 80px;
+        font-size: 0.8em;
+    }
+
+    .black-key {
+        width: 20px;
+        height: 55px;
+        font-size: 0.7em;
+    }
+
+    .octave-selector {
+        padding: 8px 15px;
+    }
+
+    .preset-buttons {
+        grid-template-columns: 1fr;
+    }
+}

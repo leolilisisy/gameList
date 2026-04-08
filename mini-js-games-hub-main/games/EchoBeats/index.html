@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Echo Beats 🎵</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>🎶 Echo Beats 🎶</h1>
+    <p id="status">Press <strong>Start</strong> to begin!</p>
+
+    <div class="pad-container">
+      <div class="pad" id="pad1" data-sound="sound1"></div>
+      <div class="pad" id="pad2" data-sound="sound2"></div>
+      <div class="pad" id="pad3" data-sound="sound3"></div>
+      <div class="pad" id="pad4" data-sound="sound4"></div>
+    </div>
+
+    <button id="start-btn">Start Game</button>
+
+    <div class="info">
+      <p>Level: <span id="level">0</span></p>
+      <p>Score: <span id="score">0</span></p>
+    </div>
+  </div>
+
+  <audio id="sound1" src="https://cdn.pixabay.com/audio/2022/03/15/audio_35f1b48ac0.mp3"></audio>
+  <audio id="sound2" src="https://cdn.pixabay.com/audio/2022/03/15/audio_8bfc3ff8b5.mp3"></audio>
+  <audio id="sound3" src="https://cdn.pixabay.com/audio/2022/03/15/audio_8ef5e79b10.mp3"></audio>
+  <audio id="sound4" src="https://cdn.pixabay.com/audio/2022/03/15/audio_29b4a6cbcf.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

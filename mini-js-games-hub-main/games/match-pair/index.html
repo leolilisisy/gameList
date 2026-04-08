@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matching Pairs Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Matching Pairs Puzzle</h1>
+
+    <div id="puzzle-container">
+        <div id="drag-items">
+            <h2>Items to Match</h2>
+            <div class="drag-item" id="item1" draggable="true" data-category="forest">🦊 Fox</div>
+            <div class="drag-item" id="item2" draggable="true" data-category="farm">🐷 Pig</div>
+            <div class="drag-item" id="item3" draggable="true" data-category="farm">🐔 Chicken</div>
+            <div class="drag-item" id="item4" draggable="true" data-category="forest">🐻 Bear</div>
+        </div>
+
+        <div id="drop-zones">
+            <h2>Categories</h2>
+            <div class="drop-zone" id="zone-forest" data-accept="forest">🌲 Forest Animals</div>
+            <div class="drop-zone" id="zone-farm" data-accept="farm">🚜 Farm Animals</div>
+        </div>
+    </div>
+
+    <div id="message">Drag and drop the items into the correct categories!</div>
+
+    <button id="reset-button">Reset Puzzle</button>
+
+    <script src="script.js"></script>
+</body>
+</html>

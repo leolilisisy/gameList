@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Form Submission RPG 📜</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>The Form Submission RPG 📜</h1>
+            <p>Your journey is dictated by the `&lt;form&gt;` tag.</p>
+        </header>
+
+        <section id="status-display">
+            <h2>Character Status</h2>
+            <p>Health: <span id="player-health">10</span></p>
+            <p>Inventory: <span id="player-inventory">None</span></p>
+        </section>
+
+        <section id="narrative-display">
+            <p id="game-text">You wake up in a damp, musty dungeon cell. The only light comes from a small crack in the wall. You must find a way out. What do you do?</p>
+        </section>
+
+        <form id="action-form">
+            <div id="form-controls">
+                <label for="action-select">Choose Action:</label>
+                <select id="action-select" name="action">
+                    <option value="examine">Examine Area</option>
+                    <option value="move">Move</option>
+                    <option value="attack" disabled>Attack (No target)</option>
+                </select>
+
+                <label for="target-input">Target/Direction (e.g., wall, north):</label>
+                <input type="text" id="target-input" name="target" placeholder="Enter target or direction...">
+            </div>
+
+            <button type="submit" id="submit-action">Execute Command</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jump Tag — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <header class="game-header">
+      <div class="title">
+        <span class="icon">🏃‍♂️🏃‍♀️</span>
+        <h1>Jump Tag</h1>
+        <p class="sub">One chases, one escapes — jump obstacles to survive!</p>
+      </div>
+
+      <div class="controls">
+        <button id="startBtn" class="btn primary play-button">Play Now</button>
+        <button id="pauseBtn" class="btn" disabled>Pause</button>
+        <button id="restartBtn" class="btn" disabled>Restart</button>
+        <button id="muteBtn" class="btn">🔊</button>
+        <a class="btn ghost" href="#" id="openNew">Open in new tab →</a>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <div class="hud">
+        <div class="score">Time: <span id="time">0.0</span>s</div>
+        <div class="score">Runner: <span id="runnerState">Alive</span></div>
+        <div class="score">Chaser: <span id="chaserState">Chasing</span></div>
+        <div class="score">Round: <span id="round">1</span></div>
+      </div>
+
+      <div class="arena-wrap">
+        <canvas id="gameCanvas" width="1100" height="380" aria-label="Jump Tag game canvas"></canvas>
+
+        <aside class="legend">
+          <h3>Controls</h3>
+          <ul>
+            <li><strong>Runner</strong>: <kbd>W</kbd> (jump)</li>
+            <li><strong>Chaser</strong>: <kbd>↑</kbd> or <kbd>Space</kbd> (jump)</li>
+            <li><strong>Both</strong>: <kbd>P</kbd> to Pause / Resume</li>
+          </ul>
+          <h3>Buttons</h3>
+          <p>Start, Pause, Restart &amp; Mute are available above.</p>
+        </aside>
+      </div>
+
+      <div class="tips">
+        <strong>Tip:</strong> Time your jumps — obstacles slow or trip players. If the chaser reaches the runner's x-position, chaser wins the round.
+      </div>
+    </main>
+
+    <footer class="game-footer">
+      <small>Made with ❤ — Mini JS Games Hub</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

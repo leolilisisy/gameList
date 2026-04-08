@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinball Wizard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Pinball Wizard</h1>
+        <p>Control the flippers and rack up points!</p>
+
+        <div class="game-stats">
+            <div id="score">Score: <span id="current-score">0</span></div>
+            <div id="balls">Balls: <span id="current-balls">3</span></div>
+            <div id="multiplier">Multiplier: <span id="current-multiplier">1x</span></div>
+        </div>
+
+        <canvas id="pinball-canvas" width="600" height="800"></canvas>
+
+        <div class="controls">
+            <div class="flipper-controls">
+                <button id="left-flipper">Left Flipper (A)</button>
+                <button id="right-flipper">Right Flipper (D)</button>
+            </div>
+            <button id="launch-btn">Launch Ball (Space)</button>
+            <button id="reset-btn">New Game</button>
+        </div>
+
+        <div id="message"></div>
+
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Use A and D keys or click buttons to control flippers</li>
+                <li>Press Space or click Launch to start the ball</li>
+                <li>Hit bumpers and targets to score points</li>
+                <li>Keep the ball in play as long as possible</li>
+                <li>Complete objectives for bonus multipliers</li>
+                <li>You have 3 balls per game</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

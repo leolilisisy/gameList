@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Traffic Light Controller — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- favicon -->
+  <link rel="icon" href="https://img.icons8.com/fluency/48/000000/traffic-light.png" />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="branding">
+        <img src="https://img.icons8.com/fluency/48/000000/traffic-light.png" alt="traffic light" />
+        <h1>Traffic Light Controller</h1>
+      </div>
+      <div class="meta">
+        <div class="score">Score: <span id="score">0</span></div>
+        <div class="lives">Collisions: <span id="collisions">0</span></div>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <section class="controls">
+        <div class="controls-row">
+          <button id="startBtn" class="control primary">Start</button>
+          <button id="pauseBtn" class="control">Pause</button>
+          <button id="restartBtn" class="control">Restart</button>
+        </div>
+
+        <div class="controls-row">
+          <label>Speed: <input id="speedRange" type="range" min="0.5" max="2.5" step="0.1" value="1"></label>
+          <label>Difficulty:
+            <select id="difficulty">
+              <option value="easy">Easy</option>
+              <option value="normal" selected>Normal</option>
+              <option value="hard">Hard</option>
+            </select>
+          </label>
+          <button id="addCar" class="control">Spawn Car</button>
+        </div>
+
+        <div class="controls-row small">
+          <span>Tip: Click a traffic light to cycle Red → Green → Yellow. Use timing to avoid jams.</span>
+        </div>
+
+        <div class="controls-row">
+          <button id="muteBtn" class="control">🔊 Mute</button>
+          <button id="helpBtn" class="control">❔ Help</button>
+        </div>
+      </section>
+
+      <section class="intersection-wrap" aria-hidden="false">
+        <!-- Background image (online) -->
+        <div class="city-bg" style="background-image: url('https://images.unsplash.com/photo-1542377280-d8c8d6b8a7f9?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=0c1b3f055e0a9a5b05c5abf1f9a8f0f7');"></div>
+
+        <div class="intersection">
+          <!-- Vertical road -->
+          <div class="road vertical">
+            <div class="lane top-lane"></div>
+            <div class="lane bottom-lane"></div>
+          </div>
+
+          <!-- Horizontal road -->
+          <div class="road horizontal">
+            <div class="lane left-lane"></div>
+            <div class="lane right-lane"></div>
+          </div>
+
+          <!-- Traffic lights (clickable) -->
+          <div class="traffic-light tl-vertical" data-orientation="vertical" title="Click to change">
+            <div class="bulb red"></div>
+            <div class="bulb yellow"></div>
+            <div class="bulb green"></div>
+          </div>
+
+          <div class="traffic-light tl-horizontal" data-orientation="horizontal" title="Click to change">
+            <div class="bulb red"></div>
+            <div class="bulb yellow"></div>
+            <div class="bulb green"></div>
+          </div>
+
+          <!-- Cars container -->
+          <div id="cars"></div>
+
+          <!-- overlay messages -->
+          <div id="overlay" class="overlay hidden">
+            <div class="overlay-card">
+              <h2 id="overlayTitle">Paused</h2>
+              <p id="overlayText">Press Start to continue</p>
+              <button id="overlayClose" class="control">Close</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>Made with ♥ — Advanced demo. Uses online assets & sounds.</div>
+      <div>Controls: Click lights, use Start/Pause/Restart, tune speed & difficulty.</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

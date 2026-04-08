@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tile Memory Flip | Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Tile Memory Flip</h1>
+        <p class="score">Moves: <span id="moves">0</span></p>
+        <p class="timer">Time: <span id="time">0</span>s</p>
+
+        <div class="tile-line" id="tile-line">
+            <!-- Tiles will be injected here -->
+        </div>
+
+        <div class="controls">
+            <button id="start-btn">Start</button>
+            <button id="pause-btn">Pause</button>
+            <button id="restart-btn">Restart</button>
+        </div>
+
+        <audio id="flip-sound" src="https://freesound.org/data/previews/341/341695_6265188-lq.mp3"></audio>
+        <audio id="match-sound" src="https://freesound.org/data/previews/402/402243_5121236-lq.mp3"></audio>
+        <audio id="win-sound" src="https://freesound.org/data/previews/276/276031_4939433-lq.mp3"></audio>
+        <audio id="wrong-sound" src="https://freesound.org/data/previews/71/71969_5121236-lq.mp3"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

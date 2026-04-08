@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  background: linear-gradient(to bottom right, #b3f0ff, #e6ffe6);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: #333;
+}
+
+h1 {
+  text-shadow: 0 0 10px #ff80ff;
+  margin-top: 10px;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+canvas {
+  border: 3px solid #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 200, 255, 0.6);
+  background: url('https://cdn.pixabay.com/photo/2015/03/26/09/41/flower-meadow-690627_1280.jpg') center/cover no-repeat;
+}
+
+.controls {
+  margin-top: 10px;
+}
+
+button {
+  background-color: #ffb3ff;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 16px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 0 0 10px #ff80ff;
+  transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+  background-color: #ff66ff;
+  transform: scale(1.1);
+}
+
+#scoreDisplay {
+  font-size: 18px;
+  margin-left: 15px;
+  font-weight: bold;
+}

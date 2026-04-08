@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geography Explorer - Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Geography Explorer</h1>
+            <p>Click on the correct country on the map to earn points!</p>
+        </header>
+
+        <div class="game-area">
+            <div class="stats-panel">
+                <div class="stat">
+                    <span class="stat-label">Score:</span>
+                    <span class="stat-value" id="current-score">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Round:</span>
+                    <span class="stat-value" id="current-round">0</span>
+                    <span class="stat-separator">/</span>
+                    <span class="stat-value" id="total-rounds">10</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Streak:</span>
+                    <span class="stat-value" id="current-streak">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Time:</span>
+                    <span class="stat-value" id="time-left">30</span>
+                </div>
+            </div>
+
+            <div class="question-section">
+                <div class="question-text" id="question-text">Find: <span id="country-name">Loading...</span></div>
+                <div class="question-hint" id="question-hint"></div>
+            </div>
+
+            <div class="map-container">
+                <svg id="world-map" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
+                    <!-- Map paths will be inserted here by JavaScript -->
+                </svg>
+            </div>
+
+            <div class="hint-section">
+                <div class="hint-buttons">
+                    <button id="hint-continent-btn" class="hint-btn">Continent Hint (-5 pts)</button>
+                    <button id="hint-capital-btn" class="hint-btn">Capital Hint (-10 pts)</button>
+                    <button id="hint-options-btn" class="hint-btn">Multiple Choice (-15 pts)</button>
+                </div>
+                <div class="multiple-choice" id="multiple-choice" style="display: none;">
+                    <div class="choice-buttons">
+                        <button class="choice-btn" data-choice="0"></button>
+                        <button class="choice-btn" data-choice="1"></button>
+                        <button class="choice-btn" data-choice="2"></button>
+                        <button class="choice-btn" data-choice="3"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message" id="message"></div>
+
+            <div class="controls">
+                <button id="start-btn" class="primary-btn">Start Game</button>
+                <button id="quit-btn" class="secondary-btn" style="display: none;">Quit Game</button>
+            </div>
+        </div>
+
+        <div class="results" id="results" style="display: none;">
+            <h2>Exploration Complete!</h2>
+            <div class="final-stats">
+                <div class="final-stat">
+                    <span class="final-label">Final Score:</span>
+                    <span class="final-value" id="final-score">0</span>
+                </div>
+                <div class="final-stat">
+                    <span class="final-label">Countries Found:</span>
+                    <span class="final-value" id="countries-found">0</span>
+                    <span class="final-separator">/</span>
+                    <span class="final-value" id="countries-total">10</span>
+                </div>
+                <div class="final-stat">
+                    <span class="final-label">Accuracy:</span>
+                    <span class="final-value" id="accuracy">0%</span>
+                </div>
+                <div class="final-stat">
+                    <span class="final-label">Best Streak:</span>
+                    <span class="final-value" id="best-streak">0</span>
+                </div>
+                <div class="final-stat">
+                    <span class="final-label">Grade:</span>
+                    <span class="final-value grade" id="grade">F</span>
+                </div>
+            </div>
+            <button id="play-again-btn" class="primary-btn">Explore Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

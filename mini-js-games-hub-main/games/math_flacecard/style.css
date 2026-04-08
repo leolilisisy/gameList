@@ -1,0 +1,127 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f4f8;
+    color: #2c3e50;
+}
+
+#game-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    max-width: 450px;
+    width: 90%;
+}
+
+h1 {
+    color: #3498db;
+    margin-bottom: 20px;
+}
+
+#status-area {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* --- Timer Bar --- */
+#timer-bar-container {
+    width: 100%;
+    height: 15px;
+    background-color: #ecf0f1;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+#timer-bar {
+    height: 100%;
+    width: 100%; /* Starts full */
+    background-color: #2ecc71; /* Green */
+    transition: width linear; /* Smooth transition */
+}
+
+/* --- Problem Display --- */
+#problem-box {
+    background-color: #34495e; /* Dark background */
+    color: white;
+    padding: 20px 10px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+#problem-display {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* --- Options Container --- */
+#options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.answer-button {
+    padding: 15px 10px;
+    font-size: 1.3em;
+    font-weight: bold;
+    background-color: #f1c40f; /* Yellow */
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.1s, transform 0.1s;
+}
+
+.answer-button:hover:not(:disabled) {
+    background-color: #f39c12;
+    transform: translateY(-2px);
+}
+
+.answer-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Feedback Styles */
+.correct {
+    background-color: #2ecc71 !important; /* Green */
+    color: white;
+}
+
+.incorrect {
+    background-color: #e74c3c !important; /* Red */
+    color: white;
+}
+
+/* --- Controls --- */
+#feedback-message {
+    min-height: 1.5em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+#start-button {
+    padding: 12px 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#start-button:hover {
+    background-color: #2980b9;
+}

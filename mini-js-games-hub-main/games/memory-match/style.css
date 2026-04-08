@@ -1,0 +1,140 @@
+:root {
+    --card-size: 100px;
+    --grid-gap: 10px;
+    --primary-color: #4A90E2; /* Blue */
+    --secondary-color: #F7DC6F; /* Yellow */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+/* --- Game Stats --- */
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#reset-button, #play-again-button {
+    padding: 8px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#reset-button:hover, #play-again-button:hover {
+    background-color: #357ABD;
+}
+
+/* --- Game Board --- */
+
+.memory-game {
+    width: calc(4 * var(--card-size) + 3 * var(--grid-gap));
+    height: calc(4 * var(--card-size) + 3 * var(--grid-gap));
+    display: grid;
+    grid-template-columns: repeat(4, var(--card-size));
+    grid-template-rows: repeat(4, var(--card-size));
+    gap: var(--grid-gap);
+    perspective: 1000px; /* For 3D flip effect */
+}
+
+.memory-card {
+    width: var(--card-size);
+    height: var(--card-size);
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Card Flipped State */
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face, .back-face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 8px;
+    backface-visibility: hidden; /* Hide the back when it's facing away */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* Card Back (Hidden) */
+.back-face {
+    background: var(--primary-color);
+    color: white;
+    border: 3px solid var(--primary-color);
+}
+
+/* Card Front (Revealed) */
+.front-face {
+    background: var(--secondary-color);
+    color: #333;
+    transform: rotateY(180deg); /* Start flipped to be the front */
+}
+
+/* Matched Card State */
+.memory-card.match {
+    cursor: default;
+    opacity: 0.5;
+}
+
+/* --- Win Message --- */
+
+.hidden {
+    display: none !important;
+}
+
+#win-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    text-align: center;
+    border: 5px solid var(--primary-color);
+}
+
+#win-message h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+}

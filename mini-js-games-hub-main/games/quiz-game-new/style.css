@@ -1,0 +1,119 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.quiz-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+}
+
+#question-text {
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    color: #4CAF50; /* Primary color */
+}
+
+/* --- Answer Buttons Grid --- */
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.answer-btn {
+    padding: 15px;
+    font-size: 1em;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.answer-btn:hover:not(:disabled) {
+    background-color: #e6e6e6;
+    border-color: #bbb;
+}
+
+.answer-btn:disabled {
+    cursor: default;
+    opacity: 0.8;
+}
+
+/* --- Feedback and Result Styling --- */
+.correct {
+    background-color: #d4edda !important;
+    border-color: #4CAF50 !important;
+    color: #155724;
+}
+
+.incorrect {
+    background-color: #f8d7da !important;
+    border-color: #dc3545 !important;
+    color: #721c24;
+}
+
+#feedback {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* --- Navigation Buttons --- */
+#next-button, #restart-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+#next-button:hover, #restart-button:hover {
+    background-color: #45a049;
+}
+
+/* --- Utility Classes --- */
+.hidden {
+    display: none;
+}
+
+#result-screen {
+    text-align: center;
+    padding: 20px;
+    background: #e9ecef;
+    border-radius: 8px;
+}
+
+#final-score {
+    font-size: 1.8em;
+    margin: 20px 0;
+    color: #333;
+}

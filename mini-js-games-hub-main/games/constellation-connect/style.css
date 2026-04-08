@@ -1,0 +1,60 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at 20% 20%, #0b132b, #1c2541, #3a506b);
+  color: #fff;
+  height: 100%;
+}
+
+.ui {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 12px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+h1 {
+  margin-bottom: 10px;
+  text-shadow: 0 0 20px cyan;
+}
+
+.buttons {
+  margin-bottom: 10px;
+}
+
+button, select {
+  background: #142850;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+button:hover, select:hover {
+  background: #00adb5;
+  box-shadow: 0 0 10px #00fff2;
+}
+
+#spaceCanvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  cursor: crosshair;
+}
+
+#status {
+  font-size: 14px;
+  color: #a6e3e9;
+}

@@ -1,0 +1,128 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 50px;
+    margin: 0;
+    background-color: #f0f4f8;
+}
+
+#game-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+h1 {
+    color: #3498db;
+    margin-bottom: 20px;
+}
+
+#header-info {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #ecf0f1;
+    border-radius: 6px;
+}
+
+/* --- Puzzle Area --- */
+#puzzle-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#jumbled-letters {
+    font-size: 3em;
+    font-weight: bold;
+    letter-spacing: 5px;
+    padding: 10px 20px;
+    background-color: #e74c3c; /* Red background for letters */
+    color: white;
+    border-radius: 8px;
+    min-width: 200px;
+}
+
+#scramble-btn {
+    padding: 10px 15px;
+    background-color: #f39c12; /* Orange */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#scramble-btn:hover {
+    background-color: #e67e22;
+}
+
+/* --- Input Area --- */
+#input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+#word-input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 1.1em;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+}
+
+#submit-btn {
+    padding: 10px 20px;
+    background-color: #2ecc71; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#submit-btn:hover {
+    background-color: #27ae60;
+}
+
+/* --- Feedback and Results --- */
+#feedback-msg {
+    min-height: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#found-words-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+#found-words-list li {
+    background-color: #3498db;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* Game Over / Disabled State */
+.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Harmony</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Pixel Harmony</h1>
+            <p class="subtitle">Match the colors. Feel the vibe.</p>
+        </header>
+
+        <div class="game-board">
+            <div class="target-section">
+                <div class="target-color" id="targetColor"></div>
+                <div class="color-code" id="targetCode">#FF6B6B</div>
+            </div>
+
+            <div class="player-section">
+                <div class="player-color" id="playerColor"></div>
+                <div class="color-code" id="playerCode">#FFFFFF</div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="color-sliders">
+                <div class="slider-group">
+                    <label>R</label>
+                    <input type="range" id="redSlider" min="0" max="255" value="255" class="slider red">
+                    <span id="redValue">255</span>
+                </div>
+                <div class="slider-group">
+                    <label>G</label>
+                    <input type="range" id="greenSlider" min="0" max="255" value="255" class="slider green">
+                    <span id="greenValue">255</span>
+                </div>
+                <div class="slider-group">
+                    <label>B</label>
+                    <input type="range" id="blueSlider" min="0" max="255" value="255" class="slider blue">
+                    <span id="blueValue">255</span>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="checkBtn" class="primary-btn">Check Match</button>
+                <button id="newColorBtn" class="secondary-btn">New Color</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value" id="score">0</div>
+                <div class="stat-label">Score</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="streak">0</div>
+                <div class="stat-label">Streak</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="accuracy">0%</div>
+                <div class="stat-label">Accuracy</div>
+            </div>
+        </div>
+
+        <div class="feedback" id="feedback">
+            <div class="feedback-content">
+                <span id="feedbackText">Adjust the sliders to match the color!</span>
+                <div class="difference-bar">
+                    <div class="difference-fill" id="differenceFill"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="confetti" id="confetti"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Studio - Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 Art Studio</h1>
+            <p>Create digital masterpieces with various tools and colors!</p>
+        </header>
+
+        <div class="game-container">
+            <!-- Toolbar -->
+            <div class="toolbar">
+                <div class="tool-section">
+                    <h3>Tools</h3>
+                    <div class="tool-group">
+                        <button id="brush-tool" class="tool-btn active" title="Brush">
+                            <span class="tool-icon">🖌️</span>
+                            <span class="tool-label">Brush</span>
+                        </button>
+                        <button id="eraser-tool" class="tool-btn" title="Eraser">
+                            <span class="tool-icon">🧽</span>
+                            <span class="tool-label">Eraser</span>
+                        </button>
+                        <button id="fill-tool" class="tool-btn" title="Fill">
+                            <span class="tool-icon">🪣</span>
+                            <span class="tool-label">Fill</span>
+                        </button>
+                        <button id="line-tool" class="tool-btn" title="Line">
+                            <span class="tool-icon">📏</span>
+                            <span class="tool-label">Line</span>
+                        </button>
+                        <button id="rectangle-tool" class="tool-btn" title="Rectangle">
+                            <span class="tool-icon">▭</span>
+                            <span class="tool-label">Rectangle</span>
+                        </button>
+                        <button id="circle-tool" class="tool-btn" title="Circle">
+                            <span class="tool-icon">○</span>
+                            <span class="tool-label">Circle</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <h3>Colors</h3>
+                    <div class="color-palette">
+                        <div class="color-btn selected" data-color="#000000" style="background: #000000;"></div>
+                        <div class="color-btn" data-color="#FF0000" style="background: #FF0000;"></div>
+                        <div class="color-btn" data-color="#00FF00" style="background: #00FF00;"></div>
+                        <div class="color-btn" data-color="#0000FF" style="background: #0000FF;"></div>
+                        <div class="color-btn" data-color="#FFFF00" style="background: #FFFF00;"></div>
+                        <div class="color-btn" data-color="#FF00FF" style="background: #FF00FF;"></div>
+                        <div class="color-btn" data-color="#00FFFF" style="background: #00FFFF;"></div>
+                        <div class="color-btn" data-color="#FFA500" style="background: #FFA500;"></div>
+                        <div class="color-btn" data-color="#800080" style="background: #800080;"></div>
+                        <div class="color-btn" data-color="#FFC0CB" style="background: #FFC0CB;"></div>
+                        <div class="color-btn" data-color="#A52A2A" style="background: #A52A2A;"></div>
+                        <div class="color-btn" data-color="#808080" style="background: #808080;"></div>
+                    </div>
+                    <div class="color-picker">
+                        <input type="color" id="custom-color" value="#000000">
+                        <label for="custom-color">Custom Color</label>
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <h3>Brush Size</h3>
+                    <div class="brush-size">
+                        <input type="range" id="brush-size" min="1" max="50" value="5">
+                        <span id="size-value">5px</span>
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <h3>Actions</h3>
+                    <div class="action-buttons">
+                        <button id="clear-canvas" class="action-btn">🗑️ Clear</button>
+                        <button id="undo-btn" class="action-btn">↶ Undo</button>
+                        <button id="redo-btn" class="action-btn">↷ Redo</button>
+                        <button id="save-btn" class="action-btn">💾 Save</button>
+                    </div>
+                </div>
+
+                <div class="tool-section">
+                    <h3>Stamps</h3>
+                    <div class="stamp-palette">
+                        <button class="stamp-btn" data-stamp="⭐">⭐</button>
+                        <button class="stamp-btn" data-stamp="🌟">🌟</button>
+                        <button class="stamp-btn" data-stamp="❤️">❤️</button>
+                        <button class="stamp-btn" data-stamp="🌸">🌸</button>
+                        <button class="stamp-btn" data-stamp="🌈">🌈</button>
+                        <button class="stamp-btn" data-stamp="🎨">🎨</button>
+                        <button class="stamp-btn" data-stamp="🦋">🦋</button>
+                        <button class="stamp-btn" data-stamp="🌺">🌺</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Canvas Area -->
+            <div class="canvas-area">
+                <div class="canvas-container">
+                    <canvas id="art-canvas" width="800" height="600"></canvas>
+                    <div class="canvas-overlay" id="canvas-overlay"></div>
+                </div>
+
+                <div class="canvas-info">
+                    <div class="info-item">
+                        <span class="info-label">Tool:</span>
+                        <span id="current-tool">Brush</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Color:</span>
+                        <span id="current-color">#000000</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Size:</span>
+                        <span id="current-size">5px</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h3>How to Use Art Studio</h3>
+            <ul>
+                <li><strong>Brush:</strong> Click and drag to draw freehand</li>
+                <li><strong>Eraser:</strong> Click and drag to erase parts of your drawing</li>
+                <li><strong>Fill:</strong> Click on an area to fill it with the selected color</li>
+                <li><strong>Line:</strong> Click and drag to draw straight lines</li>
+                <li><strong>Rectangle:</strong> Click and drag to draw rectangles</li>
+                <li><strong>Circle:</strong> Click and drag to draw circles</li>
+                <li><strong>Stamps:</strong> Click on the canvas to place emoji stamps</li>
+                <li><strong>Undo/Redo:</strong> Use these buttons to correct mistakes</li>
+                <li><strong>Save:</strong> Download your artwork as an image</li>
+            </ul>
+        </div>
+
+        <!-- Message Display -->
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

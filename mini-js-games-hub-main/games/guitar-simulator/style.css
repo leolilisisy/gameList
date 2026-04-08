@@ -1,0 +1,322 @@
+/* Guitar Simulator Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #ecf0f1;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.8;
+}
+
+.game-area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.control-group label {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.control-group select,
+.control-group button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control-group select {
+    background: #ecf0f1;
+    color: #2c3e50;
+}
+
+.control-group button {
+    background: #3498db;
+    color: white;
+    font-weight: bold;
+}
+
+.control-group button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+.fretboard-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    overflow-x: auto;
+}
+
+.string-names {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-right: 10px;
+}
+
+.string-name {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #f39c12;
+    text-align: center;
+    width: 30px;
+}
+
+.fretboard {
+    display: flex;
+    gap: 2px;
+    position: relative;
+}
+
+.string {
+    display: flex;
+    position: relative;
+    height: 60px;
+    gap: 2px;
+}
+
+.fret {
+    width: 50px;
+    height: 100%;
+    background: #8b4513;
+    border: 1px solid #654321;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    border-radius: 3px;
+}
+
+.fret:hover {
+    background: #a0522d;
+    transform: scale(1.05);
+}
+
+.fret.pressed {
+    background: #ffd700 !important;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.6);
+    animation: press 0.3s ease;
+}
+
+@keyframes press {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.fret-marker {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #ecf0f1;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 2px 4px;
+    border-radius: 3px;
+    pointer-events: none;
+}
+
+.fret-number {
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8em;
+    color: #bdc3c7;
+}
+
+.fret-numbers {
+    position: relative;
+    display: flex;
+    gap: 2px;
+    margin-left: 10px;
+}
+
+.fret-number {
+    width: 50px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #bdc3c7;
+}
+
+.info-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.info-panel h3 {
+    color: #3498db;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+#current-note-display,
+#chord-display {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #f39c12;
+    min-height: 30px;
+}
+
+#played-notes-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    min-height: 30px;
+}
+
+.note-chip {
+    background: #3498db;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.instructions {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.instructions h3 {
+    color: #3498db;
+    margin-bottom: 15px;
+}
+
+.instructions ul {
+    list-style: none;
+    padding: 0;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.instructions li:before {
+    content: "🎸";
+    position: absolute;
+    left: 0;
+    color: #f39c12;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .fretboard-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .string-names {
+        flex-direction: row;
+        margin-right: 0;
+        margin-bottom: 10px;
+        gap: 10px;
+    }
+
+    .string-name {
+        width: auto;
+        margin-right: 10px;
+    }
+
+    .fret {
+        width: 40px;
+    }
+
+    .fret-number {
+        width: 40px;
+        font-size: 0.8em;
+    }
+
+    .controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .control-group {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fret {
+        width: 35px;
+        height: 50px;
+    }
+
+    .fret-number {
+        width: 35px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+}

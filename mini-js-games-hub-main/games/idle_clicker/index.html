@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idle Clicker Tycoon 💰</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Idle Clicker</h1>
+
+        <div class="currency-display">
+            <span id="currency-amount">0</span> <span id="currency-name">Coins</span>
+            <p>Production: <span id="cps-display">0</span> Coins/sec</p>
+        </div>
+
+        <div id="main-clicker" class="main-clicker">
+            <img src="images/coin.png" alt="Clickable Coin" id="clicker-image"> 
+            </div>
+
+        <div class="shop-panel">
+            <h2>Upgrades</h2>
+            <div id="upgrades-list">
+                <div class="upgrade-item" data-upgrade-id="cursor">
+                    <span class="upgrade-name">Cursor</span>
+                    <span class="upgrade-info">Cost: <span class="cost">10</span>, CPS: <span class="cps">0.1</span></span>
+                    <span class="upgrade-level">Lv: <span class="level">0</span></span>
+                    <button class="buy-button">Buy</button>
+                </div>
+                </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

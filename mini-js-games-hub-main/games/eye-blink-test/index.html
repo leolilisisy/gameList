@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eye Blink Test 👁️</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>👁️ Eye Blink Test</h1>
+    <p class="instructions">Keep your cursor inside the eye for <strong>10 seconds</strong> without blinking (moving out)!</p>
+
+    <div id="eye-area">
+      <div id="pupil"></div>
+      <div id="glow"></div>
+    </div>
+
+    <div class="controls">
+      <button id="startBtn">Start</button>
+      <button id="pauseBtn">Pause</button>
+      <button id="restartBtn">Restart</button>
+    </div>
+
+    <div class="status">
+      <p>⏱️ Time: <span id="timer">0</span>s</p>
+      <p id="message"></p>
+    </div>
+
+    <audio id="winSound" src="https://cdn.pixabay.com/download/audio/2023/03/29/audio_321b3e3f47.mp3?filename=success-fanfare-trumpets-6185.mp3"></audio>
+    <audio id="loseSound" src="https://cdn.pixabay.com/download/audio/2023/03/01/audio_39a949a34b.mp3?filename=error-126627.mp3"></audio>
+    <audio id="hoverSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_54d85ac3d2.mp3?filename=click-124467.mp3"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

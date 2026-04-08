@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The CSS Room Escape</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="room-container">
+        <div id="door" class="cell" data-puzzle="final">🔒 DOOR: Find the key!</div>
+
+        <div id="wall-clue" class="cell" data-puzzle="inspect">Wall: Look closely!</div>
+
+        <div id="hidden-console" class="cell" data-puzzle="hiding">
+            <label for="code-input">Console:</label>
+            <input type="text" id="code-input" placeholder="Enter Code">
+            <button id="submit-code">Submit</button>
+        </div>
+
+        <div id="grid-manipulator" class="cell" data-puzzle="manipulator">
+            Box: Move me to the DOOR.
+        </div>
+    </div>
+
+    <div id="feedback-panel">
+        <p id="message">Welcome to the CSS Room. Your goal is to open the door. Start inspecting elements!</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

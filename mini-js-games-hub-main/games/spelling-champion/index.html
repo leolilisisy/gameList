@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spelling Champion - Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Spelling Champion</h1>
+            <p>Test your spelling skills! Spell the words correctly to earn points.</p>
+        </header>
+
+        <div class="game-area">
+            <div class="stats-panel">
+                <div class="stat">
+                    <span class="stat-label">Score:</span>
+                    <span class="stat-value" id="current-score">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Words:</span>
+                    <span class="stat-value" id="current-word">0</span>
+                    <span class="stat-separator">/</span>
+                    <span class="stat-value" id="total-words">10</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Streak:</span>
+                    <span class="stat-value" id="current-streak">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Time:</span>
+                    <span class="stat-value" id="time-left">60</span>
+                </div>
+            </div>
+
+            <div class="word-display">
+                <div class="word-category" id="word-category">General</div>
+                <div class="word-text" id="word-text">Loading...</div>
+                <div class="word-hint" id="word-hint"></div>
+            </div>
+
+            <div class="input-section">
+                <input type="text" id="spelling-input" placeholder="Type the spelling here..." maxlength="50" autocomplete="off">
+                <div class="input-buttons">
+                    <button id="check-btn" class="primary-btn">Check Spelling</button>
+                    <button id="hint-btn" class="secondary-btn">Hint (-10 pts)</button>
+                    <button id="skip-btn" class="secondary-btn">Skip (-5 pts)</button>
+                </div>
+            </div>
+
+            <div class="message" id="message"></div>
+
+            <div class="controls">
+                <button id="start-btn" class="primary-btn">Start Game</button>
+                <button id="quit-btn" class="secondary-btn" style="display: none;">Quit Game</button>
+            </div>
+        </div>
+
+        <div class="results" id="results" style="display: none;">
+            <h2>Game Complete!</h2>
+            <div class="final-stats">
+                <div class="final-stat">
+                    <span class="final-label">Final Score:</span>
+                    <span class="final-value" id="final-score">0</span>
+                </div>
+                <div class="final-stat">
+                    <span class="final-label">Words Correct:</span>
+                    <span class="final-value" id="words-correct">0</span>
+                    <span class="final-separator">/</span>
+                    <span class="final-value" id="words-total">10</span>
+                </div>
+                <div class="final-stat">
+                    <span class="final-label">Accuracy:</span>
+                    <span class="final-value" id="accuracy">0%</span>
+                </div>
+                <div class="final-stat">
+                    <span class="final-label">Best Streak:</span>
+                    <span class="final-value" id="best-streak">0</span>
+                </div>
+                <div class="final-stat">
+                    <span class="final-label">Grade:</span>
+                    <span class="final-value grade" id="grade">F</span>
+                </div>
+            </div>
+            <button id="play-again-btn" class="primary-btn">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

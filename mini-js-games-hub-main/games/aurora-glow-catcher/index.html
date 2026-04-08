@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aurora Glow Catcher — Mini JS Games Hub</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="title">
+        <span class="emoji">🌌</span>
+        <div>
+          <h1>Aurora Glow Catcher</h1>
+          <p class="sub">Collect glowing fragments to grow your aurora. Use arrow keys or mouse.</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="playPauseBtn" class="btn primary">Play</button>
+        <button id="restartBtn" class="btn">Restart</button>
+        <button id="muteBtn" class="btn">🔊</button>
+        <div class="meta">
+          <span>Time: <strong id="timeDisplay">00:45</strong></span>
+          <span>Score: <strong id="scoreDisplay">0</strong></span>
+          <span>Lives: <strong id="livesDisplay">3</strong></span>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <canvas id="gameCanvas"></canvas>
+
+      <aside class="hud">
+        <div class="panel">
+          <h3>Aurora Brightness</h3>
+          <div class="bar-wrap">
+            <div id="auroraBar" class="bar"></div>
+          </div>
+          <small>Collect fragments to increase glow</small>
+        </div>
+
+        <div class="panel rules">
+          <h3>How to Play</h3>
+          <ul>
+            <li>Move catcher with <kbd>← → ↑ ↓</kbd> or drag with mouse.</li>
+            <li>Collect glowing fragments ✨ to increase score and aurora glow.</li>
+            <li>Avoid dark obstacles — they reduce lives.</li>
+            <li>Game ends when timer reaches 0 or lives are gone.</li>
+          </ul>
+        </div>
+
+        <div class="panel tips">
+          <h3>Tips</h3>
+          <ol>
+            <li>Collect same-colored fragments to get combo bonuses.</li>
+            <li>Big fragments give more glow.</li>
+          </ol>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <small>Built with HTML • CSS • JS — No downloads needed. Sound synthesized in browser.</small>
+      <a href="../index.html" class="back-link">← Back to Hub</a>
+    </footer>
+
+    <!-- Modal: Game Over / Win -->
+    <div id="overlay" class="overlay hidden">
+      <div class="overlay-card">
+        <h2 id="overlayTitle">Game Over</h2>
+        <p id="overlayMsg">You scored <strong id="finalScore">0</strong></p>
+        <div class="overlay-actions">
+          <button id="overlayRestart" class="btn primary">Play Again</button>
+          <button id="overlayClose" class="btn">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

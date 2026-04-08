@@ -1,0 +1,165 @@
+:root {
+    --game-width: 600px;
+    --game-height: 400px;
+    --ball-base-size: 30px; /* The content box size */
+    --goal-color: #4CAF50;
+    --obstacle-color: #f44336;
+    --container-bg: #e0e0e0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #212121;
+    color: white;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#game-container {
+    position: relative; /* Crucial for absolute positioning of ball, goal, obstacles */
+    width: var(--game-width);
+    height: var(--game-height);
+    background-color: var(--container-bg);
+    border: 3px solid #616161;
+    overflow: hidden; /* Ensures ball/obstacles don't leak out */
+    box-sizing: content-box; /* Standard box-sizing for the container */
+    margin-bottom: 30px;
+}
+
+/* --- Player Ball --- */
+#player-ball {
+    position: absolute; /* Allows precise positioning within the container */
+    width: var(--ball-base-size);
+    height: var(--ball-base-size);
+    background-color: #2196F3; /* Blue */
+    border: 5px solid #1976D2; /* Darker blue border */
+    border-radius: 50%; /* Makes it a circle */
+    box-sizing: border-box; /* Crucial: padding/border grow inward, not outward */
+    /* Initial state, overridden by JS */
+    margin: 10px; /* Example starting margin */
+    padding: 10px; /* Example starting padding */
+    left: 0; /* Aligned by margin */
+    top: 0; /* Aligned by margin */
+    transition: background-color 0.2s; /* Smooth visual feedback */
+}
+
+/* --- Goal --- */
+#goal {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: var(--goal-color);
+    border: 2px dashed darkgreen;
+    border-radius: 5px;
+    right: 20px; /* Positioned from right */
+    bottom: 20px; /* Positioned from bottom */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: white;
+}
+
+/* --- Obstacles --- */
+.obstacle {
+    position: absolute;
+    background-color: var(--obstacle-color);
+    border: 1px solid #c62828;
+}
+
+#obs1 {
+    width: 80px;
+    height: 120px;
+    top: 50px;
+    left: 150px;
+}
+
+#obs2 {
+    width: 150px;
+    height: 50px;
+    bottom: 100px;
+    left: 80px;
+}
+
+/* A "thin wall" that requires the player to be small */
+.thin-wall {
+    background-color: #ff9800; /* Orange */
+}
+
+#obs3 {
+    width: 20px; /* Very narrow */
+    height: 150px;
+    top: 80px;
+    left: 300px;
+}
+
+#obs4 {
+    width: 100px;
+    height: 70px;
+    bottom: 30px;
+    right: 150px;
+}
+
+
+/* --- Controls --- */
+#controls {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 8px;
+    width: var(--game-width);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.control-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.control-group label {
+    flex: 1;
+    text-align: left;
+    margin-right: 10px;
+}
+
+.control-group input[type="range"] {
+    flex: 3;
+    width: 100%;
+    margin-right: 10px;
+}
+
+.control-group span {
+    flex: 0.5;
+    text-align: right;
+    width: 50px;
+}
+
+#reset-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#reset-button:hover {
+    background-color: #0056b3;
+}
+
+#game-message {
+    margin-top: 15px;
+    font-size: 1.1em;
+    color: yellow;
+    min-height: 2em; /* Prevent layout shift */
+}

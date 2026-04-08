@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rhythm Catcher</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-container">
+    <h1>🎶 Rhythm Catcher</h1>
+    <p id="status">Press Start to begin the beat!</p>
+
+    <div class="track-container" id="tracks">
+      <div class="track" data-key="A">A</div>
+      <div class="track" data-key="S">S</div>
+      <div class="track" data-key="D">D</div>
+      <div class="track" data-key="F">F</div>
+    </div>
+
+    <div class="controls">
+      <button id="startBtn">Start</button>
+      <button id="retryBtn" disabled>Retry</button>
+    </div>
+
+    <div class="info">
+      <span>Level: <strong id="level">1</strong></span>
+      <span>Score: <strong id="score">0</strong></span>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

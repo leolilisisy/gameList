@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gravity Switcher Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>🔄 Gravity Switcher</h1>
+
+        <div id="level-area">
+            <div id="player"></div>
+
+            <div class="platform goal" style="top: 50px; left: 400px; width: 80px;">GOAL</div>
+
+            <div class="platform" style="top: 350px; left: 0; width: 300px;"></div>
+            <div class="platform" style="top: 200px; left: 250px; width: 200px;"></div>
+            <div class="platform" style="top: 450px; left: 150px; width: 350px;"></div>
+
+            <div class="platform" style="top: 550px; left: 0; width: 500px;"></div>
+        </div>
+
+        <div id="status-area">
+            <p id="message">Press **SPACE** to flip gravity! Reach the GOAL.</p>
+        </div>
+
+        <div id="controls">
+            <button id="restart-button">Restart Level</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

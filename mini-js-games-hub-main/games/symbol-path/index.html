@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Symbol Path | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <audio id="success-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_d4019b8b32.mp3?filename=correct-2-46134.mp3"></audio>
+  <audio id="fail-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_8d9df8ac48.mp3?filename=error-2-46134.mp3"></audio>
+  <audio id="draw-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_41f7b6eebc.mp3?filename=beep-47158.mp3"></audio>
+
+  <div class="game-header">
+    <h1>Symbol Path 🔗</h1>
+    <div class="controls">
+      <button id="start-btn">▶️ Start</button>
+      <button id="pause-btn">⏸️ Pause</button>
+      <button id="restart-btn">🔁 Restart</button>
+    </div>
+  </div>
+
+  <div class="game-container">
+    <canvas id="gameCanvas" width="600" height="600"></canvas>
+  </div>
+
+  <div class="info">
+    <p><strong>Objective:</strong> Draw a glowing path connecting symbols in the right order!</p>
+    <p><strong>Hint:</strong> Avoid obstacles 🚧 and complete the pattern 💡.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

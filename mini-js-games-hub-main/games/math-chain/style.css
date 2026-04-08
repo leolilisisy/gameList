@@ -1,0 +1,102 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(120deg, #1e3c72, #2a5298);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  color: #fff;
+}
+
+.game-container {
+  background: rgba(0,0,0,0.6);
+  padding: 30px 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 0 30px #ffcc00;
+  width: 90%;
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px #ffcc00;
+}
+
+.target {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.expression-display {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 2px solid #ffcc00;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#current-expression span {
+  padding: 5px 10px;
+  margin: 0 2px;
+  background: #333;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#current-expression span.glow {
+  box-shadow: 0 0 15px #00ffcc;
+}
+
+.tiles-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+.tile {
+  background: #444;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-shadow: 0 0 5px #fff;
+}
+
+.tile:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ffcc00;
+}
+
+.controls button {
+  padding: 10px 15px;
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  background: #ffcc00;
+  color: #000;
+  transition: all 0.2s ease;
+}
+
+.controls button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #00ffcc;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px #fff;
+}

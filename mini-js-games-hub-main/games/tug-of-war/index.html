@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tug of War — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-shell">
+    <header class="game-header">
+      <h1>🏳️ Tug of War</h1>
+      <div class="controls">
+        <button id="startBtn" class="btn primary">Start</button>
+        <button id="pauseBtn" class="btn">Pause</button>
+        <button id="restartBtn" class="btn">Restart</button>
+        <label class="switch">
+          <input id="soundToggle" type="checkbox" checked>
+          <span class="slider"></span>
+          <span class="label-text">Sound</span>
+        </label>
+      </div>
+    </header>
+
+    <main class="arena">
+      <div class="team team-left">
+        <div class="team__name">Left</div>
+        <div class="tap-zone" id="leftTap">Tap ◀ (A)</div>
+        <div class="meter meter-left">
+          <div class="glow"></div>
+        </div>
+      </div>
+
+      <div class="rope-area">
+        <div class="rope-track">
+          <div class="rope" id="rope">
+            <div class="center-marker" id="marker"></div>
+          </div>
+        </div>
+        <div class="scoreboard">
+          <div class="score left-score"><span id="leftScore">0</span></div>
+          <div class="score right-score"><span id="rightScore">0</span></div>
+        </div>
+      </div>
+
+      <div class="team team-right">
+        <div class="team__name">Right</div>
+        <div class="tap-zone" id="rightTap">Tap ▶ (L)</div>
+        <div class="meter meter-right">
+          <div class="glow"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="game-footer">
+      <p class="hint">Controls — Left: press <kbd>A</kbd> or click left zone. Right: press <kbd>L</kbd> or click right zone.</p>
+      <p class="hint">First to move the marker fully into opponent zone wins.</p>
+    </footer>
+
+    <!-- Hidden audio elements (crowd cheer provided via Google hosted sounds) -->
+    <audio id="cheer-audio" src="https://actions.google.com/sounds/v1/crowds/team_cheer.ogg" preload="auto"></audio>
+    <audio id="battle-audio" src="https://actions.google.com/sounds/v1/crowds/battle_crowd_celebration.ogg" preload="auto"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

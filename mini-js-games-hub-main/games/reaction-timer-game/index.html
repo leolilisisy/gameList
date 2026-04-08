@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Timer Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-area" class="wait" onclick="handleClick()">
+        <p id="message">Click anywhere to start.</p>
+    </div>
+
+    <div id="info">
+        <h2>Reaction Timer</h2>
+        <p>Click the screen when the color changes from **Red** to **Green**.</p>
+        <p>Score is the time elapsed in milliseconds (**ms**). Lower is better!</p>
+        <p id="score-display">Your last score: **-** ms</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.game-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.3);
+  width: 420px;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px cyan;
+}
+
+.controls button {
+  background: #1f4068;
+  border: none;
+  color: #fff;
+  margin: 5px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.controls button:hover {
+  background: #00adb5;
+  box-shadow: 0 0 10px #00fff5;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 45px);
+  grid-template-rows: repeat(8, 45px);
+  justify-content: center;
+  gap: 5px;
+  margin-top: 15px;
+}
+
+.gem {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gem:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+.obstacle {
+  background: gray !important;
+  box-shadow: 0 0 5px #000;
+  cursor: not-allowed;
+}

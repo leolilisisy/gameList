@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+#game-area {
+    width: 90%;
+    max-width: 600px;
+    height: 300px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: background-color 0.4s ease; /* Smooth color transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#message {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+/* --- Game States --- */
+
+/* Initial State (Start/Wait) */
+#game-area.start {
+    background-color: #3498db; /* Blue */
+}
+
+/* Delay/Wait State (After first click, waiting for green) */
+#game-area.wait {
+    background-color: #e74c3c; /* Red */
+}
+
+/* Ready State (Player must click now) */
+#game-area.ready {
+    background-color: #2ecc71; /* Green */
+}
+
+/* Result State (Showing the score) */
+#game-area.result {
+    background-color: #9b59b6; /* Purple/Violet */
+}
+
+/* --- Info/Score Display --- */
+
+#info {
+    max-width: 600px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#info h2 {
+    color: #3498db;
+    margin-top: 0;
+}
+
+#score-display {
+    font-size: 1.2em;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+@media (max-width: 480px) {
+    #message {
+        font-size: 1.4em;
+    }
+    #game-area {
+        height: 200px;
+    }
+}

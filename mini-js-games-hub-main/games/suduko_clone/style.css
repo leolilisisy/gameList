@@ -1,0 +1,144 @@
+:root {
+    --grid-size: 4;
+    --cell-size: 50px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+#game-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* --- Sudoku Grid Table --- */
+#sudoku-grid {
+    border-collapse: collapse;
+    margin: 0 auto;
+    border: 3px solid #333; /* Outer border */
+}
+
+.sudoku-cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid #ccc; /* Inner cell borders */
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+/* Thicker borders to delineate 2x2 subgrids */
+.sudoku-cell:nth-child(2n) {
+    border-right: 2px solid #555;
+}
+tr:nth-child(2n) .sudoku-cell {
+    border-bottom: 2px solid #555;
+}
+
+/* Fix the outer borders */
+.sudoku-cell:nth-child(4n) {
+    border-right: 1px solid #ccc;
+}
+tr:nth-child(4n) .sudoku-cell {
+    border-bottom: 1px solid #ccc;
+}
+
+
+/* Cell States */
+.initial {
+    background-color: #e9ecef; /* Grey background for pre-filled cells */
+    color: #343a40;
+    cursor: default;
+}
+
+.selected {
+    background-color: #fff3cd; /* Light yellow highlight for selected cell */
+}
+
+.error {
+    background-color: #f8d7da !important; /* Light red for conflicts */
+    color: #721c24 !important;
+}
+
+/* --- Input Controls --- */
+#input-controls {
+    margin-top: 20px;
+}
+
+#number-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 10px;
+}
+
+.num-input {
+    padding: 10px 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    background-color: #e9f5ff;
+    color: #007bff;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+.num-input:hover {
+    background-color: #cce5ff;
+}
+
+.num-input[data-value="0"] {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* --- Feedback and Controls --- */
+#feedback-message {
+    min-height: 20px;
+    margin-top: 15px;
+}
+
+#controls {
+    margin-top: 20px;
+}
+
+#controls button {
+    padding: 10px 15px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin: 0 5px;
+}
+
+#reset-button {
+    background-color: #dc3545;
+    color: white;
+}
+
+#solve-button {
+    background-color: #28a745;
+    color: white;
+}

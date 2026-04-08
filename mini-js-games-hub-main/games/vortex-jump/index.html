@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vortex Jump | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Vortex Jump 🌀</h1>
+    <canvas id="gameCanvas"></canvas>
+    <div class="controls">
+      <button id="startBtn">Start</button>
+      <button id="pauseBtn">Pause</button>
+      <button id="resumeBtn">Resume</button>
+      <button id="restartBtn">Restart</button>
+    </div>
+    <div class="score-display">
+      Score: <span id="score">0</span>
+    </div>
+  </div>
+
+  <!-- Sound Effects -->
+  <audio id="jumpSound" src="https://freesound.org/data/previews/331/331912_3248244-lq.mp3"></audio>
+  <audio id="hitSound" src="https://freesound.org/data/previews/256/256113_3263906-lq.mp3"></audio>
+  <audio id="levelUpSound" src="https://freesound.org/data/previews/341/341695_6245472-lq.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

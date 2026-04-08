@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wind Blower 🎈</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>💨 Wind Blower 🎈</h1>
+    <div class="balloon-container">
+      <img id="balloon" src="https://pngimg.com/uploads/balloon/balloon_PNG4963.png" alt="Balloon">
+    </div>
+
+    <div class="controls">
+      <button id="startBtn">Start</button>
+      <button id="pauseBtn">Pause</button>
+      <button id="restartBtn">Restart</button>
+    </div>
+
+    <div class="stats">
+      <p>🎯 Size: <span id="sizeDisplay">1x</span></p>
+      <p>⏱️ Time Left: <span id="timer">30</span>s</p>
+    </div>
+
+    <audio id="inflateSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7ad9f41862.mp3?filename=air-blow-1-90782.mp3"></audio>
+    <audio id="popSound" src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_930cf02478.mp3?filename=pop-94319.mp3"></audio>
+
+    <div id="gameOver" class="hidden">
+      <h2 id="gameOverText"></h2>
+      <button id="playAgain">Play Again</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+:root{
+  --bg:#0f1724;
+  --card:#0b1220;
+  --muted:#9aa4b2;
+  --accent:#00e676;
+  --glass: rgba(255,255,255,0.04);
+  --glow-red: rgba(255,80,80,0.9);
+  --glow-yellow: rgba(255,210,80,0.9);
+  --glow-green: rgba(80,255,120,0.9);
+  --glass-2: rgba(255,255,255,0.02);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#071127 0%, #0b1420 100%);color:#dbe7f7}
+.page{min-height:100vh;display:flex;flex-direction:column}
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;padding:14px 22px;background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+.branding{display:flex;align-items:center;gap:12px}
+.branding img{width:42px;height:42px;border-radius:8px}
+.branding h1{margin:0;font-size:18px;letter-spacing:0.2px}
+.meta{display:flex;gap:18px;align-items:center;font-weight:600}
+.meta .score,.meta .lives{background:var(--glass);padding:8px 12px;border-radius:10px;color:var(--muted);font-weight:700}
+
+.game-area{display:flex;gap:18px;padding:18px;flex:1;align-items:flex-start;justify-content:center}
+.controls{
+  width:360px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px;padding:16px;box-shadow:0 8px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)
+}
+.controls-row{display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+.controls-row.small{font-size:13px;color:var(--muted)}
+.control{background:var(--glass-2);border:1px solid rgba(255,255,255,0.03);padding:8px 12px;border-radius:8px;cursor:pointer;color:#e6f2ff;font-weight:600}
+.control.primary{background:linear-gradient(90deg,#00e676,#00bfa5);color:#022a16;border:none;box-shadow:0 6px 18px rgba(0,230,118,0.12),0 2px 6px rgba(0,0,0,0.3)}
+.control:hover{transform:translateY(-1px)}
+.controls label{display:flex;align-items:center;gap:8px;color:var(--muted);font-weight:600}
+
+.intersection-wrap{position:relative;width:920px;height:640px;border-radius:12px;overflow:hidden;box-shadow:0 20px 50px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+.city-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:grayscale(20%) blur(0.6px) brightness(.36);transform:scale(1.05)}
+.intersection{position:relative;inset:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;pointer-events:auto}
+
+/* roads */
+.road{position:absolute;background:linear-gradient(#1f2937,#111827);box-shadow:inset 0 0 30px rgba(0,0,0,0.6);border-radius:4px}
+.road.vertical{width:220px;height:100%;z-index:2;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.road.horizontal{height:220px;width:100%;z-index:2;display:flex;flex-direction:row;justify-content:center;align-items:center}
+.lane{width:100%;height:45%;border-top:2px dashed rgba(255,255,255,0.06);border-bottom:2px dashed rgba(255,255,255,0.06);}
+
+/* intersection center mark */
+.intersection::after{
+  content:'';position:absolute;width:220px;height:220px;border-radius:6px;z-index:3;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow:inset 0 0 40px rgba(0,0,0,0.5)
+}
+
+/* traffic lights */
+.traffic-light{
+  position:absolute;width:60px;background:rgba(7,10,16,0.85);padding:8px;border-radius:12px;display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;z-index:40;border:1px solid rgba(255,255,255,0.04);
+  cursor:pointer;transition:transform .18s;
+}
+.traffic-light:hover{transform:scale(1.04)}
+.tl-vertical{right:calc(50% - 110px);top:calc(50% - 220px)}
+.tl-horizontal{left:calc(50% - 220px);bottom:calc(50% - 110px);transform:rotate(90deg)}
+.bulb{width:36px;height:36px;border-radius:50%;background:#111;box-shadow:inset 0 -6px 18px rgba(0,0,0,0.6);transition:box-shadow .18s, filter .18s, background .18s}
+.bulb.red.on{background:radial-gradient(circle at 30% 25%, #ff8a8a, #ff2b2b);box-shadow:0 0 18px var(--glow-red)}
+.bulb.yellow.on{background:radial-gradient(circle at 30% 25%, #ffe6a6, #ffd14f);box-shadow:0 0 18px var(--glow-yellow)}
+.bulb.green.on{background:radial-gradient(circle at 30% 25%, #bffbc1, #3fff73);box-shadow:0 0 18px var(--glow-green)}
+
+/* cars */
+#cars{position:absolute;inset:0;pointer-events:none;z-index:10}
+.car{
+  position:absolute;width:52px;height:30px;border-radius:6px;display:flex;align-items:center;justify-content:center;color:#021018;font-weight:700;font-size:12px;
+  box-shadow:0 10px 18px rgba(2,6,23,0.5), inset 0 -6px 10px rgba(0,0,0,0.2);
+  transition:transform .06s linear;
+}
+.car .wheel{position:absolute;width:8px;height:8px;border-radius:50%;bottom:-5px;background:#0b0b0b;left:6px;box-shadow:0 2px 2px rgba(0,0,0,0.5)}
+.car .wheel.r{left:auto;right:6px}
+.car.type-a{background:linear-gradient(180deg,#ffd54a,#ffb300)}
+.car.type-b{background:linear-gradient(180deg,#90caf9,#42a5f5)}
+.car.type-c{background:linear-gradient(180deg,#ef9a9a,#e57373)}
+.car.type-d{background:linear-gradient(180deg,#b39ddb,#9575cd)}
+
+/* overlay */
+.overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:80}
+.overlay.hidden{display:none}
+.overlay .overlay-card{background:rgba(2,6,23,0.8);padding:24px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 12px 30px rgba(0,0,0,0.6);color:#eaf6ff}
+.footer{padding:14px 22px;color:var(--muted);display:flex;justify-content:space-between;align-items:center;font-size:13px}
+
+/* responsive */
+@media (max-width:1100px){
+  .intersection-wrap{width:92vw;height:56vh}
+  .controls{width:320px}
+}
+@media (max-width:800px){
+  .game-area{flex-direction:column;align-items:center}
+  .controls{width:92%}
+  .intersection-wrap{width:92%;height:60vh}
+}

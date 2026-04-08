@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Math Chain | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Math Chain</h1>
+    <p class="target">Target: <span id="target-number">0</span></p>
+
+    <div class="expression-display">
+      <span id="current-expression"></span>
+      <span id="current-result">= ?</span>
+    </div>
+
+    <div class="tiles-container" id="tiles-container">
+      <!-- Tiles will be generated here -->
+    </div>
+
+    <div class="controls">
+      <button id="submit-btn">Submit ✅</button>
+      <button id="undo-btn">Undo ⬅️</button>
+      <button id="restart-btn">Restart 🔄</button>
+      <button id="pause-btn">Pause ⏸️</button>
+      <button id="resume-btn" hidden>Resume ▶️</button>
+    </div>
+
+    <p id="message"></p>
+  </div>
+
+  <audio id="click-sound" src="https://www.soundjay.com/button/sounds/button-16.mp3"></audio>
+  <audio id="success-sound" src="https://www.soundjay.com/button/sounds/button-10.mp3"></audio>
+  <audio id="error-sound" src="https://www.soundjay.com/button/sounds/button-3.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

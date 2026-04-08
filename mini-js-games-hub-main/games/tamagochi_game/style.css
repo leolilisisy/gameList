@@ -1,0 +1,156 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f8ff; /* Light, calming blue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.pet-container {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 480px;
+    border: 5px solid #a9d6e5;
+    position: relative;
+}
+
+h1 {
+    color: #0077b6;
+    margin-bottom: 25px;
+}
+
+/* --- Pet Display and Sprites (Placeholder) --- */
+#pet-display {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    background-color: #ffe6a7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+}
+
+#pet-sprite {
+    font-size: 5em;
+    transition: transform 0.2s;
+}
+
+/* Sprite classes (For custom image backgrounds or different emojis) */
+.pet-state-sad { background-color: #f7b7a3; }
+.pet-state-sleepy { background-color: #c9e0f6; }
+
+/* --- Stats Panel --- */
+.stats-panel {
+    margin-bottom: 30px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+}
+
+.stat-group {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.stat-group label {
+    font-weight: bold;
+    color: #555;
+    width: 90px;
+    text-align: left;
+    margin-right: 10px;
+}
+
+progress {
+    flex-grow: 1;
+    height: 20px;
+    margin-right: 10px;
+    appearance: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* Base progress bar style */
+progress::-webkit-progress-bar {
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+/* Happiness Bar: Green/Yellow */
+#happiness-bar::-webkit-progress-value { background-color: #8ac926; }
+/* Hunger Bar: Orange/Red */
+#hunger-bar::-webkit-progress-value { background-color: #ff9f1c; }
+/* Sleep Bar: Blue/Purple */
+#sleep-bar::-webkit-progress-value { background-color: #4361ee; }
+
+/* Low Stat Warning (Used by JS) */
+progress.low::-webkit-progress-value { background-color: #e63946 !important; }
+
+/* --- Action Buttons and Messages --- */
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.action-buttons button {
+    padding: 12px 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 8px;
+    background-color: #0077b6;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    flex-grow: 1;
+}
+
+.action-buttons button:hover {
+    background-color: #005f93;
+}
+
+.status-message {
+    margin-top: 20px;
+    font-style: italic;
+    color: #333;
+    min-height: 20px; /* Prevent layout shift */
+}
+
+/* --- Death Screen --- */
+#death-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.death-text {
+    font-size: 1.5em;
+    color: #e63946;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#restart-button {
+    background-color: #e63946;
+}
+
+.hidden {
+    display: none !important;
+}

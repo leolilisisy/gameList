@@ -1,0 +1,121 @@
+:root{
+  --bg:#060617;
+  --card:#0f1724;
+  --accent:#7afcff;
+  --accent-2:#8b5cf6;
+  --muted:#9aa4b2;
+  --glass: rgba(255,255,255,0.04);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+html,body,#gameCanvas{height:100%}
+body{
+  background: radial-gradient(1000px 400px at 10% 10%, rgba(138,92,246,0.08), transparent),
+              radial-gradient(800px 300px at 90% 90%, rgba(122,255,255,0.03), transparent),
+              var(--bg);
+  color:#e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:22px;
+}
+
+.page{
+  max-width:1160px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+}
+
+.title{display:flex;align-items:center;gap:12px}
+.title .icon{font-size:28px; filter: drop-shadow(0 6px 12px rgba(138,92,246,0.25));}
+.title h1{font-size:20px;letter-spacing:0.3px}
+
+.controls-top .btn{margin-left:8px}
+
+.btn{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.06);
+  padding:8px 12px;
+  border-radius:10px;
+  color:var(--accent);
+  cursor:pointer;
+  font-weight:600;
+  box-shadow: 0 6px 18px rgba(11,12,17,0.6);
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#021224;
+  border: none;
+  box-shadow:0 6px 30px rgba(123,100,248,0.18), 0 0 40px rgba(122,255,255,0.06) inset;
+}
+
+.game-area{display:flex;gap:18px;align-items:flex-start}
+.hud{
+  width:200px;
+  background:var(--card);
+  border-radius:14px;
+  padding:14px;
+  box-shadow:0 10px 30px rgba(2,6,23,0.6);
+  border:1px solid rgba(255,255,255,0.03);
+}
+.hud-row{display:flex;justify-content:space-between;padding:10px 6px;border-bottom:1px dashed rgba(255,255,255,0.02);color:var(--muted)}
+.hud-row strong{color:#fff;font-weight:700}
+
+.canvas-wrap{
+  flex:1;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-radius:14px;
+  padding:12px;
+  position:relative;
+  box-shadow:0 10px 30px rgba(2,6,23,0.6);
+  border:1px solid rgba(255,255,255,0.04);
+}
+
+canvas{
+  width:100%;
+  height:540px;
+  display:block;
+  border-radius:10px;
+  background: linear-gradient(180deg,#02020a -10%, rgba(0,0,0,0.35) 70%), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="%23222"/><stop offset="1" stop-color="%23111"/></linearGradient></defs><rect fill="none" width="100%" height="100%"/></svg>');
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.6),
+    inset 0 0 80px rgba(122,92,246,0.06);
+  border: 1px solid rgba(255,255,255,0.02);
+}
+
+/* overlay */
+.overlay{
+  position:absolute;inset:12px;display:flex;align-items:center;justify-content:center;
+}
+.overlay.hidden{display:none}
+.overlay-card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  padding:22px;border-radius:14px;border:1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 20px 60px rgba(2,6,23,0.6);
+  text-align:center;
+  width:360px;
+}
+.overlay-card h2{font-size:20px;margin-bottom:6px}
+.overlay-card p{color:var(--muted);margin-bottom:12px}
+.overlay-actions .btn{margin:6px}
+
+/* Footer */
+.footer{color:var(--muted);font-size:13px}
+
+/* small responsive */
+@media (max-width:980px){
+  .page{padding:12px}
+  .game-area{flex-direction:column}
+  .hud{width:100%}
+  canvas{height:420px}
+}

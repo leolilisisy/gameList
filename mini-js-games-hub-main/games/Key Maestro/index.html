@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Key Maestro 🎹</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>🎹 Key Maestro</h1>
+      <p class="tag">Repeat the piano sequence — use mouse or keys (A S D F G H J)</p>
+    </header>
+
+    <section class="controls">
+      <label for="difficulty">Difficulty:</label>
+      <select id="difficulty">
+        <option value="easy">Easy (slow)</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard (fast)</option>
+      </select>
+
+      <button id="startBtn">▶ Start</button>
+      <button id="strictBtn" title="Wrong answer ends the run">Strict: Off</button>
+      <button id="restartBtn">🔄 Reset</button>
+    </section>
+
+    <section class="piano-area">
+      <div class="piano" id="piano">
+        <!-- keys created by JS -->
+      </div>
+    </section>
+
+    <section class="status">
+      <div>Level: <b id="level">0</b></div>
+      <div>Score: <b id="score">0</b></div>
+      <div>Combo: <b id="combo">0</b></div>
+    </section>
+
+    <div id="message" class="message"></div>
+    <footer class="hint">Tip: Use keyboard keys <code>A S D F G H J</code> mapped to notes C D E F G A B</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

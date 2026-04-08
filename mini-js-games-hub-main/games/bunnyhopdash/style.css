@@ -1,0 +1,193 @@
+body {
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(255,240,250,0.9), rgba(215,243,255,0.95) 40%), linear-gradient(135deg, #ffeafc, #d7f3ff);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.game-container {
+  text-align: center;
+  background: linear-gradient(180deg, #fffafc 0%, #fff5fb 100%);
+  /* increase top padding so fixed title doesn't overlap content */
+  padding: 60px 40px 30px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(102, 51, 102, 0.08), 0 6px 12px rgba(255, 182, 193, 0.12);
+  width: 420px;
+  border: 1px solid rgba(255,255,255,0.6);
+  position: relative;
+}
+
+h1 {
+  color: #ff6188;
+  margin-bottom: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-shadow: 0 2px 6px rgba(255, 182, 193, 0.25);
+}
+
+/* Place game title fixed at the very top center of the window */
+.game-container > h1 {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 6px 14px;
+  background: rgba(255,255,255,0.0);
+  z-index: 1000;
+  font-size: 20px;
+}
+
+#game {
+  position: relative;
+  width: 350px;
+  height: 200px;
+  background: linear-gradient(to top, #b0eaff 0%, #e4faff 100%);
+  overflow: hidden;
+  border-radius: 20px;
+  margin: 20px auto;
+  box-shadow: inset 0 8px 18px rgba(102,51,102,0.03), 0 6px 18px rgba(102,51,102,0.04);
+}
+
+#ground {
+  position: absolute;
+  bottom: 0;
+  height: 44px;
+  width: 100%;
+  background: linear-gradient(180deg, #ffdce6 0%, #ffb6c1 100%);
+  box-shadow: 0 -6px 10px rgba(255,182,193,0.12) inset;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+#bunny {
+  position: absolute;
+  bottom: 44px;
+  left: 50px;
+  width: 46px;
+  height: 46px;
+  background: #fff5d6;
+  border-radius: 50% 50% 38% 38%;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06), 0 0 0 4px #f7d4c1;
+  transition: bottom 0.08s linear;
+}
+
+/* bunny details: ears and eyes using pseudo elements */
+#bunny::before,
+#bunny::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #d29a66;
+  border-radius: 50%;
+  top: -8px;
+}
+#bunny::before { left: 2px; }
+#bunny::after { right: 2px; }
+
+#bunny .eye {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #2b1b12;
+  border-radius: 50%;
+  top: 16px;
+}
+#bunny .eye.left { left: 12px; }
+#bunny .eye.right { right: 12px; }
+
+#bunny .nose {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 6px;
+  background: #2b1b12;
+  border-radius: 3px;
+  top: 22px;
+}
+
+#gap {
+  position: absolute;
+  bottom: 0;
+  width: 66px;
+  height: 44px;
+  /* make gap transparent so it represents empty space between two blocks */
+  background: transparent;
+  left: 350px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.04) inset;
+}
+
+/* decorative notch to hint 'gap' */
+#gap::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 8px;
+  width: 50px;
+  height: 12px;
+  background: linear-gradient(180deg,#fdf2f6,#ffdce6);
+  border-radius: 6px 6px 0 0;
+}
+
+/* draw left block edge */
+#gap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -22px;
+  width: 20px;
+  height: 44px;
+  background: linear-gradient(180deg,#ffdce6,#ffb6c1);
+  border-radius: 4px 0 0 0;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.04) inset;
+}
+
+/* additional pseudo-element for right edge by using an adjacent element trick is not available; instead
+   we'll use a sibling when generating gap, but a quick CSS-only approach is to give the gap a box-shadow
+   to hint the right edge. */
+#gap { box-shadow: -22px 0 0 -2px rgba(255,214,222,0.9), 22px 0 0 -2px rgba(255,214,222,0.9), 0 -4px 10px rgba(0,0,0,0.04) inset; }
+
+#score {
+  position: absolute;
+  left: 14px;
+  top: 12px;
+  background: rgba(255,255,255,0.9);
+  padding: 6px 10px;
+  border-radius: 12px;
+  font-weight: 700;
+  color: #ff4fa3;
+  box-shadow: 0 6px 16px rgba(255,182,193,0.12);
+}
+
+p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+.controls-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn {
+  background: #ffd6e8;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 12px;
+  color: #ff4fa3;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(255,182,193,0.12);
+}
+.btn:hover { transform: translateY(-2px); }

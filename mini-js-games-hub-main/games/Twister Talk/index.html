@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twister Talk</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>👅 Twister Talk</h1>
+    <p class="instructions">Try to type the tongue twister exactly before time runs out!</p>
+    
+    <div class="game-area">
+      <p id="twister" class="twister-text">Press Start to get a tongue twister!</p>
+      <input type="text" id="userInput" placeholder="Type here..." disabled />
+      <p id="feedback"></p>
+      <p class="timer">⏳ Time Left: <span id="time">10</span>s</p>
+    </div>
+    
+    <div class="controls">
+      <button id="startBtn">Start</button>
+      <button id="restartBtn" disabled>Restart</button>
+    </div>
+    
+    <p class="score">Score: <span id="score">0</span></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

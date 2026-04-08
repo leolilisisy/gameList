@@ -1,0 +1,70 @@
+<!doctype html>
+<div class="controls">
+<button id="undoBtn" title="Undo (Z)">⤺ Undo</button>
+<button id="resetBtn" title="Reset (R)">⟲ Reset</button>
+<button id="pauseBtn" title="Pause (P)">⏸ Pause</button>
+<button id="restartBtn" title="Restart Level">🔁 Restart</button>
+<select id="levelSelect" aria-label="Select level">
+<option value="0">Level 1 — Easy</option>
+<option value="1">Level 2 — Medium</option>
+<option value="2">Level 3 — Hard</option>
+<option value="3">Level 4 — Advanced</option>
+</select>
+</div>
+</header>
+
+
+<section class="game-area">
+<aside class="inventory" aria-label="Weight inventory">
+<h2>Weights</h2>
+<p class="inventory-hint">Drag or select a weight and place on a pan. Use number keys to quick-select.</p>
+<ul id="weightsList" class="weights-list" role="list"></ul>
+</aside>
+
+
+<section class="scale" aria-live="polite">
+<div class="scale-top">
+<div class="totals">
+<div class="total left">Left: <span id="leftTotal">0</span></div>
+<div class="total right">Right: <span id="rightTotal">0</span></div>
+</div>
+</div>
+
+
+<div class="scale-body">
+<div id="leftPan" class="pan" data-side="left" aria-label="Left pan" tabindex="0"></div>
+<div class="pivot">
+<img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=300&q=60" alt="scale pivot decorative image" />
+</div>
+<div id="rightPan" class="pan" data-side="right" aria-label="Right pan" tabindex="0"></div>
+</div>
+
+
+<div class="scale-footer">
+<div id="status" class="status">Place weights to balance the scale</div>
+</div>
+</section>
+</section>
+
+
+<section class="hud">
+<div class="moves">Moves: <span id="movesCount">0</span></div>
+<div class="time">Time: <span id="timer">00:00</span></div>
+<div class="hints">Hints used: <span id="hints">0</span></div>
+</section>
+
+
+<audio id="soundPlace" src="https://actions.google.com/sounds/v1/cartoon/pop.ogg" preload="auto"></audio>
+<audio id="soundWin" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg" preload="auto"></audio>
+<audio id="soundError" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+
+
+<footer class="footer-note">
+<p>Tip: press numbers 1–9 to quick-select weights. Keyboard: Z = Undo, R = Reset, P = Pause.</p>
+</footer>
+</main>
+
+
+<script src="script.js"></script>
+</body>
+</html>

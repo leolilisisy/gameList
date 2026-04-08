@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symmetry Painter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="app-container">
+        <h1>✨ Symmetry Painter</h1>
+
+        <div id="controls">
+            <label for="symmetry-type">Symmetry:</label>
+            <select id="symmetry-type">
+                <option value="4">4-Way (Radial)</option>
+                <option value="2">2-Way (Mirror)</option>
+                <option value="8">8-Way (Mandala)</option>
+            </select>
+
+            <label for="color-picker">Color:</label>
+            <input type="color" id="color-picker" value="#007bff">
+
+            <label for="brush-size">Size:</label>
+            <input type="range" id="brush-size" min="2" max="30" value="10">
+            <span id="size-display">10</span>px
+
+            <button id="clear-button">Clear</button>
+        </div>
+        
+        <canvas id="symmetry-canvas"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

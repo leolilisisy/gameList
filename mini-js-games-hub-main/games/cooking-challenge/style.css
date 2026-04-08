@@ -1,0 +1,207 @@
+/* Cooking Challenge Game Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fecfef);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    max-width: 1000px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.recipe-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.recipe-section h3 {
+    color: #ffeaa7;
+    margin-bottom: 10px;
+}
+
+.recipe-section p {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.kitchen-area {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+    gap: 20px;
+}
+
+.ingredients, .tools {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.ingredients h4, .tools h4 {
+    margin-bottom: 15px;
+    color: #ffeaa7;
+}
+
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+}
+
+.item {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.item.correct {
+    background: #27ae60;
+    color: white;
+}
+
+.item.wrong {
+    background: #e74c3c;
+    color: white;
+}
+
+.item.selected {
+    border: 3px solid #f39c12;
+}
+
+.controls {
+    margin: 20px 0;
+}
+
+button {
+    background: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #229954;
+}
+
+#hint-btn {
+    background: #f39c12;
+}
+
+#hint-btn:hover {
+    background: #e67e22;
+}
+
+#message {
+    font-size: 1.2em;
+    margin: 20px 0;
+    min-height: 30px;
+    font-weight: bold;
+}
+
+.instructions {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.instructions h3 {
+    margin-bottom: 10px;
+    color: #ffeaa7;
+}
+
+.instructions ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .kitchen-area {
+        flex-direction: column;
+    }
+
+    .item-grid {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    }
+
+    .game-info {
+        font-size: 1em;
+    }
+
+    .controls {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
+        max-width: 200px;
+    }
+}

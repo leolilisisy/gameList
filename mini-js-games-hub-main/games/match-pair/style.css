@@ -1,0 +1,105 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f9;
+    padding: 20px;
+}
+
+#puzzle-container {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 30px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* --- Drag Items Styling --- */
+#drag-items, #drop-zones {
+    min-width: 250px;
+}
+
+h2 {
+    color: #333;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.drag-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #ffda79; /* Yellowish background */
+    border: 2px solid #f7b731;
+    border-radius: 8px;
+    cursor: grab; /* Indicates it's draggable */
+    transition: all 0.2s ease;
+    font-weight: bold;
+}
+
+.drag-item:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Style for when an item is actively being dragged */
+.dragging {
+    opacity: 0.5;
+    transform: scale(0.95);
+}
+
+/* --- Drop Zone Styling --- */
+.drop-zone {
+    padding: 20px;
+    margin-bottom: 15px;
+    min-height: 100px;
+    background-color: #e0e0e0; /* Grey background */
+    border: 3px dashed #aaa;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    font-weight: 500;
+}
+
+/* Style for when a draggable item is hovering over a drop zone */
+.drop-zone.drag-over {
+    background-color: #d1ffd6; /* Light green on hover */
+    border-color: #4CAF50;
+    transform: scale(1.02);
+}
+
+/* Style for items successfully placed */
+.matched-item {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    cursor: default;
+    border: 2px solid #388e3c;
+    margin-top: 10px;
+}
+
+/* --- Message and Button --- */
+#message {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #555;
+}
+
+#reset-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+#reset-button:hover {
+    background-color: #0056b3;
+}

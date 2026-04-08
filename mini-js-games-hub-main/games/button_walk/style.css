@@ -1,0 +1,143 @@
+:root {
+    --stage-width: 600px;
+    --stage-height: 400px;
+    --body-color: #f1c40f; /* Yellow for visibility */
+    --torso-height: 80px;
+    --leg-segment-length: 40px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #34495e;
+    color: #ecf0f1;
+}
+
+#game-container {
+    background-color: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+h1 {
+    color: #e74c3c; /* Red */
+    margin-bottom: 15px;
+}
+
+#status-area {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+/* --- Stage and Ground --- */
+#stage {
+    width: var(--stage-width);
+    height: var(--stage-height);
+    margin: 0 auto;
+    background-color: #bdc3c7;
+    border: 5px solid #7f8c8d;
+    position: relative;
+    overflow: hidden;
+}
+
+#ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background-color: #333;
+    z-index: 10;
+}
+
+/* --- Character Container --- */
+#character {
+    position: absolute;
+    bottom: 10px; /* Stands on the ground */
+    left: 50px;
+    height: calc(var(--torso-height) + 2 * var(--leg-segment-length)); /* Total height */
+    width: 5px; /* Central axis */
+    /* This container moves horizontally */
+    transition: left 0.05s linear; 
+}
+
+/* --- Body Parts --- */
+.body-part {
+    position: absolute;
+    background-color: var(--body-color);
+}
+
+#head {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    top: -20px;
+    left: -7px;
+}
+
+#torso {
+    width: 5px;
+    height: var(--torso-height);
+    top: 0;
+    left: 0;
+}
+
+/* --- Legs (Containers and Segments) --- */
+.leg-container {
+    position: absolute;
+    top: var(--torso-height); /* Hinge at the hip */
+    left: 0;
+    width: 5px;
+    height: calc(2 * var(--leg-segment-length));
+}
+
+.leg-segment {
+    position: absolute;
+    width: 5px;
+    height: var(--leg-segment-length);
+    background-color: var(--body-color);
+    transform-origin: top center; /* All segments pivot from the top */
+}
+
+/* Thighs (upper leg) */
+#left-thigh, #right-thigh {
+    top: 0;
+}
+
+/* Shins (lower leg), positioned at the end of the thigh */
+#left-shin, #right-shin {
+    top: var(--leg-segment-length);
+}
+
+/* Initial Idle Stance */
+#left-thigh { transform: rotate(5deg); }
+#right-thigh { transform: rotate(-5deg); }
+
+/* --- Controls and Feedback --- */
+#feedback-message {
+    min-height: 20px;
+    margin-top: 20px;
+}
+
+#start-button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: #2ecc71;
+    color: #2c3e50;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#start-button:hover {
+    background-color: #27ae60;
+}

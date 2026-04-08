@@ -1,0 +1,22 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
+.game-wrap{background:#fff;border-radius:20px;padding:30px;text-align:center;box-shadow:0 20px 40px rgba(0,0,0,0.1);max-width:600px;width:100%}
+h1{color:#333;margin-bottom:20px;font-size:2.5em;text-shadow:0 2px 4px rgba(0,0,0,0.1)}
+.game-area{display:flex;flex-direction:column;gap:20px}
+.target-palette{display:flex;justify-content:center;gap:5px;padding:15px;background:#f8f9fa;border-radius:10px;border:2px solid #e9ecef}
+.target-palette .tile{width:40px;height:40px;border-radius:8px;border:2px solid #dee2e6}
+.grid-container{display:flex;justify-content:center}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:20px;background:#f8f9fa;border-radius:10px;border:2px solid #e9ecef;width:fit-content}
+.tile{width:60px;height:60px;border-radius:10px;border:2px solid #dee2e6;cursor:pointer;transition:all 0.3s ease;user-select:none;position:relative;overflow:hidden}
+.tile:hover{transform:scale(1.05);box-shadow:0 4px 8px rgba(0,0,0,0.2)}
+.tile.selected{box-shadow:0 0 0 3px #007bff;border-color:#007bff}
+.tile.matched{animation:matchPulse 0.6s ease}
+@keyframes matchPulse{0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)}}
+.controls{display:flex;gap:10px;justify-content:center}
+button{padding:10px 20px;border:none;border-radius:8px;background:#007bff;color:#fff;font-size:16px;cursor:pointer;transition:all 0.3s ease}
+button:hover{background:#0056b3;transform:translateY(-2px)}
+button:disabled{background:#6c757d;cursor:not-allowed;transform:none}
+.info{display:flex;justify-content:space-around;margin-top:20px;font-size:18px;color:#333}
+footer{font-size:14px;color:#666;margin-top:20px}
+.blocker{background:#343a40 !important;border:2px solid #495057 !important;cursor:not-allowed}
+.blocker:hover{transform:none !important}

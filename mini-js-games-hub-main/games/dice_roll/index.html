@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Roller 🎲</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="roller-container">
+        <h1>Polyhedral Dice Roller</h1>
+
+        <div class="controls-panel">
+            <div class="input-group">
+                <label for="num-dice">Number of Dice:</label>
+                <input type="number" id="num-dice" value="1" min="1" max="10">
+            </div>
+
+            <div class="input-group">
+                <label for="dice-type">Type of Die:</label>
+                <select id="dice-type">
+                    <option value="4">D4</option>
+                    <option value="6" selected>D6</option>
+                    <option value="8">D8</option>
+                    <option value="10">D10</option>
+                    <option value="12">D12</option>
+                    <option value="20">D20</option>
+                    <option value="100">D100</option>
+                </select>
+            </div>
+
+            <button id="roll-button">Roll Dice!</button>
+        </div>
+
+        <div id="results-area" class="results-area">
+            <div id="rolls-display" class="rolls-display">
+                <p class="instruction">Choose your dice and click "Roll Dice!"</p>
+            </div>
+            
+            <div id="total-display" class="total-display">
+                Total: <span id="roll-total">--</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

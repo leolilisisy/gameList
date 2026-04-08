@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gravity Flip Ball</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Gravity Flip Ball</h1>
+    <canvas id="gameCanvas" width="600" height="400"></canvas>
+    <div class="controls">
+      <button id="startBtn">Start</button>
+      <button id="pauseBtn">Pause</button>
+      <button id="resumeBtn">Resume</button>
+      <button id="restartBtn">Restart</button>
+    </div>
+    <p class="score">Score: <span id="score">0</span></p>
+  </div>
+
+  <audio id="jumpSound" src="https://www.soundjay.com/button/sounds/button-16.mp3"></audio>
+  <audio id="gameOverSound" src="https://www.soundjay.com/button/sounds/button-10.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

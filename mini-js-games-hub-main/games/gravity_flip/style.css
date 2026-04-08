@@ -1,0 +1,95 @@
+:root {
+    --level-width: 500px;
+    --level-height: 500px;
+    --player-size: 30px;
+}
+
+body {
+    font-family: 'Bebas Neue', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #34495e; /* Dark background */
+    color: #ecf0f1;
+}
+
+#game-container {
+    background-color: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+h1 {
+    color: #f1c40f; /* Yellow */
+    margin-bottom: 15px;
+}
+
+/* --- Level Area (The Game World) --- */
+#level-area {
+    width: var(--level-width);
+    height: var(--level-height);
+    background-color: #1a1a1a;
+    border: 5px solid #bdc3c7;
+    margin: 0 auto;
+    position: relative; /* Required for absolute positioning of elements */
+    overflow: hidden;
+}
+
+/* --- Player Block --- */
+#player {
+    width: var(--player-size);
+    height: var(--player-size);
+    background-color: #e74c3c; /* Red player */
+    position: absolute;
+    transition: background-color 0.1s;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* --- Platforms and Goal --- */
+.platform {
+    height: 15px;
+    background-color: #3498db; /* Blue platforms */
+    position: absolute;
+    color: white;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.platform.goal {
+    background-color: #2ecc71; /* Green goal */
+    z-index: 10;
+}
+
+/* --- Status and Controls --- */
+#status-area {
+    min-height: 20px;
+    margin-top: 15px;
+}
+
+#message {
+    font-size: 1.1em;
+    color: #bdc3c7;
+}
+
+#restart-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #9b59b6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#restart-button:hover {
+    background-color: #8e44ad;
+}

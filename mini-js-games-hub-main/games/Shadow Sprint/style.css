@@ -1,0 +1,66 @@
+:root{
+  --bg1:#071024; --bg2:#0b1226;
+  --shadow:#0b1020; --accent:#7dd3fc; --danger:#fb7185;
+  --ground:#0f1724;
+  font-family: Inter, Poppins, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg1),var(--bg2));color:#e6eef8}
+.wrap{max-width:980px;margin:18px auto;padding:16px;text-align:center}
+header h1{margin:10px 0;font-size:28px;color:var(--accent)}
+.tagline{color:#9fb4d9;margin-bottom:12px}
+
+.game-area{
+  position:relative;
+  width: 360px;
+  max-width:90vw;
+  height: 420px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 10px 40px rgba(2,6,23,0.6);
+}
+
+/* ground */
+#ground{
+  position:absolute;left:0;right:0;bottom:0;height:90px;background:linear-gradient(180deg,var(--ground),#020617);
+  box-shadow: inset 0 8px 20px rgba(0,0,0,0.6);
+}
+
+/* player */
+.player{
+  position:absolute;
+  width:48px;height:48px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#dbeafe);
+  left:60px; bottom:90px; transform-origin:center;
+  box-shadow:0 8px 18px rgba(0,0,0,0.6);
+  display:flex;align-items:center;justify-content:center;font-weight:800;color:#062033;
+}
+.player.run { animation: bob 350ms infinite; }
+@keyframes bob { 0%{transform:translateY(0)}50%{transform:translateY(-4px)}100%{transform:translateY(0)}}
+
+/* obstacles (spawned dynamically) */
+.obstacle{
+  position:absolute;
+  bottom:90px;
+  width:36px;
+  height:36px;
+  border-radius:6px;
+  background:linear-gradient(180deg,#0f1724,#020617);
+  box-shadow: 0 8px 14px rgba(11,20,34,0.6), inset 0 -6px 12px rgba(125,211,252,0.06);
+  border:3px solid rgba(125,211,252,0.06);
+}
+
+/* HUD */
+.hud{position:absolute;left:12px;top:12px;display:flex;gap:12px;font-weight:700;color:#cfe6ff}
+.controls{margin-top:12px;display:flex;gap:10px;justify-content:center}
+.controls button{padding:8px 14px;border-radius:8px;border:none;cursor:pointer;font-weight:700;background:linear-gradient(90deg,#7dd3fc,#a78bfa);color:#062033}
+.controls button:disabled{opacity:0.5}
+
+/* overlay */
+.overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,rgba(2,6,23,0.6),rgba(2,6,23,0.8))}
+.overlay .panel{background:linear-gradient(180deg,#061529,#0b2340);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.04);text-align:center}
+.hidden{display:none}
+
+.footer{margin-top:10px;color:#94a9c9}

@@ -1,0 +1,125 @@
+body {
+    font-family: 'Georgia', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #e8f8f5; /* Pale teal background */
+    color: #34495e;
+}
+
+#game-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 550px;
+    width: 90%;
+}
+
+h1 {
+    color: #1abc9c; /* Teal/Turquoise color */
+    margin-bottom: 20px;
+}
+
+#score-area {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* --- Puzzle Box --- */
+#puzzle-box {
+    background-color: #f0fdfa;
+    padding: 20px;
+    border: 2px solid #1abc9c;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+#puzzle-box h2 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.2em;
+}
+
+#definition-display {
+    font-size: 1.5em;
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* --- Input Area --- */
+#input-area {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#length-input {
+    padding: 10px;
+    font-size: 1.1em;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    width: 180px;
+    text-align: center;
+}
+
+#submit-button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #3498db; /* Blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#submit-button:hover:not(:disabled) {
+    background-color: #2980b9;
+}
+
+#submit-button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+/* --- Feedback and Controls --- */
+#feedback-message {
+    min-height: 1.5em;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+#controls button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#start-button {
+    background-color: #2ecc71; /* Green */
+    color: white;
+}
+
+#start-button:hover {
+    background-color: #27ae60;
+}
+
+#next-button {
+    background-color: #9b59b6; /* Purple */
+    color: white;
+}
+
+#next-button:hover {
+    background-color: #8e44ad;
+}

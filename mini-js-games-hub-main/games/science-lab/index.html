@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science Lab - Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Science Lab</h1>
+            <p>Conduct virtual experiments and discover the wonders of science!</p>
+        </header>
+
+        <div class="game-area">
+            <div class="stats-panel">
+                <div class="stat">
+                    <span class="stat-label">Score:</span>
+                    <span class="stat-value" id="current-score">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Experiment:</span>
+                    <span class="stat-value" id="current-experiment">None</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Accuracy:</span>
+                    <span class="stat-value" id="current-accuracy">0%</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Time:</span>
+                    <span class="stat-value" id="time-left">60</span>
+                </div>
+            </div>
+
+            <!-- Experiment Selection -->
+            <div class="experiment-selection" id="experiment-selection">
+                <h3>Choose Your Experiment</h3>
+                <div class="experiment-grid">
+                    <div class="experiment-card" data-experiment="pendulum">
+                        <div class="experiment-icon">⏰</div>
+                        <h4>Pendulum Physics</h4>
+                        <p>Study gravity and oscillation</p>
+                    </div>
+                    <div class="experiment-card" data-experiment="circuit">
+                        <div class="experiment-icon">⚡</div>
+                        <h4>Electric Circuit</h4>
+                        <p>Build and test electrical circuits</p>
+                    </div>
+                    <div class="experiment-card" data-experiment="color-mixing">
+                        <div class="experiment-icon">🎨</div>
+                        <h4>Color Chemistry</h4>
+                        <p>Mix colors and learn about pigments</p>
+                    </div>
+                    <div class="experiment-card" data-experiment="plant-growth">
+                        <div class="experiment-icon">🌱</div>
+                        <h4>Plant Biology</h4>
+                        <p>Observe plant growth factors</p>
+                    </div>
+                    <div class="experiment-card" data-experiment="projectile">
+                        <div class="experiment-icon">🚀</div>
+                        <h4>Projectile Motion</h4>
+                        <p>Launch objects and study trajectories</p>
+                    </div>
+                    <div class="experiment-card" data-experiment="density">
+                        <div class="experiment-icon">🏊</div>
+                        <h4>Density Layers</h4>
+                        <p>Explore density with liquids</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lab Workspace -->
+            <div class="lab-workspace" id="lab-workspace" style="display: none;">
+                <div class="lab-header">
+                    <h3 id="experiment-title">Experiment Title</h3>
+                    <div class="experiment-controls">
+                        <button id="reset-btn" class="lab-btn">Reset</button>
+                        <button id="hint-btn" class="lab-btn">Hint (-10 pts)</button>
+                        <button id="check-btn" class="lab-btn">Check Results</button>
+                    </div>
+                </div>
+
+                <div class="lab-area">
+                    <div class="tools-panel" id="tools-panel">
+                        <!-- Tools will be dynamically added -->
+                    </div>
+
+                    <div class="experiment-canvas" id="experiment-canvas">
+                        <!-- Experiment content will be dynamically added -->
+                    </div>
+
+                    <div class="results-panel" id="results-panel">
+                        <h4>Observations</h4>
+                        <div class="observations" id="observations"></div>
+                        <div class="measurements" id="measurements"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="message" id="message"></div>
+
+            <div class="game-controls">
+                <button id="back-to-selection-btn" class="secondary-btn" style="display: none;">Choose Different Experiment</button>
+                <button id="start-btn" class="primary-btn">Start Lab Session</button>
+                <button id="quit-btn" class="secondary-btn" style="display: none;">End Session</button>
+            </div>
+        </div>
+
+        <div class="results" id="results" style="display: none;">
+            <h2>Lab Session Complete!</h2>
+            <div class="final-stats">
+                <div class="final-stat">
+                    <span class="final-label">Total Score:</span>
+                    <span class="final-value" id="final-score">0</span>
+                </div>
+                <div class="final-stat">
+                    <span class="final-label">Experiments Completed:</span>
+                    <span class="final-value" id="experiments-completed">0</span>
+                </div>
+                <div class="final-stat">
+                    <span class="final-label">Average Accuracy:</span>
+                    <span class="final-value" id="average-accuracy">0%</span>
+                </div>
+                <div class="final-stat">
+                    <span class="final-label">Scientific Grade:</span>
+                    <span class="final-value grade" id="scientific-grade">F</span>
+                </div>
+            </div>
+            <button id="play-again-btn" class="primary-btn">Start New Lab Session</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

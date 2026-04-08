@@ -1,0 +1,44 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #1e3c72, #2a5298);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+}
+
+.game-container {
+    text-align: center;
+    position: relative;
+}
+
+canvas {
+    border: 3px solid #fff;
+    border-radius: 20px;
+    background: url('https://i.ibb.co/XV7fTtF/background.png') no-repeat center/cover;
+    box-shadow: 0 0 20px #00ffff, 0 0 50px #00ffff inset;
+}
+
+.controls button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #00ffff;
+    color: #000;
+    box-shadow: 0 0 10px #00ffff;
+    transition: 0.2s;
+}
+.controls button:hover {
+    box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff inset;
+}
+
+.score-board {
+    margin-top: 15px;
+    font-size: 18px;
+    text-shadow: 0 0 5px #00ffff;
+}

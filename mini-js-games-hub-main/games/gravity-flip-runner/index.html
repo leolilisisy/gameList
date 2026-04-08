@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gravity Flip Runner | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <canvas id="gameCanvas" width="900" height="400"></canvas>
+    <div class="ui">
+      <button id="startBtn">▶ Start</button>
+      <button id="pauseBtn">⏸ Pause</button>
+      <button id="restartBtn">🔄 Restart</button>
+      <div class="score">Score: <span id="score">0</span></div>
+    </div>
+  </div>
+
+  <audio id="jumpSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_7b7e43e3c4.mp3"></audio>
+  <audio id="hitSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_1db6e9e408.mp3"></audio>
+  <audio id="bgMusic" src="https://cdn.pixabay.com/audio/2021/09/01/audio_2f17f810c0.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

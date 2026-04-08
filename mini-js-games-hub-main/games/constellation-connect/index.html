@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Constellation Connect 🌌</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ui">
+    <h1>✨ Constellation Connect ✨</h1>
+    <div class="buttons">
+      <button id="playBtn">▶️ Play</button>
+      <button id="pauseBtn">⏸️ Pause</button>
+      <button id="restartBtn">🔁 Restart</button>
+      <button id="hintBtn">💡 Hint</button>
+      <button id="clearBtn">🧹 Clear</button>
+      <select id="modeSelect">
+        <option value="free">Free Draw</option>
+        <option value="puzzle">Puzzle Mode</option>
+      </select>
+    </div>
+    <p id="status">Connect the stars to form your constellation!</p>
+  </div>
+
+  <canvas id="spaceCanvas"></canvas>
+
+  <audio id="connectSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_ef6a48be8a.mp3?filename=click-sound-8333.mp3"></audio>
+  <audio id="completeSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_732c18049f.mp3?filename=success-1-6297.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

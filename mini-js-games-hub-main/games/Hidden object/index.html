@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hidden Object Game 🕵‍♀</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🔍 Hidden Object Game</h1>
+  <p class="tagline">Find all the hidden objects in the scene below!</p>
+
+  <div class="game-container">
+    <div class="scene">
+      <img src="https://i.ibb.co/yf3QhS7/hidden-scene.jpg" alt="Hidden Scene" class="background" />
+
+      <!-- Hidden objects (clickable spots) -->
+      <div class="object" data-name="Apple" style="top: 30%; left: 20%;"></div>
+      <div class="object" data-name="Key" style="top: 60%; left: 45%;"></div>
+      <div class="object" data-name="Star" style="top: 75%; left: 70%;"></div>
+      <div class="object" data-name="Butterfly" style="top: 40%; left: 80%;"></div>
+      <div class="object" data-name="Leaf" style="top: 20%; left: 60%;"></div>
+    </div>
+  </div>
+
+  <div class="status">
+    <p id="foundCount">Found: 0 / 5</p>
+    <button id="restartBtn">🔄 Restart</button>
+  </div>
+
+  <div id="message"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

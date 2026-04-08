@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Render Riot: The Frame Rate Fight</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Render Riot: The Frame Rate Fight</h1>
+        <p>Outpace your opponent by maintaining higher FPS. Sabotage their performance with heavy CSS and JavaScript injections!</p>
+    </header>
+
+    <div id="game-board">
+        <div id="player-side" class="side">
+            <h2>Your Frame Rate</h2>
+            <div class="fps-meter">FPS: <span id="player-fps">60</span></div>
+            <div class="budget-meter">Budget: $<span id="player-budget">100</span></div>
+            <div id="player-race-car" class="race-car"></div>
+            <div id="player-animation-target" class="animation-target"></div>
+        </div>
+
+        <div id="opponent-side" class="side">
+            <h2>Opponent Frame Rate</h2>
+            <div class="fps-meter">FPS: <span id="opponent-fps">60</span></div>
+            <div class="budget-meter">Budget: $<span id="opponent-budget">100</span></div>
+            <div id="opponent-race-car" class="race-car"></div>
+            <div id="opponent-animation-target" class="animation-target"></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <div id="controls">
+        <h2>Strategic Console</h2>
+        <div id="attack-controls">
+            <button data-attack-cost="10" data-attack-type="heavy-shadow" class="attack-btn">Heavy Load Attack (CSS: $10)</button>
+            <button data-attack-cost="15" data-attack-type="reflow-loop" class="attack-btn">Reflow Attack (JS: $15)</button>
+            <button data-attack-cost="20" data-attack-type="paint-churn" class="attack-btn">Paint Churn Attack (CSS: $20)</button>
+        </div>
+        
+        <div id="defense-controls">
+            <button id="defense-btn" data-defense-cost="25">Cleanse Attack (Defend: $25)</button>
+        </div>
+        
+        <p id="game-status">Game ready. Start attacking!</p>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

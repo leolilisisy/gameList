@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin Mission: Box-Model Mayhem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Margin Mission: Box-Model Mayhem</h1>
+        <p>Adjust the ball's margins, padding, and border to guide it to the goal without hitting obstacles!</p>
+    </header>
+
+    <div id="game-container">
+        <div id="player-ball"></div>
+        <div id="goal"></div>
+        <div class="obstacle" id="obs1"></div>
+        <div class="obstacle" id="obs2"></div>
+        <div class="obstacle thin-wall" id="obs3"></div>
+        <div class="obstacle" id="obs4"></div>
+    </div>
+
+    <div id="controls">
+        <h2>Ball Properties</h2>
+        <div class="control-group">
+            <label for="margin-top">Margin Top:</label>
+            <input type="range" id="margin-top" min="0" max="100" value="10">
+            <span id="margin-top-val">10px</span>
+        </div>
+        <div class="control-group">
+            <label for="margin-right">Margin Right:</label>
+            <input type="range" id="margin-right" min="0" max="100" value="10">
+            <span id="margin-right-val">10px</span>
+        </div>
+        <div class="control-group">
+            <label for="margin-bottom">Margin Bottom:</label>
+            <input type="range" id="margin-bottom" min="0" max="100" value="10">
+            <span id="margin-bottom-val">10px</span>
+        </div>
+        <div class="control-group">
+            <label for="margin-left">Margin Left:</label>
+            <input type="range" id="margin-left" min="0" max="100" value="10">
+            <span id="margin-left-val">10px</span>
+        </div>
+        
+        <hr>
+
+        <div class="control-group">
+            <label for="padding">Padding:</label>
+            <input type="range" id="padding" min="0" max="50" value="10">
+            <span id="padding-val">10px</span>
+        </div>
+
+        <div class="control-group">
+            <label for="border-width">Border Width:</label>
+            <input type="range" id="border-width" min="0" max="20" value="5">
+            <span id="border-width-val">5px</span>
+        </div>
+        
+        <button id="reset-button">Reset Ball</button>
+        <p id="game-message"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

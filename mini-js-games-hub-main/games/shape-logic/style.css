@@ -1,0 +1,80 @@
+body {
+  background: radial-gradient(circle at center, #1b2735, #090a0f);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-header {
+  text-align: center;
+  margin-top: 10px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  text-shadow: 0 0 15px #00ffff;
+}
+
+.controls button {
+  margin: 8px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #00ffff, #0077ff);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 0 15px #00ffff;
+  transition: transform 0.2s ease;
+}
+
+.controls button:hover {
+  transform: scale(1.1);
+}
+
+#game-container {
+  position: relative;
+  width: 80%;
+  height: 70vh;
+  margin-top: 20px;
+  border: 2px dashed #00ffff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px #00ffff;
+}
+
+#target-outline img {
+  width: 150px;
+  opacity: 0.3;
+  filter: drop-shadow(0 0 15px cyan);
+}
+
+#shapes {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+.shape {
+  width: 80px;
+  cursor: grab;
+  filter: drop-shadow(0 0 10px #00ffff);
+  transition: filter 0.2s ease;
+}
+
+.shape:hover {
+  filter: drop-shadow(0 0 25px #00ffff);
+}
+
+#status-panel {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  text-shadow: 0 0 10px #00ffff;
+}

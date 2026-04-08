@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chore RPG: Gamified To-Do List ⚔️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <h1>Your Quest Log 📜</h1>
+        
+        <div class="stats-panel">
+            <div class="stat level-stat">
+                Level: <span id="player-level">1</span>
+            </div>
+            <div class="stat xp-stat">
+                XP: <span id="player-xp">0</span> / <span id="xp-to-level">100</span>
+                <progress id="xp-progress" value="0" max="100"></progress>
+            </div>
+            <div class="stat gold-stat">
+                Gold: <span id="player-gold">0</span> 💰
+            </div>
+        </div>
+        
+        <hr>
+
+        <div class="task-input-area">
+            <input type="text" id="new-task-text" placeholder="Enter a new quest (e.g., Do laundry)">
+            <input type="number" id="new-task-xp" placeholder="XP Value" value="10" min="1">
+            <button id="add-task-button">Add Quest</button>
+        </div>
+
+        <ul id="task-list">
+            </ul>
+        
+        <hr>
+
+        <div class="shop-section">
+            <h2>The General Store</h2>
+            <p id="shop-message"></p>
+            <button id="buy-hat-button" data-cost="50">Buy Fancy Hat (50 Gold)</button>
+            <button id="buy-cloak-button" data-cost="100">Buy Traveling Cloak (100 Gold)</button>
+        </div>
+
+        <div class="inventory">
+            <h3>Your Gear:</h3>
+            <p id="inventory-display">None</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

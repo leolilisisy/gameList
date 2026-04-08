@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typing Ghost 👻 | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1998/1998671.png" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>👻 Typing Ghost Challenge</h1>
+    <p class="subtext">Race against your previous ghost! Type as fast & accurately as possible.</p>
+
+    <div class="stats">
+      <span>⏱️ WPM: <b id="wpm">0</b></span>
+      <span>🎯 Accuracy: <b id="accuracy">100%</b></span>
+      <span>👻 Ghost: <b id="ghost-status">Ready</b></span>
+    </div>
+
+    <div class="text-box">
+      <p id="display-text"></p>
+      <p id="ghost-progress"></p>
+    </div>
+
+    <textarea id="typing-area" placeholder="Start typing here..." autofocus></textarea>
+
+    <div class="buttons">
+      <button id="pause-btn">⏸️ Pause</button>
+      <button id="resume-btn" disabled>▶️ Resume</button>
+      <button id="restart-btn">🔁 Restart</button>
+    </div>
+
+    <audio id="type-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_f00f4a6cf5.mp3?filename=typewriter-key-press-110269.mp3"></audio>
+    <audio id="success-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_8f5a1269a3.mp3?filename=success-1-6297.mp3"></audio>
+    <audio id="fail-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4a3d45ac75.mp3?filename=error-126627.mp3"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

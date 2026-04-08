@@ -1,0 +1,34 @@
+<!-- FILE: index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>World Match Up — Memory: Country ⇄ Capital</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="container">
+<h1>World Match Up</h1>
+<p class="subtitle">Match each <strong>country</strong> with its <strong>capital</strong>. Click to flip two cards.</p>
+
+
+<section class="controls">
+<button id="restartBtn">Restart</button>
+<div class="stats">
+<span>Moves: <strong id="moves">0</strong></span>
+<span>Matches: <strong id="matches">0</strong>/6</span>
+</div>
+</section>
+
+
+<section id="grid" class="grid" aria-live="polite"></section>
+
+
+<footer class="footer">Made with ❤ — Simple HTML/CSS/JS</footer>
+</main>
+
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Neon Tunnel • Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ui">
+    <div class="ui__left">
+      <h1 class="title">Neon Tunnel</h1>
+      <p class="subtitle">Fly through a glowing tunnel — avoid black barriers. Survive as long as possible.</p>
+      <div class="controls">
+        <button id="startBtn" class="btn">Start</button>
+        <button id="pauseBtn" class="btn">Pause</button>
+        <button id="resumeBtn" class="btn">Resume</button>
+        <button id="restartBtn" class="btn">Restart</button>
+        <label class="label">Speed
+          <input id="speedRange" type="range" min="2" max="12" value="6"/>
+        </label>
+      </div>
+
+      <div class="stats">
+        <div>Score: <span id="score">0</span></div>
+        <div>Highscore: <span id="highscore">0</span></div>
+        <div>Multiplier: <span id="mult">1x</span></div>
+      </div>
+
+      <div class="hints">
+        <div>Controls: Arrow keys / A & D / Mouse (move)</div>
+        <div>Tip: Higher speed = more points but harder obstacles</div>
+      </div>
+
+      <div class="footer-credits">
+        <small>Assets: Unsplash + free web sounds</small>
+      </div>
+    </div>
+
+    <div class="ui__right">
+      <div class="canvas-wrap">
+        <canvas id="gameCanvas" width="800" height="600" aria-label="Neon Tunnel game canvas"></canvas>
+        <div id="overlay" class="overlay hidden">
+          <div class="overlay__panel">
+            <h2 id="overlayTitle">Paused</h2>
+            <p id="overlayText">Press Resume or Start to continue</p>
+            <div class="overlay__actions">
+              <button id="overlayResume" class="btn">Resume</button>
+              <button id="overlayRestart" class="btn">Restart</button>
+              <a href="../" class="btn ghost">Back to Hub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="audio-controls">
+        <label><input type="checkbox" id="muteToggle" /> Mute</label>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

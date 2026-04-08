@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dice Battle | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="dice-battle-container">
+    <h1>Dice Battle 🎲</h1>
+
+    <div class="players">
+      <div class="player" id="player1">
+        <h2>Player 1</h2>
+        <p>Score: <span id="score1">0</span></p>
+        <div class="dice" id="dice1"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg" alt="Dice 1"></div>
+      </div>
+      <div class="player" id="player2">
+        <h2>Player 2</h2>
+        <p>Score: <span id="score2">0</span></p>
+        <div class="dice" id="dice2"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Dice-1-b.svg" alt="Dice 2"></div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="rollBtn">Roll 🎲</button>
+      <button id="pauseBtn">Pause ⏸️</button>
+      <button id="restartBtn">Restart 🔄</button>
+    </div>
+
+    <div class="round-info">
+      <p>Round: <span id="round">1</span></p>
+      <p>Last Roll: <span id="lastRoll">-</span></p>
+    </div>
+
+    <audio id="rollSound" src="https://freesound.org/data/previews/320/320181_5260870-lq.mp3"></audio>
+    <audio id="winSound" src="https://freesound.org/data/previews/337/337049_4939433-lq.mp3"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

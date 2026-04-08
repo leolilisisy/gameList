@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Neon Orbit - Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-wrap" role="region" aria-label="Neon Orbit game container">
+    <h1>Neon Orbit</h1>
+    <div class="canvas-outer">
+      <canvas id="game" width="400" height="600"></canvas>
+    </div>
+    <div class="info" aria-live="polite">
+      <div class="controls">
+        <button id="startBtn" aria-label="Start or restart game">Start / Restart</button>
+        <button id="pauseBtn" aria-pressed="false" aria-label="Pause or resume game">Pause</button>
+      </div>
+      <p>Tap or click to reverse rotation direction. Align gaps to pass obstacles!</p>
+      <p id="score">Score: 0</p>
+      <p id="highScore">High Score: 0</p>
+    </div>
+    <footer>Made for Mini JS Games Hub</footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

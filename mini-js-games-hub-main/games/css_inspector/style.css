@@ -1,0 +1,170 @@
+/* --- Base Styling --- */
+body {
+    font-family: sans-serif;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.game-container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    gap: 30px;
+}
+
+/* --- Display Area (The "Broken" Interface) --- */
+.display-area {
+    flex: 1;
+    background-color: #2a2a2a;
+    border: 5px solid #50fa7b; /* Neon green border for "monitor" effect */
+    padding: 20px;
+    height: 400px; /* Fixed height for consistent level display */
+    display: flex;
+    align-items: center; /* Default centering */
+    justify-content: center; /* Default centering */
+    position: relative;
+    overflow: hidden;
+}
+
+#target-container {
+    width: 100%;
+    height: 100%;
+    /* This container holds the target element, useful for flex/grid levels */
+}
+
+/* --- Initial Broken States (The challenge) --- */
+
+/* Level 1 Broken State: The Invisible Button */
+.broken-level-1 {
+    width: 150px;
+    height: 50px;
+    background-color: #2a2a2a; /* Same as the display-area background, making it invisible */
+    color: #2a2a2a; /* Text color also invisible */
+    border: 1px solid #2a2a2a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+/* Level 2 Broken State: Misaligned Text */
+.broken-level-2 {
+    background-color: #444;
+    padding: 20px;
+    width: 80%;
+    text-align: right; /* Text is misaligned to the right */
+    border-radius: 5px;
+}
+
+/* Level 3 Broken State: The Shrinking Image */
+.broken-level-3 {
+    background-image: url('placeholder-image.jpg'); /* Assume a placeholder image exists */
+    background-size: cover;
+    width: 500px;
+    height: 100px; /* Incorrect height */
+    border: 3px dashed #ff5555;
+}
+
+
+/* --- Editor and Controls --- */
+.editor-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.level-info h2 {
+    color: #bd93f9; /* Purple highlight */
+}
+
+.css-editor {
+    background-color: #282a36; /* Dracula theme background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+#css-input {
+    width: 100%;
+    background-color: #44475a;
+    color: #f8f8f2;
+    border: none;
+    padding: 10px;
+    font-family: 'Consolas', monospace;
+    font-size: 16px;
+    resize: none;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.controls button {
+    padding: 10px 15px;
+    margin-top: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+#apply-css {
+    background-color: #50fa7b; /* Success green */
+    color: #1e1e1e;
+}
+
+#reset-level {
+    background-color: #ffb86c; /* Warning orange */
+    color: #1e1e1e;
+}
+
+/* --- Messages and Next Level Button --- */
+.message-box {
+    min-height: 50px;
+    background-color: #44475a;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.message-box p {
+    margin: 0;
+}
+
+.success {
+    color: #50fa7b;
+    font-weight: bold;
+}
+
+.error {
+    color: #ff5555;
+    font-weight: bold;
+}
+
+#next-level {
+    width: 100%;
+    padding: 15px;
+    background-color: #bd93f9;
+    color: #1e1e1e;
+    font-size: 18px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none !important;
+}

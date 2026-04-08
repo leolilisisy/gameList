@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Duel | Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="math-duel-container">
+        <h1>Math Duel 🧮⚔️</h1>
+
+        <div class="controls">
+            <button id="start-btn">Start</button>
+            <button id="pause-btn">Pause</button>
+            <button id="restart-btn">Restart</button>
+        </div>
+
+        <div class="players-container">
+            <div class="player" id="player1">
+                <h2>Player 1</h2>
+                <div class="track" id="track1">
+                    <div class="runner" id="runner1">🏎️</div>
+                </div>
+                <p>Score: <span id="score1">0</span></p>
+            </div>
+
+            <div class="player" id="player2">
+                <h2>Player 2</h2>
+                <div class="track" id="track2">
+                    <div class="runner" id="runner2">🚗</div>
+                </div>
+                <p>Score: <span id="score2">0</span></p>
+            </div>
+        </div>
+
+        <div class="question-container">
+            <h3>Math Question:</h3>
+            <p id="question">Press Start!</p>
+            <input type="number" id="answer" placeholder="Your answer">
+            <button id="submit-btn">Submit</button>
+        </div>
+    </div>
+
+    <!-- Sound effects -->
+    <audio id="correct-sound" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
+    <audio id="wrong-sound" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
+    <audio id="win-sound" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

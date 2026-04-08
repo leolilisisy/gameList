@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chromatic Clearance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Chromatic Clearance: The Inverse Filter Puzzle</h1>
+        <p>Adjust the controls until the image is perfectly clear. Find the inverse filters!</p>
+    </header>
+
+    <div id="game-stage">
+        <div id="target-container">
+            <img id="hidden-image" src="your-puzzle-image.jpg" alt="Hidden Puzzle Image">
+            </div>
+    </div>
+
+    <div id="controls">
+        <h2>Clearance Filters</h2>
+        
+        <div class="control-group">
+            <label for="blur-slider">Blur (px):</label>
+            <input type="range" id="blur-slider" min="0" max="10" step="0.1" value="0">
+            <span id="blur-val">0px</span>
+        </div>
+        
+        <div class="control-group">
+            <label for="invert-slider">Invert (%):</label>
+            <input type="range" id="invert-slider" min="0" max="100" step="1" value="0">
+            <span id="invert-val">0%</span>
+        </div>
+        
+        <div class="control-group">
+            <label for="hue-rotate-slider">Hue Rotate (deg):</label>
+            <input type="range" id="hue-rotate-slider" min="0" max="360" step="1" value="0">
+            <span id="hue-rotate-val">0deg</span>
+        </div>
+        
+        <div class="control-group">
+            <label for="grayscale-slider">Grayscale (%):</label>
+            <input type="range" id="grayscale-slider" min="0" max="100" step="1" value="0">
+            <span id="grayscale-val">0%</span>
+        </div>
+        
+        <button id="check-button">Check Solution</button>
+        <p id="game-message"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

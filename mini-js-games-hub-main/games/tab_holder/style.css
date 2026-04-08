@@ -1,0 +1,116 @@
+:root {
+    --mine-color: #ff5555; /* Red/Orange for Danger/Metal */
+    --farm-color: #50fa7b; /* Green for Life/Food */
+    --lab-color: #bd93f9; /* Purple for Science/Cool */
+    --base-bg: #282a36;
+    --text-color: #f8f8f2;
+}
+
+/* Base Styles */
+body {
+    font-family: sans-serif;
+    background-color: var(--base-bg);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+
+#game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.5s;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.resource-display span {
+    margin-right: 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+/* Facility-Specific Theming (Applied by JS) */
+.mine-theme {
+    border: 3px solid var(--mine-color);
+    background-color: #3d3f4b;
+}
+
+.farm-theme {
+    border: 3px solid var(--farm-color);
+    background-color: #3d3f4b;
+}
+
+.lab-theme {
+    border: 3px solid var(--lab-color);
+    background-color: #3d3f4b;
+}
+
+/* Status Box & Danger Bar */
+.status-box {
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    background-color: #44475a;
+}
+
+#danger-bar-container {
+    margin-top: 10px;
+}
+
+#danger-bar {
+    width: 100%;
+    height: 20px;
+    border: none;
+    background-color: #6272a4;
+}
+
+#danger-bar::-webkit-progress-bar {
+    background-color: #6272a4;
+    border-radius: 3px;
+}
+
+/* Dynamic bar coloring based on class applied by JS */
+.danger-mine::-webkit-progress-value { background-color: var(--mine-color); }
+.danger-farm::-webkit-progress-value { background-color: var(--farm-color); }
+.danger-lab::-webkit-progress-value { background-color: var(--lab-color); }
+
+
+/* Controls and Cooldown */
+.controls-section, .unlock-section {
+    background-color: #3d3f4b;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #6272a4;
+    color: var(--text-color);
+    transition: background-color 0.2s;
+}
+
+button:hover:not(:disabled) {
+    background-color: #8be9fd;
+    color: var(--base-bg);
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.cooldown {
+    color: #ffb86c;
+}

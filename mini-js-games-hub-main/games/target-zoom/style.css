@@ -1,0 +1,74 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at center, #0f0c29, #302b63, #24243e);
+  color: white;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-container {
+  text-align: center;
+  position: relative;
+}
+
+h1 {
+  text-shadow: 0 0 20px #ff0080;
+  margin-bottom: 10px;
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  width: 250px;
+  margin: 0 auto 10px;
+  font-size: 18px;
+}
+
+#game-area {
+  position: relative;
+  width: 600px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: crosshair;
+}
+
+.target {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff3366, #ff004c);
+  box-shadow: 0 0 20px 8px #ff004c;
+  transition: transform 0.1s linear;
+}
+
+.controls {
+  margin-top: 15px;
+}
+
+button {
+  background: linear-gradient(90deg, #ff0080, #ff8c00);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #ff0080;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

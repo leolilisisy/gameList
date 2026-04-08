@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Perfect Click | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>🎯 Perfect Click</h1>
+    <p class="info">Click the button when the glowing line enters the green zone!</p>
+
+    <div class="bar-area">
+      <div class="bar"></div>
+      <div class="target-zone"></div>
+      <div class="line"></div>
+    </div>
+
+    <div class="controls">
+      <button id="start-btn">Start</button>
+      <button id="pause-btn">Pause</button>
+      <button id="restart-btn">Restart</button>
+    </div>
+
+    <div class="scoreboard">
+      <p>Score: <span id="score">0</span></p>
+      <p>Combo: <span id="combo">0</span></p>
+      <p>Speed: <span id="speed">1x</span></p>
+    </div>
+
+    <audio id="click-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_896b7c8da9.mp3?filename=click-124467.mp3"></audio>
+    <audio id="perfect-sound" src="https://cdn.pixabay.com/download/audio/2022/03/14/audio_cce3a3cf10.mp3?filename=success-1-6297.mp3"></audio>
+    <audio id="fail-sound" src="https://cdn.pixabay.com/download/audio/2021/09/13/audio_5808b42f08.mp3?filename=error-126627.mp3"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

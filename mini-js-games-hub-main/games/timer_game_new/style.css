@@ -1,0 +1,60 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; /* Hide scrollbars */
+}
+
+#test-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+    color: white;
+    transition: background-color 0.1s ease; /* Smooth color transition */
+    cursor: pointer; /* Indicate it's clickable */
+}
+
+/* --- State Styles --- */
+
+/* Initial State: Ready to start */
+#test-area.initial {
+    background-color: #3498db; /* Blue */
+}
+
+/* Ready State: Waiting for the change (RED) */
+#test-area.ready {
+    background-color: #e74c3c; /* Red */
+}
+
+/* Go State: Click now! (GREEN) */
+#test-area.go {
+    background-color: #2ecc71; /* Green */
+}
+
+/* --- Text Styles --- */
+
+#headline {
+    font-size: 3em;
+    margin: 10px;
+}
+
+#instruction {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+#result-display {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ffcc00; /* Yellow for results */
+}
+
+#best-time {
+    font-size: 1.2em;
+    margin-top: 15px;
+}

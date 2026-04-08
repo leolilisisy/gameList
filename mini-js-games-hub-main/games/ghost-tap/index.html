@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghost Tap 👻</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>👻 Ghost Tap</h1>
+    <div class="scoreboard">
+      <span>Score: <strong id="score">0</strong></span>
+      <span>Lives: <strong id="lives">3</strong></span>
+      <span>Level: <strong id="level">1</strong></span>
+    </div>
+
+    <div class="game-area" id="game-area"></div>
+
+    <div class="controls">
+      <button id="start-btn">▶ Start</button>
+      <button id="pause-btn">⏸ Pause</button>
+      <button id="restart-btn">🔁 Restart</button>
+    </div>
+
+    <audio id="click-sound" src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg"></audio>
+    <audio id="miss-sound" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
+    <audio id="bg-music" src="https://cdn.pixabay.com/audio/2021/09/28/audio_b88e785f43.mp3" loop></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

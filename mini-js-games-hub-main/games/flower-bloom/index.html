@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Bloom | Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>🌸 Flower Bloom 🌸</h1>
+        <canvas id="flower-canvas"></canvas>
+        <div class="controls">
+            <button id="pause-btn">⏸ Pause</button>
+            <button id="resume-btn">▶ Resume</button>
+            <button id="restart-btn">🔄 Restart</button>
+            <label for="speed-range">Animation Speed:</label>
+            <input type="range" id="speed-range" min="1" max="10" value="5">
+        </div>
+        <audio id="bloom-sound" src="https://www.soundjay.com/nature/sounds/flower-bloom-01.mp3" preload="auto"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

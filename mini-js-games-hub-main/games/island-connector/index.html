@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Island Connector — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- favicon (online) -->
+  <link rel="icon" href="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=64&q=80" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="title">
+        <span class="icon">🔗</span>
+        <h1>Island Connector</h1>
+        <small>Connect all islands with minimal bridge length</small>
+      </div>
+
+      <div class="controls">
+        <label class="control-btn"><input id="sound-toggle" type="checkbox" checked /> 🔊</label>
+        <button id="pause-btn" class="control-btn">Pause</button>
+        <button id="undo-btn" class="control-btn">Undo</button>
+        <button id="restart-btn" class="control-btn">Restart</button>
+        <select id="level-select" class="control-select"></select>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <canvas id="board" width="1000" height="640" aria-label="Island Connector game board"></canvas>
+
+      <aside class="sidebar">
+        <div class="panel stat">
+          <div><strong>Score</strong></div>
+          <div id="score">0</div>
+        </div>
+        <div class="panel stat">
+          <div><strong>Time</strong></div>
+          <div id="time">00:00</div>
+        </div>
+        <div class="panel stat">
+          <div><strong>Moves</strong></div>
+          <div id="moves">0</div>
+        </div>
+        <div class="panel stat">
+          <div><strong>Total Length</strong></div>
+          <div id="length">0</div>
+        </div>
+
+        <div class="panel info">
+          <h3>Rules</h3>
+          <ul>
+            <li>Click an island then another to draw a straight bridge.</li>
+            <li>Bridges can't cross obstacles or other bridges.</li>
+            <li>Connect all islands to win. Shorter total length = higher score.</li>
+          </ul>
+        </div>
+
+        <div class="panel actions">
+          <button id="hint-btn">Hint</button>
+          <button id="save-btn">Save Score</button>
+          <a class="open-new" href="index.html" target="_blank">Open Hub</a>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <div>Made with ❤️ — <a href="https://github.com/ritaban06/mini-js-games-hub" target="_blank" rel="noopener">Mini JS Games Hub</a></div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

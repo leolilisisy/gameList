@@ -1,0 +1,90 @@
+:root {
+    --player-size: 20px;
+    --world-bg: #282a36; /* Dark background */
+    --platform-color: #50fa7b; /* Neon Green */
+    --obstacle-color: #ff5555; /* Red */
+    --goal-color: #bd93f9; /* Purple */
+}
+
+/* Global Reset and Background */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrolls bars from interfering with dimensions */
+    background-color: var(--world-bg);
+}
+
+/* --- UI Overlay (Fixed) --- */
+#ui-overlay {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #f8f8f2;
+    font-family: sans-serif;
+    border-radius: 5px;
+    z-index: 100;
+}
+
+#dimensions {
+    font-weight: bold;
+    color: #ffb86c;
+}
+
+#game-message {
+    margin-top: 10px;
+    color: var(--platform-color);
+}
+
+/* --- Player Element (Fixed in the center) --- */
+#player {
+    position: fixed;
+    width: var(--player-size);
+    height: var(--player-size);
+    background-color: #f8f8f2;
+    border-radius: 50%;
+    /* Key to keeping the player fixed in the center */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 50;
+    transition: margin-left 0.05s, margin-top 0.05s; /* For WASD movement */
+}
+
+/* --- Game World Elements (Positioned dynamically by JS) --- */
+.level-element {
+    position: absolute;
+    box-sizing: border-box;
+    transition: width 0.1s, height 0.1s, top 0.1s, left 0.1s, opacity 0.3s; /* Smooth visual changes */
+    z-index: 10;
+}
+
+.platform {
+    background-color: var(--platform-color);
+    height: 20px;
+    border-radius: 3px;
+}
+
+.obstacle {
+    background-color: var(--obstacle-color);
+    border: 1px solid #444;
+}
+
+.goal {
+    background-color: var(--goal-color);
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--world-bg);
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.hidden-platform {
+    background-color: #44475a;
+    opacity: 0.1; /* Barely visible hint */
+}

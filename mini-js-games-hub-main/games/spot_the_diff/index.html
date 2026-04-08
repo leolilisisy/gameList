@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot the Difference Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>🔎 Spot the Difference</h1>
+
+        <div id="status-area">
+            Score: <span id="score">0</span> | Time Left: <span id="timer">60</span>s
+        </div>
+
+        <div id="puzzle-area">
+            <div id="image-left" class="image-box">
+                <div class="clickable-overlay" data-side="left"></div>
+            </div>
+
+            <div id="image-right" class="image-box">
+                <div class="clickable-overlay" data-side="right"></div>
+            </div>
+            
+            </div>
+
+        <div id="feedback-message">
+            <p>Find the differences! Clicks on the right image are checked.</p>
+        </div>
+
+        <div id="controls">
+            <button id="start-button">START GAME</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

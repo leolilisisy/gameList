@@ -1,0 +1,37 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000010;
+    font-family: Arial, sans-serif;
+}
+
+.aurora-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+canvas {
+    display: block;
+}
+
+.controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    background: rgba(0,0,0,0.5);
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.controls button, .controls input {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+}

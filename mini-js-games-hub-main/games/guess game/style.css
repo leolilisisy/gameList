@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+}
+
+.game-area {
+    margin: 20px 0;
+}
+
+#guessInput {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 60%;
+    margin-right: 5px;
+}
+
+#checkButton, #newGameButton {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background-color: #007bff;
+    color: white;
+}
+
+#checkButton:hover {
+    background-color: #0056b3;
+}
+
+#newGameButton {
+    background-color: #28a745;
+    margin-top: 15px;
+}
+
+#newGameButton:hover {
+    background-color: #1e7e34;
+}
+
+/* Styles for feedback messages */
+.message {
+    font-weight: bold;
+    margin-top: 15px;
+    min-height: 20px; /* Helps prevent layout shift */
+}
+
+/* Helper class to hide the button initially */
+.hidden {
+    display: none;
+}

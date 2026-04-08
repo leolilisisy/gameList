@@ -1,0 +1,89 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #0a0a0a, #111);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.color-balance-container {
+    background-color: rgba(0,0,0,0.85);
+    padding: 20px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    text-shadow: 0 0 10px #ff0, 0 0 20px #ff0;
+}
+
+.color-box {
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+    border-radius: 15px;
+    border: 3px solid #fff;
+    box-shadow: 0 0 20px #fff;
+}
+
+.sliders label {
+    display: block;
+    margin: 10px 0;
+}
+
+input[type=range] {
+    width: 80%;
+}
+
+.controls button {
+    margin: 5px;
+    padding: 8px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #ff0;
+    color: #000;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.controls button:hover {
+    transform: scale(1.1);
+}
+
+.score-timer {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+/* Fireflies */
+.fireflies {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.firefly {
+    position: absolute;
+    width: 50px;
+    opacity: 0.7;
+    animation: float 5s infinite ease-in-out;
+    filter: drop-shadow(0 0 10px yellow);
+}
+
+@keyframes float {
+    0% {transform: translate(0,0);}
+    50% {transform: translate(50px, -30px);}
+    100% {transform: translate(0,0);}
+}

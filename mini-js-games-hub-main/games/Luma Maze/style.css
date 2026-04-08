@@ -1,0 +1,86 @@
+:root {
+  --bg: radial-gradient(circle at top, #0f172a, #1e293b, #334155);
+  --wall: #0ea5e9;
+  --player: #38bdf8;
+  --goal: #a855f7;
+}
+
+body {
+  background: var(--bg);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  width: 360px;
+}
+
+h1 {
+  color: #67e8f9;
+}
+
+#maze {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 20px auto;
+  border: 2px solid #22d3ee;
+  box-shadow: 0 0 30px #0891b2;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.9);
+}
+
+#player {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: var(--player);
+  border-radius: 50%;
+  box-shadow: 0 0 15px var(--player);
+}
+
+#goal {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--goal);
+  box-shadow: 0 0 20px var(--goal);
+}
+
+.wall {
+  position: absolute;
+  background: var(--wall);
+  box-shadow: 0 0 15px var(--wall);
+}
+
+#trail {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.controls button {
+  background: linear-gradient(90deg, #38bdf8, #818cf8);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.controls button:disabled {
+  opacity: 0.5;
+}

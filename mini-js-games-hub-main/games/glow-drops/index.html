@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Glow Drops — Mini JS Games Hub</title>
+
+  <!-- favicon -->
+  <link rel="icon" href="https://source.unsplash.com/64x64/?water-drop" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="gd-header">
+      <div class="gd-title">
+        <span class="gd-icon">💧</span>
+        <div>
+          <h1>Glow Drops</h1>
+          <p class="subtitle">Tap glowing drops, build ripples — avoid obstacles!</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="playPauseBtn" class="btn primary">Play</button>
+        <button id="restartBtn" class="btn">Restart</button>
+
+        <label class="control-inline">
+          Sound
+          <input id="soundToggle" type="checkbox" checked aria-label="Toggle sound" />
+        </label>
+
+        <label class="control-inline">
+          Volume
+          <input id="volume" type="range" min="0" max="1" step="0.01" value="0.6" />
+        </label>
+
+        <label class="control-inline">
+          Difficulty
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="normal" selected>Normal</option>
+            <option value="hard">Hard</option>
+          </select>
+        </label>
+
+        <a class="open-new" href="index.html" target="_self" rel="noopener">Back to Hub</a>
+      </div>
+    </header>
+
+    <main class="gd-main">
+      <div class="hud">
+        <div class="stat">Score: <span id="score">0</span></div>
+        <div class="stat">Lives: <span id="lives">3</span></div>
+        <div class="stat">Time: <span id="time">60</span>s</div>
+        <div class="stat">Combo: <span id="combo">x1</span></div>
+      </div>
+
+      <div class="canvas-wrap" role="application" aria-label="Glow Drops game area">
+        <!-- background image via CSS -->
+        <canvas id="gameCanvas"></canvas>
+        <!-- overlay for messages -->
+        <div id="overlay" class="overlay hidden"></div>
+      </div>
+
+      <aside class="instructions">
+        <h3>How to play</h3>
+        <ol>
+          <li>Click / Tap glowing drops to pop them and earn points.</li>
+          <li>Avoid clicking obstacles (dark bubbles) — they deduct points or lives.</li>
+          <li>Combo for extra points if you pop drops quickly in succession.</li>
+          <li>Use Pause / Restart or change difficulty anytime.</li>
+        </ol>
+        <p class="credits">Background image: Unsplash (hotlink). Music: online sample. Sounds: WebAudio synthesis.</p>
+      </aside>
+    </main>
+
+    <footer class="gd-footer">
+      <div>
+        <small>Made for Mini JS Games Hub • HTML • CSS • JS</small>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

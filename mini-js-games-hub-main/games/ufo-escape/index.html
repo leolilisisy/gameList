@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UFO Escape — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- favicon optional -->
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="title">
+        <span class="icon">🛸</span>
+        <h1>UFO Escape</h1>
+      </div>
+      <div class="controls-top">
+        <button id="startBtn" class="btn primary">Start</button>
+        <button id="pauseBtn" class="btn" disabled>Pause</button>
+        <button id="resumeBtn" class="btn" disabled>Resume</button>
+        <button id="restartBtn" class="btn" disabled>Restart</button>
+        <button id="muteBtn" class="btn">🔊</button>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <aside class="hud">
+        <div class="hud-row"><strong>Score</strong><span id="score">0</span></div>
+        <div class="hud-row"><strong>Lives</strong><span id="lives">3</span></div>
+        <div class="hud-row"><strong>Energy</strong><span id="energy">0</span></div>
+        <div class="hud-row"><strong>Level</strong><span id="level">1</span></div>
+        <div class="hud-row"><strong>Highscore</strong><span id="highscore">0</span></div>
+      </aside>
+
+      <section class="canvas-wrap">
+        <canvas id="gameCanvas" width="920" height="540" aria-label="UFO Escape game canvas"></canvas>
+        <div id="overlay" class="overlay hidden">
+          <div class="overlay-card">
+            <h2 id="overlay-title">UFO Escape</h2>
+            <p id="overlay-text">Press Start to begin</p>
+            <div class="overlay-actions">
+              <button id="overlayStart" class="btn primary">Start</button>
+              <button id="overlayResume" class="btn">Resume</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Use ← → or A D to move. On mobile, touch left/right halves to move. Collect energy orbs and avoid saucers.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

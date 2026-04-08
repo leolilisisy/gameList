@@ -1,0 +1,57 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.game-container {
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 50px);
+  grid-template-rows: repeat(8, 50px);
+  gap: 5px;
+  margin: 20px 0;
+}
+
+.tile {
+  width: 50px;
+  height: 50px;
+  background: #222;
+  border-radius: 5px;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.tile.filled {
+  background: #0ff;
+  box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+}
+
+.tile.obstacle {
+  background: #f00;
+}
+
+.controls button {
+  margin: 5px;
+  padding: 8px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #222;
+  color: #fff;
+  transition: all 0.2s;
+}
+
+.controls button:hover {
+  background: #0ff;
+  color: #000;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scale Balancer Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>⚖️ Scale Balancer Puzzle</h1>
+
+        <div id="status-area">
+            <p>Goal: <span id="goal-moment">0</span></p>
+            <p>Difference: <span id="difference-display">--</span></p>
+        </div>
+
+        <div id="scale-platform">
+            <div id="fulcrum"></div>
+            <div id="beam">
+                <div id="left-pan" class="pan" data-side="left"></div>
+                <div id="right-pan" class="pan" data-side="right"></div>
+            </div>
+        </div>
+
+        <div id="inventory">
+            <h2>Objects (Drag & Drop)</h2>
+            <div class="object" data-weight="5" data-count="3">5kg (x3)</div>
+            <div class="object" data-weight="10" data-count="2">10kg (x2)</div>
+            <div class="object" data-weight="25" data-count="1">25kg (x1)</div>
+        </div>
+
+        <div id="feedback-message">
+            <p>Drag objects onto the scale. Goal: Balance the moments!</p>
+        </div>
+
+        <div id="controls">
+            <button id="check-button" disabled>Check Balance</button>
+            <button id="reset-button">Reset Scale</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #e9f7ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.game-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+h1 {
+    color: #38761d; /* Dark Green */
+    margin-bottom: 20px;
+}
+
+/* Info Bar (Score and Timer) */
+.info-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#timer-display {
+    color: #ff0000; /* Red for urgency */
+}
+
+/* Scrambled Word Display */
+.scramble-area p {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+#scrambled-word {
+    font-size: 3em;
+    letter-spacing: 5px;
+    color: #007bff; /* Blue accent */
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+/* Input Area */
+.input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#guess-input {
+    flex-grow: 1;
+    padding: 12px;
+    font-size: 1.1em;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+}
+
+#submit-button {
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 6px;
+    background-color: #38761d;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#submit-button:hover {
+    background-color: #275214;
+}
+
+/* Feedback Message */
+.message {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.correct {
+    color: #28a745; /* Green */
+}
+
+.incorrect {
+    color: #dc3545; /* Red */
+}
+
+/* Game Over Screen */
+#game-over-screen {
+    background-color: #fff3cd;
+    border: 1px solid #ffeeba;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#final-score {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #856404;
+}
+
+#restart-button {
+    margin-top: 15px;
+    background-color: #ffc107;
+    color: #333;
+}
+
+#restart-button:hover {
+    background-color: #e0a800;
+}
+
+.hidden {
+    display: none;
+}

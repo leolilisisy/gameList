@@ -1,0 +1,86 @@
+:root {
+    --arena-bg: #1a1a1a;
+    --p1-color: #50fa7b; /* Green */
+    --p2-color: #bd93f9; /* Purple */
+    --health-color: #ff5555;
+}
+
+/* Base Styles */
+body {
+    font-family: sans-serif;
+    background-color: #282a36;
+    color: #f8f8f2;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+#game-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+/* Status Panels */
+.status-panel {
+    width: 300px;
+    padding: 15px;
+    border: 1px solid #44475a;
+    border-radius: 8px;
+    text-align: left;
+}
+
+.health-bar {
+    height: 15px;
+    background-color: var(--health-color);
+    width: 100%;
+    margin: 5px 0 10px;
+    transition: width 0.3s;
+}
+
+/* Arena */
+#arena {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    background-color: var(--arena-bg);
+    border: 3px solid #ffb86c;
+    overflow: hidden;
+}
+
+/* Fighters */
+.fighter {
+    position: absolute;
+    width: 30px;
+    height: 50px;
+    bottom: 0;
+    transition: left 0.1s;
+}
+
+#player-1 {
+    background-color: var(--p1-color);
+    left: 50px;
+}
+
+#player-2 {
+    background-color: var(--p2-color);
+    right: 50px;
+}
+
+/* Attack Animation (Visual feedback for lag attacks) */
+.lag-attack {
+    animation: pulse-red 0.5s ease-out;
+}
+
+@keyframes pulse-red {
+    0% { transform: scale(1); opacity: 1; box-shadow: 0 0 10px var(--p2-color); }
+    100% { transform: scale(1.5); opacity: 0; box-shadow: 0 0 20px var(--p2-color); }
+}
+
+#game-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #ffb86c;
+}

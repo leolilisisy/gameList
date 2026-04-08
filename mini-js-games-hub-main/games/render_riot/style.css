@@ -1,0 +1,117 @@
+:root {
+    --side-width: 45%;
+    --animation-speed: 10s;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2e2e2e;
+    color: #e0e0e0;
+}
+
+#game-board {
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin-bottom: 20px;
+}
+
+.side {
+    width: var(--side-width);
+    padding: 20px;
+    border: 2px solid #555;
+    background-color: #3e3e3e;
+    min-height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- Performance Monitoring & Animation --- */
+
+.fps-meter, .budget-meter {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* The element that will constantly be animated and affected by lag */
+.animation-target {
+    width: 50px;
+    height: 50px;
+    background-color: #00bcd4;
+    position: absolute;
+    bottom: 20px;
+    left: 10%;
+    border-radius: 5px;
+    animation: slide var(--animation-speed) linear infinite alternate;
+}
+
+@keyframes slide {
+    from { transform: translateX(0); }
+    to { transform: translateX(80%); }
+}
+
+/* --- Core Attack Classes (The Sabotage) --- */
+
+/* 1. Heavy Load Attack: Complex Box Shadow (forces heavy composite/paint) */
+.heavy-shadow-attack {
+    /* Nested, large, and complex box shadow that is computationally expensive */
+    box-shadow: 
+        0 0 50px 20px rgba(255, 0, 0, 0.7),
+        0 0 100px 40px rgba(0, 255, 0, 0.5) inset,
+        0 0 150px 60px rgba(0, 0, 255, 0.3),
+        -5px -5px 10px 0px rgba(255, 255, 0, 0.2),
+        5px 5px 10px 0px rgba(255, 0, 255, 0.4);
+    transition: box-shadow 0.1s; /* Ensure the browser re-evaluates frequently */
+    will-change: box-shadow;
+}
+
+/* 2. Reflow Attack: (Handled primarily by JavaScript forcing offsetHeight reads) */
+/* This class is just a visual placeholder if needed */
+
+/* 3. Paint Churn Attack: Forcing constant repaints on a large area */
+.paint-churn-attack {
+    /* Use a repeating gradient animation on a large element */
+    background-image: repeating-linear-gradient(
+        45deg,
+        #f06292,
+        #f06292 10px,
+        #e91e63 10px,
+        #e91e63 20px
+    );
+    animation: paint-shift 0.5s linear infinite;
+    will-change: background-image, transform;
+}
+
+@keyframes paint-shift {
+    to {
+        background-position: 40px 0;
+    }
+}
+
+/* --- Controls Styling --- */
+#controls {
+    text-align: center;
+    width: 90%;
+    padding: 20px;
+    background-color: #4a4a4a;
+    border-radius: 8px;
+}
+
+.attack-btn, #defense-btn {
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.attack-btn { background-color: #ff5722; color: white; }
+.attack-btn:hover { background-color: #e64a19; }
+
+#defense-btn { background-color: #4CAF50; color: white; }
+#defense-btn:hover { background-color: #388E3C; }

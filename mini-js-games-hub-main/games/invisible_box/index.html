@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Invisible Box</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>🔍 The Invisible Box</h1>
+
+        <div id="status-area">
+            <p id="hint-message">Move your mouse over the field to search!</p>
+            <p id="score-display">Clicks: <span id="click-count">0</span></p>
+        </div>
+
+        <div id="playing-field">
+            <div id="target-box" style="display: none;"></div>
+        </div>
+
+        <div id="controls">
+            <button id="start-button">START SEARCH</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

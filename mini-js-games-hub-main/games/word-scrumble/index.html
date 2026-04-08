@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Scramble Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Word Scramble</h1>
+        
+        <div id="header-info">
+            <p>Time Left: <span id="timer">60</span>s</p>
+            <p>Score: <span id="score">0</span></p>
+        </div>
+
+        <div id="puzzle-area">
+            <div id="jumbled-letters"></div>
+            <button id="scramble-btn">Scramble</button>
+        </div>
+        
+        <div id="input-area">
+            <input type="text" id="word-input" placeholder="Type word here..." maxlength="10" autofocus>
+            <button id="submit-btn">Submit</button>
+        </div>
+
+        <p id="feedback-msg"></p>
+
+        <div id="found-words-area">
+            <h3>Words Found (<span id="found-count">0</span>):</h3>
+            <ul id="found-words-list">
+                </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

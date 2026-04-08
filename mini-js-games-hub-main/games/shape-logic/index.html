@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shape Logic | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio id="bg-music" src="https://cdn.pixabay.com/download/audio/2023/04/13/audio_2b5e5b6b60.mp3?filename=calm-puzzle-theme-144177.mp3" loop></audio>
+  <audio id="snap-sound" src="https://cdn.pixabay.com/download/audio/2021/08/09/audio_8e7e937b94.mp3?filename=click.mp3"></audio>
+
+  <div class="game-header">
+    <h1>Shape Logic 🧠</h1>
+    <div class="controls">
+      <button id="start-btn">Start</button>
+      <button id="pause-btn">Pause</button>
+      <button id="restart-btn">Restart</button>
+    </div>
+  </div>
+
+  <div id="game-container">
+    <div id="target-outline">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Triangle_-_black_simple.svg/512px-Triangle_-_black_simple.svg.png" alt="Target Shape">
+    </div>
+
+    <div id="shapes">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Circle_-_black_simple.svg/512px-Circle_-_black_simple.svg.png" class="shape" data-rotate="0">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Simple_square.svg/512px-Simple_square.svg.png" class="shape" data-rotate="0">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Equilateral_triangle.svg/512px-Equilateral_triangle.svg.png" class="shape" data-rotate="0">
+    </div>
+  </div>
+
+  <div id="status-panel">
+    <p id="status-text">Click “Start” to play!</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

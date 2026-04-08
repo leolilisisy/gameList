@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orb Collector | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <header>
+      <h1>🟢 Orb Collector</h1>
+      <div class="stats">
+        <span>Score: <span id="score">0</span></span>
+        <span>Best: <span id="best">0</span></span>
+      </div>
+      <div class="controls">
+        <button id="pauseBtn">⏸️ Pause</button>
+        <button id="restartBtn">🔄 Restart</button>
+      </div>
+    </header>
+
+    <canvas id="gameCanvas" width="800" height="500"></canvas>
+
+    <footer>
+      <p>Use ⬆️⬇️⬅️➡️ or WASD to move. Collect glowing dots and avoid obstacles!</p>
+    </footer>
+  </div>
+
+  <audio id="collectSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_d92e9c9f73.mp3?filename=collectcoin-6075.mp3"></audio>
+  <audio id="hitSound" src="https://cdn.pixabay.com/download/audio/2021/09/09/audio_4bcb4a10f3.mp3?filename=error-126627.mp3"></audio>
+  <audio id="bgMusic" src="https://cdn.pixabay.com/download/audio/2022/03/14/audio_62bb5cc4aa.mp3?filename=futuristic-beat-11134.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

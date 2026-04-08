@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 15px rgba(229, 46, 113, 0.5);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #a0a0e0;
+    margin-bottom: 30px;
+}
+
+.game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.game-board {
+    background: rgba(16, 18, 27, 0.7);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 500px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #4a3fe0;
+}
+
+.target-pattern {
+    background: rgba(16, 18, 27, 0.7);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 500px;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #e53f8c;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.control-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    background: linear-gradient(90deg, #4a3fe0, #e53f8c);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    flex: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.rules {
+    background: rgba(16, 18, 27, 0.7);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    max-width: 1030px;
+    width: 100%;
+    border: 2px solid #00c9ff;
+}
+
+.rules h2 {
+    color: #00c9ff;
+    margin-bottom: 10px;
+}
+
+.rules p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 10px currentColor;
+}
+
+.quantum-field {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1030px;
+    margin-bottom: 20px;
+}
+
+.stat-box {
+    background: rgba(16, 18, 27, 0.7);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+    border: 1px solid #4a3fe0;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ff8a00;
+}
+
+.win-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.win-message.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.win-content {
+    background: linear-gradient(135deg, #0f0c29, #302b63);
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+    border: 3px solid #ff8a00;
+    box-shadow: 0 0 30px rgba(255, 138, 0, 0.7);
+}
+
+.win-content h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #ff8a00;
+}
+
+.quantum-rule {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(16, 18, 27, 0.8);
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #00c9ff;
+    font-size: 0.9rem;
+}

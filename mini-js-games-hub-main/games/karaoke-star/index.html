@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karaoke Star - Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎤 Karaoke Star</h1>
+            <p>Sing along to your favorite songs!</p>
+        </header>
+
+        <div class="game-area">
+            <div class="song-selection">
+                <h3>Choose a Song:</h3>
+                <div class="song-buttons">
+                    <button class="song-btn" data-song="happy-birthday">Happy Birthday</button>
+                    <button class="song-btn" data-song="twinkle-twinkle">Twinkle Twinkle Little Star</button>
+                    <button class="song-btn" data-song="row-row">Row Row Row Your Boat</button>
+                    <button class="song-btn" data-song="amazing-grace">Amazing Grace</button>
+                </div>
+            </div>
+
+            <div class="karaoke-display">
+                <div class="album-art">
+                    <div class="album-placeholder">
+                        <span class="music-note">♪</span>
+                    </div>
+                </div>
+
+                <div class="lyrics-container">
+                    <div class="lyrics-display" id="lyrics-display">
+                        <div class="lyrics-line" id="current-line">Select a song to start singing!</div>
+                        <div class="lyrics-line" id="next-line"></div>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <div class="time-display">
+                            <span id="current-time">0:00</span> / <span id="total-time">0:00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="play-btn" class="control-btn">▶️ Play</button>
+                <button id="pause-btn" class="control-btn" disabled>⏸️ Pause</button>
+                <button id="stop-btn" class="control-btn" disabled>⏹️ Stop</button>
+                <button id="restart-btn" class="control-btn" disabled>🔄 Restart</button>
+            </div>
+
+            <div class="scoring">
+                <div class="score-display">
+                    <h3>Score: <span id="score">0</span></h3>
+                    <div class="stars" id="stars">
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                        <span class="star">⭐</span>
+                    </div>
+                </div>
+
+                <div class="performance-meter">
+                    <h4>Performance</h4>
+                    <div class="meter">
+                        <div class="meter-fill" id="performance-fill"></div>
+                    </div>
+                    <div class="performance-text" id="performance-text">Ready to sing!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Select a song from the available options</li>
+                <li>Click "Play" to start the karaoke session</li>
+                <li>Sing along with the highlighted lyrics</li>
+                <li>Try to stay on beat for a higher score</li>
+                <li>Use Pause/Stop/Restart as needed</li>
+                <li>Aim for 5 stars by singing perfectly!</li>
+            </ul>
+        </div>
+
+        <div class="microphone-tip">
+            <p>💡 <strong>Pro Tip:</strong> For the best experience, use a microphone and sing along!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

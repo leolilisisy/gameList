@@ -1,0 +1,92 @@
+:root {
+    --field-size: 400px;
+    --target-size: 40px;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f7f9fb;
+    color: #333;
+}
+
+#game-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* --- Playing Field --- */
+#playing-field {
+    width: var(--field-size);
+    height: var(--field-size);
+    margin: 20px auto;
+    border: 3px solid #ccc;
+    background-color: #e9ecef; /* Light background for the search area */
+    position: relative; /* CRUCIAL: Used for absolute positioning of the target */
+    cursor: crosshair;
+}
+
+/* --- Hidden Target --- */
+#target-box {
+    width: var(--target-size);
+    height: var(--target-size);
+    /* Make it invisible, but still clickable */
+    background-color: transparent; 
+    border: none;
+    position: absolute;
+    /* We will set the left/top position in JavaScript */
+    cursor: pointer;
+    z-index: 10;
+    /* Center the box around its top-left coordinates */
+    transform: translate(-50%, -50%);
+}
+
+/* Style to visually confirm the hit (revealed by JS) */
+#target-box.found {
+    background-color: rgba(46, 204, 113, 0.8); /* Green when found */
+    border: 2px solid #27ae60;
+}
+
+/* --- Status and Controls --- */
+#status-area {
+    min-height: 50px;
+    margin-bottom: 20px;
+}
+
+#hint-message {
+    font-size: 1.2em;
+    font-weight: bold;
+    min-height: 1.5em;
+    color: #555;
+}
+
+#start-button {
+    padding: 12px 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#start-button:hover {
+    background-color: #1e7e34;
+}

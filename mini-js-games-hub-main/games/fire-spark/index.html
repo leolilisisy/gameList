@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Fire Spark — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- favicon -->
+  <link rel="icon" href="https://source.unsplash.com/128x128/?fire" />
+</head>
+<body>
+  <div class="ui-wrap">
+    <header class="topbar">
+      <div class="title">
+        <span class="icon">🔥</span>
+        <h1>Fire Spark</h1>
+      </div>
+
+      <div class="controls">
+        <div class="score-group">
+          <div>Score: <span id="score">0</span></div>
+          <div>Best: <span id="best">0</span></div>
+        </div>
+
+        <div class="buttons">
+          <button id="startBtn" class="btn primary">Start</button>
+          <button id="pauseBtn" class="btn">Pause</button>
+          <button id="restartBtn" class="btn">Restart</button>
+          <label class="volume">
+            <input id="muteToggle" type="checkbox" />
+            🔊
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <canvas id="gameCanvas"></canvas>
+
+      <aside class="side-panel">
+        <div class="stat">
+          <div class="label">Heat</div>
+          <div id="heatWrap" class="meter"><div id="heatBar" class="meter-fill"></div></div>
+        </div>
+
+        <div class="stat">
+          <div class="label">Wind</div>
+          <div id="windIndicator" class="wind">↔ 0</div>
+        </div>
+
+        <div class="stat">
+          <div class="label">Status</div>
+          <div id="status">Idle</div>
+        </div>
+
+        <div class="stat tips">
+          <div class="label">Tips</div>
+          <ul>
+            <li>Move your cursor / finger to keep the spark close.</li>
+            <li>Avoid cold gusts (blue obstacles).</li>
+            <li>Wind gusts occasionally shift direction — react fast!</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <div>Made with ❤️ — keep the spark alive!</div>
+      <div class="links">
+        <a class="play-button" href="../fire-spark/index.html">Play Now</a>
+        <a href="#" id="open-tab" target="_blank" rel="noopener">Open in New Tab →</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Sounds hosted online (Google hosted public sounds) -->
+  <audio id="soundStart" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg" preload="auto"></audio>
+  <audio id="soundGust" src="https://actions.google.com/sounds/v1/impacts/soft_thud.ogg" preload="auto"></audio>
+  <audio id="soundFail" src="https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

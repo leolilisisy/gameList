@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.tap-container {
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+    padding: 30px 50px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.tap-line {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.bulb {
+    width: 15px;
+    height: 15px;
+    margin: 3px;
+    border-radius: 50%;
+    background: #444;
+    box-shadow: 0 0 5px #000;
+    transition: 0.3s;
+}
+
+.bulb.active {
+    background: #00ffea;
+    box-shadow: 0 0 15px #00ffea, 0 0 30px #00ffea, 0 0 45px #00ffea;
+}
+
+.controls button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+    background: #222;
+    color: #00ffea;
+}
+
+.controls button:hover {
+    background: #00ffea;
+    color: #222;
+}
+
+#message {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}

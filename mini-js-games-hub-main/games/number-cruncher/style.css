@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  color: #fff;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  width: 400px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  margin-bottom: 15px;
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+#game-area {
+  margin: 20px 0;
+}
+
+#problem {
+  font-size: 2rem;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+input {
+  width: 80%;
+  padding: 10px;
+  font-size: 18px;
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+button {
+  background: #2ecc71;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin: 5px;
+}
+
+button:hover {
+  background: #27ae60;
+}
+
+#level, #score, #timer {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+#message {
+  margin: 10px 0;
+  font-size: 16px;
+  min-height: 20px;
+}

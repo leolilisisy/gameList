@@ -1,0 +1,49 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+#puzzleCanvas {
+    border: 3px solid #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+}
+
+#controls {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    text-align: center;
+}
+
+#controls button {
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+}
+
+#btn-reverse { background-color: #007bff; color: white; }
+#btn-channel-shift { background-color: #28a745; color: white; }
+#btn-invert { background-color: #ffc107; }
+#btn-reset { background-color: #dc3545; color: white; }
+
+#game-message {
+    margin-top: 20px;
+    font-weight: bold;
+    min-height: 20px; /* To prevent layout shift */
+}
+
+/* Class to visually hide the memory hint after a delay */
+.hidden {
+    display: none;
+}

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Arrow Dodge — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Arrow Dodge — dodge arrows coming from screen edges. HTML5 Canvas game." />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="title">
+        <span class="icon">🏹</span>
+        <h1>Arrow Dodge</h1>
+      </div>
+      <div class="controls">
+        <button id="startBtn" class="btn primary">Start</button>
+        <button id="pauseBtn" class="btn" disabled>Pause</button>
+        <button id="resumeBtn" class="btn" disabled>Resume</button>
+        <button id="restartBtn" class="btn" disabled>Restart</button>
+        <label class="toggle-sound">
+          <input type="checkbox" id="soundToggle" checked>
+          🔊 Sound
+        </label>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="sidebar">
+        <div class="stat">
+          <div class="label">Score</div>
+          <div id="score" class="value">0</div>
+        </div>
+        <div class="stat">
+          <div class="label">High Score</div>
+          <div id="highScore" class="value">0</div>
+        </div>
+        <div class="stat">
+          <div class="label">Wave</div>
+          <div id="wave" class="value">0</div>
+        </div>
+        <div class="stat">
+          <div class="label">Lives</div>
+          <div id="lives" class="value">1</div>
+        </div>
+
+        <div class="powerups">
+          <div class="p-title">Power-ups</div>
+          <div id="powerupList">Shield: <span id="shieldStatus">No</span></div>
+        </div>
+
+        <div class="help">
+          <h3>How to play</h3>
+          <ul>
+            <li>Move: Arrow keys or WASD</li>
+            <li>Avoid arrows from screen edges</li>
+            <li>Pick green shield to block 1 hit</li>
+            <li>Every hit ends the run (unless shield)</li>
+          </ul>
+        </div>
+
+        <div class="links">
+          <a class="btn ghost" href="../../index.html">← Back to Hub</a>
+          <a class="btn ghost" href="https://github.com/ritaban06/mini-js-games-hub" target="_blank" rel="noopener">Repo</a>
+        </div>
+      </aside>
+
+      <section class="game-area">
+        <div class="canvas-wrap">
+          <canvas id="gameCanvas" width="900" height="600"></canvas>
+          <div class="overlay" id="overlay">
+            <div id="overlayMessage" class="overlay-message"></div>
+            <div class="overlay-actions">
+              <button id="overlayStart" class="btn primary">Start Game</button>
+              <button id="overlayRestart" class="btn">Restart</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="credits">Made with ❤️ — Arrow Dodge</div>
+      <div class="attribution">Sprites/icons from Wikimedia Commons. Sounds: Google Actions public sounds.</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

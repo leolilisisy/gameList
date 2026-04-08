@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tap the Beat — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- favicon -->
+  <link rel="icon" href="https://source.unsplash.com/128x128/?music" />
+</head>
+<body>
+  <div class="game-shell">
+    <header class="game-header">
+      <div class="game-title">
+        <span class="icon">🎧</span>
+        <h1>Tap the Beat</h1>
+        <p class="sub">Tap in time — hit combos and earn a high score!</p>
+      </div>
+
+      <div class="controls-top">
+        <select id="difficulty">
+          <option value="easy">Easy (slow)</option>
+          <option value="normal" selected>Normal</option>
+          <option value="hard">Hard (fast)</option>
+        </select>
+
+        <div class="buttons">
+          <button id="startBtn" class="btn primary">Start</button>
+          <button id="pauseBtn" class="btn" disabled>Pause</button>
+          <button id="restartBtn" class="btn" disabled>Restart</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-main">
+      <section class="visual-column">
+        <div class="stage" id="stage">
+          <!-- moving beat circles will be injected here -->
+          <div class="hit-line" aria-hidden="true"></div>
+          <div class="feedback" id="feedback"></div>
+        </div>
+
+        <div class="tap-area">
+          <button id="tapBtn" class="tap-btn" aria-label="Tap to the beat">TAP</button>
+          <p class="hint">Tap button or press <kbd>Space</kbd></p>
+        </div>
+      </section>
+
+      <aside class="stats-column">
+        <div class="score-card glow">
+          <h3>Score</h3>
+          <div id="score">0</div>
+        </div>
+
+        <div class="score-card">
+          <h3>Combo</h3>
+          <div id="combo">0</div>
+        </div>
+
+        <div class="score-card">
+          <h3>Accuracy</h3>
+          <div id="accuracy">—</div>
+        </div>
+
+        <div class="progress-card">
+          <h3>Progress</h3>
+          <div class="progress-bar">
+            <div id="progressFill" style="width: 0%"></div>
+          </div>
+          <div class="time-meta"><span id="timeElapsed">0.0s</span> / <span id="duration">0.0s</span></div>
+        </div>
+
+        <div class="audio-controls">
+          <label for="trackSelect">Track</label>
+          <select id="trackSelect">
+            <option value="drum-01">Ambient Beat</option>
+            <option value="pop-01">Upbeat Pop</option>
+          </select>
+          <div class="audio-buttons">
+            <button id="muteBtn" class="btn">Mute</button>
+            <button id="volDown" class="btn">-</button>
+            <button id="volUp" class="btn">+</button>
+          </div>
+        </div>
+
+        <div class="credits">
+          <small>Images: Unsplash • Hosted audio samples</small>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="game-footer">
+      <a class="ghost" href="../" aria-label="Back to hub">← Back to Hub</a>
+      <div class="best">Pro tip: aim for "Perfect" — gives big combo boosts!</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

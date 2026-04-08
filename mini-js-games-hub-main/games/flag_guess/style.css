@@ -1,0 +1,115 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f4f8;
+}
+
+#game-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+h1 {
+    color: #1a237e;
+    margin-bottom: 20px;
+}
+
+#score-area {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #3f51b5;
+    margin-bottom: 15px;
+}
+
+/* --- Flag Display --- */
+#flag-display {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #eceff1;
+}
+
+#flag-image {
+    width: 100%;
+    max-width: 300px; /* Keep flag image size reasonable */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Options Container --- */
+#options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.option-button {
+    padding: 12px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #e3f2fd;
+    color: #1a237e;
+    border: 2px solid #90caf9;
+    border-radius: 6px;
+    transition: background-color 0.2s, transform 0.1s;
+    font-weight: 600;
+}
+
+.option-button:hover:not(:disabled) {
+    background-color: #bbdefb;
+    transform: translateY(-2px);
+}
+
+.option-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* --- Feedback and Correct/Incorrect Styles --- */
+#feedback-message {
+    min-height: 1.5em; /* Reserve space to prevent layout jump */
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.correct {
+    background-color: #4CAF50; /* Green for correct */
+    color: white;
+    border-color: #388e3c;
+}
+
+.incorrect {
+    background-color: #f44336; /* Red for incorrect */
+    color: white;
+    border-color: #d32f2f;
+}
+
+/* --- Next Button --- */
+#next-button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #00bcd4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#next-button:hover {
+    background-color: #0097a7;
+}

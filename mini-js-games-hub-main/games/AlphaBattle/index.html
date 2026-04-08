@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alpha Battle ⚔</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>⚔ Alpha Battle</h1>
+  <p class="tagline">Test your speed and spelling skills before the timer runs out!</p>
+
+  <div class="game-container">
+    <div class="word-box" id="wordDisplay">Press Start!</div>
+
+    <input type="text" id="userInput" placeholder="Type the word here..." disabled />
+
+    <div class="info">
+      <p>⏱ Time: <span id="time">30</span>s</p>
+      <p>💯 Score: <span id="score">0</span></p>
+    </div>
+
+    <div class="buttons">
+      <button id="startBtn">▶ Start</button>
+      <button id="restartBtn">🔄 Restart</button>
+    </div>
+  </div>
+
+  <p id="message"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>

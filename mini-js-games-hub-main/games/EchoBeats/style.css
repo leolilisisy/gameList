@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle, #1a1a2e, #0f0c29);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+}
+
+.game-container {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #ffcc70;
+  text-shadow: 0 0 20px #ffcc70;
+}
+
+#status {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+.pad-container {
+  display: grid;
+  grid-template-columns: repeat(2, 150px);
+  grid-gap: 20px;
+  justify-content: center;
+  margin: 30px auto;
+}
+
+.pad {
+  width: 150px;
+  height: 150px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+#pad1 { background: linear-gradient(135deg, #ff6a00, #ee0979); }
+#pad2 { background: linear-gradient(135deg, #24c6dc, #514a9d); }
+#pad3 { background: linear-gradient(135deg, #00b09b, #96c93d); }
+#pad4 { background: linear-gradient(135deg, #fc5c7d, #6a82fb); }
+
+.pad.active {
+  transform: scale(1.1);
+  box-shadow: 0 0 40px #fff;
+}
+
+#start-btn {
+  background: linear-gradient(45deg, #f7971e, #ffd200);
+  color: black;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.2em;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#start-btn:hover {
+  background: linear-gradient(45deg, #ffb347, #ffcc33);
+  transform: scale(1.05);
+}
+
+.info {
+  margin-top: 20px;
+  font-size: 1.2em;
+}

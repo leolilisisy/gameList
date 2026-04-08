@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snowball Rush | Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-ui">
+        <h1>❄️ Snowball Rush</h1>
+        <div class="controls">
+            <button id="start-btn">Start</button>
+            <button id="pause-btn">Pause</button>
+            <button id="restart-btn">Restart</button>
+            <button id="mute-btn">🔊</button>
+            <span class="score">Score: <span id="score">0</span></span>
+        </div>
+        <canvas id="gameCanvas" width="800" height="500"></canvas>
+    </div>
+
+    <!-- Sound Effects -->
+    <audio id="flake-sound" src="https://freesound.org/data/previews/82/82768_1022656-lq.mp3"></audio>
+    <audio id="hit-sound" src="https://freesound.org/data/previews/66/66717_931655-lq.mp3"></audio>
+    <audio id="jump-sound" src="https://freesound.org/data/previews/41/41456_512123-lq.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

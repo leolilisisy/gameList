@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slot Spinner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎰 Slot Spinner</h1>
+        <p>Spin the reels and try your luck!</p>
+
+        <div class="game-stats">
+            <div id="balance">Balance: $<span id="current-balance">1000</span></div>
+            <div id="bet">Bet: $<span id="current-bet">10</span></div>
+            <div id="last-win">Last Win: $<span id="current-win">0</span></div>
+        </div>
+
+        <div class="slot-machine">
+            <div class="reels">
+                <div class="reel" id="reel1">
+                    <div class="symbol">🍒</div>
+                    <div class="symbol">🍋</div>
+                    <div class="symbol">🍊</div>
+                    <div class="symbol">🍇</div>
+                    <div class="symbol">🔔</div>
+                    <div class="symbol">⭐</div>
+                    <div class="symbol">7️⃣</div>
+                </div>
+                <div class="reel" id="reel2">
+                    <div class="symbol">🍒</div>
+                    <div class="symbol">🍋</div>
+                    <div class="symbol">🍊</div>
+                    <div class="symbol">🍇</div>
+                    <div class="symbol">🔔</div>
+                    <div class="symbol">⭐</div>
+                    <div class="symbol">7️⃣</div>
+                </div>
+                <div class="reel" id="reel3">
+                    <div class="symbol">🍒</div>
+                    <div class="symbol">🍋</div>
+                    <div class="symbol">🍊</div>
+                    <div class="symbol">🍇</div>
+                    <div class="symbol">🔔</div>
+                    <div class="symbol">⭐</div>
+                    <div class="symbol">7️⃣</div>
+                </div>
+            </div>
+
+            <div class="paylines">
+                <div class="payline payline-center"></div>
+                <div class="payline payline-top"></div>
+                <div class="payline payline-bottom"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="bet-controls">
+                <button id="decrease-bet">-</button>
+                <span id="bet-amount">$10</span>
+                <button id="increase-bet">+</button>
+            </div>
+            <button id="spin-btn">SPIN!</button>
+            <button id="max-bet-btn">Max Bet</button>
+        </div>
+
+        <div id="message"></div>
+
+        <div class="paytable">
+            <h3>Paytable:</h3>
+            <div class="paytable-row">
+                <span>🍒 🍒 🍒</span>
+                <span>$50</span>
+            </div>
+            <div class="paytable-row">
+                <span>🍋 🍋 🍋</span>
+                <span>$75</span>
+            </div>
+            <div class="paytable-row">
+                <span>🍊 🍊 🍊</span>
+                <span>$100</span>
+            </div>
+            <div class="paytable-row">
+                <span>🍇 🍇 🍇</span>
+                <span>$150</span>
+            </div>
+            <div class="paytable-row">
+                <span>🔔 🔔 🔔</span>
+                <span>$200</span>
+            </div>
+            <div class="paytable-row">
+                <span>⭐ ⭐ ⭐</span>
+                <span>$300</span>
+            </div>
+            <div class="paytable-row">
+                <span>7️⃣ 7️⃣ 7️⃣</span>
+                <span>$1000</span>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Set your bet amount using the + and - buttons</li>
+                <li>Click SPIN to start the reels</li>
+                <li>Match 3 symbols on the center line to win</li>
+                <li>Different symbols pay different amounts</li>
+                <li>Three 7's is the jackpot!</li>
+                <li>Start with $1000 and try to build your fortune</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

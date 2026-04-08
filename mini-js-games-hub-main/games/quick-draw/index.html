@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quick Draw | Mini JS Games Hub</title>
+
+  <!-- Online background / art (royalty-free placeholders) -->
+  <link rel="preconnect" href="https://images.unsplash.com" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <header class="qd-header">
+      <div class="qd-title">
+        <h1>Quick Draw</h1>
+        <p class="subtitle">Wait for <strong>DRAW!</strong> — shoot faster than the AI. Don't shoot early!</p>
+      </div>
+      <div class="qd-controls">
+        <select id="mode-select" title="Game mode">
+          <option value="bestof3">Best of 3</option>
+          <option value="timed">Timed — 30s</option>
+        </select>
+
+        <select id="difficulty-select" title="AI difficulty">
+          <option value="easy">Easy (slower AI)</option>
+          <option value="normal" selected>Normal</option>
+          <option value="hard">Hard (faster AI)</option>
+        </select>
+
+        <button id="start-btn" class="btn primary">Start</button>
+        <button id="pause-btn" class="btn" disabled>Pause</button>
+        <button id="restart-btn" class="btn" disabled>Restart</button>
+      </div>
+    </header>
+
+    <main class="qd-main" role="main">
+      <section class="arena">
+        <div class="target-area">
+          <div class="baddie baddie-ai">
+            <img class="baddie-img" src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?w=800&q=60&auto=format&fit=crop&crop=faces" alt="AI opponent" />
+            <div class="name">AI</div>
+            <div class="score" id="ai-score">AI: 0</div>
+          </div>
+
+          <div class="center-panel">
+            <div id="signal" class="signal wait">WAIT...</div>
+            <div id="countdown" class="countdown"> </div>
+
+            <button id="shoot-btn" class="shoot-btn" aria-label="Shoot (spacebar/enter)" disabled>
+              🔫 SHOOT
+            </button>
+
+            <div class="controls-row">
+              <div class="result" id="round-result">Ready</div>
+              <div class="timer" id="mode-timer"></div>
+            </div>
+          </div>
+
+          <div class="baddie baddie-player">
+            <img class="baddie-img" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=60&auto=format&fit=crop&crop=faces" alt="Player" />
+            <div class="name">You</div>
+            <div class="score" id="player-score">You: 0</div>
+          </div>
+        </div>
+
+        <div class="hud">
+          <div class="stat">
+            <label>Round:</label>
+            <span id="round-info">0 / 0</span>
+          </div>
+          <div class="stat">
+            <label>Your best (local):</label>
+            <span id="best-score">—</span>
+          </div>
+          <div class="stat">
+            <label>Last reaction:</label>
+            <span id="last-reaction">—</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="howto">
+        <h3>How to play</h3>
+        <ul>
+          <li>Click <strong>Start</strong>. Wait for the big <strong>DRAW!</strong> signal.</li>
+          <li>When you see <strong>DRAW!</strong>, press the <strong>Shoot</strong> button or press <strong>Space/Enter</strong>.</li>
+          <li>Shoot too early and you automatically lose the round.</li>
+          <li>Modes: <strong>Best of 3</strong> or <strong>Timed 30s</strong> mode.</li>
+        </ul>
+      </section>
+
+      <footer class="qd-footer">
+        <a class="hub-link" href="../../index.html">← Back to Hub</a>
+        <div class="credits">Sounds: Google Actions library • Images: Unsplash</div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

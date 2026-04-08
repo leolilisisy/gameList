@@ -1,0 +1,89 @@
+:root{
+  --bg:#0b1020;
+  --card:#0f1724;
+  --accent:#ff6b6b;
+  --accent-2:#ffd166;
+  --glow: 0 8px 40px rgba(255,107,107,0.18), 0 2px 6px rgba(0,0,0,0.6);
+  --glass: rgba(255,255,255,0.03);
+  --muted: #9aa3b2;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial}
+body{
+  background:
+    radial-gradient(1200px 500px at 10% 10%, rgba(120,94,255,0.07), transparent 10%),
+    radial-gradient(900px 400px at 90% 90%, rgba(255,165,90,0.04), transparent 10%),
+    var(--bg);
+  color:#e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.game-shell{
+  width:100%;
+  max-width:1100px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:14px;
+  box-shadow: 0 10px 40px rgba(2,6,23,0.7);
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+/* Header */
+.game-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 20px;
+  gap:12px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);
+}
+.game-title{display:flex;align-items:center;gap:10px}
+.icon{font-size:26px}
+.title-text{font-weight:600;font-size:18px}
+.meta{color:var(--muted);font-size:13px;margin-left:6px}
+
+.scoreboard{display:flex;gap:12px;align-items:center}
+.scoreboard div{font-size:13px;color:var(--muted)}
+.scoreboard strong{font-size:16px;color:#fff;display:inline-block;min-width:36px;text-align:center}
+
+/* Controls */
+.controls{display:flex;gap:8px;align-items:center}
+.control-btn{
+  background:var(--glass);
+  border:1px solid rgba(255,255,255,0.03);
+  color:#fff;padding:8px 10px;border-radius:8px;cursor:pointer;font-size:14px;
+  box-shadow: var(--glow);
+}
+.open-new{padding:8px 12px;border-radius:8px;background:transparent;color:var(--muted);text-decoration:none;border:1px dashed rgba(255,255,255,0.03)}
+
+/* Game area */
+.game-area{position:relative;background:linear-gradient(180deg,#071025 0%, #071226 60%);height:600px;display:flex;align-items:center;justify-content:center}
+canvas{width:100%;height:100%;display:block;background:
+  linear-gradient(180deg,rgba(255,255,255,0.015),transparent 20%);}
+
+/* Overlay */
+.overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg, rgba(2,6,23,0.7), rgba(2,6,23,0.6))}
+.overlay.hidden{display:none}
+.overlay-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:26px;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,0.03);box-shadow: 0 18px 60px rgba(2,6,23,0.7)}
+.overlay-card h2{margin:0 0 8px;font-size:22px}
+.overlay-card p{color:var(--muted);margin:0 0 18px}
+.overlay-actions{display:flex;gap:10px;justify-content:center}
+.cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));border:none;color:#08101a;padding:8px 16px;border-radius:10px;font-weight:600;cursor:pointer}
+.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#fff;padding:8px 12px;border-radius:10px}
+
+/* Footer & help */
+.game-footer{padding:14px 20px;background:transparent;color:var(--muted);font-size:13px}
+.help{position:absolute;left:18px;bottom:18px;color:var(--muted);font-size:13px;background:rgba(0,0,0,0.25);padding:8px 10px;border-radius:10px;backdrop-filter: blur(4px)}
+
+/* Small screens */
+@media (max-width:720px){
+  .game-shell{margin:8px}
+  .game-area{height:72vh}
+  .controls{gap:6px}
+}

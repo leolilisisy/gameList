@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Direction Maze | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="maze-container">
+    <h1>Direction Maze</h1>
+    <p>Reach the goal by following the directional tiles! 💡</p>
+    <div class="maze-status">
+      <span id="moves">Moves: 0</span>
+      <span id="timer">Time: 0s</span>
+    </div>
+    <div id="maze"></div>
+    <div class="controls">
+      <button id="start-btn">Start</button>
+      <button id="pause-btn">Pause</button>
+      <button id="resume-btn">Resume</button>
+      <button id="restart-btn">Restart</button>
+    </div>
+  </div>
+
+  <audio id="move-sound" src="https://www.soundjay.com/button/sounds/button-16.mp3"></audio>
+  <audio id="goal-sound" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3"></audio>
+  <audio id="hit-sound" src="https://www.soundjay.com/button/sounds/button-10.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

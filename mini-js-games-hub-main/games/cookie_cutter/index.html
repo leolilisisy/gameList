@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cookie Cutter 🍪</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>The Cookie Cutter 👑</h1>
+            <p>Your kingdom's survival depends entirely on the browser's **Cookies**.</p>
+        </header>
+
+        <section id="resource-panel">
+            <h2>Kingdom Resources (Stored in Cookies)</h2>
+            <div class="resource-grid">
+                <div class="stat-item">💰 Gold: <span id="res-gold">--</span></div>
+                <div class="stat-item">❤️ Health: <span id="res-health">--</span></div>
+                <div class="stat-item">🍎 Food: <span id="res-food">--</span></div>
+                <div class="stat-item">🛡️ Army Size: <span id="res-army">--</span></div>
+            </div>
+        </section>
+
+        <section id="action-panel">
+            <h2>Royal Audit & Actions</h2>
+            <div id="audit-status">
+                <p id="audit-message" class="nominal">Audit Status: System Nominal (For now...)</p>
+            </div>
+
+            <div class="action-controls">
+                <button id="collect-tax">Collect Tax (+10 Gold)</button>
+                <button id="train-army">Train Army (-20 Gold, +1 Army)</button>
+                <button id="advance-day">Advance Day (Consumption & Audit Check)</button>
+            </div>
+        </section>
+        
+        <section id="instruction-panel">
+            <h2>The Only Way to Win...</h2>
+            <p>This game is unwinnable by conventional means. Use **Developer Tools** (F12) to access the **Application** tab, find the **Cookies**, and manually edit your resources.</p>
+            <p>🚨 **WARNING:** Make your edits subtle. Suspiciously clean data (perfectly rounded numbers, zero debt, etc.) will trigger an instant Audit Event!</p>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

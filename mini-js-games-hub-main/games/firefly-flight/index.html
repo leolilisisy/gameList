@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Firefly Flight | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-ui">
+    <h1>Firefly Flight</h1>
+    <p>Guide the firefly through the dark forest. Collect orbs, avoid obstacles, and keep glowing!</p>
+    <div class="buttons">
+      <button id="start-btn">Start</button>
+      <button id="pause-btn">Pause</button>
+      <button id="restart-btn">Restart</button>
+    </div>
+    <canvas id="gameCanvas" width="800" height="500"></canvas>
+    <p>Score: <span id="score">0</span></p>
+  </div>
+
+  <!-- Sounds -->
+  <audio id="collect-sound" src="https://freesound.org/data/previews/66/66717_931655-lq.mp3"></audio>
+  <audio id="hit-sound" src="https://freesound.org/data/previews/341/341695_3248244-lq.mp3"></audio>
+  <audio id="bg-music" src="https://freesound.org/data/previews/460/460114_855957-lq.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

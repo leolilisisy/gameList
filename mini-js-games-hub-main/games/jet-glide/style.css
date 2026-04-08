@@ -1,0 +1,132 @@
+:root{
+  --bg:#06070a;
+  --card:#0b0d13;
+  --neon-1:#00f0ff;
+  --neon-2:#7cff6b;
+  --accent:#ff5bd3;
+  --glass: rgba(255,255,255,0.04);
+  --muted: rgba(255,255,255,0.45);
+  --glass-2: rgba(255,255,255,0.03);
+  --radius:14px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: radial-gradient(1200px 400px at 10% 10%, rgba(0,240,255,0.04), transparent),
+              radial-gradient(900px 300px at 90% 80%, rgba(124,255,107,0.02), transparent),
+              var(--bg);
+  color:#eaf6ff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  justify-content:center;
+  padding:32px;
+}
+
+/* container */
+.page{
+  width: 100%;
+  max-width:1100px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+/* topbar */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+.topbar .back{
+  color:var(--muted);
+  text-decoration:none;
+  font-weight:600;
+  padding:8px 12px;
+  background:var(--glass);
+  border-radius:10px;
+}
+.topbar h1{margin:0;font-size:20px}
+.controls-top button{
+  background:transparent;border:0;color:var(--muted);font-size:20px;cursor:pointer;padding:6px 8px;border-radius:8px;
+}
+.controls-top button[aria-pressed="false"]{opacity:0.5}
+
+/* game area layout */
+.game-area{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:18px;
+  align-items:start;
+}
+
+/* UI card */
+.game-ui{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-radius:var(--radius);
+  padding:14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* meta */
+.meta{display:flex;justify-content:space-between;align-items:center;padding:6px 8px 12px 8px}
+.meta .score,.meta .highscore{font-weight:700;background:linear-gradient(90deg,var(--glass),transparent);padding:8px 10px;border-radius:10px;font-size:14px}
+
+/* canvas wrap */
+.canvas-wrap{position:relative;border-radius:12px;overflow:hidden;margin:6px 0;border:1px solid rgba(255,255,255,0.03);}
+#gameCanvas{display:block;width:100%;height:auto;background:
+  linear-gradient(to bottom, rgba(4,6,20,0.9), rgba(2,3,10,0.85));}
+
+/* overlay */
+.overlay{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;
+}
+.overlay-card{
+  width:88%;max-width:620px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px;text-align:center;backdrop-filter: blur(6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  border:1px solid rgba(255,255,255,0.04);
+  pointer-events:auto;
+}
+.overlay-card h2{margin:6px 0 8px;font-size:22px}
+.overlay-card p{color:var(--muted);margin:0 0 12px}
+.overlay-actions{display:flex;gap:10px;justify-content:center;margin-bottom:8px}
+.cta{
+  background:linear-gradient(90deg,var(--neon-1),var(--accent));
+  color:#031016;border:0;padding:10px 16px;border-radius:10px;font-weight:700;cursor:pointer;
+  box-shadow:0 6px 20px rgba(0,240,255,0.09), 0 4px 8px rgba(255,91,211,0.06);
+}
+.muted{
+  background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);padding:8px 12px;border-radius:10px;cursor:pointer;
+}
+
+/* on-screen controls */
+.game-controls{display:flex;gap:8px;justify-content:center;padding-top:8px}
+.touch{padding:10px 14px;border-radius:10px;border:0;background:var(--glass-2);color:var(--muted);font-weight:700;cursor:pointer}
+
+/* description column */
+.desc{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:16px;
+  border:1px solid rgba(255,255,255,0.03);
+}
+.desc h3{margin-top:0}
+.desc ul{margin:8px 0 0 18px;color:var(--muted)}
+
+/* footer */
+.foot{color:var(--muted);text-align:center;padding:4px;font-size:13px}
+
+/* neon glow for canvas elements using CSS filters on the canvas element */
+#gameCanvas { filter: drop-shadow(0 6px 16px rgba(0, 240, 255, 0.06)) drop-shadow(0 -6px 12px rgba(124,255,107,0.02)); }
+
+/* responsive */
+@media (max-width:980px){
+  .game-area{grid-template-columns: 1fr;}
+  .desc{order:2}
+  .canvas-wrap{order:1}
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Length Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>❓ Word Length Puzzle</h1>
+
+        <div id="score-area">
+            Score: <span id="score">0</span> / <span id="total-rounds">0</span>
+        </div>
+
+        <div id="puzzle-box">
+            <h2>Definition:</h2>
+            <p id="definition-display">Press START to get a definition!</p>
+        </div>
+
+        <div id="input-area">
+            <input type="number" id="length-input" placeholder="Number of letters?" disabled>
+            <button id="submit-button" disabled>GUESS</button>
+        </div>
+        
+        <div id="feedback-message">
+            </div>
+
+        <div id="controls">
+            <button id="start-button">START GAME</button>
+            <button id="next-button" style="display: none;">NEXT WORD</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

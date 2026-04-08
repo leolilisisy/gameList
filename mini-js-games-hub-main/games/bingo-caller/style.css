@@ -1,0 +1,391 @@
+/* Bingo Caller Game Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    color: white;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    color: #ffd700;
+}
+
+p {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    background: rgba(255, 215, 0, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #ffd700;
+}
+
+.game-area {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
+    align-items: flex-start;
+}
+
+.bingo-card {
+    flex: 1;
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    border: 4px solid #ffd700;
+}
+
+.card-header {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.letter {
+    background: #e74c3c;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 5px;
+}
+
+.number-cell {
+    background: #f8f9fa;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #495057;
+    cursor: pointer;
+    transition: all 0.3s;
+    aspect-ratio: 1;
+    min-height: 50px;
+    position: relative;
+}
+
+.number-cell:hover {
+    background: #e9ecef;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.number-cell.marked {
+    background: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+
+.number-cell.marked::after {
+    content: '✓';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    font-size: 0.8em;
+    color: white;
+}
+
+.free-space {
+    background: #ffd700 !important;
+    color: #000 !important;
+    font-weight: bold;
+    cursor: default;
+}
+
+.free-space::after {
+    content: '★';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    color: #000;
+}
+
+.game-controls {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.called-numbers-display {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    border: 2px solid #ffd700;
+}
+
+.called-numbers-display h3 {
+    margin-bottom: 10px;
+    color: #ffd700;
+    text-align: center;
+}
+
+#called-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    gap: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.called-number {
+    background: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9em;
+    animation: numberCalled 0.5s ease-out;
+}
+
+@keyframes numberCalled {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.control-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:disabled {
+    background: #666;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#call-number-btn {
+    background: #27ae60;
+    grid-column: span 2;
+}
+
+#call-number-btn:hover {
+    background: #229954;
+}
+
+#auto-play-btn.active {
+    background: #e67e22;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+#new-game-btn {
+    background: #e74c3c;
+}
+
+#new-game-btn:hover {
+    background: #c0392b;
+}
+
+#check-bingo-btn {
+    background: #f39c12;
+}
+
+#check-bingo-btn:hover {
+    background: #e67e22;
+}
+
+.game-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #ffd700;
+}
+
+.game-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+.game-options input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+#message {
+    font-size: 1.2em;
+    margin: 20px 0;
+    min-height: 30px;
+    font-weight: bold;
+    color: #ffd700;
+    text-align: center;
+}
+
+.win-patterns {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 2px solid #ffd700;
+}
+
+.win-patterns h3 {
+    margin-bottom: 15px;
+    color: #ffd700;
+    text-align: center;
+}
+
+.patterns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.pattern {
+    background: rgba(255, 215, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ffd700;
+}
+
+.instructions {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.instructions h3 {
+    margin-bottom: 10px;
+    color: #ffd700;
+    text-align: center;
+}
+
+.instructions ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .game-area {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .control-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    #call-number-btn {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .card-grid {
+        gap: 3px;
+    }
+
+    .number-cell {
+        font-size: 1em;
+        min-height: 40px;
+    }
+
+    .game-stats {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    .control-buttons {
+        gap: 8px;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+
+    .patterns {
+        grid-template-columns: 1fr;
+    }
+}

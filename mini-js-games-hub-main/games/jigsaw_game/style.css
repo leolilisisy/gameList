@@ -1,0 +1,119 @@
+:root {
+    --grid-size: 4; /* 4x4 grid */
+    --puzzle-width: 400px; /* Total width/height of the puzzle container */
+    --piece-size: calc(var(--puzzle-width) / var(--grid-size));
+    --image-url: url('images/jigsaw-image.jpg'); /* !!! UPDATE THIS PATH !!! */
+}
+
+body {
+    font-family: 'Verdana', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+#game-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 900px;
+    width: 90%;
+}
+
+h1 {
+    color: #e67e22; /* Orange puzzle theme */
+    margin-bottom: 20px;
+}
+
+/* --- Puzzle Area Layout --- */
+#puzzle-area {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 20px;
+}
+
+/* --- Reference Image --- */
+#reference-image-box h2 {
+    font-size: 1em;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+#reference-image, #jigsaw-grid {
+    width: var(--puzzle-width);
+    height: var(--puzzle-width);
+}
+#reference-image {
+    background-image: var(--image-url);
+    background-size: cover;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+}
+
+/* --- Jigsaw Grid --- */
+#jigsaw-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size), 1fr);
+    grid-template-rows: repeat(var(--grid-size), 1fr);
+    border: 3px solid #333;
+}
+
+/* --- Piece Styling --- */
+.jigsaw-piece {
+    width: var(--piece-size);
+    height: var(--piece-size);
+    box-sizing: border-box;
+    border: 1px solid rgba(255, 255, 255, 0.6); /* White lines between pieces */
+    cursor: pointer;
+    background-image: var(--image-url);
+    /* CRUCIAL: Ensures the whole image is treated as 400x400 */
+    background-size: var(--puzzle-width) var(--puzzle-width); 
+    transition: box-shadow 0.1s, transform 0.3s;
+}
+
+.jigsaw-piece:hover {
+    box-shadow: inset 0 0 15px rgba(230, 126, 34, 0.8);
+}
+
+.selected {
+    box-shadow: 0 0 15px 5px #007bff; /* Blue shadow when selected */
+    border-color: #007bff;
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+/* --- Status and Controls --- */
+#status-area {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#feedback-message {
+    min-height: 20px;
+    margin-bottom: 20px;
+}
+
+#shuffle-button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#shuffle-button:hover {
+    background-color: #2980b9;
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Care - Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🐾 Pet Care</h1>
+            <p>Take care of your virtual pet and keep it happy and healthy!</p>
+        </header>
+
+        <div class="game-area">
+            <div class="pet-display">
+                <div class="pet-container">
+                    <div class="pet" id="pet">
+                        <div class="pet-body">
+                            <div class="pet-face">
+                                <div class="eyes">
+                                    <div class="eye left-eye">•</div>
+                                    <div class="eye right-eye">•</div>
+                                </div>
+                                <div class="mouth" id="mouth">ω</div>
+                            </div>
+                            <div class="pet-ears">
+                                <div class="ear left-ear">▲</div>
+                                <div class="ear right-ear">▲</div>
+                            </div>
+                        </div>
+                        <div class="pet-effects" id="pet-effects"></div>
+                    </div>
+
+                    <div class="pet-name" id="pet-name">Buddy</div>
+                    <div class="pet-mood" id="pet-mood">Happy</div>
+                </div>
+
+                <div class="pet-stats">
+                    <div class="stat">
+                        <label>Hunger</label>
+                        <div class="stat-bar">
+                            <div class="stat-fill hunger-fill" id="hunger-fill"></div>
+                        </div>
+                        <span class="stat-value" id="hunger-value">100%</span>
+                    </div>
+
+                    <div class="stat">
+                        <label>Happiness</label>
+                        <div class="stat-bar">
+                            <div class="stat-fill happiness-fill" id="happiness-fill"></div>
+                        </div>
+                        <span class="stat-value" id="happiness-value">100%</span>
+                    </div>
+
+                    <div class="stat">
+                        <label>Health</label>
+                        <div class="stat-bar">
+                            <div class="stat-fill health-fill" id="health-fill"></div>
+                        </div>
+                        <span class="stat-value" id="health-value">100%</span>
+                    </div>
+
+                    <div class="stat">
+                        <label>Energy</label>
+                        <div class="stat-bar">
+                            <div class="stat-fill energy-fill" id="energy-fill"></div>
+                        </div>
+                        <span class="stat-value" id="energy-value">100%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="actions-panel">
+                <h3>Care Actions</h3>
+                <div class="action-buttons">
+                    <button class="action-btn feed-btn" id="feed-btn">
+                        🍎 Feed
+                        <span class="cooldown" id="feed-cooldown"></span>
+                    </button>
+                    <button class="action-btn play-btn" id="play-btn">
+                        🎾 Play
+                        <span class="cooldown" id="play-cooldown"></span>
+                    </button>
+                    <button class="action-btn clean-btn" id="clean-btn">
+                        🧼 Clean
+                        <span class="cooldown" id="clean-cooldown"></span>
+                    </button>
+                    <button class="action-btn heal-btn" id="heal-btn">
+                        💊 Heal
+                        <span class="cooldown" id="heal-cooldown"></span>
+                    </button>
+                    <button class="action-btn sleep-btn" id="sleep-btn">
+                        😴 Sleep
+                        <span class="cooldown" id="sleep-cooldown"></span>
+                    </button>
+                </div>
+
+                <div class="pet-info">
+                    <h4>Pet Info</h4>
+                    <div class="info-item">
+                        <span class="label">Age:</span>
+                        <span class="value" id="pet-age">1 day</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Level:</span>
+                        <span class="value" id="pet-level">1</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Experience:</span>
+                        <span class="value" id="pet-exp">0/100</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Coins:</span>
+                        <span class="value" id="pet-coins">50</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="minigames-panel">
+                <h3>Mini Games</h3>
+                <div class="minigame-buttons">
+                    <button class="minigame-btn" id="fetch-game-btn">🦴 Fetch Game</button>
+                    <button class="minigame-btn" id="puzzle-game-btn">🧩 Puzzle Game</button>
+                    <button class="minigame-btn" id="memory-game-btn">🧠 Memory Game</button>
+                </div>
+
+                <div class="game-area-display" id="game-area-display">
+                    <div class="game-placeholder">
+                        <p>Choose a mini game to play with your pet!</p>
+                        <div class="pet-game-icon">🎮</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="notifications" id="notifications"></div>
+
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Keep your pet's hunger, happiness, health, and energy above 20%</li>
+                <li>Feed your pet regularly to maintain hunger levels</li>
+                <li>Play with your pet to increase happiness</li>
+                <li>Clean your pet when it gets dirty</li>
+                <li>Use medicine when your pet is sick</li>
+                <li>Let your pet sleep to restore energy</li>
+                <li>Play mini games to earn coins and experience</li>
+                <li>Level up your pet by gaining experience</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #e8f4f8; /* Light blue background */
+    color: #34495e;
+}
+
+#game-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 25px;
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- Shared Question/Input Styles --- */
+#setup-question-area, #quiz-question-area {
+    min-height: 100px; /* Ensure consistent height */
+    padding: 15px;
+    border: 1px dashed #999;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 1.1em;
+    width: 80%;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+/* --- Button Styles --- */
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin: 5px;
+}
+
+#next-setup-button, #submit-quiz-button {
+    background-color: #2ecc71; /* Green */
+    color: white;
+}
+
+#next-setup-button:hover:not(:disabled), #submit-quiz-button:hover:not(:disabled) {
+    background-color: #27ae60;
+}
+
+#start-quiz-button {
+    background-color: #007bff; /* Blue */
+    color: white;
+}
+
+#start-quiz-button:hover {
+    background-color: #0056b3;
+}
+
+.global-control {
+    margin-top: 30px;
+    background-color: #e74c3c; /* Red */
+    color: white;
+}
+
+.global-control:hover {
+    background-color: #c0392b;
+}
+
+button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* --- Quiz Mode Status --- */
+#quiz-status {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #3498db;
+    margin-bottom: 20px;
+}
+
+#quiz-feedback-message {
+    min-height: 1.5em;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Specific feedback colors */
+.correct {
+    color: #2ecc71;
+}
+
+.incorrect {
+    color: #e74c3c;
+}

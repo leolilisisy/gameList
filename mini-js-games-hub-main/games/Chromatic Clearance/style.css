@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+}
+
+#game-stage {
+    width: 400px;
+    height: 300px;
+    border: 5px solid #3498db;
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#target-container {
+    /* This element is the filter application point */
+    width: 100%;
+    height: 100%;
+    transition: filter 0.1s linear; /* Smooth visual feedback */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#hidden-image {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+/* --- Controls Styling --- */
+#controls {
+    width: 400px;
+    padding: 20px;
+    background-color: #34495e;
+    border-radius: 5px;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.control-group label {
+    flex: 2;
+    margin-right: 10px;
+}
+
+.control-group input[type="range"] {
+    flex: 4;
+}
+
+.control-group span {
+    flex: 1;
+    text-align: right;
+}
+
+#check-button {
+    padding: 10px 20px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}

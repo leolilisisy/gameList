@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Time Keeper Reaction Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>🎯 The Time Keeper</h1>
+
+        <div id="score-area">
+            Score: <span id="score">0</span> | Last Score: <span id="last-score">--</span>ms
+        </div>
+
+        <div id="track-container">
+            <div id="hit-zone">HIT ZONE</div>
+            
+            <div id="moving-target"></div>
+        </div>
+
+        <div id="feedback-message">
+            <p>Click the button when the target is inside the HIT ZONE!</p>
+        </div>
+
+        <div id="controls">
+            <button id="action-button">START</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

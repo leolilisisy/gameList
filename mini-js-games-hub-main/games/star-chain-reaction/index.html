@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Star Chain Reaction — Mini JS Games Hub</title>
+
+  <!-- nice space background from Unsplash CDN (online link) -->
+  <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="left">
+        <h1>Star Chain Reaction ✨</h1>
+        <p class="subtitle">One click. One chain. Catch the stars.</p>
+      </div>
+      <div class="right">
+        <div class="controls-row">
+          <label for="level">Level</label>
+          <select id="level" title="Select difficulty">
+            <option value="0">Easy</option>
+            <option value="1" selected>Normal</option>
+            <option value="2">Hard</option>
+            <option value="3">Insane</option>
+          </select>
+
+          <button id="startBtn" class="btn primary">Start</button>
+          <button id="pauseBtn" class="btn">Pause</button>
+          <button id="restartBtn" class="btn">Restart</button>
+          <button id="muteBtn" class="btn">🔊</button>
+        </div>
+
+        <div class="score-row">
+          <div class="score">Score: <span id="score">0</span></div>
+          <div class="highscore">High: <span id="highscore">0</span></div>
+          <div class="catches">Caught: <span id="caught">0</span></div>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <canvas id="gameCanvas"></canvas>
+
+      <aside class="right-panel">
+        <div class="panel-card">
+          <h3>How to play</h3>
+          <ul>
+            <li>Click anywhere to create a glowing explosion.</li>
+            <li>Stars that touch the explosion will explode too — create chain reactions.</li>
+            <li>Catch as many as you can in one round for the highest score.</li>
+          </ul>
+        </div>
+
+        <div class="panel-card small">
+          <h4>Round Info</h4>
+          <p>Stars: <span id="starCount">0</span></p>
+          <p>Attempts: <span id="attemptsLeft">1</span></p>
+        </div>
+
+        <div class="panel-card small">
+          <h4>Settings</h4>
+          <label><input type="checkbox" id="visualGlow" checked> Extra Glow</label><br>
+          <label><input type="checkbox" id="particlesOn" checked> Particles</label>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <div>Made with ❤️ — Mini JS Games Hub</div>
+      <div class="links"><a href="../../index.html" class="ghost">Back to Hub</a></div>
+    </footer>
+  </div>
+
+  <script src="script.js" type="module"></script>
+</body>
+</html>

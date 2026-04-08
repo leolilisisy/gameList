@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to top, #a2d5f2, #ffffff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.game-ui {
+    text-align: center;
+}
+
+canvas {
+    background: url("https://cdn.pixabay.com/photo/2016/03/26/23/23/snow-1284612_1280.png") repeat-x;
+    display: block;
+    margin: 20px auto;
+    border: 3px solid #00f0ff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00f0ff, 0 0 40px #00f0ff inset;
+}
+
+.controls button {
+    padding: 8px 12px;
+    margin: 5px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #00bfff;
+    color: white;
+    box-shadow: 0 0 10px #00f0ff;
+    transition: all 0.2s;
+}
+.controls button:hover {
+    background-color: #0080ff;
+    box-shadow: 0 0 20px #00f0ff;
+}
+
+.score {
+    font-weight: bold;
+    font-size: 18px;
+    margin-left: 15px;
+}

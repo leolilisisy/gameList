@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Timeline - Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>History Timeline</h1>
+            <p>Arrange historical events in the correct chronological order!</p>
+        </header>
+
+        <div class="game-area">
+            <div class="stats-panel">
+                <div class="stat">
+                    <span class="stat-label">Score:</span>
+                    <span class="stat-value" id="current-score">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Events:</span>
+                    <span class="stat-value" id="current-event">0</span>
+                    <span class="stat-separator">/</span>
+                    <span class="stat-value" id="total-events">8</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Streak:</span>
+                    <span class="stat-value" id="current-streak">0</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-label">Time:</span>
+                    <span class="stat-value" id="time-left">120</span>
+                </div>
+            </div>
+
+            <div class="timeline-section">
+                <h3>Timeline</h3>
+                <div class="timeline" id="timeline">
+                    <!-- Timeline slots will be created here -->
+                </div>
+            </div>
+
+            <div class="events-section">
+                <h3>Events to Arrange</h3>
+                <div class="events-container" id="events-container">
+                    <!-- Event cards will be created here -->
+                </div>
+            </div>
+
+            <div class="controls-section">
+                <div class="control-buttons">
+                    <button id="hint-btn" class="secondary-btn">Hint (-20 pts)</button>
+                    <button id="check-btn" class="primary-btn">Check Order</button>
+                    <button id="clear-btn" class="secondary-btn">Clear Timeline</button>
+                </div>
+            </div>
+
+            <div class="message" id="message"></div>
+
+            <div class="game-controls">
+                <button id="start-btn" class="primary-btn">Start Game</button>
+                <button id="quit-btn" class="secondary-btn" style="display: none;">Quit Game</button>
+            </div>
+        </div>
+
+        <div class="results" id="results" style="display: none;">
+            <h2>Timeline Complete!</h2>
+            <div class="final-stats">
+                <div class="final-stat">
+                    <span class="final-label">Final Score:</span>
+                    <span class="final-value" id="final-score">0</span>
+                </div>
+                <div class="final-stat">
+                    <span class="final-label">Events Correct:</span>
+                    <span class="final-value" id="events-correct">0</span>
+                    <span class="final-separator">/</span>
+                    <span class="final-value" id="events-total">8</span>
+                </div>
+                <div class="final-stat">
+                    <span class="final-label">Accuracy:</span>
+                    <span class="final-value" id="accuracy">0%</span>
+                </div>
+                <div class="final-stat">
+                    <span class="final-label">Time Bonus:</span>
+                    <span class="final-value" id="time-bonus">0</span>
+                </div>
+                <div class="final-stat">
+                    <span class="final-label">Grade:</span>
+                    <span class="final-value grade" id="grade">F</span>
+                </div>
+            </div>
+            <button id="play-again-btn" class="primary-btn">Create Another Timeline</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

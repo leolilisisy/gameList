@@ -1,0 +1,93 @@
+body {
+    font-family: 'Press Start 2P', cursive, Arial, sans-serif; /* Pixel font or fallback */
+    background-color: #2c3e50; /* Dark blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Hide scrollbars */
+    color: #ecf0f1;
+}
+
+/* Import a pixel font if desired */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.game-wrapper {
+    position: relative;
+    border: 5px solid #3498db; /* Blue border */
+    box-shadow: 0 0 25px rgba(52, 152, 219, 0.8); /* Blue glow */
+    border-radius: 8px;
+    overflow: hidden; /* Ensure game elements stay inside */
+}
+
+#gameCanvas {
+    background-color: #87ceeb; /* Sky blue */
+    display: block; /* Remove extra space below canvas */
+}
+
+/* --- Overlay Screens (Start/Game Over) --- */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width/height */
+}
+
+.overlay h1 {
+    font-size: 3.5em;
+    margin-bottom: 0.8em;
+    color: #3498db; /* Blue highlight */
+    text-shadow: 0 0 10px #3498db;
+}
+
+.overlay p {
+    margin-bottom: 1.5em;
+    font-size: 1.2em;
+    color: #bbb;
+}
+
+.overlay button {
+    padding: 15px 30px;
+    font-size: 1.8em;
+    cursor: pointer;
+    background-color: #2ecc71; /* Green button */
+    color: #333;
+    border: 2px solid #2ecc71;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.overlay button:hover {
+    background-color: #27ae60;
+    border-color: #27ae60;
+    color: white;
+}
+
+#gameOverScreen h1 {
+    color: #e74c3c; /* Red for Game Over */
+    text-shadow: 0 0 10px #e74c3c;
+}
+
+#finalScoreDisplay {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #f1c40f; /* Yellow for score */
+}
+
+/* Utility class to hide elements */
+.hidden {
+    display: none;
+}

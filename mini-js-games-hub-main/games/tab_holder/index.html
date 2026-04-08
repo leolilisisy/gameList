@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tab Hoarder - Loading...</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1 id="facility-name">Initializing Facility...</h1>
+            <div class="resource-display">
+                <span id="res-metal">🔩 Metal: 0</span>
+                <span id="res-food">🍎 Food: 0</span>
+                <span id="res-science">🧪 Science: 0</span>
+            </div>
+        </header>
+
+        <main id="facility-area">
+            <div id="status-box" class="status-box">
+                <h2 id="status-title">System Status:</h2>
+                <p id="status-text">Awaiting initial data...</p>
+                <div id="danger-bar-container">
+                    <label id="danger-label" for="danger-bar">Danger Level:</label>
+                    <progress id="danger-bar" value="0" max="100"></progress>
+                </div>
+            </div>
+
+            <section class="controls-section">
+                <h3>Production Controls</h3>
+                <button id="action-button" disabled>Load Level Data...</button>
+                <p id="cooldown-text" class="cooldown"></p>
+            </section>
+
+            <section class="unlock-section">
+                <h3>Facility Management</h3>
+                <p>Required to Unlock New Facility: <span id="unlock-cost-text">N/A</span></p>
+                <button id="unlock-button" disabled>Unlock New Facility</button>
+                <div id="unlocked-links" class="unlocked-links">
+                    </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Sequence Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>🔢 Largest Number Memory Test</h1>
+
+        <div id="score-area">
+            Score: <span id="score">0</span>
+        </div>
+
+        <div id="number-display-box">
+            <span id="number-display">Press START</span>
+        </div>
+
+        <div id="controls">
+            <button id="start-button">START SEQUENCE</button>
+            
+            <div id="input-area" style="display: none;">
+                <input type="number" id="answer-input" placeholder="Largest number?" disabled>
+                <button id="submit-button" disabled>SUBMIT</button>
+            </div>
+        </div>
+
+        <div id="feedback-message">
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

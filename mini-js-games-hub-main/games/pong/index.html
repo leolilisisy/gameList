@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title data-i18n="gamePong.title">Pong — Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="pong">
+      <header class="pong__header">
+        <div class="pong__toolbar">
+          <h1 data-i18n="gamePong.title">Pong</h1>
+          <button type="button" class="language-toggle-game" data-language-toggle></button>
+        </div>
+        <p class="hint" data-i18n="gamePong.hint">Use W/S (left) and Up/Down (right) or play vs CPU with Left player only.</p>
+      </header>
+      <canvas
+        id="board"
+        width="800"
+        height="480"
+        aria-label="Pong game board"
+        data-i18n-aria-label="gamePong.boardLabel"
+      ></canvas>
+      <div class="pong__controls">
+        <button id="restart" data-i18n="gamePong.restart">Restart</button>
+        <label><input id="cpuToggle" type="checkbox" /> <span data-i18n="gamePong.playVsCpu">Play vs CPU (right paddle)</span></label>
+      </div>
+    </main>
+
+    <script src="../../site-i18n.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="gameSnake.title">Snake Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-shell">
+    <div class="toolbar">
+      <button type="button" class="language-toggle-game" data-language-toggle></button>
+    </div>
+    <h1 data-i18n="gameSnake.title">Snake Game</h1>
+    <canvas
+      id="game"
+      width="400"
+      height="400"
+      aria-label="Snake game canvas"
+      data-i18n-aria-label="gameSnake.gameLabel"
+    ></canvas>
+    <h2 id="score"><span data-i18n="gameSnake.score">Score</span>: <span id="score-value">0</span></h2>
+  </div>
+  <script src="../../site-i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

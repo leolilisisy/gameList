@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ColorGrid — 2D Cube Puzzle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>ColorGrid</h1>
+      <p class="subtitle">Rotate rows & columns to match all colors.</p>
+    </header>
+
+    <section class="controls">
+      <div class="row">
+        <label for="size">Grid size:</label>
+        <select id="size">
+          <option value="2">2 × 2</option>
+          <option value="3" selected>3 × 3</option>
+          <option value="4">4 × 4</option>
+          <option value="5">5 × 5</option>
+        </select>
+
+        <button id="newGame">New Game</button>
+        <button id="shuffleBtn">Shuffle</button>
+        <button id="undoBtn" disabled>Undo</button>
+        <button id="solveDemo">Auto Demo</button>
+      </div>
+
+      <div class="row">
+        <div class="rotate-controls">
+          <label>Selection:</label>
+          <div class="selector">
+            <input type="radio" id="selRow" name="selType" value="row" checked />
+            <label for="selRow">Row</label>
+            <input type="radio" id="selCol" name="selType" value="col" />
+            <label for="selCol">Column</label>
+          </div>
+
+          <label for="indexInput">Index:</label>
+          <input id="indexInput" type="number" min="1" value="1" style="width:64px" />
+        </div>
+
+        <div class="rotate-buttons">
+          <button id="leftBtn">⟲ Rotate ←</button>
+          <button id="rightBtn">Rotate → ⟳</button>
+          <button id="upBtn">⟰ Up</button>
+          <button id="downBtn">Down ⟱</button>
+        </div>
+
+        <div class="status">
+          <div>Moves: <span id="moves">0</span></div>
+          <div>Time: <span id="time">00:00</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="board-wrap">
+      <div id="board" class="board"></div>
+    </section>
+
+    <section class="notes">
+      <p>Tip: Select Row or Column, set the Index (1-based), then use Rotate buttons. Shuffle to scramble, Undo to revert last move.</p>
+      <p class="small">Accessible & color-blind friendly palette included (tile labels show short ids).</p>
+    </section>
+
+    <div id="modal" class="modal hidden">
+      <div class="modal-content">
+        <h2>🎉 Solved!</h2>
+        <p id="modalText"></p>
+        <div class="modal-actions">
+          <button id="modalClose">Close</button>
+          <button id="modalNew">New Game</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>Made with ❤️ — ColorGrid</footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

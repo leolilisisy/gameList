@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Virus Defender — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- favicon -->
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2965/2965567.png">
+</head>
+<body>
+  <div class="game-shell">
+    <header class="game-header">
+      <div class="title">
+        <span class="icon">🦠</span>
+        <h1>Virus Defender</h1>
+        <small>Defend the core — click or tap viruses before they reach it</small>
+      </div>
+
+      <div class="controls">
+        <div class="hud">
+          <div class="hud-item"><label>Score</label><div id="score">0</div></div>
+          <div class="hud-item"><label>Health</label><div id="health">5</div></div>
+          <div class="hud-item"><label>Level</label><div id="level">1</div></div>
+        </div>
+
+        <div class="buttons">
+          <button id="pauseBtn" class="btn">⏸ Pause</button>
+          <button id="restartBtn" class="btn">🔁 Restart</button>
+          <button id="muteBtn" class="btn">🔊</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <!-- Canvas holds game visuals -->
+      <canvas id="gameCanvas" width="900" height="600" aria-label="Virus Defender game area"></canvas>
+
+      <!-- Overlay messages -->
+      <div id="overlay" class="overlay hidden">
+        <div class="overlay-card">
+          <h2 id="overlay-title">Paused</h2>
+          <p id="overlay-sub">Tap Resume to continue</p>
+          <div class="overlay-actions">
+            <button id="resumeBtn" class="btn big">Resume</button>
+            <button id="overlayRestart" class="btn big">Restart</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section class="instructions">
+      <h3>How to Play</h3>
+      <ul>
+        <li>Click or tap a virus before it reaches the glowing core.</li>
+        <li>Each destroyed virus gives points. Missed viruses reduce core health.</li>
+        <li>Difficulty ramps up: spawn rate and speed increase over time.</li>
+        <li>Use Pause / Restart / Mute controls. Works on mobile and desktop.</li>
+      </ul>
+    </section>
+
+    <footer class="game-footer">
+      <small>Built with HTML • CSS • JS — assets from Mixkit & SoundJay (direct links).</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

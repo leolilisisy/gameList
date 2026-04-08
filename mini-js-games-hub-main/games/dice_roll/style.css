@@ -1,0 +1,122 @@
+body {
+    font-family: 'Verdana', sans-serif;
+    background-color: #36454F; /* Charcoal background */
+    color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.roller-container {
+    background: #4A5B6A; /* Steel Blue container */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+h1 {
+    color: #FFD700; /* Gold */
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* --- Controls Panel --- */
+.controls-panel {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    background-color: #5B6C7D;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="number"], select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #777;
+    background-color: #eee;
+    color: #333;
+    font-size: 1em;
+}
+
+#roll-button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #2ECC71; /* Green */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 15px;
+}
+
+#roll-button:hover {
+    background-color: #27ae60;
+}
+
+/* --- Results Area --- */
+.results-area {
+    padding: 20px;
+    border: 2px solid #FFD700;
+    border-radius: 10px;
+    background-color: #3e4d58;
+}
+
+.rolls-display {
+    min-height: 60px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.die-result {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #FF6347; /* Tomato Red */
+    padding: 8px 15px;
+    border: 2px solid #FF6347;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.total-display {
+    font-size: 2em;
+    font-weight: bold;
+    color: #FFD700;
+    border-top: 1px solid #777;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+#roll-total {
+    color: #2ECC71;
+    font-size: 1.5em;
+}
+
+.instruction {
+    font-style: italic;
+    color: #aaa;
+}

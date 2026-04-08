@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Quirk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>QUANTUM QUIRK</h1>
+        <div class="subtitle">Manipulate quantum particles to match the target pattern</div>
+    </header>
+    
+    <div class="stats">
+        <div class="stat-box">
+            <div>Level</div>
+            <div class="stat-value" id="level">1</div>
+        </div>
+        <div class="stat-box">
+            <div>Moves</div>
+            <div class="stat-value" id="moves">0</div>
+        </div>
+        <div class="stat-box">
+            <div>Accuracy</div>
+            <div class="stat-value" id="accuracy">0%</div>
+        </div>
+    </div>
+    
+    <div class="game-container">
+        <div class="game-board" id="gameBoard">
+            <div class="quantum-field" id="quantumField"></div>
+            <div class="quantum-rule" id="quantumRule">Rule: Gravity Inversion</div>
+        </div>
+        
+        <div class="target-pattern" id="targetPattern">
+            <div class="quantum-rule">Target Pattern</div>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <div class="control-row">
+            <button id="gravityBtn">Toggle Gravity</button>
+            <button id="quantumBtn">Quantum Entangle</button>
+            <button id="resetBtn">Reset Particles</button>
+        </div>
+        <div class="control-row">
+            <button id="attractBtn">Particle Attraction</button>
+            <button id="repelBtn">Particle Repulsion</button>
+            <button id="nextLevelBtn" style="display: none;">Next Level</button>
+        </div>
+    </div>
+    
+    <div class="rules">
+        <h2>Quantum Rules</h2>
+        <p>• Particles change behavior based on active quantum rules</p>
+        <p>• Match the target pattern by manipulating particles with different forces</p>
+        <p>• Each level introduces new quantum behaviors</p>
+        <p>• Complete levels with the fewest moves for a higher score</p>
+    </div>
+    
+    <div class="win-message" id="winMessage">
+        <div class="win-content">
+            <h2>QUANTUM SYNCHRONIZED!</h2>
+            <p>You've mastered level <span id="winLevel">1</span>!</p>
+            <p>Moves: <span id="winMoves">0</span> | Accuracy: <span id="winAccuracy">0%</span></p>
+            <button id="continueBtn">Continue to Next Quantum State</button>
+        </div>
+    </div>
+<script type="module" src="script.js"></script>
+   
+</body>
+</html>

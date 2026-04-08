@@ -1,0 +1,125 @@
+body {
+    font-family: 'Verdana', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f8f9fa;
+    color: #343a40;
+}
+
+#game-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 550px;
+    width: 90%;
+}
+
+h1 {
+    color: #ffc107; /* Yellow/Gold for puzzle */
+    margin-bottom: 20px;
+}
+
+#status-area {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #17a2b8;
+}
+
+/* --- Clue Area --- */
+#clue-area {
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #ced4da;
+}
+
+#clue-area h2 {
+    color: #007bff;
+    font-size: 1.1em;
+    margin: 10px 0 5px 0;
+}
+
+#clue-one, #clue-two {
+    font-size: 1.4em;
+    font-style: italic;
+    font-weight: 500;
+    margin: 5px 0 15px 0;
+    padding: 5px;
+}
+
+/* --- Input Area --- */
+#input-area {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#player-input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 1.1em;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+#submit-button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    background-color: #28a745; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#submit-button:hover:not(:disabled) {
+    background-color: #1e7e34;
+}
+
+#player-input:disabled, #submit-button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+/* --- Controls and Feedback --- */
+#feedback-message {
+    min-height: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#controls button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#start-button {
+    background-color: #ffc107;
+    color: #333;
+}
+
+#start-button:hover {
+    background-color: #e0a800;
+}
+
+#next-button {
+    background-color: #17a2b8; /* Cyan/Blue */
+    color: white;
+}
+
+#next-button:hover {
+    background-color: #138496;
+}

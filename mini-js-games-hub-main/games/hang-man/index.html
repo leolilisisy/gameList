@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Classic Hangman</h1>
+        
+        <div id="game-area">
+            
+            <div id="hangman-visuals">
+                <div class="scaffold">
+                    <div id="gallows"></div>
+                    <div id="head" class="hidden"></div>
+                    <div id="body" class="hidden"></div>
+                    <div id="left-arm" class="hidden"></div>
+                    <div id="right-arm" class="hidden"></div>
+                    <div id="left-leg" class="hidden"></div>
+                    <div id="right-leg" class="hidden"></div>
+                </div>
+            </div>
+
+            <div id="puzzle-details">
+                <p id="message">Press any letter to start!</p>
+                <div id="word-display">
+                    </div>
+                
+                <div id="guessed-letters-display">
+                    Guessed Letters: <span id="guessed-letters"></span>
+                </div>
+                
+                <p id="guesses-left">Remaining Guesses: <span id="guess-count">7</span></p>
+                
+                <button id="new-game-btn" class="hidden">New Game</button>
+            </div>
+        </div>
+
+    </div>
+    
+    <input type="text" id="keyboard-input" maxlength="1" style="opacity:0; position:absolute;">
+
+    <script src="script.js"></script>
+</body>
+</html>

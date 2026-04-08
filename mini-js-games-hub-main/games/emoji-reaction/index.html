@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Emoji Reaction Test | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- nice background image from Unsplash (hotlink allowed for preview) -->
+  <meta name="description" content="Emoji Reaction Test — match emojis to meanings as fast as you can.">
+</head>
+<body>
+  <main class="game-shell" role="main">
+    <header class="game-header">
+      <div class="left">
+        <h1>Emoji Reaction Test</h1>
+        <p class="sub">Match the emoji to the correct meaning — test speed & memory.</p>
+      </div>
+      <div class="controls">
+        <button id="pauseBtn" class="btn">Pause</button>
+        <button id="restartBtn" class="btn">Restart</button>
+        <button id="soundToggle" class="btn">🔊</button>
+        <a class="openhub" href="../../index.html" title="Back to hub">← Hub</a>
+      </div>
+    </header>
+
+    <section class="status-bar" aria-live="polite">
+      <div>Score: <strong id="score">0</strong></div>
+      <div>Round: <strong id="round">0</strong></div>
+      <div>Time Left: <strong id="timeLeft">--</strong></div>
+      <div>Avg RT: <strong id="avgRt">--</strong> ms</div>
+    </section>
+
+    <section class="game-area" id="gameArea">
+      <div class="emoji-display glow" id="emojiDisplay" aria-hidden="false">😀</div>
+
+      <div class="options" id="options">
+        <!-- options buttons injected here -->
+      </div>
+    </section>
+
+    <section class="footer-ui">
+      <div class="difficulty">
+        <label>Difficulty</label>
+        <progress id="difficultyProgress" value="1" max="10"></progress>
+      </div>
+
+      <div class="hints">
+        <button id="hintBtn" class="small">Hint</button>
+        <div id="hintText" class="hint-text" aria-hidden="true"></div>
+      </div>
+
+      <div class="smallprint">Made with ♥ — online assets only (images & sounds)</div>
+    </section>
+  </main>
+
+  <audio id="soundCorrect" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg" preload="auto"></audio>
+  <audio id="soundWrong" src="https://actions.google.com/sounds/v1/cartoon/boing.ogg" preload="auto"></audio>
+  <audio id="soundTick" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

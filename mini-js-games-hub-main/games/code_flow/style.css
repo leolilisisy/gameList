@@ -1,0 +1,93 @@
+:root {
+    --code-panel-width: 45%;
+    --animation-stage-width: 45%;
+    --rhythm-color: #ff5722;
+}
+
+body {
+    font-family: monospace, Courier New, monospace;
+    background-color: #1a1a2e;
+    color: #00ff00; /* Neon green terminal text */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#game-container {
+    display: flex;
+    justify-content: space-around;
+    width: 900px;
+    margin-bottom: 20px;
+    background-color: #0d0d1b;
+    border: 1px solid #333;
+    padding: 10px;
+}
+
+/* --- Code Panel Styling --- */
+#code-panel {
+    width: var(--code-panel-width);
+    position: relative;
+    padding: 10px;
+    border-right: 1px dashed #333;
+}
+
+#code-display {
+    background-color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    line-height: 1.5;
+    position: relative;
+}
+
+/* Execution Indicator */
+#line-indicator {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1.5em; /* Matches line height */
+    background-color: rgba(255, 255, 0, 0.3); /* Highlight color */
+    z-index: 10;
+    transition: top 0.1s linear; /* Smooth line transitions */
+    top: 5em; /* Initial position for 'Line 3' */
+}
+
+/* --- Animation Stage Styling --- */
+#animation-stage {
+    width: var(--animation-stage-width);
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#animated-box {
+    width: 50px;
+    height: 50px;
+    background-color: #00bcd4;
+    position: absolute;
+    border-radius: 50%;
+    will-change: transform; /* Optimization hint */
+}
+
+#rhythm-cue {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--rhythm-color);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.1s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* --- Visual Error Feedback --- */
+.flow-error #animated-box {
+    /* Example of a visual distortion on error */
+    filter: hue-rotate(180deg) blur(2px); 
+    transform: scale(1.5) !important; /* Force a jerky visual error */
+    transition: all 0.1s;
+}

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Number Weave — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="nw-app">
+    <header class="nw-header">
+      <div class="nw-title">
+        <div class="nw-icon">🔢</div>
+        <div>
+          <h1>Number Weave</h1>
+          <p class="sub">Connect numbers in increasing order — lines must not overlap.</p>
+        </div>
+      </div>
+
+      <div class="nw-controls">
+        <label for="level-select">Level</label>
+        <select id="level-select">
+          <option value="1">Easy — 6 numbers</option>
+          <option value="2" selected>Medium — 9 numbers</option>
+          <option value="3">Hard — 12 numbers</option>
+          <option value="4">Expert — 16 numbers</option>
+        </select>
+
+        <button id="start-btn" class="btn primary">Start</button>
+        <button id="pause-btn" class="btn">Pause</button>
+        <button id="restart-btn" class="btn danger">Restart</button>
+      </div>
+    </header>
+
+    <main class="nw-main">
+      <aside class="nw-sidebar">
+        <div class="stat">
+          <div class="stat-label">Next</div>
+          <div id="next-number" class="stat-value">—</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Moves</div>
+          <div id="moves" class="stat-value">0</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Timer</div>
+          <div id="timer" class="stat-value">00:00</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Best (level)</div>
+          <div id="best" class="stat-value">—</div>
+        </div>
+
+        <div class="sound-controls">
+          <label><input type="checkbox" id="sound-toggle" checked /> Sound</label>
+          <label><input type="checkbox" id="vibrate-toggle" /> Vibrate</label>
+        </div>
+
+        <div class="tips">
+          <strong>Tips</strong>
+          <ul>
+            <li>Tap numbers in order from 1 → N.</li>
+            <li>Plan to avoid crossing existing lines.</li>
+            <li>Obstacles block lines — use the available space.</li>
+          </ul>
+        </div>
+      </aside>
+
+      <section class="nw-board-wrap">
+        <div id="board" class="nw-board">
+          <canvas id="canvas"></canvas>
+          <div id="pins" class="pins"></div>
+        </div>
+
+        <div class="nw-footer">
+          <div id="message" class="message">Press <b>Start</b> to begin.</div>
+          <div class="action-row">
+            <button id="undo-btn" class="btn">Undo</button>
+            <button id="hint-btn" class="btn">Hint</button>
+            <button id="clear-btn" class="btn">Clear</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

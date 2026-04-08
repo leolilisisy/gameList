@@ -1,0 +1,85 @@
+:root {
+    --grid-rows: 40;
+    --grid-cols: 40;
+    --cell-size: 12px; /* Size of each individual cell */
+}
+
+body {
+    font-family: 'Consolas', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+#game-container {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: fit-content;
+}
+
+h1 {
+    color: #1abc9c; /* Teal */
+    margin-bottom: 15px;
+}
+
+/* --- Controls and Status --- */
+#controls {
+    margin-bottom: 15px;
+}
+
+.action-button {
+    padding: 8px 15px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.2s;
+}
+
+#start-button { background-color: #2ecc71; color: white; }
+#stop-button { background-color: #e74c3c; color: white; }
+#reset-button { background-color: #95a5a6; color: white; }
+#step-button { background-color: #3498db; color: white; }
+
+#status-area {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+/* --- Grid Container --- */
+#grid-container {
+    width: calc(var(--grid-cols) * var(--cell-size));
+    height: calc(var(--grid-rows) * var(--cell-size));
+    display: grid;
+    /* Sets up the grid based on JS variables */
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    border: 1px solid #ccc;
+    margin: 0 auto;
+}
+
+/* --- Cell Styling --- */
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid #eee; /* Faint internal lines */
+    box-sizing: border-box;
+    background-color: #fff; /* Dead Cell (White) */
+    transition: background-color 0.1s;
+    cursor: pointer;
+}
+
+.cell.live {
+    background-color: #1abc9c; /* Live Cell (Teal) */
+    box-shadow: 0 0 5px rgba(26, 188, 156, 0.8);
+}

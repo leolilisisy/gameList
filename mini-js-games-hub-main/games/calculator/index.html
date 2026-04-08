@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Challenge Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>🧮 Calculator Challenge</h1>
+
+        <div id="target-display-area">
+            Target: <span id="target-number">0</span>
+        </div>
+
+        <div id="current-display-area">
+            Current Value: <span id="current-value">0</span>
+        </div>
+
+        <div id="history-display-area">
+            History: <span id="operation-history">START</span>
+        </div>
+
+        <div id="calculator-grid">
+            <button class="op-button" data-action="clear">C</button>
+            <button class="op-button" data-action="reset">RESET</button>
+            <button class="op-button op-math" data-op="/">÷</button>
+            <button class="op-button op-math" data-op="*">×</button>
+            <button class="op-button op-math" data-op="-">−</button>
+            <button class="op-button op-math" data-op="+">+</button>
+        </div>
+
+        <div id="feedback-message">
+            <p>Use the numbers and operations to reach the target!</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

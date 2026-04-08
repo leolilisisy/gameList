@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Color Balance | Mini JS Games Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="color-balance-container">
+    <h1>🎨 Color Balance</h1>
+    
+    <div class="game-info">
+        <div class="target-color-panel">
+            <h2>Target Color</h2>
+            <div id="target-color" class="color-box"></div>
+        </div>
+        <div class="current-color-panel">
+            <h2>Current Color</h2>
+            <div id="current-color" class="color-box"></div>
+        </div>
+    </div>
+
+    <div class="sliders">
+        <label>R <input type="range" id="red-slider" min="0" max="255" value="128"></label>
+        <label>G <input type="range" id="green-slider" min="0" max="255" value="128"></label>
+        <label>B <input type="range" id="blue-slider" min="0" max="255" value="128"></label>
+    </div>
+
+    <div class="controls">
+        <button id="start-btn">Start</button>
+        <button id="pause-btn">Pause</button>
+        <button id="restart-btn">Restart</button>
+        <button id="practice-btn">Practice Mode</button>
+        <button id="challenge-btn">Challenge Mode</button>
+    </div>
+
+    <div class="score-timer">
+        <p>Time: <span id="timer">30</span>s</p>
+        <p>Score: <span id="score">0</span></p>
+    </div>
+
+    <audio id="success-sound" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
+    <audio id="fail-sound" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
+</div>
+
+<!-- Firefly background -->
+<div class="fireflies">
+    <img src="https://i.ibb.co/4Z7C0vF/firefly1.png" class="firefly" />
+    <img src="https://i.ibb.co/4Z7C0vF/firefly1.png" class="firefly" />
+    <img src="https://i.ibb.co/4Z7C0vF/firefly1.png" class="firefly" />
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

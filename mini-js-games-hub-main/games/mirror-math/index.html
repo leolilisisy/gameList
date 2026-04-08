@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mirror Math — Mini JS Games Hub</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fav icon -->
+  <link rel="icon" href="https://source.unsplash.com/80x80/?math,geometry" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand__icon">🪞</span>
+        <div>
+          <h1>Mirror Math</h1>
+          <p class="muted">Decode transformed equations — train visual rotation + arithmetic</p>
+        </div>
+      </div>
+      <div class="controls-header">
+        <button id="pause-resume" class="btn">Pause</button>
+        <button id="restart" class="btn btn--accent">Restart</button>
+        <a class="btn btn--ghost" href="../../index.html" target="_parent">Back to Hub ↩</a>
+      </div>
+    </header>
+
+    <main class="main">
+      <aside class="sidebar">
+        <section class="panel">
+          <h3>Mode</h3>
+          <select id="mode-select">
+            <option value="practice">Practice (no timer)</option>
+            <option value="timed">Timed (per equation)</option>
+            <option value="challenge">Challenge (mixed)</option>
+          </select>
+        </section>
+
+        <section class="panel">
+          <h3>Difficulty</h3>
+          <select id="difficulty-select">
+            <option value="easy">Easy (single-digit)</option>
+            <option value="medium" selected>Medium (two-digit)</option>
+            <option value="hard">Hard (advanced ops)</option>
+          </select>
+        </section>
+
+        <section class="panel">
+          <h3>Orientation</h3>
+          <div class="orientation-row">
+            <label><input type="radio" name="orientation" value="mirrored" checked> Mirrored</label>
+            <label><input type="radio" name="orientation" value="rotated"> Rotated</label>
+            <label><input type="radio" name="orientation" value="mixed"> Mixed</label>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h3>Audio</h3>
+          <label><input id="audio-toggle" type="checkbox" checked> Sound Effects</label>
+        </section>
+
+        <section class="panel small">
+          <h3>Help</h3>
+          <ul>
+            <li>Type the numeric answer and press <strong>Enter</strong> or click <em>Submit</em>.</li>
+            <li>Practice mode has no timer; Timed gives a countdown; Challenge mixes everything.</li>
+            <li>Correct answers increment score and streak; wrong answers reduce streak and may penalize time.</li>
+          </ul>
+        </section>
+      </aside>
+
+      <section class="play-area">
+        <div class="hud">
+          <div class="hud__left">
+            <div class="pill">Score: <strong id="score">0</strong></div>
+            <div class="pill">Streak: <strong id="streak">0</strong></div>
+          </div>
+          <div class="hud__center">
+            <div class="mode-badge" id="mode-badge">Practice</div>
+            <div class="timer" id="timer">—</div>
+          </div>
+          <div class="hud__right">
+            <div class="pill">Mode: <strong id="hud-mode">Practice</strong></div>
+            <div class="pill">Difficulty: <strong id="hud-diff">Medium</strong></div>
+          </div>
+        </div>
+
+        <div class="stage">
+          <!-- canvas used to render rotated/mirrored text so transforms are seamless -->
+          <canvas id="eq-canvas" width="720" height="140" aria-label="Transformed equation"></canvas>
+        </div>
+
+        <div class="input-row">
+          <input id="answer-input" inputmode="numeric" autocomplete="off" placeholder="Type answer here" />
+          <button id="submit-btn" class="btn btn--accent">Submit</button>
+          <button id="skip-btn" class="btn btn--ghost">Skip</button>
+        </div>
+
+        <div class="feedback">
+          <div id="message" class="message">Ready? Press <strong>Submit</strong> or Enter to start.</div>
+        </div>
+
+        <div class="progress-row">
+          <div class="glow-track" id="glow-track">
+            <!-- glowing bulbs represent remaining time in timed mode -->
+            <div class="bulb" id="bulb-1"></div><div class="bulb" id="bulb-2"></div><div class="bulb" id="bulb-3"></div>
+            <div class="bulb" id="bulb-4"></div><div class="bulb" id="bulb-5"></div><div class="bulb" id="bulb-6"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div>© Mirror Math — Built for Mini JS Games Hub</div>
+      <div class="muted">Images from Unsplash · Sounds from Google Actions sound library (public)</div>
+    </footer>
+  </div>
+
+  <!-- Audio: public Google-hosted effects (no download required) -->
+  <audio id="sfx-correct" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg" preload="auto"></audio>
+  <audio id="sfx-wrong" src="https://actions.google.com/sounds/v1/cartoon/boing.ogg" preload="auto"></audio>
+  <audio id="sfx-tick" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>

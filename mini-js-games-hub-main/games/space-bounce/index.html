@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Bounce | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <canvas id="gameCanvas"></canvas>
+
+    <div class="controls">
+      <button id="startBtn">▶ Start</button>
+      <button id="pauseBtn">⏸ Pause</button>
+      <button id="restartBtn">🔄 Restart</button>
+    </div>
+
+    <div class="scoreboard">
+      <p>⭐ Score: <span id="score">0</span></p>
+      <p>🏆 High Score: <span id="highscore">0</span></p>
+    </div>
+  </div>
+
+  <audio id="bgMusic" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_36c4b0f3b0.mp3?filename=space-ambience-114308.mp3" loop></audio>
+  <audio id="bounceSound" src="https://cdn.pixabay.com/download/audio/2021/08/04/audio_7f0dc4ebf2.mp3?filename=bounce-1-116125.mp3"></audio>
+  <audio id="powerSound" src="https://cdn.pixabay.com/download/audio/2021/09/30/audio_1c5b62b08e.mp3?filename=power-up-1-199573.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

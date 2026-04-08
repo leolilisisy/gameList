@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: radial-gradient(#000011, #000);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.game-container {
+  text-align: center;
+}
+
+canvas {
+  border: 2px solid #fff;
+  display: block;
+  margin: 20px auto;
+  background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80') no-repeat center center/cover;
+  border-radius: 10px;
+}
+
+.controls {
+  margin-top: 10px;
+}
+
+button {
+  margin: 5px;
+  padding: 8px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background: #222;
+  color: #fff;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #444;
+}
+
+#message {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}

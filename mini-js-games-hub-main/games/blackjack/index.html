@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blackjack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="instructions-overlay">
+        <div id="instructions-box">
+            <h2>Welcome to Blackjack!</h2>
+            <h3>How to Play:</h3>
+            <ul>
+                <li>The goal is to get a hand value closer to 21 than the dealer, without going over.</li>
+                <li>Numbered cards are worth their face value. King, Queen, and Jack are worth 10.</li>
+                <li>Aces can be worth 1 or 11.</li>
+                <li>Click the chips to place your bet, then click 'Deal' to start.</li>
+                <li>Click 'Hit' to take another card, or 'Stand' to keep your current hand.</li>
+                <li>'Double Down' doubles your bet, but you only get one more card.</li>
+            </ul>
+            <button id="start-game-btn">Let's Play!</button>
+        </div>
+    </div>
+
+    <div id="game-board" class="hidden">
+        <div id="dealer-area" class="area">
+            <h2>Dealer's Hand (<span id="dealer-score">0</span>)</h2>
+            <div id="dealer-hand" class="hand"></div>
+        </div>
+        
+        <div id="player-area" class="area">
+            <h2>Your Hand (<span id="player-score">0</span>)</h2>
+            <div id="player-hand" class="hand"></div>
+        </div>
+
+        <div id="game-status">
+            <p id="status-message">Place your bet to start the game!</p>
+        </div>
+
+        <!-- NEW: A persistent container for all player info and controls -->
+        <div id="player-info">
+            <div id="money-and-bet">
+                <p>Your Money: $<span id="player-money">500</span></p>
+                <p>Current Bet: $<span id="current-bet-display">0</span></p>
+            </div>
+            <div id="controls">
+                <div id="betting-area">
+                    <div id="chips">
+                        <button class="chip" data-value="5">$5</button>
+                        <button class="chip" data-value="10">$10</button>
+                        <button class="chip" data-value="25">$25</button>
+                        <button class="chip" data-value="100">$100</button>
+                    </div>
+                    <div>
+                        <button id="deal-btn" disabled>Deal</button>
+                        <button id="clear-bet-btn">Clear Bet</button>
+                    </div>
+                </div>
+                <div id="actions-area" class="hidden">
+                    <button id="hit-btn">Hit</button>
+                    <button id="stand-btn">Stand</button>
+                    <button id="double-down-btn">Double Down</button>
+                </div>
+                <div id="replay-area" class="hidden">
+                    <button id="replay-btn">Play Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

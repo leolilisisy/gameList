@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Racer Typing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>🏎️ Word Racer</h1>
+
+        <div id="race-track">
+            <div id="player-racer" class="racer">👤 Player</div>
+            
+            <div id="opponent-racer" class="racer">🤖 Opponent</div>
+        </div>
+
+        <div id="text-display-box">
+            <p id="target-text">Press START to load the race text!</p>
+        </div>
+
+        <div id="input-area">
+            <input type="text" id="typing-input" placeholder="Start typing here..." disabled>
+        </div>
+        
+        <div id="status-area">
+            <p id="message">Click **START** to begin the race!</p>
+        </div>
+
+        <div id="controls">
+            <button id="start-button">START RACE</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

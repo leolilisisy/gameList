@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The CSS Inspector</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>The CSS Inspector 🕵️</h1>
+        <p>Fix the broken display by writing or correcting the **CSS** code!</p>
+    </header>
+
+    <main class="game-container">
+        <section class="display-area">
+            <div id="target-container">
+                <div id="level-target" class="target-element">
+                    Level Content
+                </div>
+            </div>
+        </section>
+
+        <section class="editor-area">
+            <div class="level-info">
+                <h2 id="level-title">Level 1: The Invisible Button</h2>
+                <p id="level-description">The button should be visible! Hint: It's currently blending into the background.</p>
+            </div>
+
+            <div class="css-editor">
+                <label for="css-input">Enter your CSS rule (e.g., color: blue;):</label>
+                <textarea id="css-input" rows="3" placeholder="e.g., color: red;"></textarea>
+                <div class="controls">
+                    <button id="apply-css">Apply CSS</button>
+                    <button id="reset-level">Reset Level</button>
+                </div>
+            </div>
+
+            <div id="message-box" class="message-box">
+                <p>Welcome! Type your CSS and click 'Apply CSS' to fix the display.</p>
+            </div>
+            
+            <button id="next-level" class="hidden">Next Level >></button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

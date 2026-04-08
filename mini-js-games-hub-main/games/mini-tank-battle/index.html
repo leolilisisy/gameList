@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Tank Battle</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1 class="glow-title">🔥 Mini Tank Battle 🔥</h1>
+    <canvas id="gameCanvas" width="800" height="500"></canvas>
+
+    <div class="controls">
+      <button id="startBtn">▶ Start</button>
+      <button id="pauseBtn">⏸ Pause</button>
+      <button id="restartBtn">🔁 Restart</button>
+    </div>
+
+    <audio id="shootSound" src="https://actions.google.com/sounds/v1/impacts/metal_clang.ogg"></audio>
+    <audio id="explosionSound" src="https://actions.google.com/sounds/v1/explosions/explosion.ogg"></audio>
+    <audio id="bgMusic" src="https://cdn.pixabay.com/audio/2022/10/02/audio_b2cc88eec0.mp3" loop></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

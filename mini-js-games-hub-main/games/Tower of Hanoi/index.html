@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tower of Hanoi 🏰</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-header">
+    <h1>🏰 Tower of Hanoi</h1>
+    <p class="tagline">Move all disks from <b>Tower A</b> to <b>Tower C</b> — using the fewest moves possible!</p>
+  </div>
+
+  <div class="controls">
+    <label for="diskCount">🌀 Disks:</label>
+    <select id="diskCount">
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+    </select>
+
+    <button id="startBtn">🎮 Start Game</button>
+    <p id="moveCount">Moves: 0</p>
+  </div>
+
+  <div class="game-area">
+    <div class="tower" id="towerA"><div class="label">A</div></div>
+    <div class="tower" id="towerB"><div class="label">B</div></div>
+    <div class="tower" id="towerC"><div class="label">C</div></div>
+  </div>
+
+  <div id="message"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

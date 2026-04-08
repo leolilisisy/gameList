@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Clicker Reaction Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>👂 Sound Clicker</h1>
+
+        <div id="status-area">
+            <p>Average Reaction: <span id="avg-reaction">--</span> ms</p>
+            <p>Last Score: <span id="last-reaction">--</span> ms</p>
+        </div>
+        
+        <div id="click-target">
+            <p id="message">Click START to begin!</p>
+        </div>
+
+        <div id="controls">
+            <button id="start-button">START</button>
+        </div>
+        
+        <audio id="sound-cue" src="audio/ding.mp3" preload="auto"></audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nebula Navigator</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="instructions-overlay">
+        <div id="instructions-content">
+            <h2>NEBULA NAVIGATOR</h2>
+            <p>Pilot a spaceship through colorful nebulae, collecting energy orbs while dodging cosmic debris and black holes!</p>
+            
+            <h3>Controls:</h3>
+            <ul>
+                <li><code>Arrow Keys</code> - Move Ship</li>
+                <li><code>Space</code> - Boost</li>
+            </ul>
+            
+            <button id="startButton">Start Game</button>
+        </div>
+    </div>
+
+    <div id="game-ui">
+        <div id="score">Score: 0</div>
+        <div id="lives">Lives: 3</div>
+        <div id="energy">Energy: 100</div>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+    
+    <script src="script.js"></script>
+</body>
+</html>

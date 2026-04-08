@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speed Match | Mini JS Games Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="speed-match-container">
+    <h1>⚡ Speed Match ⚡</h1>
+    <div class="info-bar">
+        <div>Score: <span id="score">0</span></div>
+        <div>Time: <span id="timer">30</span>s</div>
+        <div>Combo: <span id="combo">0</span></div>
+    </div>
+    <div class="target-symbol-container">
+        <p>Target:</p>
+        <div id="target-symbol" class="symbol"></div>
+    </div>
+    <div class="play-area" id="play-area">
+        <!-- Symbols appear here -->
+    </div>
+    <div class="controls">
+        <button id="start-btn">Start</button>
+        <button id="pause-btn">Pause</button>
+        <button id="restart-btn">Restart</button>
+    </div>
+</div>
+
+<!-- Sounds -->
+<audio id="hit-sound" src="https://www.soundjay.com/button/sounds/button-16.mp3"></audio>
+<audio id="miss-sound" src="https://www.soundjay.com/button/sounds/button-10.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>

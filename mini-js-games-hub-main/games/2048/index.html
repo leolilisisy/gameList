@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title data-i18n="game2048.title">2048</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game">
+    <header>
+      <h1 data-i18n="game2048.title">2048</h1>
+      <div class="controls">
+        <button type="button" class="language-toggle-game" data-language-toggle></button>
+        <div class="score"><span data-i18n="game2048.score">Score</span>: <span id="score">0</span></div>
+        <button id="new-game" data-i18n="game2048.newGame">New Game</button>
+      </div>
+    </header>
+
+    <section class="board-wrapper">
+      <div
+        id="board"
+        class="board"
+        aria-label="2048 game board"
+        data-i18n-aria-label="game2048.boardLabel"
+      ></div>
+      <div id="message" class="message hidden"></div>
+    </section>
+
+    <footer>
+      <p data-i18n="game2048.instructions">Use arrow keys or swipe to move tiles. Merge tiles to reach 2048.</p>
+    </footer>
+  </main>
+
+  <script src="../../site-i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

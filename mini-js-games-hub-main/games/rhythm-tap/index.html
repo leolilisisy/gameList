@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythm Tap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Rhythm Tap</h1>
+            <p class="subtitle">Feel the beat. Tap the rhythm.</p>
+        </header>
+
+        <div class="game-area">
+            <div class="track">
+                <div class="beat-line" id="beatLine"></div>
+                <div class="tap-circle" id="tapCircle">
+                    <div class="inner-circle"></div>
+                </div>
+                <div class="beat-indicators" id="beatIndicators"></div>
+            </div>
+
+            <div class="visualizer" id="visualizer">
+                <div class="frequency-bar" style="--delay: 0"></div>
+                <div class="frequency-bar" style="--delay: 1"></div>
+                <div class="frequency-bar" style="--delay: 2"></div>
+                <div class="frequency-bar" style="--delay: 3"></div>
+                <div class="frequency-bar" style="--delay: 4"></div>
+                <div class="frequency-bar" style="--delay: 5"></div>
+                <div class="frequency-bar" style="--delay: 6"></div>
+                <div class="frequency-bar" style="--delay: 7"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="song-selector">
+                <select id="songSelect">
+                    <option value="electronic">Electronic Beat</option>
+                    <option value="jazz">Jazz Rhythm</option>
+                    <option value="hiphop">Hip Hop Flow</option>
+                    <option value="latin">Latin Groove</option>
+                </select>
+                <button id="playBtn" class="primary-btn">Play</button>
+            </div>
+
+            <div class="difficulty">
+                <button class="difficulty-btn active" data-difficulty="easy">Easy</button>
+                <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+                <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value" id="score">0</div>
+                <div class="stat-label">Score</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="combo">0</div>
+                <div class="stat-label">Combo</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="accuracy">100%</div>
+                <div class="stat-label">Accuracy</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="streak">0</div>
+                <div class="stat-label">Perfect Streak</div>
+            </div>
+        </div>
+
+        <div class="feedback" id="feedback">
+            <div class="feedback-text" id="feedbackText">Tap when the circle hits the line!</div>
+            <div class="timing-indicator">
+                <div class="timing-marker perfect"></div>
+                <div class="timing-marker good"></div>
+                <div class="timing-marker ok"></div>
+                <div class="timing-marker miss"></div>
+                <div class="current-timing" id="currentTiming"></div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <p>• Tap anywhere when the circle reaches the line</p>
+            <p>• Perfect timing gives more points</p>
+            <p>• Build combos for score multipliers</p>
+            <p>• Use Spacebar or click to tap</p>
+        </div>
+    </div>
+
+    <audio id="tapSound" src="data:audio/wav;base64,UklGRigAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQQAAAAAAA=="></audio>
+    <script src="script.js"></script>
+</body>
+</html>

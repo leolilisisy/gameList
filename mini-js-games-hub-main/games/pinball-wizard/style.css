@@ -1,0 +1,176 @@
+/* Pinball Wizard Game Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    max-width: 700px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: #ffd700;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    background: rgba(255, 215, 0, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #ffd700;
+}
+
+#pinball-canvas {
+    border: 4px solid #ffd700;
+    border-radius: 15px;
+    background: linear-gradient(180deg, #2c3e50, #34495e);
+    display: block;
+    margin: 20px auto;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.controls {
+    margin: 20px 0;
+}
+
+.flipper-controls {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#left-flipper, #right-flipper {
+    background: #3498db;
+    min-width: 120px;
+}
+
+#left-flipper:hover, #right-flipper:hover {
+    background: #2980b9;
+}
+
+#launch-btn {
+    background: #27ae60;
+    width: 100%;
+    max-width: 200px;
+}
+
+#launch-btn:hover {
+    background: #229954;
+}
+
+#reset-btn {
+    background: #f39c12;
+}
+
+#reset-btn:hover {
+    background: #e67e22;
+}
+
+#message {
+    font-size: 1.2em;
+    margin: 20px 0;
+    min-height: 30px;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.instructions {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.instructions h3 {
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.instructions ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #pinball-canvas {
+        width: 100%;
+        max-width: 400px;
+        height: 600px;
+    }
+
+    .flipper-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    button {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .game-stats {
+        font-size: 1em;
+        padding: 10px;
+    }
+}

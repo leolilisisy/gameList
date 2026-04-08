@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Music Bubble Pop — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Pop musical bubbles to create melodies. Built with WebAudio, CSS animations and JS." />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Music Bubble Pop</h1>
+      <p class="subtitle">Pop the glowing bubbles — each plays a musical note 🎵</p>
+      <div class="controls">
+        <button id="playPauseBtn" class="btn">Play</button>
+        <button id="restartBtn" class="btn">Restart</button>
+
+        <label class="control-inline">Volume
+          <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8" />
+        </label>
+
+        <label class="control-inline">Difficulty
+          <select id="difficulty">
+            <option value="easy">Easy</option>
+            <option value="normal" selected>Normal</option>
+            <option value="hard">Hard</option>
+          </select>
+        </label>
+
+        <label class="control-inline">Spawn Rate
+          <input id="spawnRate" type="range" min="300" max="2200" step="100" value="900" />
+        </label>
+
+        <label class="control-inline">BG Music
+          <input id="bgToggle" type="checkbox" />
+        </label>
+      </div>
+
+      <div class="score-row">
+        <div>Score: <strong id="score">0</strong></div>
+        <div>Combo: <strong id="combo">0</strong></div>
+        <div>High: <strong id="highscore">0</strong></div>
+      </div>
+    </header>
+
+    <main class="play-area" id="playArea" tabindex="0" aria-label="Play area: pop the bubbles">
+      <!-- bubbles injected here -->
+      <div id="hint" class="hint">Click or tap the bubbles to pop them — create melodies!</div>
+    </main>
+
+    <footer class="app-footer">
+      <div class="legend">
+        <span class="dot" style="background:linear-gradient(45deg,#ff6b6b,#ffb86b)"></span> Low note
+        <span class="dot" style="background:linear-gradient(45deg,#6bffb8,#6bd6ff)"></span> Mid note
+        <span class="dot" style="background:linear-gradient(45deg,#c86bff,#ff6bd1)"></span> High note
+      </div>
+      <div class="credit">Built with WebAudio • No downloads • Images from Unsplash</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

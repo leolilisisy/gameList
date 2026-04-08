@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bubble Sonata</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>🫧 Bubble Sonata</h1>
+    <p id="status">Tap the bubbles in rhythm!</p>
+
+    <div id="gameArea"></div>
+
+    <div class="scoreboard">
+      <span>Score: <strong id="score">0</strong></span>
+      <span>Combo: <strong id="combo">0</strong></span>
+    </div>
+
+    <div class="controls">
+      <button id="startBtn">Start</button>
+      <button id="restartBtn" disabled>Restart</button>
+    </div>
+  </main>
+
+  <audio id="popSound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_2b96f927db.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

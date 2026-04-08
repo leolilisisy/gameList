@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firefly Catcher | Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Firefly Catcher</h1>
+        <p class="score">Score: <span id="score">0</span></p>
+        <p class="time">Time Left: <span id="time">30</span>s</p>
+        
+        <div class="controls">
+            <button id="start-btn">Start</button>
+            <button id="pause-btn">Pause</button>
+            <button id="restart-btn">Restart</button>
+        </div>
+
+        <div id="game-area"></div>
+
+        <audio id="bg-sound" loop>
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="catch-sound">
+            <source src="https://www.soundjay.com/button/beep-07.wav" type="audio/wav">
+        </audio>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

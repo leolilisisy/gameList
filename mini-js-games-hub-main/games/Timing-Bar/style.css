@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at center, #0f0c29, #302b63, #24243e);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.game-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+  width: 400px;
+}
+
+h1 {
+  text-shadow: 0 0 15px cyan;
+  margin-bottom: 20px;
+}
+
+.bar-area {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 25px;
+  box-shadow: inset 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.target-zone {
+  position: absolute;
+  width: 60px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 255, 0, 0.5);
+  border-radius: 10px;
+  box-shadow: 0 0 20px lime;
+}
+
+.moving-bar {
+  position: absolute;
+  width: 50px;
+  height: 100%;
+  left: 0;
+  background: cyan;
+  border-radius: 10px;
+  box-shadow: 0 0 20px cyan;
+  animation: moveBar 2s linear infinite;
+}
+
+@keyframes moveBar {
+  0% { left: 0; }
+  100% { left: calc(100% - 50px); }
+}
+
+.controls button {
+  background: none;
+  border: 2px solid cyan;
+  color: white;
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.controls button:hover {
+  background: cyan;
+  color: black;
+  box-shadow: 0 0 20px cyan;
+}
+
+.scoreboard {
+  margin-top: 15px;
+  font-size: 1rem;
+  text-shadow: 0 0 10px cyan;
+}

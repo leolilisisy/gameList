@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bridge Puzzle | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2592/2592705.png">
+</head>
+<body>
+  <div class="game-container">
+    <header>
+      <h1>🌉 Bridge Puzzle</h1>
+      <div class="controls">
+        <button id="startBtn">▶ Start</button>
+        <button id="pauseBtn">⏸ Pause</button>
+        <button id="restartBtn">🔁 Restart</button>
+      </div>
+    </header>
+
+    <canvas id="bridgeCanvas"></canvas>
+
+    <div id="status">
+      <p>Connect all islands with glowing bridges!</p>
+      <p id="message"></p>
+    </div>
+  </div>
+
+  <!-- Background Music + Sounds -->
+  <audio id="bgMusic" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_3a9c61e4e7.mp3?filename=happy-beat-109736.mp3" loop></audio>
+  <audio id="connectSound" src="https://cdn.pixabay.com/download/audio/2022/03/14/audio_2b5b3f6e3e.mp3?filename=click-124467.mp3"></audio>
+  <audio id="winSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_73ff8cf0dc.mp3?filename=success-1-6297.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

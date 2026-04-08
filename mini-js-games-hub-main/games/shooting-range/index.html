@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shooting Range</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Shooting Range</h1>
+        <p>Hit targets with your shots! Click to fire.</p>
+
+        <div class="game-stats">
+            <div id="score">Score: <span id="current-score">0</span></div>
+            <div id="level">Level: <span id="current-level">1</span></div>
+            <div id="ammo">Ammo: <span id="current-ammo">10</span></div>
+            <div id="timer">Time: <span id="time-left">30</span>s</div>
+        </div>
+
+        <canvas id="range-canvas" width="800" height="500"></canvas>
+
+        <div class="controls">
+            <button id="start-btn">Start Shooting</button>
+            <button id="reload-btn" style="display:none;">Reload (50 pts)</button>
+            <button id="reset-btn" style="display:none;">Shoot Again</button>
+        </div>
+
+        <div id="message"></div>
+
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Click anywhere on the range to shoot</li>
+                <li>Hit the center of targets for maximum points</li>
+                <li>Different targets give different scores</li>
+                <li>Watch out for moving targets!</li>
+                <li>Reload when you run out of ammo</li>
+                <li>Survive the time limit to advance levels</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

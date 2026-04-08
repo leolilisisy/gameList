@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 Sliding Puzzle Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>The 15 Puzzle</h1>
+        
+        <div class="stats">
+            <span id="moves">Moves: 0</span>
+            <span id="time">Time: 0s</span>
+            <button id="reset-button">New Game</button>
+        </div>
+        
+        <div class="puzzle-board" id="puzzle-board">
+            </div>
+
+        <div id="win-message" class="hidden">
+            <h2>🏆 Solved! 🏆</h2>
+            <p>You solved the puzzle in <span id="final-moves"></span> moves and <span id="final-time"></span> seconds!</p>
+            <button id="play-again-button">Play Again</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

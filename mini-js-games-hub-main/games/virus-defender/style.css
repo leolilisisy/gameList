@@ -1,0 +1,122 @@
+:root{
+  --bg:#080812;
+  --panel:#0f1220;
+  --accent:#7c4dff;
+  --glow: rgba(124,77,255,0.45);
+  --danger:#ff4d6d;
+  --muted: #9aa0c7;
+  --glass: rgba(255,255,255,0.04);
+  --glass-2: rgba(255,255,255,0.02);
+  --radius: 14px;
+  --card-pad: 18px;
+  --shadow: 0 8px 30px rgba(3,5,15,0.6);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, "Segoe UI", Roboto, system-ui, -apple-system, "Helvetica Neue", Arial;
+  background: radial-gradient(circle at 10% 10%, rgba(124,77,255,0.06), transparent 6%),
+              linear-gradient(180deg, #05050a 0%, #0a0b10 100%);
+  color:#e9eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.game-shell{
+  width:100%;
+  max-width:1100px;
+  border-radius:18px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:20px;
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+
+/* Header */
+.game-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:14px;
+}
+
+.title{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+.title .icon{
+  font-size:34px;
+  display:inline-grid;
+  place-items:center;
+  width:66px;
+  height:66px;
+  border-radius:12px;
+  background: linear-gradient(135deg,var(--accent), #4dc3ff);
+  box-shadow: 0 6px 28px var(--glow), inset 0 -6px 20px rgba(0,0,0,0.25);
+}
+.title h1{
+  margin:0;font-size:20px;
+}
+.title small{display:block;color:var(--muted);margin-top:2px;font-size:12px}
+
+/* HUD & Buttons */
+.controls{display:flex;gap:12px; align-items:center}
+.hud{display:flex;gap:10px}
+.hud-item{background:var(--glass); padding:8px 12px; border-radius:12px; min-width:68px; text-align:center}
+.hud-item label{display:block;font-size:11px;color:var(--muted); margin-bottom:6px}
+.hud-item div{font-weight:700; font-size:16px}
+
+.buttons{display:flex;gap:8px}
+.btn{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.03); color: #eaf0ff; padding:8px 12px; border-radius:10px; cursor:pointer; font-weight:600}
+.btn:hover{transform:translateY(-2px); box-shadow:0 10px 30px rgba(0,0,0,0.45)}
+.btn.big{padding:12px 18px; font-size:16px}
+
+/* Game area */
+.game-area{position:relative; display:flex; align-items:center; justify-content:center; margin:10px 0; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005)); border-radius:12px; padding:12px}
+#gameCanvas{
+  display:block;
+  width:100%;
+  max-width:980px;
+  height:520px;
+  border-radius:12px;
+  background: radial-gradient(circle at center, rgba(124,77,255,0.06) 0%, rgba(0,0,0,0.35) 40%),
+              linear-gradient(180deg, #061025 0%, #03122a 100%);
+  box-shadow: 0 8px 40px rgba(2,6,20,0.6), inset 0 0 40px rgba(255,255,255,0.02);
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+/* Overlay */
+.overlay{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center; backdrop-filter: blur(6px);
+}
+.overlay-card{background:linear-gradient(180deg, rgba(12,12,20,0.85), rgba(10,10,16,0.75)); padding:26px; border-radius:12px; text-align:center; width:320px; box-shadow:0 20px 60px rgba(0,0,0,0.6); border:1px solid rgba(255,255,255,0.03)}
+.overlay-card h2{margin:0 0 8px}
+.overlay-card p{margin:0 0 18px; color:var(--muted)}
+.overlay-actions{display:flex;gap:12px;justify-content:center}
+
+/* Instructions */
+.instructions{margin-top:12px; color:var(--muted); padding:14px; border-radius:10px; background:var(--glass-2)}
+.instructions ul{margin:6px 0 0; padding:0 0 0 18px}
+.instructions li{margin:6px 0}
+
+/* Footer */
+.game-footer{margin-top:10px; color:var(--muted); font-size:12px; text-align:center}
+
+/* utility */
+.hidden{display:none}
+
+/* Responsive adjustments */
+@media (max-width:760px){
+  .game-header{flex-direction:column; align-items:flex-start; gap:8px}
+  .hud{order:2}
+  .buttons{order:1}
+  #gameCanvas{height:420px}
+}

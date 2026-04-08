@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Underwater Diver</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hud">
+    <div class="score">Score: <span id="score">0</span></div>
+    <div class="oxygen">Oxygen: <span id="oxygen">100</span>%</div>
+    <div class="lives">Lives: <span id="lives">3</span></div>
+    <div class="powerup">Power-up: <span id="powerup">None</span></div>
+    <button id="pauseBtn">⏸️ Pause</button>
+    <button id="restartBtn">🔄 Restart</button>
+  </div>
+  <canvas id="gameCanvas"></canvas>
+
+  <audio id="collectSound" src="https://freesound.org/data/previews/528/528140_3248244-lq.mp3"></audio>
+  <audio id="hitSound" src="https://freesound.org/data/previews/66/66717_931655-lq.mp3"></audio>
+  <audio id="powerupSound" src="https://freesound.org/data/previews/331/331912_3248244-lq.mp3"></audio>
+  <audio id="bgMusic" src="https://freesound.org/data/previews/411/411102_5121236-lq.mp3" loop autoplay></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

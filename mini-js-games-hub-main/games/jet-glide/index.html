@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jet Glide — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Control a neon jet and dodge floating mines. Jet Glide — HTML5 Canvas game." />
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a href="../../index.html" class="back">← Back to Hub</a>
+      <h1>Jet Glide</h1>
+      <div class="controls-top">
+        <button id="sound-toggle" aria-pressed="true" title="Toggle Sound">🔊</button>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <section class="game-ui">
+        <div class="meta">
+          <div class="score">Score: <span id="score">0</span></div>
+          <div class="highscore">High: <span id="highscore">0</span></div>
+        </div>
+
+        <div class="canvas-wrap">
+          <canvas id="gameCanvas" width="900" height="520" aria-label="Jet Glide game canvas"></canvas>
+          <div class="overlay" id="overlay">
+            <div class="overlay-card">
+              <h2 id="overlay-title">Jet Glide</h2>
+              <p id="overlay-text">Control the jet with arrow keys, mouse or touch. Avoid floating mines. Survive as long as possible.</p>
+              <div class="overlay-actions">
+                <button id="startBtn" class="cta">Start</button>
+                <button id="resumeBtn" class="cta" hidden>Resume</button>
+                <button id="pauseBtn" class="muted" hidden>Pause</button>
+                <button id="restartBtn" class="muted">Restart</button>
+              </div>
+              <div class="small">Tip: use ↑ / ↓ or drag on mobile. Score increases over time. Mines speed up!</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-controls">
+          <button id="leftBtn" class="touch">◀</button>
+          <button id="upBtn" class="touch">▲</button>
+          <button id="downBtn" class="touch">▼</button>
+          <button id="rightBtn" class="touch">▶</button>
+        </div>
+      </section>
+
+      <section class="desc">
+        <h3>How to Play</h3>
+        <ul>
+          <li>Control the jet using arrow keys, mouse (click+drag), or the on-screen buttons.</li>
+          <li>Dodge floating mines — if you collide, the game ends.</li>
+          <li>The longer you survive, the faster and more numerous the mines become.</li>
+        </ul>
+
+        <h3>Features</h3>
+        <ul>
+          <li>Neon glow visuals</li>
+          <li>Start / Pause / Restart</li>
+          <li>Local high-score persistence</li>
+          <li>Sound effects (online) with toggle</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <small>Made with ❤️ • Canvas • JS • No build tools</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

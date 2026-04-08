@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Persona Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container" data-mode="setup">
+        <h1>👤 The Persona Quiz</h1>
+
+        <div id="setup-mode" class="game-mode">
+            <h2>Player 1: Setup Your Persona</h2>
+            <p>Answer these questions about yourself. Your answers will be saved for Player 2 to guess later!</p>
+            
+            <div id="setup-question-area">
+                </div>
+
+            <button id="next-setup-button" disabled>Next Question</button>
+            <button id="start-quiz-button" style="display: none;">Save & Start Quiz Mode</button>
+        </div>
+
+        <div id="quiz-mode" class="game-mode" style="display: none;">
+            <h2>Player 2: Guess the Persona!</h2>
+            
+            <div id="quiz-status">
+                Score: <span id="quiz-score">0</span> / <span id="quiz-total">0</span>
+            </div>
+
+            <div id="quiz-question-area">
+                </div>
+
+            <button id="submit-quiz-button" disabled>Submit Guess</button>
+            <p id="quiz-feedback-message"></p>
+        </div>
+        
+        <button id="reset-button" class="global-control">Reset Data & Restart</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LexiQuest 🧠</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>🧠 LexiQuest</h1>
+  <p class="tagline">Test your English vocabulary! Choose the correct meaning or synonym of the word shown.</p>
+
+  <div class="game-container">
+    <div class="question-box">
+      <h2 id="word">Loading...</h2>
+      <div id="options" class="options"></div>
+    </div>
+
+    <div class="status">
+      <p id="score">Score: 0</p>
+      <p id="question-number">Question: 1 / 10</p>
+    </div>
+
+    <button id="nextBtn" disabled>➡ Next</button>
+  </div>
+
+  <div class="controls">
+    <label for="difficulty">Difficulty:</label>
+    <select id="difficulty">
+      <option value="easy">Easy</option>
+      <option value="medium">Medium</option>
+      <option value="hard">Hard</option>
+    </select>
+    <button id="startBtn">🎮 Start Quiz</button>
+  </div>
+
+  <div id="message"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

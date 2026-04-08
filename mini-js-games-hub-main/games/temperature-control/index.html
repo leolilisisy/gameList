@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Temperature Control — Mini JS Games Hub</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Page styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fav icon (online) -->
+  <link rel="icon" href="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=32&q=60">
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <div class="title">
+        <h1>Temperature Control</h1>
+        <p class="subtitle">Keep the system inside the target range — handle disturbances & changing setpoints.</p>
+      </div>
+      <div class="controls-top">
+        <button id="startBtn" class="btn primary">Start</button>
+        <button id="pauseBtn" class="btn" disabled>Pause</button>
+        <button id="restartBtn" class="btn" disabled>Restart</button>
+        <div class="status-pill" id="status">Idle</div>
+      </div>
+    </header>
+
+    <section class="board">
+      <div class="left">
+        <div class="meter-card glow">
+          <div class="meter-title">Current Temp</div>
+          <div class="meter-value" id="tempValue">--°C</div>
+          <div class="meter-bar">
+            <div id="meterFill" class="meter-fill" style="width:0%"></div>
+          </div>
+          <div class="range-hint">
+            Target: <span id="targetRangeText">--</span> • Safety: <span id="safetyLimitsText">--</span>
+          </div>
+        </div>
+
+        <div class="sliders-card">
+          <div class="slider-row">
+            <label>Heating Power <span id="heatVal">0</span>%</label>
+            <input id="heatSlider" type="range" min="0" max="100" value="30">
+          </div>
+          <div class="slider-row">
+            <label>Cooling Power <span id="coolVal">0</span>%</label>
+            <input id="coolSlider" type="range" min="0" max="100" value="30">
+          </div>
+
+          <div class="setpoint-row">
+            <label>Target Setpoint</label>
+            <input id="setpointInput" type="number" value="25" step="1" min="-10" max="100">
+            <button id="applySetpoint" class="btn">Apply</button>
+          </div>
+
+          <div class="toggles">
+            <label><input id="autoControl" type="checkbox" checked> Auto-assist (auto bias towards setpoint)</label>
+          </div>
+        </div>
+
+        <div class="events-card">
+          <div class="events-title">Events & Logs</div>
+          <ul id="eventsList" class="events-list"></ul>
+        </div>
+      </div>
+
+      <div class="right">
+        <div class="graph-card glow">
+          <canvas id="tempChart" width="700" height="300"></canvas>
+        </div>
+
+        <div class="info-cards">
+          <div class="info small">
+            <div>Elapsed</div>
+            <div id="elapsed">00:00</div>
+          </div>
+          <div class="info small">
+            <div>In-Range Time</div>
+            <div id="inRangeTime">0s</div>
+          </div>
+          <div class="info">
+            <div>Win Condition</div>
+            <div id="winCondition">Keep within range for <strong id="winDuration">30</strong>s</div>
+          </div>
+        </div>
+
+        <div class="audio-controls">
+          <label>Audio: </label>
+          <button id="muteBtn" class="btn">Mute</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="app__footer">
+      <div class="game-meta">
+        <span class="meta-item">Category: <strong>Puzzle / Simulation</strong></span>
+        <span class="meta-item">Tags: <strong>control, simulation, physics</strong></span>
+      </div>
+
+      <div class="play-links">
+        <a href="../" class="btn">Back to Hub</a>
+        <a id="openNewTab" href="index.html" target="_blank" class="btn ghost">Open in new tab →</a>
+      </div>
+    </footer>
+  </main>
+
+  <!-- sounds (online links) -->
+  <!-- Button click -->
+  <audio id="sndClick" src="https://www.soundjay.com/buttons/sounds/button-16.mp3" preload="auto"></audio>
+  <!-- Disturbance alarm -->
+  <audio id="sndAlarm" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3" preload="auto"></audio>
+  <!-- Success chime -->
+  <audio id="sndSuccess" src="https://www.soundjay.com/misc/sounds/tingle-1.mp3" preload="auto"></audio>
+  <!-- Failure buzzer -->
+  <audio id="sndFail" src="https://www.soundjay.com/misc/sounds/fail-buzzer-01.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

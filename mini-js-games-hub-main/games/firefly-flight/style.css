@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0b0b2f;
+  color: #fff;
+  text-align: center;
+}
+
+.game-ui {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+canvas {
+  display: block;
+  margin: 20px auto;
+  background-color: #0b0b2f;
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  margin: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.orb {
+  fill: yellow;
+}

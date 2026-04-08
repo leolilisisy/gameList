@@ -1,0 +1,92 @@
+:root {
+    --grid-dimension: 4;
+    --tile-size: 80px;
+    --wall-color: #5d4037;
+    --floor-color: #a1887f;
+    --player-color: gold;
+    --key-color: yellow;
+    --exit-color: #4caf50;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #212121;
+    color: white;
+    padding: 20px;
+}
+
+#grid-map {
+    display: grid;
+    /* Create a 4x4 grid of equal-sized cells */
+    grid-template-columns: repeat(var(--grid-dimension), var(--tile-size));
+    grid-template-rows: repeat(var(--grid-dimension), var(--tile-size));
+    border: 5px solid #333;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin: 20px 0;
+}
+
+.tile {
+    /* flexbox alignment for content (like emojis) */
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* Transition is crucial for a smooth visual swap */
+    transition: order 0.3s ease-in-out, background-color 0.2s; 
+    user-select: none;
+    cursor: default;
+}
+
+/* --- TILE TYPES AND VISUALS --- */
+
+.wall {
+    background-color: var(--wall-color);
+}
+
+.floor {
+    background-color: var(--floor-color);
+}
+
+.player {
+    background-color: var(--player-color);
+}
+
+.key {
+    background-color: var(--key-color);
+}
+
+.exit {
+    background-color: var(--exit-color);
+}
+
+.empty {
+    /* The empty tile is the target for swapping */
+    background-color: #424242;
+    cursor: pointer; /* Suggests it's interactable */
+}
+
+/* --- GRID ORDER TRICK --- */
+/* Initial order set from data-order in HTML */
+.tile[data-order="1"] { order: 1; }
+.tile[data-order="2"] { order: 2; }
+/* ... (you would continue this for all 16 tiles) */
+.tile[data-order="3"] { order: 3; }
+.tile[data-order="4"] { order: 4; }
+.tile[data-order="5"] { order: 5; }
+.tile[data-order="6"] { order: 6; }
+.tile[data-order="7"] { order: 7; }
+.tile[data-order="8"] { order: 8; }
+.tile[data-order="9"] { order: 9; }
+.tile[data-order="10"] { order: 10; }
+.tile[data-order="11"] { order: 11; }
+.tile[data-order="12"] { order: 12; }
+.tile[data-order="13"] { order: 13; }
+.tile[data-order="14"] { order: 14; }
+.tile[data-order="15"] { order: 15; }
+.tile[data-order="16"] { order: 16; }
+
+/* The JS will update the inline style.order property, overriding these classes */

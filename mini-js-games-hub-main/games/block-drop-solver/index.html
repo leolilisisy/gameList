@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Block Drop Solver | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1 class="title">🧱 Block Drop Solver</h1>
+    <div class="controls">
+      <button id="startBtn">▶ Start</button>
+      <button id="pauseBtn">⏸ Pause</button>
+      <button id="restartBtn">🔁 Restart</button>
+    </div>
+
+    <canvas id="gameCanvas" width="300" height="600"></canvas>
+
+    <div class="info">
+      <p>🎯 Score: <span id="score">0</span></p>
+      <p>💨 Level: <span id="level">1</span></p>
+    </div>
+  </div>
+
+  <!-- Sound Effects (online) -->
+  <audio id="moveSound" src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg"></audio>
+  <audio id="rotateSound" src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg"></audio>
+  <audio id="clearSound" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
+  <audio id="bgMusic" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

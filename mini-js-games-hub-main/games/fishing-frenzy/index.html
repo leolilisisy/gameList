@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fishing Frenzy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎣 Fishing Frenzy</h1>
+        <p>Catch fish of different sizes for points! Click when the hook is near a fish.</p>
+
+        <div class="game-stats">
+            <div id="score">Score: <span id="current-score">0</span></div>
+            <div id="level">Level: <span id="current-level">1</span></div>
+            <div id="timer">Time: <span id="time-left">60</span>s</div>
+            <div id="fish-caught">Fish Caught: <span id="caught-count">0</span></div>
+        </div>
+
+        <canvas id="fishing-canvas" width="800" height="500"></canvas>
+
+        <div class="controls">
+            <button id="start-btn">Start Fishing</button>
+            <button id="pause-btn" style="display:none;">Pause</button>
+            <button id="reset-btn" style="display:none;">Fish Again</button>
+        </div>
+
+        <div id="message"></div>
+
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Move your mouse to position the fishing hook</li>
+                <li>Click to cast your line when a fish swims by</li>
+                <li>Different sized fish give different points</li>
+                <li>Try to catch as many fish as possible before time runs out</li>
+                <li>Larger fish are worth more but harder to catch</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

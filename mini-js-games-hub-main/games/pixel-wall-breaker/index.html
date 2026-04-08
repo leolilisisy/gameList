@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pixel Wall Breaker — Mini JS Games Hub</title>
+
+  <!-- Modern neon UI -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Sound attribution (public sound library links used) -->
+  <meta name="description" content="Pixel Wall Breaker — Destroy pixel walls with bouncing projectiles. Built with HTML/CSS/JS.">
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="left">
+        <h1 class="brand">Pixel Wall Breaker</h1>
+        <small class="muted">Retro · Arcade · Advanced</small>
+      </div>
+
+      <div class="controls-top">
+        <div class="hud">
+          <div>Score: <span id="score">0</span></div>
+          <div>Level: <span id="level">1</span></div>
+          <div>Lives: <span id="lives">3</span></div>
+        </div>
+
+        <div class="buttons">
+          <button id="btn-pause" class="btn">Pause</button>
+          <button id="btn-restart" class="btn">Restart</button>
+          <button id="btn-sound" class="btn">Sound: On</button>
+          <a class="backlink btn ghost" href="../../index.html">← Back to Hub</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <aside class="left-panel">
+        <div class="panel-card">
+          <h3>How to play</h3>
+          <ol>
+            <li>Click and drag on shooter to aim and set power, then release to fire.</li>
+            <li>Balls bounce off walls and break blocks until they lose momentum.</li>
+            <li>Clear all blocks to advance. Some blocks need multiple hits.</li>
+          </ol>
+          <div class="panel-stats">
+            <label>Power</label>
+            <progress id="power-progress" max="100" value="50"></progress>
+            <label>Balls per shot</label>
+            <select id="balls-count">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="panel-card small">
+          <h4>Tips</h4>
+          <ul>
+            <li>Aim at angles to produce multi-bounce hits.</li>
+            <li>Use power for long shots; low power gives controlled bounces.</li>
+            <li>Higher levels have tougher bricks — watch HP bars.</li>
+          </ul>
+        </div>
+      </aside>
+
+      <section class="playfield-wrap">
+        <div class="playfield" id="playfield">
+          <!-- Canvas for gameplay -->
+          <canvas id="gameCanvas" width="800" height="520" aria-label="Pixel Wall Breaker canvas"></canvas>
+
+          <!-- HUD overlay -->
+          <div class="overlay" id="overlay">
+            <div class="aim-hud" id="aimHud">
+              <div class="shooter" id="shooter"></div>
+              <div class="aim-line" id="aimLine"></div>
+            </div>
+            <div class="center-info" id="centerInfo" hidden>
+              <h2 id="centerTitle"></h2>
+              <p id="centerMsg"></p>
+              <div class="center-actions">
+                <button id="centerContinue" class="btn">Continue</button>
+                <button id="centerRetry" class="btn ghost">Retry</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="credits">Built with ❤️ • Uses public sound resources</div>
+    </footer>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>

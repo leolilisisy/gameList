@@ -1,0 +1,135 @@
+:root{
+  --bg:#071126;
+  --card:#0f1724;
+  --muted:#9fb3c8;
+  --accent:#ff9f1c; /* warm accent */
+  --accent-2:#2dd4bf; /* cool accent */
+  --glass: rgba(255,255,255,0.03);
+  --glass-2: rgba(255,255,255,0.02);
+  --glow: 0 10px 30px rgba(255,159,28,0.12);
+  --glass-border: rgba(255,255,255,0.04);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(45,212,191,0.07), transparent 6%),
+              radial-gradient(900px 400px at 90% 90%, rgba(255,159,28,0.05), transparent 6%),
+              var(--bg);
+  color:#e6f0f2;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:28px;
+}
+
+/* Layout */
+.app{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+/* Header */
+.app__header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:16px;
+}
+.title h1{margin:0;font-size:26px;letter-spacing:-0.6px}
+.subtitle{margin:6px 0 0;color:var(--muted);font-size:13px}
+
+/* Buttons */
+.btn{
+  background:transparent;
+  border:1px solid var(--glass-border);
+  color:inherit;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  margin-left:8px;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{
+  background:linear-gradient(90deg,var(--accent),#ffb470);
+  color:#081018;
+  border:none;
+  box-shadow: var(--glow);
+}
+.btn.ghost{
+  background:transparent;
+  border:1px dashed rgba(255,255,255,0.06);
+}
+
+/* Status */
+.status-pill{
+  margin-left:14px;
+  background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  padding:6px 10px;
+  border-radius:999px;
+  font-weight:600;
+  color:var(--muted);
+  border:1px solid var(--glass-border);
+}
+
+/* Board */
+.board{
+  display:grid;
+  grid-template-columns: 420px 1fr;
+  gap:20px;
+}
+
+/* Cards */
+.glow{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:16px;
+  border-radius:12px;
+  border:1px solid var(--glass-border);
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6), 0 0 24px rgba(45,212,191,0.03);
+}
+
+.meter-card{display:flex;flex-direction:column;gap:8px;align-items:center}
+.meter-title{color:var(--muted);font-size:13px}
+.meter-value{font-size:44px;font-weight:800;letter-spacing:-1px}
+.meter-bar{width:100%;height:12px;background:var(--glass-2);border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.02)}
+.meter-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent-2));transition:width 300ms ease;box-shadow:0 6px 20px rgba(0,0,0,0.4) inset}
+
+.range-hint{font-size:13px;color:var(--muted)}
+
+/* sliders */
+.sliders-card{margin-top:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);padding:12px;border-radius:10px}
+.slider-row{display:flex;flex-direction:column;gap:8px;margin-bottom:10px}
+.slider-row label{font-size:13px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+.slider-row input[type=range]{width:100%}
+
+/* events */
+.events-card{margin-top:12px;padding:12px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+.events-title{font-weight:700;margin-bottom:8px}
+.events-list{list-style:none;padding:0;margin:0;max-height:160px;overflow:auto}
+.events-list li{font-size:13px;padding:6px;border-bottom:1px solid rgba(255,255,255,0.02);color:var(--muted)}
+
+/* right column */
+.graph-card{padding:12px;border-radius:12px}
+canvas{width:100%;height:300px;display:block;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);border-radius:8px}
+
+/* info & small cards */
+.info-cards{display:flex;gap:10px;margin-top:10px;align-items:center}
+.info{background:rgba(255,255,255,0.02);padding:10px;border-radius:8px;min-width:120px}
+.info.small{min-width:100px;text-align:center}
+.info div:first-child{font-size:12px;color:var(--muted);margin-bottom:6px}
+
+/* footer */
+.app__footer{display:flex;justify-content:space-between;align-items:center;padding-top:12px;color:var(--muted)}
+.play-links a{margin-left:8px}
+
+/* responsive */
+@media (max-width:980px){
+  .board{grid-template-columns:1fr; }
+  .right{order:2}
+  .left{order:1}
+}

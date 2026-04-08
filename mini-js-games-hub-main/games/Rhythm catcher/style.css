@@ -1,0 +1,110 @@
+:root {
+  --bg: #0f172a;
+  --accent: #38bdf8;
+  --good: #22c55e;
+  --bad: #ef4444;
+  --note: #f472b6;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at center, #0f172a, #000);
+  color: #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.game-container {
+  text-align: center;
+  max-width: 400px;
+}
+
+h1 {
+  color: var(--accent);
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+#status {
+  color: #a1a1aa;
+  margin-bottom: 15px;
+}
+
+.track-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  position: relative;
+  height: 400px;
+  margin-bottom: 15px;
+}
+
+.track {
+  flex: 1;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-weight: bold;
+  color: #bae6fd;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.note {
+  width: 80%;
+  height: 30px;
+  background: var(--note);
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  left: 10%;
+  animation: fall linear;
+}
+
+@keyframes fall {
+  0% { top: 0; opacity: 1; }
+  100% { top: 370px; opacity: 0.7; }
+}
+
+.controls button {
+  margin: 5px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--accent), #a78bfa);
+  color: #06121f;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.info {
+  margin-top: 10px;
+  color: #93c5fd;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.1em;
+}
+
+.flash {
+  background: var(--good) !important;
+  color: #fff !important;
+  box-shadow: 0 0 15px var(--good);
+}
+
+.miss {
+  background: var(--bad) !important;
+  box-shadow: 0 0 15px var(--bad);
+}

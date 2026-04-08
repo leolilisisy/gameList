@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angle Shot Archery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>🏹 Angle Shot Archery</h1>
+
+        <div id="status-area">
+            Score: <span id="score-display">0</span> | Shots: <span id="shots-display">0</span>
+        </div>
+
+        <div id="canvas-area">
+            <canvas id="archery-canvas"></canvas>
+        </div>
+
+        <div id="input-display">
+            Angle: <span id="angle-display">45°</span> | Power: <span id="power-display">50</span>
+        </div>
+
+        <div id="controls">
+            <button id="shoot-button" disabled>SHOOT</button>
+            <button id="reset-button">Restart</button>
+        </div>
+
+        <div id="feedback-message">
+            <p>Click and drag on the canvas to set angle and power, then press SHOOT.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

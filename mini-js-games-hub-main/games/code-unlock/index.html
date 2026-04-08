@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Unlock | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>💡 Code Unlock</h1>
+    <p>Click bulbs in correct order to unlock the code!</p>
+
+    <div class="bulb-sequence" id="bulb-sequence">
+      <!-- Bulbs will be generated here -->
+    </div>
+
+    <div class="controls">
+      <button id="start-btn">Start</button>
+      <button id="pause-btn">Pause</button>
+      <button id="restart-btn">Restart</button>
+    </div>
+
+    <p id="status"></p>
+  </div>
+
+  <audio id="success-sound" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
+  <audio id="fail-sound" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

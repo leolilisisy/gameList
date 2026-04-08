@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia Master</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🧠 Trivia Master</h1>
+        <p>Test your knowledge and become a trivia champion!</p>
+
+        <div class="game-stats">
+            <div id="score">Score: <span id="current-score">0</span></div>
+            <div id="question-count">Question: <span id="current-question">0</span>/<span id="total-questions">10</span></div>
+            <div id="timer">Time: <span id="time-left">30</span>s</div>
+            <div id="streak">Streak: <span id="current-streak">0</span></div>
+        </div>
+
+        <div class="game-area">
+            <div class="question-section">
+                <div class="category-badge" id="category">General Knowledge</div>
+                <div class="difficulty-badge" id="difficulty">Easy</div>
+                <div class="question" id="question-text">
+                    Click "Start Game" to begin your trivia challenge!
+                </div>
+                <div class="timer-bar">
+                    <div class="timer-fill" id="timer-fill"></div>
+                </div>
+            </div>
+
+            <div class="answers-section">
+                <button class="answer-btn" id="answer-a" data-answer="A">
+                    <span class="answer-letter">A</span>
+                    <span class="answer-text">Answer option A</span>
+                </button>
+                <button class="answer-btn" id="answer-b" data-answer="B">
+                    <span class="answer-letter">B</span>
+                    <span class="answer-text">Answer option B</span>
+                </button>
+                <button class="answer-btn" id="answer-c" data-answer="C">
+                    <span class="answer-letter">C</span>
+                    <span class="answer-text">Answer option C</span>
+                </button>
+                <button class="answer-btn" id="answer-d" data-answer="D">
+                    <span class="answer-letter">D</span>
+                    <span class="answer-text">Answer option D</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="start-btn">Start Game</button>
+            <button id="hint-btn" disabled>Use Hint (50 pts)</button>
+            <button id="skip-btn" disabled>Skip Question (25 pts)</button>
+            <button id="quit-btn" style="display:none;">End Game</button>
+        </div>
+
+        <div id="message"></div>
+
+        <div class="game-results" id="results" style="display:none;">
+            <h2>Game Complete!</h2>
+            <div class="final-stats">
+                <div class="stat">Final Score: <span id="final-score">0</span></div>
+                <div class="stat">Questions Answered: <span id="questions-answered">0</span></div>
+                <div class="stat">Correct Answers: <span id="correct-answers">0</span></div>
+                <div class="stat">Accuracy: <span id="accuracy">0%</span></div>
+                <div class="stat">Best Streak: <span id="best-streak">0</span></div>
+            </div>
+            <div class="grade" id="grade">Grade: F</div>
+            <button id="play-again-btn">Play Again</button>
+        </div>
+
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Answer trivia questions as quickly as possible</li>
+                <li>Each correct answer earns points based on speed and difficulty</li>
+                <li>Build a streak for bonus points</li>
+                <li>Use hints or skip questions (costs points)</li>
+                <li>You have 30 seconds per question</li>
+                <li>Complete all 10 questions to finish the game</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

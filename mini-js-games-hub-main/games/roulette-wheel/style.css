@@ -1,0 +1,370 @@
+/* Roulette Wheel Game Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0f0f23, #1a1a2e);
+    min-height: 100vh;
+    color: white;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    color: #ffd700;
+}
+
+p {
+    text-align: center;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.game-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 20px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+    background: rgba(255, 215, 0, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #ffd700;
+}
+
+.game-area {
+    display: flex;
+    gap: 30px;
+    margin: 20px 0;
+    align-items: flex-start;
+}
+
+.wheel-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#roulette-canvas {
+    border: 5px solid #ffd700;
+    border-radius: 50%;
+    background: #1a1a1a;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    margin-bottom: 20px;
+}
+
+.wheel-controls {
+    display: flex;
+    gap: 15px;
+}
+
+.betting-table {
+    flex: 1;
+    background: #2a2a2a;
+    border-radius: 15px;
+    padding: 20px;
+    border: 3px solid #ffd700;
+}
+
+.chip-selector {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.chip-selector span {
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.chip-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.chip-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chip-btn:hover {
+    background: #2980b9;
+    transform: scale(1.1);
+}
+
+.chip-btn.active {
+    background: #ffd700;
+    color: #000;
+    box-shadow: 0 0 15px #ffd700;
+}
+
+.table-grid {
+    display: grid;
+    grid-template-columns: 60px repeat(12, 1fr);
+    grid-template-rows: repeat(3, 50px);
+    gap: 2px;
+    margin-bottom: 20px;
+}
+
+.number-cell {
+    background: #4a4a4a;
+    border: 1px solid #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    border-radius: 5px;
+}
+
+.number-cell:hover {
+    background: #5a5a5a;
+    transform: scale(1.05);
+}
+
+.number-cell.red {
+    background: #e74c3c;
+}
+
+.number-cell.black {
+    background: #2c3e50;
+}
+
+.number-cell.zero {
+    background: #27ae60;
+    grid-row: span 3;
+}
+
+.chip-stack {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ffd700;
+    color: #000;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7em;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.outside-bets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.outside-bet {
+    background: #34495e;
+    color: white;
+    border: 2px solid #ffd700;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+    text-align: center;
+}
+
+.outside-bet:hover {
+    background: #2c3e50;
+    transform: translateY(-2px);
+}
+
+.outside-bet.bet-placed {
+    background: #ffd700;
+    color: #000;
+}
+
+button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #c0392b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+button:disabled {
+    background: #666;
+    cursor: not-allowed;
+    transform: none;
+}
+
+#spin-btn {
+    background: #27ae60;
+    font-size: 1.2em;
+    padding: 15px 30px;
+}
+
+#spin-btn:hover {
+    background: #229954;
+}
+
+#spin-btn.spinning {
+    background: #666;
+}
+
+#clear-bets-btn {
+    background: #f39c12;
+}
+
+#clear-bets-btn:hover {
+    background: #e67e22;
+}
+
+#message {
+    font-size: 1.2em;
+    margin: 20px 0;
+    min-height: 30px;
+    font-weight: bold;
+    color: #ffd700;
+    text-align: center;
+}
+
+.payouts {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.payouts h3 {
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.payout-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.payout-info div {
+    background: rgba(255, 215, 0, 0.1);
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ffd700;
+}
+
+.instructions {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: left;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.instructions h3 {
+    margin-bottom: 10px;
+    color: #ffd700;
+    text-align: center;
+}
+
+.instructions ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+    .game-area {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .table-grid {
+        grid-template-columns: 50px repeat(12, 1fr);
+        grid-template-rows: repeat(3, 40px);
+    }
+
+    .number-cell {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 768px) {
+    #roulette-canvas {
+        width: 300px;
+        height: 300px;
+    }
+
+    .table-grid {
+        grid-template-columns: 40px repeat(12, 1fr);
+        grid-template-rows: repeat(3, 35px);
+        font-size: 0.8em;
+    }
+
+    .chip-buttons {
+        gap: 5px;
+    }
+
+    .chip-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 0.8em;
+    }
+
+    .outside-bets {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .wheel-controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

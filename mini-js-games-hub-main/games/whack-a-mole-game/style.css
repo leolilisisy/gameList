@@ -1,0 +1,114 @@
+:root {
+    --hole-color: #583f2a; /* Brown dirt */
+    --mole-color: #3b3b3b; /* Dark mole */
+    --game-time: 30s;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #b8c9d9; /* Light blue background */
+}
+
+#game-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 90%;
+    max-width: 450px;
+}
+
+h1 {
+    color: #e74c3c;
+    margin-bottom: 10px;
+}
+
+#header-info {
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* --- Game Board and Holes --- */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 15px;
+    padding: 15px;
+    background-color: #90ee90; /* Grass green board */
+    border-radius: 10px;
+}
+
+.hole {
+    width: 100%;
+    height: 100px;
+    position: relative;
+    overflow: hidden; /* Crucial: Hides the mole when it's down */
+    border-radius: 50%;
+    background-color: var(--hole-color);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+/* --- Mole Styling and Animation --- */
+.mole {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: -100px; /* Hidden position */
+    background-color: var(--mole-color);
+    border-radius: 50%;
+    border-bottom: 5px solid #222;
+    transition: bottom 0.2s ease-out; /* Smooth pop-up transition */
+}
+
+/* Class added when the mole should be visible */
+.hole.up .mole {
+    bottom: 0;
+}
+
+/* Class added when the mole is successfully hit */
+.mole.whacked {
+    background-color: #f39c12; /* Flash color */
+    transform: scale(0.9);
+    opacity: 0.5;
+    transition: transform 0.1s;
+}
+
+/* --- Controls and Messages --- */
+#start-button {
+    padding: 12px 25px;
+    background-color: #3498db;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#start-button:hover {
+    background-color: #2980b9;
+}
+
+#message {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #555;
+}
+
+/* Disable interaction when game is not running */
+.game-stopped .hole {
+    pointer-events: none;
+}

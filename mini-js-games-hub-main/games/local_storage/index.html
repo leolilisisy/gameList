@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Local Storage Legacy 💾</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>The Local Storage Legacy 💾</h1>
+        <p>An idle game where your save file is your primary tool. Fix the corruption!</p>
+    </header>
+
+    <main class="game-container">
+        
+        <section class="game-view">
+            <h2>Current Stats</h2>
+            <div id="status-display" class="status-grid">
+                </div>
+            
+            <button id="mine-gold">Mine Gold (x1)</button>
+            <button id="buy-miner" disabled>Buy Miner (10 Gold)</button>
+            
+            <div id="corruption-panel">
+                <h3>Corruption Status</h3>
+                <p id="corruption-message">System Nominal.</p>
+                <button id="progress-button" disabled>Check for Progress</button>
+            </div>
+        </section>
+
+        <section class="console-view">
+            <h2>Local Save File (`gameState`)</h2>
+            <p class="console-note">🚨 **Warning:** Altering this data incorrectly will trigger a System Reset.</p>
+            
+            <textarea id="save-editor" rows="20"></textarea>
+            
+            <div class="console-controls">
+                <button id="load-save">Load Save (Refresh Editor)</button>
+                <button id="apply-changes">Apply Changes & Validate</button>
+            </div>
+            
+            <div id="console-output" class="console-output">
+                Welcome, Detective. Your save file is unencrypted.
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

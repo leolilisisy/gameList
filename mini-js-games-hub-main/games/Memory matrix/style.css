@@ -1,0 +1,96 @@
+:root {
+  --bg: #070b1a;
+  --accent: #7dd3fc;
+  --wrong: #fb7185;
+  --good: #34d399;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, #0b132b, #000);
+  color: #dbeafe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+}
+
+h1 {
+  color: var(--accent);
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+
+#status {
+  color: #9ca3af;
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: grid;
+  gap: 8px;
+  justify-content: center;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s;
+}
+
+.cell:hover {
+  transform: scale(1.05);
+}
+
+.cell.active {
+  background: var(--accent);
+  box-shadow: 0 0 18px var(--accent);
+}
+
+.cell.correct {
+  background: var(--good);
+  box-shadow: 0 0 18px var(--good);
+}
+
+.cell.wrong {
+  background: var(--wrong);
+  box-shadow: 0 0 18px var(--wrong);
+}
+
+.controls button {
+  margin: 5px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--accent), #a78bfa);
+  color: #06121f;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.info {
+  margin-top: 15px;
+  color: #93c5fd;
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.1em;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gem Swap | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <header>
+      <h1>💎 Gem Swap</h1>
+      <div class="controls">
+        <button id="start-btn">▶️ Start</button>
+        <button id="pause-btn">⏸️ Pause</button>
+        <button id="restart-btn">🔁 Restart</button>
+      </div>
+      <div class="score-panel">
+        <p>Score: <span id="score">0</span></p>
+        <p>Moves: <span id="moves">30</span></p>
+      </div>
+    </header>
+
+    <div id="board" class="board"></div>
+
+    <footer>
+      <p>Swap gems to match 3+ and earn points! ✨</p>
+    </footer>
+  </div>
+
+  <audio id="swap-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_5b1a4a2c11.mp3?filename=click-124467.mp3"></audio>
+  <audio id="match-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4f18c6a8a3.mp3?filename=game-notification-199230.mp3"></audio>
+  <audio id="error-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_84bb24444a.mp3?filename=error-126627.mp3"></audio>
+  <script src="script.js"></script>
+</body>
+</html>

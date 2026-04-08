@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Butterfly Garden 🦋</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>🦋 Butterfly Garden</h1>
+    <canvas id="gameCanvas" width="800" height="500"></canvas>
+    
+    <div class="controls">
+      <button id="startBtn">▶ Start</button>
+      <button id="pauseBtn">⏸ Pause</button>
+      <button id="restartBtn">🔄 Restart</button>
+      <span id="scoreDisplay">Score: 0</span>
+    </div>
+  </div>
+
+  <audio id="nectarSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7b41cb2d26.mp3?filename=pop-94319.mp3"></audio>
+  <audio id="hitSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_7b41cb2d26.mp3?filename=error-2-126514.mp3"></audio>
+  <audio id="bgMusic" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_4b88a8f92c.mp3?filename=gentle-garden-11239.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Runner Game 🏃‍♂️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-wrapper">
+        <canvas id="gameCanvas"></canvas>
+        <div id="startScreen" class="overlay">
+            <h1>RUNNER GAME</h1>
+            <p>Press **Spacebar** to Jump</p>
+            <button id="startButton">Start Game</button>
+        </div>
+        <div id="gameOverScreen" class="overlay hidden">
+            <h1>GAME OVER!</h1>
+            <p id="finalScoreDisplay"></p>
+            <button id="restartButton">Play Again</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

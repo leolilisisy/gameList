@@ -1,0 +1,94 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: #111;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.game-container {
+    text-align: center;
+    padding: 20px;
+    width: 95%;
+    max-width: 1000px;
+}
+
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #fffa;
+}
+
+.tile-line {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.tile {
+    width: 80px;
+    height: 120px;
+    background: #222;
+    border-radius: 12px;
+    cursor: pointer;
+    perspective: 1000px;
+    position: relative;
+    box-shadow: 0 0 10px #0ff;
+    transition: transform 0.5s;
+}
+
+.tile.flipped {
+    transform: rotateY(180deg);
+}
+
+.tile .front, .tile .back {
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.tile .front {
+    background: #0ff3;
+    color: #000;
+}
+
+.tile .back {
+    background: #222;
+    color: #0ff;
+    transform: rotateY(180deg);
+}
+
+.controls button {
+    padding: 8px 15px;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(45deg, #0ff, #0f0);
+    color: #000;
+    font-weight: bold;
+    box-shadow: 0 0 10px #0ff;
+    transition: 0.3s;
+}
+
+.controls button:hover {
+    box-shadow: 0 0 20px #0ff, 0 0 40px #0f0;
+}
+
+.score, .timer {
+    font-size: 1.2rem;
+    margin: 5px;
+}

@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: radial-gradient(circle at top, #60a5fa, #3b82f6, #1e3a8a);
+  min-height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: hidden;
+}
+
+.game-header {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.game-header h1 {
+  font-size: 2.5rem;
+  text-shadow: 0 0 15px #93c5fd;
+}
+
+.tagline {
+  margin-top: 8px;
+  font-size: 1.1rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255,255,255,0.1);
+  padding: 10px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  margin: 20px 0;
+}
+
+.controls label, .controls select, .controls button, .controls p {
+  font-size: 1rem;
+}
+
+select, button {
+  border: none;
+  outline: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+select {
+  background: #2563eb;
+  color: white;
+}
+
+button {
+  background: linear-gradient(90deg, #f472b6, #a78bfa);
+  color: white;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255,255,255,0.5);
+}
+
+#moveCount {
+  font-weight: bold;
+}
+
+.game-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 60px;
+  width: 90%;
+  max-width: 900px;
+  height: 350px;
+  margin-top: 20px;
+}
+
+.tower {
+  width: 140px;
+  height: 300px;
+  background: rgba(0,0,0,0.25);
+  border-radius: 10px;
+  border: 3px solid rgba(255,255,255,0.2);
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tower:hover {
+  box-shadow: 0 0 15px rgba(255,255,255,0.4);
+}
+
+.label {
+  position: absolute;
+  bottom: -30px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.disk {
+  height: 25px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+#message {
+  margin-top: 30px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-shadow: 0 0 10px #fef9c3;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

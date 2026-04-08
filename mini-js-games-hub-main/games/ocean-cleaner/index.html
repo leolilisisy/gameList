@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ocean Cleaner — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="oc-wrapper">
+    <header class="oc-header">
+      <h1>Ocean Cleaner</h1>
+      <div class="oc-header-actions">
+        <button id="btn-mute" aria-label="Mute/unmute">🔊</button>
+        <button id="btn-restart">Restart</button>
+        <button id="btn-pause">Pause</button>
+        <a class="open-hub" href="../../index.html" target="_self">← Back to Hub</a>
+      </div>
+    </header>
+
+    <main class="oc-main">
+      <div class="oc-canvas-wrap">
+        <canvas id="gameCanvas" width="960" height="540"></canvas>
+      </div>
+
+      <aside class="oc-ui">
+        <div class="panel">
+          <div class="stat"><strong>Score</strong><div id="score">0</div></div>
+          <div class="stat"><strong>Collected</strong><div id="collected">0</div></div>
+          <div class="stat"><strong>Health</strong><div id="health">3</div></div>
+          <div class="stat"><strong>Net</strong><div id="net">Ready</div></div>
+          <div class="stat"><strong>Timer</strong><div id="timer">—</div></div>
+        </div>
+
+        <div class="panel upgrades">
+          <h3>Upgrades</h3>
+          <div class="upgrade-list">
+            <button data-upgrade="net" class="upgrade-btn">Bigger Net (500)</button>
+            <button data-upgrade="speed" class="upgrade-btn">Faster Boat (800)</button>
+            <button data-upgrade="magnet" class="upgrade-btn">Magnet (1200)</button>
+          </div>
+          <div class="save-note">Best: <span id="best">0</span></div>
+        </div>
+
+        <div class="panel tips">
+          <h4>Controls</h4>
+          <ul>
+            <li>Arrow keys or WASD — move</li>
+            <li>Space — Net Burst (short auto-collect)</li>
+            <li>Touch — drag to move</li>
+            <li>Tap UI buttons for pause/restart</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="oc-footer">
+      <div class="credits">Made with ❤️ — Mini JS Games Hub</div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

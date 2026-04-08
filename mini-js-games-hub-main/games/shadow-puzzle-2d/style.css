@@ -1,0 +1,50 @@
+:root{
+  --bg:#0f1724;
+  --panel:#0b1220;
+  --accent:#ffd166;
+  --muted:#9aa6b2;
+  --glass: rgba(255,255,255,0.03);
+  --card-radius:12px;
+}
+
+*{box-sizing:border-box;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,#071021 0%, #0f1724 100%);color:#e6eef6}
+.app{max-width:1200px;margin:22px auto;padding:18px;border-radius:14px;position:relative}
+.app-header{display:flex;flex-direction:column;gap:6px;margin-bottom:12px}
+.app-header h1{margin:0;font-size:22px;letter-spacing:0.2px}
+.subtitle{margin:0;color:var(--muted);font-size:13px}
+
+.game-area{display:flex;gap:16px;align-items:flex-start}
+.canvas-wrap{flex:1;position:relative;background:linear-gradient(180deg,rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.6)}
+#gameCanvas{display:block;width:100%;height:auto;border-radius:10px;background:linear-gradient(180deg,#0b1220,#071021);box-shadow:0 12px 30px rgba(0,0,0,0.6) inset}
+
+.controls{width:320px;display:flex;flex-direction:column;gap:12px}
+.panel{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--card-radius);padding:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+.row{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.btn{background:linear-gradient(180deg,#132033,#0b1b2a);border:1px solid rgba(255,255,255,0.04);color:#e6eef6;padding:8px 10px;border-radius:8px;cursor:pointer;font-weight:600}
+.btn:active{transform:translateY(1px)}
+.level-display{flex:1;text-align:center;color:var(--accent)}
+
+.info{margin-top:6px}
+progress{width:100%;height:10px;border-radius:8px;background:#07121a;overflow:hidden}
+#matchBar::-webkit-progress-value{background:linear-gradient(90deg,#ffd166,#ff8a00)}
+
+.hint p{margin:0;color:var(--muted);font-size:13px}
+
+.audio-controls{display:flex;flex-direction:column;gap:8px}
+.audio-controls label{font-size:13px;color:var(--muted)}
+.audio-controls input{transform:scale(1.15)}
+
+.credits small{color:var(--muted)}
+
+.app-footer{display:flex;justify-content:space-between;align-items:center;margin-top:14px;color:var(--muted)}
+.ghost-btn{background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--muted);padding:8px 10px;border-radius:8px;cursor:pointer}
+
+.light-hud{position:absolute;right:22px;top:22px;pointer-events:none}
+.bulb-glow{width:48px;height:48px;border-radius:999px;background:radial-gradient(circle at 30% 30%, rgba(255,209,102,0.95), rgba(255,140,0,0.2) 40%, rgba(255,140,0,0.04) 70%);box-shadow:0 0 40px rgba(255,180,80,0.45), 0 0 88px rgba(255,140,0,0.12)}
+
+/* small screens */
+@media (max-width:980px){
+  .game-area{flex-direction:column}
+  .controls{width:100%}
+}

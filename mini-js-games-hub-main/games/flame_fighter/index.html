@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Frame Rate Fighter 📉</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>The Frame Rate Fighter 📉</h1>
+        <p>Attack your opponent by crashing their frame rate!</p>
+    </header>
+
+    <div id="game-container">
+        <div id="player-1-status" class="status-panel">
+            <h2>Player 1 (Defender)</h2>
+            <div class="health-bar" id="p1-health-bar"></div>
+            <p>Health: <span id="p1-health">100</span></p>
+            <p>Your FPS: <span id="p1-fps">--</span></p>
+            <p>Controls: WASD (Move), C (Light Attack), V (Lag Attack)</p>
+        </div>
+
+        <div id="arena">
+            <div id="player-1" class="fighter"></div>
+            <div id="player-2" class="fighter"></div>
+        </div>
+
+        <div id="player-2-status" class="status-panel">
+            <h2>Player 2 (Attacker)</h2>
+            <div class="health-bar" id="p2-health-bar"></div>
+            <p>Health: <span id="p2-health">100</span></p>
+            <p>Your FPS: <span id="p2-fps">--</span></p>
+            <p>Controls: Arrow Keys (Move), L (Light Attack), K (Lag Attack)</p>
+        </div>
+    </div>
+
+    <div id="game-message">Press 'K' or 'V' for a Lag Attack!</div>
+
+    <script src="script.js"></script>
+</body>
+</html>

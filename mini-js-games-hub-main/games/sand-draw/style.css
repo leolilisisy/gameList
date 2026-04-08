@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #0d0d0d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: #fff;
+}
+
+.game-ui {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+.controls {
+    margin-bottom: 10px;
+}
+
+.controls button, .controls input {
+    margin: 0 5px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.controls button:hover {
+    box-shadow: 0 0 10px #00ffff;
+}
+
+canvas {
+    background: #111;
+    display: block;
+    border: 2px solid #ff00ff;
+    border-radius: 10px;
+}

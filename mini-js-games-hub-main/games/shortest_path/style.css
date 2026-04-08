@@ -1,0 +1,130 @@
+:root {
+    --grid-rows: 10;
+    --grid-cols: 10;
+    --cell-size: 30px;
+    --grid-width: calc(var(--grid-cols) * var(--cell-size));
+}
+
+body {
+    font-family: 'Consolas', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #34495e; /* Dark background */
+    color: #ecf0f1;
+}
+
+#game-container {
+    background-color: #2c3e50;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    width: fit-content;
+    max-width: 90%;
+}
+
+h1 {
+    color: #f1c40f;
+    margin-bottom: 20px;
+}
+
+#status-area {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* --- Grid Container --- */
+#grid-container {
+    width: var(--grid-width);
+    height: var(--grid-width);
+    display: grid;
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    border: 3px solid #7f8c8d;
+    margin: 0 auto 20px;
+}
+
+/* --- Cell Styling (The core visual) --- */
+.grid-cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid rgba(127, 140, 141, 0.5); /* Faint grid lines */
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.1s;
+}
+
+/* Cell Types */
+.start {
+    background-color: #2ecc71; /* Green */
+    color: white;
+    font-weight: bold;
+}
+
+.end {
+    background-color: #e74c3c; /* Red */
+    color: white;
+    font-weight: bold;
+}
+
+.wall {
+    background-color: #34495e; /* Dark obstacle */
+    cursor: not-allowed;
+}
+
+.path {
+    background-color: #3498db; /* Blue path */
+}
+
+/* Interaction */
+.grid-cell:hover:not(.wall):not(.start):not(.end) {
+    background-color: #4CAF50; /* Hover to show it's clickable */
+}
+
+/* --- Controls and Feedback --- */
+#feedback-message {
+    min-height: 20px;
+    margin-bottom: 20px;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+#controls button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#reset-button {
+    background-color: #f39c12; /* Orange reset */
+    color: white;
+}
+
+#reset-button:hover {
+    background-color: #e67e22;
+}
+
+#new-puzzle-button {
+    background-color: #3498db; /* Blue new puzzle */
+    color: white;
+}
+
+#new-puzzle-button:hover {
+    background-color: #2980b9;
+}

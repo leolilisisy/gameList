@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catch or Crash | Mini JS Games Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game-container">
+    <header class="game-header">
+        <h1>Catch or Crash</h1>
+        <div class="scoreboard">
+            <span>Score: <span id="score">0</span></span>
+            <span>Lives: <span id="lives">3</span></span>
+        </div>
+        <div class="game-controls">
+            <button id="startBtn">Start</button>
+            <button id="pauseBtn">Pause</button>
+            <button id="restartBtn">Restart</button>
+        </div>
+    </header>
+    <div class="game-play-area" id="gameArea"></div>
+    <audio id="catchSound" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
+    <audio id="crashSound" src="https://actions.google.com/sounds/v1/cartoon/cartoon_boing.ogg"></audio>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

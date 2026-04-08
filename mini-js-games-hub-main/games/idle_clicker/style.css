@@ -1,0 +1,165 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2c3e50; /* Dark blue background */
+    color: #ecf0f1; /* Light grey text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.game-container {
+    background: #34495e; /* Slightly lighter dark blue for container */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    border: 2px solid #2ecc71; /* Green border */
+}
+
+h1 {
+    color: #f1c40f; /* Yellow title */
+    margin-bottom: 20px;
+}
+
+/* --- Currency Display --- */
+.currency-display {
+    margin-bottom: 30px;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #f1c40f; /* Yellow for currency */
+}
+
+#currency-amount {
+    font-size: 2.5em;
+    color: #ecf0f1; /* White for main number */
+}
+
+#cps-display {
+    font-size: 0.8em;
+    color: #2ecc71; /* Green for CPS */
+}
+
+/* --- Main Clicker --- */
+.main-clicker {
+    width: 150px;
+    height: 150px;
+    background-color: #f1c40f; /* Yellow background for clicker */
+    border-radius: 50%;
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.1s ease-out;
+    border: 5px solid #e6b300;
+}
+
+.main-clicker:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+#clicker-image {
+    width: 120px;
+    height: 120px;
+    display: block;
+    user-select: none; /* Prevent dragging */
+}
+
+/* If using emoji instead of image */
+#clicker-icon {
+    font-size: 4em;
+}
+
+/* --- Shop Panel --- */
+.shop-panel {
+    background-color: #2c3e50;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #3a5068;
+}
+
+.shop-panel h2 {
+    color: #bdc3c7;
+    margin-bottom: 20px;
+}
+
+#upgrades-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.upgrade-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #34495e;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 1px solid #4a627a;
+    transition: background-color 0.1s;
+}
+
+.upgrade-item:hover {
+    background-color: #3e566b;
+}
+
+.upgrade-name {
+    font-weight: bold;
+    color: #ecf0f1;
+    flex: 2;
+    text-align: left;
+}
+
+.upgrade-info {
+    font-size: 0.9em;
+    color: #bdc3c7;
+    flex: 3;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.upgrade-info .cost {
+    color: #f1c40f;
+    font-weight: bold;
+}
+
+.upgrade-info .cps {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.upgrade-level {
+    font-size: 0.9em;
+    color: #95a5a6;
+    flex: 1;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.upgrade-item button {
+    padding: 8px 15px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.upgrade-item button:hover:not(:disabled) {
+    background-color: #27ae60;
+}
+
+.upgrade-item button:disabled {
+    background-color: #7f8c8d;
+    cursor: not-allowed;
+}

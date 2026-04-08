@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Helix Fall — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Background image hosted on Unsplash (hotlink allowed) -->
+  <meta name="description" content="Helix Fall clone — avoid red zones and drop as far as possible.">
+</head>
+<body>
+  <div class="page">
+    <header class="topbar">
+      <div class="left">
+        <a href="../../index.html" class="back">← Back to Hub</a>
+        <h1>Helix Fall</h1>
+      </div>
+      <div class="right">
+        <div class="scoreboard">
+          <div>Score <span id="score">0</span></div>
+          <div>Best <span id="best">0</span></div>
+        </div>
+        <div class="controls">
+          <button id="pauseResumeBtn" class="btn">Pause</button>
+          <button id="restartBtn" class="btn">Restart</button>
+          <button id="muteBtn" class="btn">🔊</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <div class="canvas-wrap">
+        <canvas id="gameCanvas" width="420" height="720" aria-label="Helix Fall game canvas"></canvas>
+        <div class="hud">
+          <div class="big-center" id="centerMessage" hidden></div>
+          <div class="small-tip">Use ← → or drag to rotate the tower</div>
+        </div>
+      </div>
+
+      <section class="ui-panel">
+        <div class="legend">
+          <div class="legend-item"><span class="dot safe"></span> Safe</div>
+          <div class="legend-item"><span class="dot danger"></span> Danger</div>
+        </div>
+        <div class="buttons-row">
+          <button id="playBtn" class="cta">Play</button>
+          <button id="resumeBtn" class="cta subtle" hidden>Resume</button>
+        </div>
+        <div class="credits">Visuals: gradient + glow • Sounds: web audio • Built with ❤️</div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Tip: fall through the gaps to score. Red zones end the run.</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

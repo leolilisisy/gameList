@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Cruncher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🧮 Number Cruncher</h1>
+        <p>Solve math problems quickly to advance levels!</p>
+        <div id="game-area">
+            <div id="level">Level: <span id="current-level">1</span></div>
+            <div id="score">Score: <span id="current-score">0</span></div>
+            <div id="timer">Time: <span id="time-left">30</span>s</div>
+            <div id="problem"></div>
+            <input type="number" id="user-input" placeholder="Your answer">
+            <button id="submit-btn">Submit</button>
+            <button id="next-btn" style="display:none;">Next Level</button>
+        </div>
+        <div id="message"></div>
+        <button id="start-btn">Start Game</button>
+        <button id="reset-btn" style="display:none;">Play Again</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

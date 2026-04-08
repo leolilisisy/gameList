@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Viewport Voyager 📐</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="ui-overlay">
+        <h2>Viewport Voyager</h2>
+        <p>Use your mouse to **resize the browser window** to manipulate the level geometry.</p>
+        <div id="dimensions">
+            Width: <span id="dim-w">0</span>px | Height: <span id="dim-h">0</span>px
+        </div>
+        <div id="level-status">Current Level: 1</div>
+        <div id="game-message">Resize the window until a platform aligns with the player!</div>
+    </div>
+    
+    <div id="game-world">
+        <div id="player"></div>
+
+        <div id="goal" class="level-element goal"></div>
+
+        <div id="platform-a" class="level-element platform"></div>
+        <div id="platform-b" class="level-element platform"></div>
+
+        <div id="wall-a" class="level-element obstacle"></div>
+
+        <div id="hidden-platform" class="level-element platform hidden-platform"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

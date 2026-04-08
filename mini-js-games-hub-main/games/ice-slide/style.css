@@ -1,0 +1,76 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #b3ecff 0%, #e6f9ff 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #003366;
+}
+
+.game-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 20px 40px;
+  box-shadow: 0 0 20px rgba(0, 128, 255, 0.4);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(6, 60px);
+  grid-template-rows: repeat(6, 60px);
+  gap: 4px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.cell {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  background-color: #cceeff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.wall {
+  background-color: #66ccff;
+  background-image: url("https://cdn.pixabay.com/photo/2017/12/28/14/22/ice-3044714_1280.jpg");
+  background-size: cover;
+}
+
+.goal {
+  background-color: #99ffcc;
+  background-image: url("https://cdn-icons-png.flaticon.com/512/190/190411.png");
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.player {
+  background-image: url("https://cdn-icons-png.flaticon.com/512/616/616408.png");
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #b3e0ff;
+  border: 2px solid #0099ff;
+}
+
+.controls button {
+  margin: 10px;
+  padding: 10px 16px;
+  font-size: 16px;
+  background: #0099ff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.controls button:hover {
+  background: #007acc;
+}

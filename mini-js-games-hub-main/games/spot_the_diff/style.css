@@ -1,0 +1,118 @@
+:root {
+    --image-width: 400px; /* Width of a single image */
+    --image-height: 300px; /* Height of a single image */
+    --image-url: url('images/main-puzzle-image.jpg'); /* !!! UPDATE THIS PATH !!! */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+#game-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    max-width: calc(2 * var(--image-width) + 80px); /* 2 images + gap + padding */
+    width: 90%;
+}
+
+h1 {
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+#status-area {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* --- Puzzle Area and Images --- */
+#puzzle-area {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    position: relative; /* Crucial for positioning the markers absolutely */
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+}
+
+.image-box {
+    width: var(--image-width);
+    height: var(--image-height);
+    background-image: var(--image-url);
+    background-size: cover;
+    border: 1px solid #999;
+    position: relative;
+}
+
+/* The invisible layer for intercepting clicks */
+.clickable-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    /* We only listen for clicks on the right image */
+    cursor: pointer; 
+}
+
+#image-left .clickable-overlay {
+    /* Clicks on the left image do nothing */
+    cursor: default; 
+}
+
+/* --- Difference Marker Styling --- */
+.difference-marker {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid #f44336; /* Red ring */
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+    pointer-events: none; /* Allows clicks to pass through to the overlay */
+    transition: opacity 0.3s;
+    opacity: 0; /* Hidden initially */
+    z-index: 20;
+    /* Center the circle on the coordinate */
+    transform: translate(-50%, -50%); 
+}
+
+.difference-marker.found {
+    border-color: #4CAF50; /* Green when found */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+    opacity: 1; /* Visible when found */
+}
+
+/* --- Feedback and Controls --- */
+#feedback-message {
+    min-height: 1.5em;
+    margin-bottom: 20px;
+}
+
+#start-button {
+    padding: 12px 25px;
+    font-size: 1.2em;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#start-button:hover {
+    background-color: #1e7e34;
+}

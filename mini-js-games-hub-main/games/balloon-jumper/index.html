@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Balloon Jumper — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Jump from balloon to balloon. Great controls, glow visuals, pause/restart, and high score." />
+</head>
+<body>
+  <div class="game-shell">
+    <header class="game-header">
+      <div class="left">
+        <div class="game-title">
+          <span class="icon">🎈</span>
+          <span class="title-text">Balloon Jumper</span>
+        </div>
+        <div class="meta">Arcade • Reflex • HTML/CSS/JS</div>
+      </div>
+
+      <div class="right">
+        <div class="scoreboard">
+          <div>Score <strong id="score">0</strong></div>
+          <div>High <strong id="highscore">0</strong></div>
+        </div>
+
+        <div class="controls">
+          <button id="soundToggle" class="control-btn" title="Toggle sound">🔊</button>
+          <button id="pauseBtn" class="control-btn" title="Pause / Resume">⏸️</button>
+          <button id="restartBtn" class="control-btn" title="Restart">↻</button>
+          <a class="open-new" href="index.html" target="_blank" rel="noopener">Open Hub</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <canvas id="gameCanvas" width="900" height="600" aria-label="Balloon Jumper game area"></canvas>
+
+      <div id="overlay" class="overlay hidden">
+        <div class="overlay-card">
+          <h2 id="overlayTitle">Paused</h2>
+          <p id="overlayMsg">Press Resume or Space to continue.</p>
+          <div class="overlay-actions">
+            <button id="resumeBtn" class="cta">Resume</button>
+            <button id="overlayRestart" class="ghost">Restart</button>
+            <a href="#" id="shareScore" class="ghost">Share Score</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="help">
+        <div>Move: ← → or Touch</div>
+        <div>Jump: Auto on landing</div>
+      </div>
+    </main>
+
+    <footer class="game-footer">
+      <p>Made with ❤️ — press <kbd>Space</kbd> to pause/resume. Touch to move on mobile.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

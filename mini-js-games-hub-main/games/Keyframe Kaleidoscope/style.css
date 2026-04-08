@@ -1,0 +1,83 @@
+:root {
+    --animation-duration: 2.5s; /* The core rhythm duration */
+    /* A complex, custom cubic-bezier function for non-linear, tricky timing */
+    --animation-timing: cubic-bezier(0.8, -0.5, 0.2, 1.5); 
+    --game-width: 500px;
+}
+
+body {
+    font-family: monospace, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #212121;
+    color: #f0f0f0;
+    padding: 20px;
+}
+
+#game-area {
+    width: var(--game-width);
+    height: 100px;
+    border: 3px solid #6c5ce7;
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+#target-box {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #ff5722;
+    border-radius: 5px;
+    top: 25px;
+    
+    /* --- THE CORE ANIMATION RULE --- */
+    animation: bounce-rhythm var(--animation-duration) var(--animation-timing) infinite alternate;
+    /* The animation-play-state will be controlled by JavaScript for pausing */
+    animation-play-state: running;
+}
+
+/* --- Keyframes Definition --- */
+@keyframes bounce-rhythm {
+    /* 0% is the start state (left side) */
+    0% {
+        left: 0;
+        transform: scale(1);
+    }
+    
+    /* A mid-point to introduce a false rhythm/specific state change */
+    50% {
+        background-color: #4CAF50; /* Green at midpoint */
+        transform: scale(0.8);
+    }
+
+    /* 100% is the end state (right side) */
+    100% {
+        left: calc(var(--game-width) - 50px);
+        transform: scale(1.2);
+    }
+}
+
+
+/* --- State Classes (Used to change the required hit point) --- */
+.state-end {
+    /* Default state, requires hitting 100% (right side) */
+    border: 2px solid yellow; 
+}
+
+.state-start {
+    /* Requires hitting 0% (left side) on animationiteration */
+    border: 2px solid cyan;
+    background-color: #ffc107;
+}
+
+.state-mid {
+    /* Requires hitting 50% state (Green, scaled down) */
+    border: 2px solid lime;
+}
+
+/* Pause state */
+.paused #target-box {
+    animation-play-state: paused;
+}

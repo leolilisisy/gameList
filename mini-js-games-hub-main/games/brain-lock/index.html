@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brain Lock | Mini JS Games Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="brainlock-container">
+    <h1>Brain Lock</h1>
+    <p>Unlock the lock by reproducing the correct sequence!</p>
+
+    <div class="sequence-line">
+        <!-- 5 bulbs -->
+        <div class="bulb" id="bulb-0"></div>
+        <div class="bulb" id="bulb-1"></div>
+        <div class="bulb" id="bulb-2"></div>
+        <div class="bulb" id="bulb-3"></div>
+        <div class="bulb" id="bulb-4"></div>
+    </div>
+
+    <div class="controls">
+        <button id="start-btn">Start</button>
+        <button id="pause-btn">Pause</button>
+        <button id="restart-btn">Restart</button>
+    </div>
+
+    <p id="message"></p>
+</div>
+
+<audio id="success-sound" src="https://www.soundjay.com/buttons/sounds/button-3.mp3"></audio>
+<audio id="fail-sound" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>

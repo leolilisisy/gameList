@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maze Master</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🌀 Maze Master</h1>
+        <p>Find your way out of complex mazes! Use arrow keys to move.</p>
+
+        <div class="game-stats">
+            <div id="level">Level: <span id="current-level">1</span></div>
+            <div id="score">Score: <span id="current-score">0</span></div>
+            <div id="timer">Time: <span id="time-display">00:00</span></div>
+        </div>
+
+        <canvas id="maze-canvas" width="600" height="600"></canvas>
+
+        <div class="controls">
+            <button id="start-btn">Start Game</button>
+            <button id="reset-btn" style="display:none;">New Maze</button>
+            <button id="hint-btn">Show Hint</button>
+        </div>
+
+        <div id="message"></div>
+
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Use arrow keys or WASD to move your character</li>
+                <li>Reach the red exit square to complete the level</li>
+                <li>Avoid dead ends and find the optimal path</li>
+                <li>Complete levels faster for higher scores</li>
+                <li>Use hints if you get stuck (costs points)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

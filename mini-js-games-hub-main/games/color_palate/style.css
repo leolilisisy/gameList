@@ -1,0 +1,132 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f7f9fc;
+    color: #333;
+}
+
+#game-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+
+h1 {
+    color: #4a4e69;
+    margin-bottom: 20px;
+}
+
+#status-area {
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #6a0572;
+}
+
+/* --- Palette Display (The Question) --- */
+#palette-display {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.color-swatch {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+    border: 3px solid transparent; /* Base border */
+}
+
+.missing-swatch {
+    border: 3px dashed #ff6b6b; /* Red dashed border for the empty slot */
+    background-color: #eee;
+}
+
+#instructions {
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #555;
+}
+
+/* --- Options Container (The Answers) --- */
+#options-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.option-swatch {
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.2s, transform 0.1s;
+}
+
+.option-swatch:hover:not(.disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.correct-guess {
+    border: 4px solid #4CAF50 !important; /* Green */
+}
+
+.incorrect-guess {
+    border: 4px solid #f44336 !important; /* Red */
+    opacity: 0.5;
+}
+
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* --- Feedback and Controls --- */
+#feedback-message {
+    min-height: 1.5em;
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+#controls button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#start-button {
+    background-color: #6a0572; /* Purple */
+    color: white;
+}
+
+#start-button:hover {
+    background-color: #4f0354;
+}
+
+#next-button {
+    background-color: #007bff; /* Blue */
+    color: white;
+}
+
+#next-button:hover {
+    background-color: #0056b3;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Pet Simulator - Pixel 🐾</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="pet-container">
+        <h1>Pixel the Digi-Pet</h1>
+        
+        <div id="pet-display" class="pet-state-happy">
+            <span id="pet-sprite">😊</span>
+        </div>
+
+        <div class="stats-panel">
+            <div class="stat-group">
+                <label for="hunger-bar">Hunger:</label>
+                <progress id="hunger-bar" value="100" max="100"></progress>
+                <span id="hunger-value">100</span>
+            </div>
+
+            <div class="stat-group">
+                <label for="happiness-bar">Happiness:</label>
+                <progress id="happiness-bar" value="100" max="100"></progress>
+                <span id="happiness-value">100</span>
+            </div>
+
+            <div class="stat-group">
+                <label for="sleep-bar">Energy:</label>
+                <progress id="sleep-bar" value="100" max="100"></progress>
+                <span id="sleep-value">100</span>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button id="feed-button">Feed 🍕</button>
+            <button id="play-button">Play 🎾</button>
+            <button id="sleep-button">Tuck In 😴</button>
+        </div>
+
+        <p id="message-area" class="status-message">Pixel is waiting for attention...</p>
+        
+        <div id="death-screen" class="hidden">
+            <p id="death-message" class="death-text">Pixel has gone to digital heaven.</p>
+            <button id="restart-button">Start New Pet</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

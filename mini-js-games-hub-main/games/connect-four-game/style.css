@@ -1,0 +1,133 @@
+:root {
+    --rows: 6;
+    --cols: 7;
+    --cell-size: 60px;
+    --player1-color: #e74c3c; /* Red */
+    --player2-color: #f1c40f; /* Yellow */
+    --board-color: #3498db; /* Blue */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f4f8;
+}
+
+#game-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: var(--board-color);
+    margin-bottom: 10px;
+}
+
+#status-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #ecf0f1;
+    border-radius: 5px;
+}
+
+#turn-indicator {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0;
+}
+
+#reset-button {
+    padding: 8px 15px;
+    background-color: #2ecc71; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#reset-button:hover {
+    background-color: #27ae60;
+}
+
+/* --- Board Styling --- */
+#board {
+    display: grid;
+    grid-template-rows: repeat(var(--rows), var(--cell-size));
+    grid-template-columns: repeat(var(--cols), var(--cell-size));
+    background-color: var(--board-color);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.cell-disc {
+    width: calc(var(--cell-size) - 10px);
+    height: calc(var(--cell-size) - 10px);
+    border-radius: 50%;
+    background-color: white; /* The hole color */
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.1s ease;
+}
+
+/* --- Disc Colors --- */
+.player1 {
+    background-color: var(--player1-color);
+}
+
+.player2 {
+    background-color: var(--player2-color);
+}
+
+/* --- Hover Effect for Dropping --- */
+.cell[data-column]:hover .cell-disc {
+    /* Temporarily show a faded disc to indicate drop target */
+    opacity: 0.5;
+    background-color: transparent; /* Reset to white base */
+}
+
+/* Player 1 hover preview */
+#board:has(.cell[data-column]:hover):not(.game-over) .cell[data-column]:hover .cell-disc {
+    background-color: var(--player1-color);
+}
+
+/* Player 2 hover preview (overridden by JS on turn change) */
+.player2-turn #board:has(.cell[data-column]:hover):not(.game-over) .cell[data-column]:hover .cell-disc {
+    background-color: var(--player2-color);
+}
+
+/* Game Over state */
+.game-over .cell[data-column]:hover .cell-disc {
+    opacity: 1; /* Disable hover effect when game is over */
+    cursor: default;
+}
+
+/* Win animation highlight */
+.winning-cell .cell-disc {
+    box-shadow: 0 0 15px 5px #fff;
+    animation: flash 0.5s infinite alternate;
+}
+
+@keyframes flash {
+    from { transform: scale(1.0); }
+    to { transform: scale(1.1); }
+}

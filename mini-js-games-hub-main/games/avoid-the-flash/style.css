@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #0f0f0f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.game-container {
+    text-align: center;
+    width: 350px;
+    padding: 20px;
+    background: #111;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #0ff;
+}
+
+.game-screen {
+    margin: 20px 0;
+    height: 50px;
+    background: #222;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 15px #0ff inset;
+}
+
+.obstacle-line {
+    height: 100%;
+    width: 100%;
+    background: #0f0;
+    transition: background 0.2s ease;
+}
+
+.controls button {
+    margin: 5px;
+    padding: 8px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #fff;
+    background: #0ff;
+    box-shadow: 0 0 10px #0ff;
+    transition: all 0.2s ease;
+}
+
+.controls button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.score {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+#message {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}

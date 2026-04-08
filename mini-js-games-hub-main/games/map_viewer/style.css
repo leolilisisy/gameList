@@ -1,0 +1,86 @@
+:root {
+    --grid-rows: 25;
+    --grid-cols: 25;
+    --cell-size: 15px; /* Size of each individual tile */
+}
+
+body {
+    font-family: 'Consolas', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #1a1a1a; /* Dark background */
+    color: #00ff00; /* Green terminal text */
+}
+
+#game-container {
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    color: #00ff00;
+    margin-bottom: 15px;
+}
+
+#status-area {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+/* --- Map Grid Container --- */
+#grid-container {
+    width: calc(var(--grid-cols) * var(--cell-size));
+    height: calc(var(--grid-rows) * var(--cell-size));
+    display: grid;
+    /* Sets up the grid based on JS variables */
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    border: 2px solid #555;
+    margin: 0 auto 20px;
+}
+
+/* --- Tile Styling --- */
+.grid-cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    /* No border needed, background color differentiates tiles */
+}
+
+.tile-wall {
+    background-color: #34495e; /* Dark blue/grey wall */
+}
+
+.tile-floor {
+    background-color: #8e44ad; /* Purple floor */
+    /* Add a small shadow/border to give definition to the floor */
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.5);
+}
+
+.tile-empty {
+    /* Background matches container background */
+    background-color: #222; 
+}
+
+/* --- Controls --- */
+#new-map-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    background-color: #2ecc71; /* Green button */
+    color: #222;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#new-map-button:hover {
+    background-color: #27ae60;
+}

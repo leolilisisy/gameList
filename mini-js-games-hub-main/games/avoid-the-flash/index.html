@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avoid the Flash | Mini JS Games Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game-container">
+    <h1>Avoid the Flash</h1>
+    <div class="game-screen">
+        <div class="obstacle-line"></div>
+    </div>
+    <div class="controls">
+        <button id="start-btn">Start</button>
+        <button id="pause-btn" disabled>Pause</button>
+        <button id="resume-btn" disabled>Resume</button>
+        <button id="restart-btn" disabled>Restart</button>
+    </div>
+    <p class="score">Score: <span id="score">0</span></p>
+    <p id="message"></p>
+</div>
+
+<!-- Sounds -->
+<audio id="success-sound" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
+<audio id="fail-sound" src="https://actions.google.com/sounds/v1/cartoon/boing.ogg"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(135deg,#0c0c0c 0%,#1a1a2e 100%);display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px;color:#fff}
+.game-wrap{background:#1a1a2e;border-radius:20px;padding:30px;text-align:center;box-shadow:0 20px 40px rgba(0,0,0,0.5);max-width:500px;width:100%;border:1px solid #00d4ff}
+h1{color:#00d4ff;margin-bottom:20px;font-size:2em;text-shadow:0 0 10px #00d4ff}
+.difficulty-selector{display:flex;gap:10px;justify-content:center;margin-bottom:20px}
+.diff-btn{padding:8px 16px;border:1px solid #00d4ff;border-radius:8px;background:#1a1a2e;color:#00d4ff;cursor:pointer;transition:all 0.3s ease}
+.diff-btn:hover,.diff-btn.active{background:#00d4ff;color:#1a1a2e}
+.game-area{position:relative;display:flex;align-items:center;justify-content:center;min-height:400px}
+.orbs{position:relative;width:300px;height:300px}
+.orb{position:absolute;width:60px;height:60px;border-radius:50%;cursor:pointer;transition:all 0.3s ease;transform-origin:center;border:2px solid #fff}
+.orb:nth-child(1){top:0;left:50%;transform:translateX(-50%)}
+.orb:nth-child(2){top:25%;right:0;transform:translateY(-50%)}
+.orb:nth-child(3){bottom:25%;right:0;transform:translateY(50%)}
+.orb:nth-child(4){bottom:0;left:50%;transform:translateX(-50%)}
+.orb:nth-child(5){top:25%;left:0;transform:translateY(-50%)}
+.orb:nth-child(6){bottom:25%;left:0;transform:translateY(50%)}
+.orb.active{box-shadow:0 0 20px currentColor, 0 0 40px currentColor, 0 0 60px currentColor;transform:scale(1.2)}
+.center-display{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center}
+#message{font-size:24px;margin-bottom:10px;text-shadow:0 0 10px #00d4ff}
+#sequence{font-size:18px}
+.info{margin-top:20px}
+.controls{display:flex;gap:10px;justify-content:center;margin-top:10px}
+button{padding:10px 20px;border:none;border-radius:8px;background:#00d4ff;color:#1a1a2e;font-size:16px;cursor:pointer;transition:all 0.3s ease}
+button:hover{background:#0099cc}
+footer{font-size:14px;color:#666;margin-top:20px}
+@media (max-width: 600px) {
+  .game-wrap{padding:20px;max-width:100%}
+  .orbs{width:250px;height:250px}
+  .orb{width:50px;height:50px}
+  .center-display{font-size:20px}
+}

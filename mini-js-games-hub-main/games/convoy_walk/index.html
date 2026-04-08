@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conway's Game of Life</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>🦠 Game of Life Simulator</h1>
+
+        <div id="controls">
+            <button id="start-button" class="action-button">Start</button>
+            <button id="stop-button" class="action-button" disabled>Stop</button>
+            <button id="reset-button" class="action-button">Reset</button>
+            <button id="step-button" class="action-button">Step</button>
+        </div>
+
+        <div id="status-area">
+            Generation: <span id="generation-display">0</span> | Live Cells: <span id="live-count">0</span>
+        </div>
+
+        <div id="grid-container">
+            </div>
+
+        <div id="feedback-message">
+            <p>Click on the grid to set initial live cells, then press START.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Code Breaker Mini — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Code Breaker Mini - guess the 3-digit code. Advanced UI, pause, restart, keyboard & on-screen input." />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand__icon">🔐</span>
+        <h1>Code Breaker Mini</h1>
+      </div>
+      <div class="controls">
+        <button id="sound-toggle" class="btn icon" title="Toggle sound">🔊</button>
+        <button id="pause-btn" class="btn icon" title="Pause game">⏸️</button>
+        <button id="restart-btn" class="btn" title="Restart game">Restart</button>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="game-stage" aria-live="polite">
+        <div class="game-info">
+          <div class="stat">
+            <label>Total Attempts</label>
+            <div id="attempts-left" class="big">8</div>
+          </div>
+          <div class="stat">
+            <label>Mode</label>
+            <div id="mode-label">Classic (3-digit)</div>
+          </div>
+        </div>
+
+        <div class="play-area">
+          <div class="target-line" aria-hidden="true">
+            <!-- Visual bulbs representing current guess & target hints -->
+            <div class="bulb-row">
+              <div class="bulb" data-index="0"></div>
+              <div class="bulb" data-index="1"></div>
+              <div class="bulb" data-index="2"></div>
+            </div>
+            <div class="secret-hint">🔒 Secret code hidden</div>
+          </div>
+
+          <div class="input-panel" aria-label="Guess input">
+            <div id="guess-display" class="guess-display" aria-live="polite" aria-atomic="true">_ _ _</div>
+            <div class="numpad" role="group" aria-label="Number pad">
+              <button class="num-key" data-key="1">1</button>
+              <button class="num-key" data-key="2">2</button>
+              <button class="num-key" data-key="3">3</button>
+              <button class="num-key" data-key="4">4</button>
+              <button class="num-key" data-key="5">5</button>
+              <button class="num-key" data-key="6">6</button>
+              <button class="num-key" data-key="7">7</button>
+              <button class="num-key" data-key="8">8</button>
+              <button class="num-key" data-key="9">9</button>
+              <button class="num-key" data-key="0">0</button>
+              <button id="backspace" class="action-key">⌫</button>
+              <button id="submit-guess" class="action-key primary">Enter</button>
+            </div>
+            <div class="quick-actions">
+              <button id="hint-btn" class="btn">Reveal Hint</button>
+              <button id="auto-guess" class="btn">Smart Suggest</button>
+            </div>
+          </div>
+
+          <div class="status-area">
+            <p id="message" class="message">Guess the secret 3-digit code.</p>
+            <div id="history" class="history" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="right-panel">
+        <div class="card">
+          <h3>How to play</h3>
+          <ol>
+            <li>Guess a 3-digit number (digits can repeat).</li>
+            <li>After each guess you'll receive per-digit feedback:
+              <ul>
+                <li><strong class="hint-correctpos">Green</strong> — correct digit in correct position</li>
+                <li><strong class="hint-correctdigit">Yellow</strong> — digit exists elsewhere</li>
+                <li><strong class="hint-absent">Grey</strong> — digit not in code</li>
+              </ul>
+            </li>
+            <li>You have limited attempts — find the code before they run out!</li>
+          </ol>
+        </div>
+
+        <div class="card credits">
+          <h4>Assets (online)</h4>
+          <ul>
+            <li>Background: Unsplash</li>
+            <li>Sounds: Google Actions Sound Library</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <div>Made with ❤️ — <a href="../../" target="_blank" rel="noopener">Mini JS Games Hub</a></div>
+        <div class="small">Code Breaker Mini • 3-digit classic mode • Advanced UI</div>
+      </div>
+    </footer>
+  </div>
+
+  <audio id="sfx-click" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+  <audio id="sfx-win" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg" preload="auto"></audio>
+  <audio id="sfx-lose" src="https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg" preload="auto"></audio>
+  <audio id="sfx-hint" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

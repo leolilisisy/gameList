@@ -1,0 +1,111 @@
+:root {
+    --track-length: 3000px; /* Initial length of the track */
+    --scroll-duration: 20s; /* Base duration for the animation */
+    --game-width: 900px;
+    --player-offset: 100px; /* Player is positioned near the left */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1a1a2e;
+    color: white;
+    margin: 0;
+}
+
+#game-container {
+    width: var(--game-width);
+    height: 150px;
+    border: 3px solid #6c5ce7;
+    overflow: hidden; /* Key for the scrolling effect */
+    position: relative;
+    background-color: #2b2c3e;
+}
+
+#player {
+    position: absolute;
+    left: var(--player-offset);
+    top: 50px;
+    width: 50px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 50px;
+    z-index: 10;
+}
+
+/* --- Track and Scrolling Animation --- */
+
+#track {
+    position: absolute;
+    width: var(--track-length); /* Must be wider than the container */
+    height: 100%;
+    animation: scroll var(--scroll-duration) linear infinite;
+    transform: translateX(0); /* Start position */
+}
+
+@keyframes scroll {
+    /* The track moves from right (off-screen) to left */
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(var(--game-width) - var(--track-length))); }
+}
+
+/* --- Obstacle Base Styling --- */
+.target {
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: crosshair;
+    transition: opacity 0.1s; /* Visual feedback for successful removal */
+    border-left: 5px solid;
+    border-right: 5px solid;
+    user-select: none;
+}
+
+/* --- Specific Obstacle Visuals --- */
+
+.right-click-barrier {
+    background-color: #ff6b6b; /* Red */
+    border-color: #e55039;
+    content: "RIGHT CLICK";
+}
+
+.double-click-wall {
+    background-color: #ffeaa7; /* Yellow */
+    border-color: #f9ca24;
+    content: "DOUBLE CLICK";
+}
+
+.hover-tap-bridge {
+    background-color: #48dbfb; /* Blue */
+    border-color: #0abde3;
+    content: "HOVER & TAP";
+    opacity: 0.5; /* Initial semi-transparent state */
+}
+
+/* --- State Classes --- */
+.passed {
+    opacity: 0; /* Successfully removed obstacle */
+    pointer-events: none; /* No longer clickable */
+}
+
+.stopped #track {
+    animation-play-state: paused; /* Pause scrolling on fail */
+}
+
+.active {
+    box-shadow: 0 0 10px 5px gold inset; /* Highlight the currently reachable target */
+}
+
+/* Hide default browser context menu globally for immersion */
+body:not(.allow-context-menu) {
+    user-select: none;
+    -webkit-user-select: none;
+}

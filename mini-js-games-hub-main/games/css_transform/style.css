@@ -1,0 +1,91 @@
+:root {
+    --grid-size: 3; /* e.g., 3 for 3x3 */
+    --piece-size: calc(100% / var(--grid-size));
+    --image-url: url('your-image.jpg'); /* REPLACE with your actual image path */
+}
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#puzzle-container {
+    width: 450px; /* Example size */
+    height: 450px;
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size), 1fr);
+    grid-template-rows: repeat(var(--grid-size), 1fr);
+    border: 5px solid #333;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    perspective: 1000px; /* For a nice 3D effect on transforms */
+}
+
+.piece {
+    width: 100%;
+    height: 100%;
+    background-image: var(--image-url);
+    background-size: 450px 450px; /* Must match container size */
+    cursor: pointer;
+    transition: transform 0.3s ease-out, box-shadow 0.2s; /* Smooth transitions for movement */
+    /* All pieces start with a slight border and a different color on hover/select */
+    border: 1px solid #555;
+    box-sizing: border-box;
+}
+
+/* Selected piece highlighting */
+.piece.selected {
+    box-shadow: 0 0 10px 3px gold inset;
+    border: 1px solid gold;
+}
+
+/* * Background Position Logic: 
+ * The pieces are indexed 0-8 (row * 3 + col).
+ * The image is 450x450, and each piece is 150x150.
+ * To show the correct section: 
+ * background-position-x = - (col * piece-size)
+ * background-position-y = - (row * piece-size)
+ */
+
+/* Row 1 (Pieces 0, 1, 2) */
+.piece[data-piece-id="0"] { background-position: 0% 0%; }
+.piece[data-piece-id="1"] { background-position: -50% 0%; }
+.piece[data-piece-id="2"] { background-position: -100% 0%; }
+
+/* Row 2 (Pieces 3, 4, 5) */
+.piece[data-piece-id="3"] { background-position: 0% -50%; }
+.piece[data-piece-id="4"] { background-position: -50% -50%; }
+.piece[data-piece-id="5"] { background-position: -100% -50%; }
+
+/* Row 3 (Pieces 6, 7, 8) */
+.piece[data-piece-id="6"] { background-position: 0% -100%; }
+.piece[data-piece-id="7"] { background-position: -50% -100%; }
+.piece[data-piece-id="8"] { background-position: -100% -100%; }
+
+
+/* --- THE INITIAL SCRAMBLE (CSS-centric) --- */
+/* Apply random initial transforms to a few pieces in CSS for the "scramble" effect */
+/* The solved state is 'transform: none;' or 'transform: initial;' */
+
+/* Example Scramble Transforms - These will need to be reversed by the player! */
+.piece[data-piece-id="1"] { transform: rotate(90deg); }
+.piece[data-piece-id="3"] { transform: scaleX(-1); }
+.piece[data-piece-id="4"] { transform: rotate(180deg) scaleY(-1); }
+.piece[data-piece-id="8"] { transform: scaleY(-1) rotate(270deg); }
+
+
+/* Utility and Control styles */
+.hidden { display: none !important; }
+
+#controls {
+    text-align: center;
+}
+
+#piece-control-buttons button {
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+}

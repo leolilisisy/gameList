@@ -1,0 +1,116 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0f1720;
+  --panel: #11121a;
+  --accent: #22c55e;
+  --muted: #9aa4b2;
+  --card-border: rgba(255,255,255,0.04);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, #071021 0%, #0f1720 100%);
+  color: #e6eef6;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 640px;
+  text-align: center;
+}
+
+h1 { font-size: 1.9rem; margin-bottom: 6px; }
+p { margin: 8px 0; color: var(--muted); }
+
+.controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  background: var(--accent);
+  color: #022;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(34,197,94,0.12);
+}
+button:hover { transform: translateY(-2px); }
+
+.info {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-weight: 600;
+  color: #fff;
+}
+
+.game-area {
+  margin: 0 auto;
+  width: 100%;
+  height: 360px;
+  max-height: 60vh;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+}
+
+/* Circle */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  transition: transform 0.12s linear, opacity 0.12s linear;
+  will-change: transform, opacity;
+}
+
+/* Target label & sample */
+#targetLabel {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 700;
+  color: #fff;
+}
+.target-sample {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-left: 8px;
+  vertical-align: middle;
+  border: 2px solid rgba(255,255,255,0.08);
+}
+
+/* Result */
+.result-box {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--card-border);
+}
+
+.hidden { display: none; }
+
+.hint {
+  margin-top: 10px;
+  font-size: 0.9rem

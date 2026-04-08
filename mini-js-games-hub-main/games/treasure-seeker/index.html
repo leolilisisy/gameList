@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treasure Seeker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>💰 Treasure Seeker</h1>
+        <p>Dig for treasure in the grid! Click cells to reveal what's hidden.</p>
+
+        <div class="game-info">
+            <div id="level">Level: <span id="current-level">1</span></div>
+            <div id="score">Score: <span id="current-score">0</span></div>
+            <div id="treasures-left">Treasures Left: <span id="remaining-treasures">0</span></div>
+            <div id="timer">Time: <span id="time-display">00:00</span></div>
+        </div>
+
+        <div id="game-board"></div>
+
+        <div class="controls">
+            <button id="start-btn">Start Game</button>
+            <button id="reset-btn" style="display:none;">New Game</button>
+            <button id="hint-btn">Use Shovel (50 pts)</button>
+        </div>
+
+        <div id="message"></div>
+
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Click on dirt cells to dig and reveal what's underneath</li>
+                <li>Find all the treasure chests to complete the level</li>
+                <li>Avoid the bombs - they end your digging!</li>
+                <li>Use shovels to reveal larger areas (costs points)</li>
+                <li>Complete levels quickly for bonus points</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

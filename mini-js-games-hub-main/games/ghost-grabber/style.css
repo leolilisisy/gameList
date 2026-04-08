@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-container {
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2rem;
+  text-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #0ff;
+  margin: 20px 0;
+}
+
+.controls {
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 8px 15px;
+  margin: 0 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #0ff;
+  color: #000;
+  box-shadow: 0 0 10px #0ff;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #0ff;
+}
+
+.game-area {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  border: 2px solid #0ff;
+  border-radius: 10px;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #111 0%, #000 100%);
+}
+
+.ghost {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background-image: url("https://i.postimg.cc/6Qd1gKZC/ghost.png");
+  background-size: cover;
+  pointer-events: auto;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  0% { filter: drop-shadow(0 0 5px #0ff); transform: scale(1); }
+  50% { filter: drop-shadow(0 0 15px #0ff); transform: scale(1.1); }
+  100% { filter: drop-shadow(0 0 5px #0ff); transform: scale(1); }
+}
+
+.score, .combo {
+  display: inline-block;
+  margin-left: 20px;
+  font-weight: bold;
+}

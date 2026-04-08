@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echo Maze | Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-ui">
+        <h1>Echo Maze</h1>
+        <div class="controls">
+            <button id="start-btn">Start</button>
+            <button id="pause-btn">Pause</button>
+            <button id="restart-btn">Restart</button>
+            <span id="status">Press Start to Play</span>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+    </div>
+
+    <!-- Sounds -->
+    <audio id="echoSound" src="https://freesound.org/data/previews/415/415209_5121236-lq.mp3"></audio>
+    <audio id="hitSound" src="https://freesound.org/data/previews/102/102564_5121236-lq.mp3"></audio>
+    <audio id="collectSound" src="https://freesound.org/data/previews/341/341695_62416-lq.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

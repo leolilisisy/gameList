@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Star Trail Drawer | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Star Trail Drawer</h1>
+    <canvas id="gameCanvas"></canvas>
+
+    <div class="controls">
+      <button id="startBtn">Start</button>
+      <button id="pauseBtn">Pause</button>
+      <button id="restartBtn">Restart</button>
+      <button id="clearBtn">Clear Trail</button>
+      <button id="hintBtn">Hint</button>
+    </div>
+
+    <p id="message"></p>
+  </div>
+
+  <!-- Sounds -->
+  <audio id="connectSound" src="https://freesound.org/data/previews/66/66717_931655-lq.mp3"></audio>
+  <audio id="successSound" src="https://freesound.org/data/previews/240/240776_4019027-lq.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

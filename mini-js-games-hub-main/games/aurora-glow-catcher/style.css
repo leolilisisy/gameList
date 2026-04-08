@@ -1,0 +1,160 @@
+:root{
+  --bg1: #071028;
+  --bg2: #08122a;
+  --glass: rgba(255,255,255,0.06);
+  --glass-2: rgba(255,255,255,0.03);
+  --accent: #6ef0c7;
+  --accent-2: #7b6eff;
+  --text: #e9f2ff;
+  --muted: rgba(233,242,255,0.6);
+  --success: #b7ff9e;
+  --danger: #ff9e9e;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body,#gameCanvas{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(180deg,var(--bg1), var(--bg2));
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  min-height:100vh;
+  align-items:center;
+  justify-content:center;
+  padding:28px;
+}
+
+/* App container */
+.app{
+  width:min(1200px,96vw);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.0));
+  border-radius:14px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.7);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+/* Top bar */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  padding:18px 22px;
+  align-items:center;
+  gap:12px;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+.title{display:flex;align-items:center;gap:14px}
+.title .emoji{font-size:34px}
+.title h1{margin:0;font-size:20px}
+.title .sub{margin:0;color:var(--muted);font-size:13px}
+
+/* Controls */
+.controls{display:flex;align-items:center;gap:12px}
+.btn{
+  background:var(--glass);
+  color:var(--text);
+  border:1px solid rgba(255,255,255,0.04);
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:14px;
+}
+.btn.primary{
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color:#06101a;
+  border:none;
+  box-shadow: 0 6px 18px rgba(107,68,255,0.14), inset 0 -2px 6px rgba(255,255,255,0.03);
+}
+.meta{color:var(--muted);display:flex;gap:12px;font-size:13px;align-items:center}
+
+/* Main layout */
+.game-area{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:18px;
+  padding:18px;
+  align-items:stretch;
+}
+
+/* Canvas */
+#gameCanvas{
+  width:100%;
+  height:640px;
+  display:block;
+  border-radius:10px;
+  background: radial-gradient(1200px 600px at 10% 30%, rgba(120,80,255,0.08), transparent 10%),
+              radial-gradient(900px 400px at 90% 70%, rgba(120,255,190,0.04), transparent 8%),
+              linear-gradient(180deg, rgba(6,10,25,0.85), rgba(6,10,25,0.6));
+  box-shadow: 0 12px 40px rgba(3,8,23,0.7), inset 0 1px 0 rgba(255,255,255,0.02);
+  position:relative;
+}
+
+/* HUD panels on the right */
+.hud{
+  padding:6px 10px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.panel{
+  background: linear-gradient(180deg,var(--glass), var(--glass-2));
+  border-radius:10px;
+  padding:12px;
+  border:1px solid rgba(255,255,255,0.03);
+}
+.panel h3{margin:0 0 8px 0;font-size:14px}
+.bar-wrap{
+  width:100%;
+  height:14px;
+  background:rgba(255,255,255,0.03);
+  border-radius:8px;
+  overflow:hidden;
+}
+.bar{
+  height:100%;
+  width:0%;
+  background: linear-gradient(90deg, #6ef0c7, #7b6eff);
+  box-shadow: 0 6px 20px rgba(100,150,255,0.12);
+  transition:width 300ms ease;
+}
+
+/* rules & tips */
+.rules ul, .tips ol{padding-left:18px;margin:0;color:var(--muted);font-size:13px}
+.rules li{margin:6px 0}
+
+/* Footer */
+.footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 18px;
+  font-size:13px;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,0.02);
+}
+.back-link{color:var(--muted);text-decoration:none}
+
+/* overlay */
+.overlay{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(2,6,23,0.6);backdrop-filter: blur(5px);
+}
+.overlay.hidden{display:none}
+.overlay-card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  color:var(--text);
+  border-radius:12px;padding:22px;width:min(520px,92%);text-align:center;
+  box-shadow:0 12px 40px rgba(2,6,23,0.7);
+}
+.overlay-actions{display:flex;gap:12px;justify-content:center;margin-top:14px}
+kbd{background:rgba(255,255,255,0.04);padding:4px 6px;border-radius:6px;font-weight:600}
+@media (max-width:980px){
+  .game-area{grid-template-columns:1fr;grid-auto-rows:auto}
+  #gameCanvas{height:520px}
+  .hud{order:2}
+}

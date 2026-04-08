@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timing Bar | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>🎯 Timing Bar</h1>
+
+    <div class="bar-area">
+      <div class="target-zone"></div>
+      <div class="moving-bar"></div>
+    </div>
+
+    <div class="controls">
+      <button id="start-btn">Start</button>
+      <button id="pause-btn">Pause</button>
+      <button id="resume-btn">Resume</button>
+      <button id="restart-btn">Restart</button>
+    </div>
+
+    <div class="scoreboard">
+      <p>Score: <span id="score">0</span></p>
+      <p>Level: <span id="level">1</span></p>
+      <p>Status: <span id="status">Waiting...</span></p>
+    </div>
+  </div>
+
+  <audio id="hit-sound" src="https://actions.google.com/sounds/v1/cartoon/pop.ogg"></audio>
+  <audio id="miss-sound" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
+  <audio id="bg-music" src="https://files.freemusicarchive.org/storage-freemusicarchive-org/music/no_curator/Ketsa/Dreamstate/Ketsa_-_06_-_Voyager.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

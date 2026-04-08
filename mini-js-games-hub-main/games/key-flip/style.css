@@ -1,0 +1,73 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #111;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.game-container {
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  text-shadow: 0 0 10px #00ffea, 0 0 20px #00ffea;
+}
+
+.game-info {
+  margin: 15px 0;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: space-around;
+}
+
+.game-area {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(90deg, #111 0%, #222 100%);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 20px #00ffea inset;
+  margin-bottom: 20px;
+}
+
+.obstacle {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Red_circle.svg/2048px-Red_circle.svg.png') no-repeat center center;
+  background-size: cover;
+  top: -60px;
+  animation: fall linear;
+}
+
+@keyframes fall {
+  0% { top: -60px; }
+  100% { top: 400px; }
+}
+
+.controls button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 8px;
+  background-color: #00ffea;
+  color: #111;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00ffea;
+  transition: 0.2s;
+}
+
+.controls button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #00ffea;
+}

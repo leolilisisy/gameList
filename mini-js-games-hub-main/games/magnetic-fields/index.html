@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Magnetic Fields 🧲</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>🧲 Magnetic Fields</h1>
+    <canvas id="gameCanvas" width="800" height="500"></canvas>
+
+    <div class="controls">
+      <button id="startBtn">▶️ Start</button>
+      <button id="pauseBtn">⏸️ Pause</button>
+      <button id="restartBtn">🔁 Restart</button>
+      <p>Use keys: <b>N</b> = North Pole, <b>S</b> = South Pole</p>
+    </div>
+
+    <audio id="bgMusic" loop src="https://cdn.pixabay.com/download/audio/2023/04/25/audio_31d348f865.mp3?filename=space-chillout-14680.mp3"></audio>
+    <audio id="goalSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_ae0b7bff17.mp3?filename=success-1-6297.mp3"></audio>
+    <audio id="hitSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_f01b2a1e11.mp3?filename=error-126627.mp3"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

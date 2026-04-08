@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Array Reversal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Pixel Array Reversal: Image Puzzle</h1>
+        <p>Fix the scrambled image by applying a sequence of array transformations.</p>
+        <p id="memory-hint">Memorize this image!</p>
+    </header>
+
+    <div id="game-area">
+        <canvas id="puzzleCanvas" width="200" height="200"></canvas>
+    </div>
+
+    <div id="controls">
+        <h2>Transformations</h2>
+        <button id="btn-reverse">🔄 Reverse (Flip)</button>
+        <button id="btn-channel-shift">🌈 Channel Shift</button>
+        <button id="btn-invert">🌑 Invert Colors</button>
+        <button id="btn-reset">⬅️ Reset Puzzle</button>
+    </div>
+    
+    <p id="game-message"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>

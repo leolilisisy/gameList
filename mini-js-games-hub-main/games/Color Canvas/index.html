@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Canvas 🎨</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="toolbar">
+    <h1>🎨 Color Canvas</h1>
+    <div class="controls">
+      <label>Brush Size:</label>
+      <input type="range" id="brush-size" min="1" max="50" value="5">
+
+      <label>Color:</label>
+      <input type="color" id="color-picker" value="#00ffff">
+
+      <button id="eraser">🧽 Eraser</button>
+      <button id="clear">🧼 Clear</button>
+      <button id="save">💾 Save</button>
+    </div>
+  </div>
+
+  <canvas id="drawing-board"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>

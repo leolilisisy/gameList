@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Catch or Miss — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=48&auto=format&fit=crop&crop=faces" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="title">
+        <span class="logo">🎯</span>
+        <div>
+          <h1>Catch or Miss</h1>
+          <p class="subtitle">React fast — catch the right prompts, avoid the decoys.</p>
+        </div>
+      </div>
+
+      <div class="controls">
+        <label class="small-label">Mode</label>
+        <select id="mode-select" aria-label="Game mode">
+          <option value="single">Single Player</option>
+          <option value="duo">Two Player (local)</option>
+        </select>
+
+        <label class="small-label">Difficulty</label>
+        <select id="difficulty-select" aria-label="Difficulty">
+          <option value="easy">Easy</option>
+          <option value="normal" selected>Normal</option>
+          <option value="hard">Hard</option>
+        </select>
+
+        <button id="start-btn" class="btn primary">Start</button>
+        <button id="pause-btn" class="btn" disabled>Pause</button>
+        <button id="restart-btn" class="btn" disabled>Restart</button>
+
+        <label class="toggle">
+          <input type="checkbox" id="mute-toggle" />
+          <span>🔊</span>
+        </label>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <aside class="sidebar">
+        <div class="panel stats">
+          <h3>Score</h3>
+          <div class="stat big" id="score">0</div>
+          <div class="stat-row">
+            <div>
+              <small>Combo</small>
+              <div id="combo">0</div>
+            </div>
+            <div>
+              <small>Lives</small>
+              <div id="lives">3</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel rules">
+          <h3>How to play</h3>
+          <ul>
+            <li>Click green targets or press the assigned key to catch them.</li>
+            <li>Avoid red decoys and obstacles — they cost points & lives.</li>
+            <li>Two-player mode: Player 1 uses <strong>F</strong>, Player 2 uses <strong>J</strong>.</li>
+            <li>Pause with the Pause button. Restart anytime.</li>
+          </ul>
+        </div>
+
+        <div class="panel leaderboard">
+          <h3>Round</h3>
+          <div id="round">0</div>
+          <h3>Highscore</h3>
+          <div id="highscore">0</div>
+        </div>
+      </aside>
+
+      <section class="arena" id="arena" tabindex="0" aria-label="Game arena">
+        <!-- dynamic prompts will appear here -->
+        <div id="hint" class="hint">Press <strong>Start</strong> to play</div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-left">
+        <small>Images: Unsplash / Picsum • Sounds: WebAudio</small>
+      </div>
+      <div class="footer-right">
+        <a class="play-now play-button" href="../catch-or-miss/index.html">Play Here</a>
+        <a class="open-new" target="_blank" href="../catch-or-miss/index.html">Open in new tab →</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+/* Basic reset and container styling */
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+/* Game container for canvas and score */
+#game-container {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+/* Canvas styling */
+#gameCanvas {
+    background-color: #00001a; /* Dark blue background for 'sky' effect */
+    display: block;
+}
+
+/* Score overlay styling */
+#score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    user-select: none; /* Prevent text selection */
+}

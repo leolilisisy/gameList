@@ -1,0 +1,111 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a1f 0%, #1a0a2e 50%, #0f0a1f 100%);
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+}
+
+#gameContainer {
+    text-align: center;
+    position: relative;
+}
+
+canvas {
+    border: 3px solid #4a0e78;
+    border-radius: 10px;
+    background: radial-gradient(circle at center, #0d0520, #050210);
+    box-shadow: 0 0 40px rgba(138, 43, 226, 0.4);
+    cursor: crosshair;
+    /* ensure canvas sits below overlays */
+    position: relative;
+    z-index: 0;
+}
+
+#ui {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 18px;
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.8);
+    pointer-events: none;
+}
+
+#score {
+    float: left;
+    background: rgba(74, 14, 120, 0.3);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+#timer {
+    float: right;
+    background: rgba(74, 14, 120, 0.3);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+#instructions {
+    clear: both;
+    margin-top: 80px;
+    background: rgba(74, 14, 120, 0.3);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#gameOver {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(10, 5, 20, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    border: 3px solid #8a2be2;
+    display: none;
+    box-shadow: 0 0 50px rgba(138, 43, 226, 0.6);
+    z-index: 10; /* keep game-over on top so buttons are clickable */
+}
+
+#gameOver h2 {
+    color: #8a2be2;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+#gameOver p {
+    color: #fff;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+#restartBtn {
+    margin-top: 20px;
+    padding: 15px 40px;
+    font-size: 20px;
+    background: linear-gradient(135deg, #8a2be2, #4a0e78);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    pointer-events: all;
+    transition: all 0.3s;
+}
+
+#restartBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.8);
+}

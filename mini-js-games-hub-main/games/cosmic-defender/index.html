@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Defender</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="stars"></div>
+        <div class="stars stars2"></div>
+        
+        <header>
+            <h1>Cosmic Defender</h1>
+            <p class="subtitle">Protect the galaxy from alien invasion</p>
+        </header>
+
+        <div class="game-screen" id="gameScreen">
+            <div class="player-ship" id="playerShip">
+                <div class="ship-core"></div>
+                <div class="ship-wings"></div>
+            </div>
+            <div class="enemies-container" id="enemiesContainer"></div>
+            <div class="projectiles-container" id="projectilesContainer"></div>
+            <div class="powerups-container" id="powerupsContainer"></div>
+            
+            <div class="hud">
+                <div class="hud-item">
+                    <div class="hud-label">SCORE</div>
+                    <div class="hud-value" id="score">0</div>
+                </div>
+                <div class="hud-item">
+                    <div class="hud-label">LIVES</div>
+                    <div class="hud-value" id="lives">3</div>
+                </div>
+                <div class="hud-item">
+                    <div class="hud-label">WAVE</div>
+                    <div class="hud-value" id="wave">1</div>
+                </div>
+                <div class="hud-item">
+                    <div class="hud-label">POWER</div>
+                    <div class="hud-value" id="power">NORMAL</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="control-buttons">
+                <button id="startBtn" class="control-btn primary">START MISSION</button>
+                <button id="pauseBtn" class="control-btn secondary">PAUSE</button>
+                <button id="restartBtn" class="control-btn secondary">RESTART</button>
+            </div>
+            
+            <div class="mobile-controls">
+                <div class="d-pad">
+                    <button class="move-btn" data-direction="left">←</button>
+                    <button class="move-btn" data-direction="up">↑</button>
+                    <button class="move-btn" data-direction="down">↓</button>
+                    <button class="move-btn" data-direction="right">→</button>
+                </div>
+                <button class="shoot-btn">FIRE</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <div class="instruction-item">
+                <span class="key">← →</span>
+                <span>Move Ship</span>
+            </div>
+            <div class="instruction-item">
+                <span class="key">SPACE</span>
+                <span>Fire Laser</span>
+            </div>
+            <div class="instruction-item">
+                <span class="key">P</span>
+                <span>Pause Game</span>
+            </div>
+        </div>
+
+        <div class="game-over" id="gameOver">
+            <div class="game-over-content">
+                <h2>MISSION FAILED</h2>
+                <div class="final-stats">
+                    <div>Final Score: <span id="finalScore">0</span></div>
+                    <div>Wave Reached: <span id="finalWave">1</span></div>
+                    <div>Enemies Destroyed: <span id="finalKills">0</span></div>
+                </div>
+                <button id="retryBtn" class="control-btn primary">RETRY MISSION</button>
+            </div>
+        </div>
+
+        <div class="wave-alert" id="waveAlert">
+            <div class="wave-content">
+                <h3>INCOMING WAVE</h3>
+                <div class="wave-number" id="waveNumber">1</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

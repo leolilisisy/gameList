@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two-Button Walker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>🚶 Two-Button Walker</h1>
+
+        <div id="status-area">
+            Distance: <span id="distance-display">0</span>m | Last Key: <span id="last-key-display">--</span>
+        </div>
+
+        <div id="stage">
+            <div id="character">
+                <div id="head" class="body-part"></div>
+                <div id="torso" class="body-part"></div>
+                
+                <div id="left-leg-container" class="leg-container">
+                    <div id="left-thigh" class="leg-segment" data-limb="left"></div>
+                    <div id="left-shin" class="leg-segment" data-limb="left"></div>
+                </div>
+
+                <div id="right-leg-container" class="leg-container">
+                    <div id="right-thigh" class="leg-segment" data-limb="right"></div>
+                    <div id="right-shin" class="leg-segment" data-limb="right"></div>
+                </div>
+            </div>
+            
+            <div id="ground"></div>
+        </div>
+        
+        <div id="feedback-message">
+            <p>Press **Q** and **W** alternately to walk!</p>
+        </div>
+
+        <div id="controls">
+            <button id="start-button">START</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

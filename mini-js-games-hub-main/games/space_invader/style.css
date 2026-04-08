@@ -1,0 +1,84 @@
+body {
+    font-family: 'Press Start 2P', cursive, Arial, sans-serif; /* A classic arcade font */
+    background-color: #1a1a2e; /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Prevent scrollbars */
+    color: #eee;
+}
+
+/* Optional: Import a pixel-style font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+.game-wrapper {
+    position: relative;
+    border: 4px solid #00ff00; /* Neon green border */
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); /* Green glow */
+    border-radius: 5px;
+}
+
+#gameCanvas {
+    background-color: #000; /* Black background for the game area */
+    display: block; /* Remove extra space below canvas */
+}
+
+/* --- Overlay Screens (Start/Game Over) --- */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+}
+
+.overlay h1 {
+    font-size: 3em;
+    margin-bottom: 0.8em;
+    color: #00ff00; /* Green highlight */
+    text-shadow: 0 0 10px #00ff00;
+}
+
+.overlay p {
+    margin-bottom: 0.8em;
+    font-size: 1.1em;
+    color: #bbb;
+}
+
+.overlay button {
+    padding: 12px 25px;
+    font-size: 1.5em;
+    cursor: pointer;
+    background-color: #00ff00;
+    color: #000;
+    border: 2px solid #00ff00;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.overlay button:hover {
+    background-color: #00a000;
+    border-color: #00a000;
+    color: white;
+}
+
+#gameOverMessage {
+    color: #ff0000; /* Red for Game Over */
+    text-shadow: 0 0 10px #ff0000;
+}
+
+/* Utility class to hide elements */
+.hidden {
+    display: none;
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerning Krusher</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Kerning Krusher: Typography Puzzles</h1>
+        <p>Adjust the text properties to guide the Krusher (🔴) to the Goal (⭐).</p>
+    </header>
+
+    <div id="game-container">
+        <div id="krusher">🔴</div>
+        
+        <div id="goal">⭐</div>
+        
+        <div id="platform-size" class="text-platform">PLATFORM-A</div>
+
+        <div id="platform-spacing" class="text-platform">_GAP_GAP_GAP_</div>
+
+        <div id="floor"></div>
+    </div>
+
+    <div id="controls">
+        <h2>Typography Controls</h2>
+        
+        <div class="control-group">
+            <label for="size-slider">Platform A (Font Size):</label>
+            <input type="range" id="size-slider" min="10" max="60" value="30">
+            <span id="size-val">30px</span>
+        </div>
+        
+        <div class="control-group">
+            <label for="spacing-slider">Platform B (Letter Spacing):</label>
+            <input type="range" id="spacing-slider" min="-5" max="10" value="0">
+            <span id="spacing-val">0px</span>
+        </div>
+        
+        <button id="reset-button">Reset Krusher</button>
+        <p id="game-message"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

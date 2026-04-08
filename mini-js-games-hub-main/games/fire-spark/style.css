@@ -1,0 +1,129 @@
+:root{
+  --bg:#0b0f17;
+  --panel:#0f1620;
+  --accent:#ff6b35;
+  --muted:#9aa6b2;
+  --glass: rgba(255,255,255,0.04);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(255,120,40,0.06), transparent 6%),
+              radial-gradient(900px 400px at 90% 90%, rgba(40,160,255,0.02), transparent 6%),
+              var(--bg);
+  color:#e6eef6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  align-items:stretch;
+  min-height:100vh;
+}
+
+/* layout */
+.ui-wrap{
+  margin:auto;
+  width:min(1200px,96%);
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent 30%);
+  border-radius:14px;
+  box-shadow: 0 10px 40px rgba(2,6,23,0.6);
+  overflow:hidden;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 22px;
+  gap:16px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-bottom:1px solid rgba(255,255,255,0.03);
+}
+
+.title{display:flex;align-items:center;gap:12px}
+.title .icon{font-size:26px;filter:drop-shadow(0 6px 12px rgba(255,107,53,0.18))}
+.title h1{font-size:18px;margin:0;font-weight:600}
+
+.controls{display:flex;gap:12px;align-items:center}
+.score-group{font-weight:600;color:var(--muted);display:flex;gap:10px;align-items:center}
+.score-group span{color:#fff}
+.buttons{display:flex;gap:8px;align-items:center}
+
+.btn{
+  background:var(--glass);
+  border:1px solid rgba(255,255,255,0.04);
+  color:#e9f3ff;
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  transition:transform .12s ease, box-shadow .12s;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(2,6,23,0.35)}
+.btn.primary{background:linear-gradient(90deg,var(--accent),#ff9a5a); color:#08101a; border:none; box-shadow:0 8px 26px rgba(255,107,53,0.12)}
+
+.volume input{display:none}
+
+/* main area */
+.game-area{
+  display:grid;
+  grid-template-columns: 1fr 320px;
+  gap:18px;
+  padding:18px;
+  align-items:stretch;
+}
+
+#gameCanvas{
+  width:100%;
+  height:640px;
+  display:block;
+  border-radius:12px;
+  background-image:
+    linear-gradient(180deg, rgba(255,255,255,0.015), transparent 10%),
+    url('https://source.unsplash.com/1600x900/?embers,fire');
+  background-size:cover;
+  background-position:center;
+  box-shadow: inset 0 0 140px rgba(255,120,40,0.03), 0 20px 60px rgba(2,6,23,0.6);
+  border:1px solid rgba(255,255,255,0.03);
+  position:relative;
+}
+
+/* side panel */
+.side-panel{
+  padding:12px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,0.03);
+  height:640px;
+  overflow:auto;
+}
+
+.stat{margin-bottom:12px}
+.label{font-size:13px;color:var(--muted);margin-bottom:6px}
+.meter{height:14px;border-radius:999px;background:rgba(255,255,255,0.03);padding:3px}
+.meter-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#ffef8a,var(--accent));width:20%;box-shadow:0 6px 18px rgba(255,107,53,0.12), 0 0 24px rgba(255,107,53,0.08) inset;transition:width .18s ease}
+
+.wind{font-weight:700;color:#cfeaff}
+#status{font-weight:700;color:#f7e4d0}
+
+.tips ul{padding-left:16px;margin:6px 0;color:var(--muted);line-height:1.35;font-size:13px}
+
+.footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 18px;
+  border-top:1px solid rgba(255,255,255,0.02);
+  background:linear-gradient(0deg, rgba(255,255,255,0.01), transparent);
+}
+.footer .links a{margin-left:14px;color:var(--muted);text-decoration:none;font-weight:600}
+.footer .links a.play-button{background:transparent;border:1px solid rgba(255,255,255,0.03);padding:6px 10px;border-radius:8px;color:#fff}
+
+/* responsive */
+@media (max-width:1024px){
+  .game-area{grid-template-columns:1fr}
+  #gameCanvas{height:520px}
+  .side-panel{height:auto}
+}

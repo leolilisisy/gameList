@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f4f8;
+    color: #333;
+}
+
+#game-container {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    color: #3498db;
+    margin-bottom: 20px;
+}
+
+#gameCanvas {
+    background-color: #ecf0f1; /* Light gray background for maze paths */
+    border: 2px solid #2c3e50; /* Dark border for the maze */
+    display: block; /* Remove extra space below canvas */
+    margin: 0 auto 20px auto;
+}
+
+#game-info {
+    margin-top: 10px;
+}
+
+#message {
+    font-size: 1.1em;
+    font-weight: bold;
+    min-height: 25px; /* Prevent layout shift */
+    color: #555;
+}
+
+#new-game-btn {
+    padding: 10px 20px;
+    background-color: #2ecc71; /* Green */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+#new-game-btn:hover {
+    background-color: #27ae60;
+}

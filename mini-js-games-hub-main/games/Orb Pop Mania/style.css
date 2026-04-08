@@ -1,0 +1,37 @@
+body {
+  background: radial-gradient(circle at top, #83a4d4, #b6fbff);
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 10px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+#gameCanvas {
+  background: #1e1e2f;
+  border: 4px solid #fff;
+  border-radius: 10px;
+}
+
+#info {
+  margin-top: 10px;
+}
+
+button {
+  background: #ff69b4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ff8fc1;
+}

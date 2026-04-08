@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Color Harmony - Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-wrap" role="region" aria-label="Color Harmony game container">
+    <h1>Color Harmony</h1>
+    <div class="game-area">
+      <div class="target-palette" id="targetPalette"></div>
+      <div class="grid-container">
+        <div class="grid" id="grid"></div>
+      </div>
+      <div class="controls">
+        <button id="shuffleBtn">Shuffle</button>
+        <button id="resetBtn">Reset Level</button>
+        <button id="nextBtn" style="display:none;">Next Level</button>
+      </div>
+      <div class="info">
+        <p id="level">Level: 1</p>
+        <p id="moves">Moves: 0</p>
+        <p id="status"></p>
+      </div>
+    </div>
+    <footer>Made for Mini JS Games Hub</footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at center, #0a0a0a 0%, #1c1c1c 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  overflow: hidden;
+}
+
+h1 {
+  text-shadow: 0 0 20px cyan;
+}
+
+canvas {
+  background: linear-gradient(145deg, #141414, #222);
+  border: 2px solid cyan;
+  border-radius: 12px;
+  box-shadow: 0 0 30px cyan;
+}
+
+.controls {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  background: black;
+  border: 2px solid cyan;
+  color: cyan;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: cyan;
+  color: black;
+  box-shadow: 0 0 15px cyan;
+}

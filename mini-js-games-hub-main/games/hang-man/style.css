@@ -1,0 +1,196 @@
+:root {
+    --primary-color: #3498db;
+    --danger-color: #e74c3c;
+    --success-color: #2ecc71;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f4f8;
+}
+
+#game-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-top: 0;
+}
+
+#game-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- Hangman Visuals (CSS Drawing) --- */
+#hangman-visuals {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 20px;
+    position: relative;
+    border-bottom: 5px solid #333; /* Base */
+}
+
+.scaffold {
+    position: relative;
+    width: 150px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#gallows {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 5px;
+    height: 100%;
+    background-color: #333;
+    transform: translateX(-50%);
+}
+
+#gallows::before {
+    /* Top beam */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px; 
+    width: 100px;
+    height: 5px;
+    background-color: #333;
+}
+
+#gallows::after {
+    /* Rope */
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 45px; 
+    width: 5px;
+    height: 30px;
+    background-color: #333;
+}
+
+/* --- Hangman Parts --- */
+#head, #body, #left-arm, #right-arm, #left-leg, #right-leg {
+    position: absolute;
+    background-color: #333;
+    z-index: 10;
+    transition: opacity 0.3s;
+}
+
+/* Head */
+#head {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 35px;
+    left: calc(50% + 40px - 15px); /* Positioned relative to gallows */
+    border: 3px solid #333;
+    background-color: white;
+}
+
+/* Body */
+#body {
+    width: 5px;
+    height: 60px;
+    top: 70px;
+    left: calc(50% + 40px - 2.5px);
+}
+
+/* Arms */
+#left-arm, #right-arm {
+    width: 30px;
+    height: 5px;
+    top: 80px;
+    transform-origin: left center;
+}
+#left-arm {
+    left: calc(50% + 40px - 30px);
+    transform: rotate(30deg);
+}
+#right-arm {
+    left: calc(50% + 40px + 5px);
+    transform: rotate(-30deg);
+}
+
+/* Legs */
+#left-leg, #right-leg {
+    width: 40px;
+    height: 5px;
+    top: 130px;
+    transform-origin: left center;
+}
+#left-leg {
+    left: calc(50% + 40px - 40px);
+    transform: rotate(60deg);
+}
+#right-leg {
+    left: calc(50% + 40px + 5px);
+    transform: rotate(-60deg);
+}
+
+.hidden {
+    opacity: 0;
+}
+
+/* --- Puzzle Details --- */
+#puzzle-details {
+    margin-top: 10px;
+}
+
+#message {
+    font-size: 1.2em;
+    font-weight: bold;
+    min-height: 25px; /* Prevent layout shift */
+}
+
+#word-display {
+    font-size: 3em;
+    letter-spacing: 15px;
+    margin-bottom: 20px;
+}
+
+#guessed-letters-display {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+#guessed-letters {
+    color: var(--danger-color);
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#guesses-left {
+    font-size: 1.1em;
+    color: #555;
+}
+
+#guess-count {
+    font-weight: bold;
+    color: var(--danger-color);
+}
+
+#new-game-btn {
+    padding: 10px 20px;
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-top: 20px;
+}

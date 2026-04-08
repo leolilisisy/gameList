@@ -1,0 +1,63 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: #fff;
+}
+
+.game-container {
+  text-align: center;
+  background: rgba(0,0,0,0.6);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
+}
+
+.bulb-sequence {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.bulb {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+  border-radius: 50%;
+  background: #444;
+  box-shadow: 0 0 10px #222;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+
+.bulb.glow {
+  background: yellow;
+  box-shadow: 0 0 20px yellow, 0 0 40px yellow, 0 0 60px yellow;
+}
+
+.controls button {
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  transition: 0.2s all;
+}
+
+.controls button:hover {
+  background: #ffd633;
+}
+
+#status {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}

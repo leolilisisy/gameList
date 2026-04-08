@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tap Counter | Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="tap-container">
+        <h1>Tap Counter</h1>
+        <p>Tap <strong>100 times</strong> as fast as you can!</p>
+        <div class="tap-line" id="tap-line">
+            <!-- 100 bulbs -->
+        </div>
+        <p id="count-display">0 / 100</p>
+        <div class="controls">
+            <button id="tap-btn">Tap!</button>
+            <button id="pause-btn">Pause</button>
+            <button id="resume-btn" disabled>Resume</button>
+            <button id="restart-btn">Restart</button>
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <audio id="tap-sound" src="https://www.soundjay.com/button/beep-07.mp3"></audio>
+    <audio id="win-sound" src="https://www.soundjay.com/button/beep-10.mp3"></audio>
+    <audio id="fail-sound" src="https://www.soundjay.com/button/beep-05.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

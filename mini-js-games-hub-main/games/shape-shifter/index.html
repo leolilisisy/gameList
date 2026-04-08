@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Shifter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🔄 Shape Shifter</h1>
+        <p>Change shapes to fit through obstacles! Press SPACE to morph.</p>
+
+        <div class="game-info">
+            <div id="score">Score: <span id="current-score">0</span></div>
+            <div id="level">Level: <span id="current-level">1</span></div>
+        </div>
+
+        <canvas id="game-canvas" width="800" height="400"></canvas>
+
+        <div class="controls">
+            <button id="start-btn">Start Game</button>
+            <button id="pause-btn" style="display:none;">Pause</button>
+            <button id="reset-btn" style="display:none;">Play Again</button>
+        </div>
+
+        <div id="message"></div>
+
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Use SPACEBAR to change your shape</li>
+                <li>Match your shape to the obstacle holes to pass through</li>
+                <li>Avoid hitting the obstacles!</li>
+                <li>Survive as long as possible to increase your score</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

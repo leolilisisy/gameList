@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Race Track</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🏎️ Race Track</h1>
+        <p>Race cars around the track! Use arrow keys to control your car.</p>
+
+        <div class="game-stats">
+            <div id="score">Score: <span id="current-score">0</span></div>
+            <div id="level">Level: <span id="current-level">1</span></div>
+            <div id="speed">Speed: <span id="current-speed">0</span></div>
+            <div id="laps">Laps: <span id="current-lap">0</span>/<span id="total-laps">3</span></div>
+        </div>
+
+        <canvas id="track-canvas" width="800" height="600"></canvas>
+
+        <div class="controls">
+            <button id="start-btn">Start Race</button>
+            <button id="pause-btn" style="display:none;">Pause</button>
+            <button id="reset-btn" style="display:none;">Race Again</button>
+        </div>
+
+        <div id="message"></div>
+
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Use arrow keys to steer and accelerate your car</li>
+                <li>Stay on the track and avoid obstacles</li>
+                <li>Collect power-ups for speed boosts</li>
+                <li>Complete laps to increase your score</li>
+                <li>Don't crash into walls or other cars!</li>
+            </ul>
+            <p><strong>Controls:</strong> ↑ Accelerate, ← → Steer, ↓ Brake</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

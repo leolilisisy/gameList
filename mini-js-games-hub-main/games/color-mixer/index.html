@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Mixer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Color Mixer</h1>
+        <p>Mix colors to create the perfect shade!</p>
+        <div id="game-area">
+            <div class="color-display">
+                <div class="color-box">
+                    <div class="label">Target</div>
+                    <div id="target-color" class="color"></div>
+                </div>
+                <div class="color-box">
+                    <div class="label">Your Mix</div>
+                    <div id="current-color" class="color"></div>
+                </div>
+            </div>
+            <div id="level">Level: <span id="current-level">1</span></div>
+            <div id="score">Score: <span id="current-score">0</span></div>
+            <div class="sliders">
+                <div class="slider-group">
+                    <label for="red">Red: <span id="red-value">128</span></label>
+                    <input type="range" id="red" min="0" max="255" value="128">
+                </div>
+                <div class="slider-group">
+                    <label for="green">Green: <span id="green-value">128</span></label>
+                    <input type="range" id="green" min="0" max="255" value="128">
+                </div>
+                <div class="slider-group">
+                    <label for="blue">Blue: <span id="blue-value">128</span></label>
+                    <input type="range" id="blue" min="0" max="255" value="128">
+                </div>
+            </div>
+            <button id="submit-btn">Submit Mix</button>
+            <button id="next-btn" style="display:none;">Next Level</button>
+        </div>
+        <div id="message"></div>
+        <button id="start-btn">Start Game</button>
+        <button id="reset-btn" style="display:none;">Play Again</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

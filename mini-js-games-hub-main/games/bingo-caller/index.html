@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bingo Caller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Bingo Caller</h1>
+        <p>Mark your card and get BINGO!</p>
+
+        <div class="game-stats">
+            <div id="called-numbers">Called: <span id="current-called">0</span></div>
+            <div id="last-number">Last: <span id="last-called">-</span></div>
+            <div id="game-status">Status: <span id="status">Ready to Play</span></div>
+        </div>
+
+        <div class="game-area">
+            <div class="bingo-card">
+                <div class="card-header">
+                    <div class="letter">B</div>
+                    <div class="letter">I</div>
+                    <div class="letter">N</div>
+                    <div class="letter">G</div>
+                    <div class="letter">O</div>
+                </div>
+                <div class="card-grid">
+                    <!-- B column (1-15) -->
+                    <div class="number-cell" data-column="B" data-number="1">1</div>
+                    <div class="number-cell" data-column="B" data-number="2">2</div>
+                    <div class="number-cell" data-column="B" data-number="3">3</div>
+                    <div class="number-cell" data-column="B" data-number="4">4</div>
+                    <div class="number-cell" data-column="B" data-number="5">5</div>
+
+                    <!-- I column (16-30) -->
+                    <div class="number-cell" data-column="I" data-number="16">16</div>
+                    <div class="number-cell" data-column="I" data-number="17">17</div>
+                    <div class="number-cell" data-column="I" data-number="18">18</div>
+                    <div class="number-cell" data-column="I" data-number="19">19</div>
+                    <div class="number-cell" data-column="I" data-number="20">20</div>
+
+                    <!-- N column (31-45) -->
+                    <div class="number-cell free-space" data-column="N" data-number="FREE">FREE</div>
+                    <div class="number-cell" data-column="N" data-number="32">32</div>
+                    <div class="number-cell" data-column="N" data-number="33">33</div>
+                    <div class="number-cell" data-column="N" data-number="34">34</div>
+                    <div class="number-cell" data-column="N" data-number="35">35</div>
+
+                    <!-- G column (46-60) -->
+                    <div class="number-cell" data-column="G" data-number="46">46</div>
+                    <div class="number-cell" data-column="G" data-number="47">47</div>
+                    <div class="number-cell" data-column="G" data-number="48">48</div>
+                    <div class="number-cell" data-column="G" data-number="49">49</div>
+                    <div class="number-cell" data-column="G" data-number="50">50</div>
+
+                    <!-- O column (61-75) -->
+                    <div class="number-cell" data-column="O" data-number="61">61</div>
+                    <div class="number-cell" data-column="O" data-number="62">62</div>
+                    <div class="number-cell" data-column="O" data-number="63">63</div>
+                    <div class="number-cell" data-column="O" data-number="64">64</div>
+                    <div class="number-cell" data-column="O" data-number="65">65</div>
+                </div>
+            </div>
+
+            <div class="game-controls">
+                <div class="called-numbers-display">
+                    <h3>Called Numbers</h3>
+                    <div id="called-list"></div>
+                </div>
+
+                <div class="control-buttons">
+                    <button id="call-number-btn">Call Next Number</button>
+                    <button id="auto-play-btn">Auto Play</button>
+                    <button id="new-game-btn">New Game</button>
+                    <button id="check-bingo-btn">Check BINGO</button>
+                </div>
+
+                <div class="game-options">
+                    <label>
+                        <input type="checkbox" id="auto-mark"> Auto-mark my card
+                    </label>
+                    <label>
+                        <input type="checkbox" id="sound-enabled" checked> Sound effects
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div id="message"></div>
+
+        <div class="win-patterns">
+            <h3>Winning Patterns:</h3>
+            <div class="patterns">
+                <div class="pattern">
+                    <strong>Horizontal:</strong> Complete any row
+                </div>
+                <div class="pattern">
+                    <strong>Vertical:</strong> Complete any column
+                </div>
+                <div class="pattern">
+                    <strong>Diagonal:</strong> Complete either diagonal
+                </div>
+                <div class="pattern">
+                    <strong>Four Corners:</strong> Mark all four corners
+                </div>
+                <div class="pattern">
+                    <strong>Full House:</strong> Complete entire card
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Numbers will be called randomly from 1-75</li>
+                <li>Click on numbers on your card to mark them when called</li>
+                <li>Or enable auto-mark to automatically mark called numbers</li>
+                <li>Get 5 in a row (horizontal, vertical, or diagonal) to win</li>
+                <li>The center FREE space is already marked</li>
+                <li>Try for different winning patterns for variety</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

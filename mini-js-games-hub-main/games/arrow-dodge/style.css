@@ -1,0 +1,89 @@
+:root{
+  --bg1:#05031a;
+  --bg2:#0b0b1a;
+  --accent:#00e6a8;
+  --accent-2:#7afcff;
+  --muted:#a8b3c7;
+  --glass: rgba(255,255,255,0.04);
+  --neon: 0 0 18px rgba(0,230,168,0.25), 0 0 40px rgba(122,252,255,0.06);
+  --radius:14px;
+  --btn-radius:10px;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:
+  radial-gradient(1200px 600px at 10% 20%, rgba(0,230,168,0.05), transparent 8%),
+  radial-gradient(1000px 500px at 90% 80%, rgba(122,252,255,0.03), transparent 12%),
+  linear-gradient(180deg,var(--bg1),var(--bg2));
+  color:#e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.shell{
+  max-width:1200px;margin:28px auto;padding:18px;
+  display:flex;flex-direction:column;gap:18px;
+}
+
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;padding:12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+  box-shadow: var(--neon);
+}
+
+.title{display:flex;align-items:center;gap:12px}
+.title .icon{font-size:28px}
+.title h1{font-size:20px;margin:0}
+
+.controls{display:flex;gap:8px;align-items:center}
+.btn{
+  background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:var(--btn-radius);cursor:pointer;
+  color:var(--muted);font-weight:600;backdrop-filter: blur(6px);
+}
+.btn.primary{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#001;box-shadow:0 6px 20px rgba(0,230,168,0.12);border: none;
+}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:#d7eaf0}
+
+.toggle-sound{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-weight:600}
+.toggle-sound input{transform:scale(1.0)}
+
+.main{display:flex;gap:16px}
+.sidebar{
+  width:280px;padding:16px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.03);box-shadow:var(--neon);
+  display:flex;flex-direction:column;gap:12px;
+}
+.stat{display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:10px;background:var(--glass)}
+.stat .label{color:var(--muted);font-size:13px}
+.stat .value{font-weight:800;font-size:20px;color:var(--accent)}
+.powerups{padding:12px;border-radius:10px;background:linear-gradient(90deg, rgba(122,252,255,0.02), rgba(0,230,168,0.02));font-size:14px}
+.help{font-size:13px;color:var(--muted);line-height:1.4}
+.links{display:flex;flex-direction:column;gap:8px;margin-top:auto}
+
+.game-area{flex:1;display:flex;align-items:center;justify-content:center;padding:12px}
+.canvas-wrap{position:relative;width:100%;max-width:960px;border-radius:16px;overflow:hidden;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.1));box-shadow:var(--neon);
+  border:1px solid rgba(255,255,255,0.03);padding:12px;
+}
+canvas{display:block;background:
+  radial-gradient(circle at 10% 10%, rgba(0,230,168,0.02), transparent 8%),
+  linear-gradient(180deg, rgba(2,6,23,0.6), rgba(5,9,28,0.92));width:100%;height:auto;border-radius:10px;}
+
+/* Overlay for messages */
+.overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.overlay .overlay-message{pointer-events:auto;background:linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4));padding:18px;border-radius:12px;text-align:center;backdrop-filter: blur(6px);border:1px solid rgba(255,255,255,0.04)}
+.overlay .overlay-actions{margin-top:12px;display:flex;gap:8px;justify-content:center}
+.overlay .btn{pointer-events:auto}
+
+/* neon glows for arrows/player */
+.glow{filter:drop-shadow(0 0 6px rgba(0,230,168,0.8)) drop-shadow(0 0 18px rgba(122,252,255,0.12))}
+
+/* small screens */
+@media (max-width:900px){
+  .main{flex-direction:column}
+  .sidebar{width:100%}
+  .canvas-wrap{max-width:100%}
+}

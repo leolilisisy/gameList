@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Farmer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="sun">☀️</div>
+    <div id="notification-container"></div>
+
+    <h1>Clicker Farmer 🧑‍🌾</h1>
+
+    <div id="dashboard">
+        <div id="stats">
+            <div class="stat" title="Your current money.">💰 Money: <span id="money-display">10</span></div>
+            <div class="stat" title="Your current level. Harvest crops to gain XP!">⭐ Level: <span id="level-display">1</span> (XP: <span id="xp-display">0</span> / <span id="xp-next-display">100</span>)</div>
+        </div>
+        <div id="store">
+            <div id="crop-store-buttons">
+                <!-- Crop buttons are generated here -->
+            </div>
+            <button id="buy-land-btn" title="Buy another plot to plant more crops.">Buy Plot</button>
+            <button id="reset-btn" title="Warning: This will delete all your progress!">Reset Game</button>
+        </div>
+    </div>
+
+    <div id="farm-land">
+        <!-- Farm plots are created by JavaScript -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

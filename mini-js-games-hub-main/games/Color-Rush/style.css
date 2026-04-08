@@ -1,0 +1,410 @@
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Inter, Helvetica, Arial, sans-serif;
+      /* professional deep gradient with a faint warm pink highlight near the top */
+      background-image: 
+        radial-gradient(ellipse at top center, rgba(255,120,170,0.08) 0%, rgba(255,120,170,0.03) 22%, transparent 42%),
+        linear-gradient(160deg, #0f172a 0%, #2a2d6a 45%, #064e63 100%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #e6eef8;
+      min-height: 100vh;
+      display: flex;
+      overflow: hidden; /* prevent page scroll */
+      justify-content: center;
+      overflow-x: hidden;
+      padding: 18px;
+      line-height: 1.45;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px; /* slightly tighter */
+      height: calc(100vh - 24px); /* occupy viewport height */
+      overflow: hidden; /* keep everything fitted inside */
+      justify-content: space-between; /* push footer to bottom so gameArea can expand */
+    }
+
+    .header {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 12px;
+      padding: 8px 10px; /* much tighter padding to shrink header */
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      flex: 0 0 72px; /* fixed smaller header height */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .title-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-size: 2rem; /* increased for prominence */
+      font-weight: 800;
+      /* subtle pinkish gradient for a gentle accent */
+      background: linear-gradient(90deg, #FF9BB3 0%, #FF6FA3 60%, #C07ACB 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .title-icon {
+      font-size: 2.2rem;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 8px; /* tighter */
+      margin-bottom: 6px; /* less vertical space */
+      align-items: center;
+    }
+
+    .stat-card {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 10px;
+      padding: 8px; /* smaller */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 34px rgba(180, 90, 140, 0.12);
+      border-color: rgba(255, 255, 255, 0.16);
+    }
+
+    .stat-icon {
+      font-size: 1.5rem;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-weight: 500;
+    }
+
+    .stat-value {
+      font-size: 1.1rem;
+      font-weight: 700;
+    }
+
+    .target-color {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .target-swatch {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      box-shadow: 0 6px 18px rgba(200, 80, 140, 0.18);
+      border: 2px solid rgba(255, 255, 255, 0.9);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .target-swatch.pulse {
+      transform: scale(1.08);
+      box-shadow: 0 10px 28px rgba(255, 120, 170, 0.28);
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .btn {
+      /* warmer pink/purple CTA */
+      background: linear-gradient(135deg, #FF7AA2 0%, #FF9BC0 50%, #C98BE0 100%);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 6px 20px rgba(200, 80, 140, 0.12);
+      transition: all 0.28s cubic-bezier(.2,.9,.2,1);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:active {
+      transform: translateY(1px);
+    }
+
+    .btn.outline {
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+    }
+
+    .btn.outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    #gameArea {
+      position: relative;
+      width: 100%;
+      /* make the game area take most of the vertical space */
+      flex: 4 1 auto; /* larger grow factor */
+      min-height: 380px; /* increase minimum so it's noticeably bigger */
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      flex-direction: column;
+    }
+
+    #basket {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 120px;
+      height: 30px;
+      /* pink-forward basket with a soft highlight */
+      background: linear-gradient(90deg, #FF7AA2 0%, #FFB6D2 60%);
+      border-radius: 15px 15px 8px 8px;
+      box-shadow: 0 8px 30px rgba(180, 80, 140, 0.25), 0 2px 6px rgba(0,0,0,0.35);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      transition: transform 0.12s cubic-bezier(.2,.9,.2,1);
+      z-index: 10;
+    }
+
+    .basket-glow {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 120px;
+      height: 30px;
+      border-radius: 15px 15px 8px 8px;
+      /* pinkish glow to match the basket */
+      background: rgba(255, 120, 170, 0.18);
+      filter: blur(14px);
+      z-index: 5;
+      opacity: 0;
+      transition: opacity 0.28s ease;
+    }
+
+    .ball {
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      top: 0;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), inset 0 4px 8px rgba(255, 255, 255, 0.4);
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      z-index: 5;
+      transition: transform 0.2s ease;
+    }
+
+    .ball:hover {
+      transform: scale(1.1);
+    }
+
+    /* touch control buttons removed — pointer drag and keyboard remain */
+
+    .pause-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
+      z-index: 100;
+    }
+
+    .pause-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      color: #fff;
+      padding: 30px 40px;
+      border-radius: 20px;
+      font-size: 2.5rem;
+      font-weight: 700;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .modal-card {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(20px);
+      color: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      width: min(500px, 90%);
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      animation: modalAppear 0.4s ease-out;
+    }
+
+    @keyframes modalAppear {
+      0% { opacity: 0; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .modal-card h2 {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      background: linear-gradient(90deg, #FFD54F, #FF4081);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+
+    .modal-summary {
+      font-size: 1.2rem;
+      margin-bottom: 24px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .modal-btn {
+      flex: 1;
+      max-width: 180px;
+    }
+
+    /* footer styling kept compact so game area can be larger */
+    .footer {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.78rem;
+      margin: 6px 0 8px 0;
+      padding: 4px 0;
+      flex: 0 0 auto;
+      opacity: 0.95;
+    }
+
+    /* utility hide class used by JS to toggle overlays */
+    .hidden {
+      display: none !important;
+    }
+
+    .particle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      to {
+        top: 500px;
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .title {
+        font-size: 2rem;
+      }
+      
+      .stats-container {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .stat-card {
+        padding: 12px;
+      }
+      
+      .stat-value {
+        font-size: 1.5rem;
+      }
+      
+      .controls {
+        flex-wrap: wrap;
+      }
+      
+      .btn {
+        flex: 1;
+        min-width: 140px;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .title {
+        font-size: 1.8rem;
+      }
+      
+      #gameArea {
+        min-height: 180px;
+      }
+    }

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Color Switch Maze · Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- favicon -->
+  <link rel="icon" href="https://via.placeholder.com/32/FF6B6B/ffffff?text=C" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="title">
+        <span class="icon">🟣</span>
+        <h1>Color Switch Maze</h1>
+      </div>
+      <div class="controls">
+        <select id="level-select" aria-label="Select level">
+          <option value="0">Level 1 — Beginner</option>
+          <option value="1">Level 2 — Advanced</option>
+        </select>
+        <button id="start-btn" class="btn">Start</button>
+        <button id="pause-btn" class="btn">Pause</button>
+        <button id="restart-btn" class="btn">Restart</button>
+        <button id="next-btn" class="btn">Next Level</button>
+        <label class="sound-toggle">
+          <input id="mute-sounds" type="checkbox" />
+          Mute
+        </label>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <aside class="hud">
+        <div class="stat">
+          <div>Player Color</div>
+          <div id="player-color" class="color-pill">—</div>
+        </div>
+        <div class="stat">
+          <div>Moves</div>
+          <div id="moves">0</div>
+        </div>
+        <div class="stat">
+          <div>Time</div>
+          <div id="time">00:00</div>
+        </div>
+        <div class="stat">
+          <div>Level</div>
+          <div id="level-name">—</div>
+        </div>
+        <div class="stat">
+          <div>Status</div>
+          <div id="status">Ready</div>
+        </div>
+        <div class="actions mobile-controls" aria-hidden="false">
+          <button id="up" class="dir">↑</button>
+          <div>
+            <button id="left" class="dir">←</button>
+            <button id="down" class="dir">↓</button>
+            <button id="right" class="dir">→</button>
+          </div>
+        </div>
+        <div class="legend">
+          <div><span class="swatch red"></span> Red</div>
+          <div><span class="swatch green"></span> Green</div>
+          <div><span class="swatch blue"></span> Blue</div>
+          <div><span class="swatch pad"></span> Color Pad</div>
+          <div><span class="swatch exit"></span> Exit</div>
+        </div>
+      </aside>
+
+      <section class="canvas-wrap">
+        <canvas id="game-canvas" width="900" height="600" aria-label="Color Switch Maze"></canvas>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <div class="notes">
+        Tip: Use arrow keys / WASD or on-screen arrows. Only move to nodes matching your color.
+      </div>
+      <div class="links">
+        <a href="../../index.html" class="btn ghost">Back to Hub</a>
+        <a id="open-new-tab" href="index.html" target="_blank" class="btn ghost">Open in new tab →</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

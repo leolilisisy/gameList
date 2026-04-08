@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circuit Connect | Mini JS Games Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="game-container">
+    <h1>Circuit Connect 🔌</h1>
+    <div class="board-container">
+        <canvas id="circuit-board" width="600" height="400"></canvas>
+    </div>
+    <div class="controls">
+        <button id="restart-btn">Restart</button>
+        <button id="pause-btn">Pause</button>
+        <button id="undo-btn">Undo</button>
+        <button id="redo-btn">Redo</button>
+    </div>
+    <div class="pieces">
+        <button class="piece-btn" data-type="straight">Straight Wire</button>
+        <button class="piece-btn" data-type="elbow">Elbow Wire</button>
+        <button class="piece-btn" data-type="switch">Switch</button>
+        <button class="piece-btn" data-type="bulb">Bulb</button>
+        <button class="piece-btn" data-type="source">Power Source</button>
+    </div>
+</div>
+
+<!-- Sounds -->
+<audio id="place-sound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
+<audio id="success-sound" src="https://www.soundjay.com/misc/sounds/bell-ringing-05.mp3"></audio>
+<audio id="error-sound" src="https://www.soundjay.com/button/sounds/button-10.mp3"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>

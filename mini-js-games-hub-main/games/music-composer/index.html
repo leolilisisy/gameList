@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Composer - Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 Music Composer</h1>
+            <p>Create and compose your own musical masterpieces!</p>
+        </header>
+
+        <div class="composer-container">
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <div class="control-section">
+                    <h3>🎼 Composition</h3>
+                    <div class="composition-controls">
+                        <button id="play-btn" class="control-btn play-btn">
+                            <span class="btn-icon">▶️</span>
+                            <span class="btn-text">Play</span>
+                        </button>
+                        <button id="record-btn" class="control-btn record-btn">
+                            <span class="btn-icon">⏺️</span>
+                            <span class="btn-text">Record</span>
+                        </button>
+                        <button id="stop-btn" class="control-btn stop-btn">
+                            <span class="btn-icon">⏹️</span>
+                            <span class="btn-text">Stop</span>
+                        </button>
+                        <button id="clear-btn" class="control-btn clear-btn">
+                            <span class="btn-icon">🗑️</span>
+                            <span class="btn-text">Clear</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>🎹 Instruments</h3>
+                    <div class="instrument-selector">
+                        <select id="instrument-select">
+                            <option value="piano">🎹 Piano</option>
+                            <option value="guitar">🎸 Guitar</option>
+                            <option value="drums">🥁 Drums</option>
+                            <option value="flute">🪈 Flute</option>
+                            <option value="bell">🔔 Bell</option>
+                            <option value="organ">🎹 Organ</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>⏱️ Tempo</h3>
+                    <div class="tempo-control">
+                        <input type="range" id="tempo-slider" min="60" max="200" value="120">
+                        <span id="tempo-value">120 BPM</span>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>💾 Save & Load</h3>
+                    <div class="save-load-controls">
+                        <button id="save-btn" class="control-btn save-btn">
+                            <span class="btn-icon">💾</span>
+                            <span class="btn-text">Save</span>
+                        </button>
+                        <button id="load-btn" class="control-btn load-btn">
+                            <span class="btn-icon">📁</span>
+                            <span class="btn-text">Load</span>
+                        </button>
+                        <input type="file" id="file-input" accept=".json" style="display: none;">
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>📊 Stats</h3>
+                    <div class="stats-display">
+                        <div class="stat-item">
+                            <span class="stat-label">Notes:</span>
+                            <span id="note-count">0</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Duration:</span>
+                            <span id="composition-duration">0s</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Status:</span>
+                            <span id="recording-status">Ready</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Piano Keyboard -->
+            <div class="piano-section">
+                <div class="octave-selector">
+                    <button id="octave-down" class="octave-btn">◀️</button>
+                    <span id="current-octave">Octave 4</span>
+                    <button id="octave-up" class="octave-btn">▶️</button>
+                </div>
+
+                <div class="piano-keyboard">
+                    <!-- White keys -->
+                    <div class="white-key" data-note="C">C</div>
+                    <div class="white-key" data-note="D">D</div>
+                    <div class="white-key" data-note="E">E</div>
+                    <div class="white-key" data-note="F">F</div>
+                    <div class="white-key" data-note="G">G</div>
+                    <div class="white-key" data-note="A">A</div>
+                    <div class="white-key" data-note="B">B</div>
+
+                    <!-- Black keys -->
+                    <div class="black-key" data-note="C#" style="left: 40px;">C#</div>
+                    <div class="black-key" data-note="D#" style="left: 120px;">D#</div>
+                    <div class="black-key" data-note="F#" style="left: 280px;">F#</div>
+                    <div class="black-key" data-note="G#" style="left: 360px;">G#</div>
+                    <div class="black-key" data-note="A#" style="left: 440px;">A#</div>
+                </div>
+            </div>
+
+            <!-- Composition Display -->
+            <div class="composition-display">
+                <h3>🎼 Your Composition</h3>
+                <div class="note-sequence" id="note-sequence">
+                    <div class="empty-composition">
+                        <span>🎵 Click "Record" and play some notes to start composing!</span>
+                    </div>
+                </div>
+                <div class="composition-actions">
+                    <button id="loop-btn" class="action-btn">
+                        <span class="btn-icon">🔄</span>
+                        <span class="btn-text">Loop</span>
+                    </button>
+                    <button id="export-btn" class="action-btn">
+                        <span class="btn-icon">📤</span>
+                        <span class="btn-text">Export MIDI</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Preset Songs -->
+            <div class="presets-section">
+                <h3>🎵 Preset Songs</h3>
+                <div class="preset-buttons">
+                    <button class="preset-btn" data-song="twinkle">⭐ Twinkle Twinkle</button>
+                    <button class="preset-btn" data-song="happy">😊 Happy Birthday</button>
+                    <button class="preset-btn" data-song="fur-elise">🎹 Für Elise</button>
+                    <button class="preset-btn" data-song="ode-joy">🎼 Ode to Joy</button>
+                    <button class="preset-btn" data-song="greensleeves">🌿 Greensleeves</button>
+                    <button class="preset-btn" data-song="random">🎲 Random</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h3>How to Use Music Composer</h3>
+            <ul>
+                <li><strong>Play:</strong> Click piano keys to hear notes instantly</li>
+                <li><strong>Record:</strong> Start recording, then play notes to create a sequence</li>
+                <li><strong>Playback:</strong> Play back your recorded composition</li>
+                <li><strong>Instruments:</strong> Choose different instruments for variety</li>
+                <li><strong>Tempo:</strong> Adjust playback speed (60-200 BPM)</li>
+                <li><strong>Octaves:</strong> Change octave range with arrow buttons</li>
+                <li><strong>Save/Load:</strong> Save compositions as JSON files</li>
+                <li><strong>Presets:</strong> Try pre-made songs for inspiration</li>
+                <li><strong>Loop:</strong> Continuously play your composition</li>
+            </ul>
+        </div>
+
+        <!-- Message Display -->
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

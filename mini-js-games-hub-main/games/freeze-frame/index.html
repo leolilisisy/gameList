@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Freeze Frame | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Freeze Frame</h1>
+    <canvas id="gameCanvas"></canvas>
+
+    <div class="controls">
+      <button id="startBtn">Start</button>
+      <button id="pauseBtn">Pause</button>
+      <button id="resumeBtn">Resume</button>
+      <button id="restartBtn">Restart</button>
+    </div>
+
+    <div class="scoreboard">
+      <span>Score: <span id="score">0</span></span>
+      <span>Time: <span id="time">60</span>s</span>
+    </div>
+  </div>
+
+  <audio id="bgMusic" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
+  <audio id="popSound" src="https://www.soundjay.com/button/beep-07.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

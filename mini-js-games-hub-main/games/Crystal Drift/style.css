@@ -1,0 +1,91 @@
+:root {
+  --bg: radial-gradient(circle at center, #0f172a, #020617);
+  --flake: #bae6fd;
+  --basket: #38bdf8;
+  --accent: #93c5fd;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.game-container {
+  text-align: center;
+  max-width: 400px;
+}
+
+h1 {
+  font-size: 2em;
+  color: var(--flake);
+  margin-bottom: 10px;
+}
+
+#status {
+  color: #a1a1aa;
+  margin-bottom: 15px;
+}
+
+#gameArea {
+  position: relative;
+  width: 320px;
+  height: 400px;
+  border: 2px solid var(--accent);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto 15px;
+}
+
+#basket {
+  position: absolute;
+  bottom: 10px;
+  left: 140px;
+  width: 50px;
+  height: 20px;
+  background: var(--basket);
+  border-radius: 6px;
+  box-shadow: 0 0 15px var(--basket);
+}
+
+.flake {
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--flake);
+  box-shadow: 0 0 10px var(--flake);
+  opacity: 0.9;
+}
+
+.controls button {
+  margin: 5px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #38bdf8, #a78bfa);
+  color: #06121f;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.info {
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  color: var(--accent);
+  font-size: 1.1em;
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>Bloom Catch — Prototype</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="game-wrap">
+    <canvas id="game"></canvas>
+
+    <div id="ui">
+      <div id="score">Combo: <span id="combo">0</span></div>
+      <div id="high-score">High: <span id="high-score-val">0</span></div>
+      <div id="misses">Misses: <span id="miss-count">0</span>/5</div>
+    </div>
+
+    <div id="overlay" class="hidden">
+      <div class="panel">
+        <h1>Bloom Catch</h1>
+        <p id="final-text">Relax and catch petals.</p>
+        <button id="restart">Play again</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

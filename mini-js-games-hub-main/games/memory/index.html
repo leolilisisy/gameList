@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="gameMemory.title">Memory Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-shell">
+    <div class="toolbar">
+      <button type="button" class="language-toggle-game" data-language-toggle></button>
+    </div>
+    <h1 data-i18n="gameMemory.title">Memory Game</h1>
+    <p class="hint" data-i18n="gameMemory.hint">Flip cards and match all emoji pairs.</p>
+    <div
+      id="game-board"
+      aria-label="Memory game board"
+      data-i18n-aria-label="gameMemory.boardLabel"
+    ></div>
+  </div>
+  <script src="../../site-i18n.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

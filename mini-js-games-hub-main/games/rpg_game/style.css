@@ -1,0 +1,102 @@
+:root {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --accent-color: #50fa7b;
+    --form-bg: #282c34;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Courier New', monospace;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#game-container {
+    width: 90%;
+    max-width: 800px;
+    border: 3px solid var(--accent-color);
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(80, 250, 123, 0.5);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Status Display */
+#status-display {
+    border: 1px dashed var(--text-color);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#status-display h2 {
+    color: var(--accent-color);
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+/* Narrative Area */
+#narrative-display {
+    min-height: 100px;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #111;
+    border-left: 5px solid var(--accent-color);
+}
+
+#game-text {
+    white-space: pre-wrap; /* Preserve formatting if needed */
+    line-height: 1.5;
+}
+
+/* Action Form (The Command Interface) */
+#action-form {
+    background-color: var(--form-bg);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+#form-controls {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 20px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+label {
+    text-align: right;
+    color: var(--accent-color);
+}
+
+input[type="text"], select {
+    padding: 8px;
+    border: 1px solid #444;
+    background-color: #000;
+    color: var(--text-color);
+    font-family: inherit;
+    font-size: 1em;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #7aff9b;
+}

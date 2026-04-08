@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghost Grabber | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>Ghost Grabber 👻</h1>
+    <div class="controls">
+      <button id="start-btn">Start</button>
+      <button id="pause-btn">Pause</button>
+      <button id="restart-btn">Restart</button>
+      <span class="score">Score: <span id="score">0</span></span>
+      <span class="combo">Combo: <span id="combo">0</span></span>
+    </div>
+    <div class="game-area" id="game-area"></div>
+    <audio id="pop-sound" src="https://www.soundjay.com/buttons/sounds/button-16.mp3"></audio>
+    <audio id="miss-sound" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

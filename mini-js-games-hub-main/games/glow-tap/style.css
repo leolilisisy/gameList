@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle, #000000, #111111);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: #fff;
+}
+
+.game-container {
+    text-align: center;
+}
+
+#game-area {
+    position: relative;
+    width: 300px;
+    height: 500px;
+    margin: 20px auto;
+    border: 2px solid #fff;
+    background-color: #000;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.bulb, .obstacle {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.bulb {
+    background: radial-gradient(circle, #00ffff, #00aaff);
+    box-shadow: 0 0 15px #00ffff, 0 0 30px #00ffff, 0 0 50px #00ffff;
+}
+
+.bulb:hover {
+    transform: scale(1.2);
+}
+
+.obstacle {
+    background-color: red;
+    box-shadow: 0 0 10px red, 0 0 20px red;
+}
+
+.controls button {
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.controls button:hover {
+    background-color: #00ffff;
+    color: #000;
+}

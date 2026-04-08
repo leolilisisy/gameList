@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Number Lock Challenge — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://source.unsplash.com/64x64/?lock,puzzle" />
+</head>
+<body>
+  <div class="nl-app">
+    <header class="nl-header">
+      <div class="nl-left">
+        <h1 class="nl-title">🔐 Number Lock Challenge</h1>
+        <p class="nl-sub">Solve mini-puzzles to reveal the digits and unlock the code.</p>
+      </div>
+      <div class="nl-controls">
+        <div class="nl-stats">
+          <div>Level <span id="level">1</span></div>
+          <div>Score <span id="score">0</span></div>
+          <div>Hints <span id="hints">3</span></div>
+        </div>
+        <div class="nl-buttons">
+          <button id="start-btn" class="btn primary">Start</button>
+          <button id="pause-btn" class="btn" disabled>Pause</button>
+          <button id="resume-btn" class="btn" disabled>Resume</button>
+          <button id="restart-btn" class="btn danger" disabled>Restart</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="nl-main">
+      <section class="lock-area">
+        <div class="lock-visual">
+          <img class="lock-image" src="https://source.unsplash.com/420x260/?padlock,code" alt="lock image" />
+          <div class="code-display" id="code-display">
+            <!-- digits will appear here -->
+          </div>
+        </div>
+
+        <div class="timer-panel">
+          <div class="timer-row">
+            <label>Timer:</label>
+            <div id="timer">--:--</div>
+          </div>
+          <div class="progress-row">
+            <label>Progress:</label>
+            <div class="progress">
+              <div id="progress-bar" class="progress-bar"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="puzzle-area" id="puzzle-area">
+        <div class="puzzle-header">
+          <h2 id="puzzle-title">Press Start to play</h2>
+        </div>
+
+        <div class="puzzle-body" id="puzzle-body">
+          <img src="https://source.unsplash.com/640x360/?puzzle,game" alt="" class="puzzle-illu" />
+          <p class="puzzle-instruction">You’ll be presented with mini-puzzles. Solve to reveal code digits.</p>
+        </div>
+
+        <div class="puzzle-actions">
+          <button id="hint-btn" class="btn" title="Use a hint (reveals clue)">Use Hint</button>
+          <button id="submit-puzzle" class="btn primary" disabled>Submit</button>
+          <div id="feedback" class="feedback"></div>
+        </div>
+      </section>
+    </main>
+
+    <aside class="nl-side">
+      <div class="level-legend">
+        <h3>Level Info</h3>
+        <ul>
+          <li>Level difficulty increases every 2 levels.</li>
+          <li>Each level reveals between 1–4 digits.</li>
+          <li>Faster solves = bonus score. Hints reduce score.</li>
+        </ul>
+      </div>
+
+      <div class="sound-controls">
+        <h3>Sound</h3>
+        <label><input type="checkbox" id="sound-toggle" checked /> Enable sound</label>
+      </div>
+
+      <div class="instructions">
+        <h3>Controls</h3>
+        <p>Mouse / touch for UI, keyboard input when asked. Use hint sparingly.</p>
+      </div>
+    </aside>
+
+    <footer class="nl-footer">
+      <small>Assets: Unsplash & Google Actions Sounds (public). Developed for Mini JS Games Hub.</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

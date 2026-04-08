@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gridlock Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Gridlock Explorer: The CSS Dungeon</h1>
+        <p>Use the arrow keys to swap your tile's position with an adjacent empty tile. Solve the puzzle by moving the Key to the Exit!</p>
+    </header>
+
+    <div id="game-container">
+        <div id="grid-map">
+            <div class="tile wall" data-order="1"></div>
+            <div class="tile wall" data-order="2"></div>
+            <div class="tile wall" data-order="3"></div>
+            <div class="tile wall" data-order="4"></div>
+
+            <div class="tile wall" data-order="5"></div>
+            <div class="tile floor player" id="player" data-order="6">🧑‍💻</div> 
+            <div class="tile floor key" id="key" data-order="7">🔑</div>
+            <div class="tile floor empty" id="empty-tile" data-order="8"></div>
+
+            <div class="tile wall" data-order="9"></div>
+            <div class="tile floor empty" data-order="10"></div>
+            <div class="tile floor exit" id="exit" data-order="11">🚪</div>
+            <div class="tile wall" data-order="12"></div>
+
+            <div class="tile wall" data-order="13"></div>
+            <div class="tile wall" data-order="14"></div>
+            <div class="tile wall" data-order="15"></div>
+            <div class="tile wall" data-order="16"></div>
+        </div>
+    </div>
+
+    <p id="message"></p>
+    
+    <script src="script.js"></script>
+</body>
+</html>

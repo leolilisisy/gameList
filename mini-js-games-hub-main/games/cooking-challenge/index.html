@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cooking Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>👨‍🍳 Cooking Challenge</h1>
+        <p>Prepare meals by following recipes! Complete each step before time runs out.</p>
+
+        <div class="game-info">
+            <div id="score">Score: <span id="current-score">0</span></div>
+            <div id="level">Level: <span id="current-level">1</span></div>
+            <div id="timer">Time: <span id="time-left">30</span>s</div>
+            <div id="step">Step: <span id="current-step">1</span>/<span id="total-steps">5</span></div>
+        </div>
+
+        <div class="recipe-section">
+            <h3 id="recipe-name">Pasta Carbonara</h3>
+            <p id="current-instruction">Click on the ingredients needed for this step</p>
+        </div>
+
+        <div class="kitchen-area">
+            <div class="ingredients" id="ingredients-area">
+                <!-- Ingredients will be populated by JavaScript -->
+            </div>
+            <div class="tools" id="tools-area">
+                <!-- Tools will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="start-btn">Start Cooking</button>
+            <button id="hint-btn">Show Hint (20 pts)</button>
+            <button id="reset-btn" style="display:none;">Cook Again</button>
+        </div>
+
+        <div id="message"></div>
+
+        <div class="instructions">
+            <h3>How to Play:</h3>
+            <ul>
+                <li>Follow the recipe instructions step by step</li>
+                <li>Click on the correct ingredients and tools when prompted</li>
+                <li>Complete each step before the timer runs out</li>
+                <li>Earn points for speed and accuracy</li>
+                <li>Use hints if you get stuck (costs points)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+:root {
+    --primary-color: #8B0000; /* Dark Red */
+    --accent-color: #FFD700; /* Gold */
+    --bg-color: #f0f4f8;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    user-select: none;
+}
+
+.game-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.game-area {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+/* --- Canvas Styling --- */
+
+#gameCanvas {
+    border: 5px solid var(--primary-color);
+    background-color: #111; /* Dark well background */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+/* --- Side Panel Styling --- */
+
+.side-panel {
+    width: 150px;
+    text-align: left;
+}
+
+.side-panel h2, .side-panel h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+#nextPieceCanvas {
+    border: 2px solid #ccc;
+    background-color: #eee;
+    margin-bottom: 15px;
+}
+
+.controls-info {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* --- Buttons and Game Over --- */
+
+button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #FFCC00;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#game-over-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+    text-align: center;
+    border: 5px solid var(--primary-color);
+}

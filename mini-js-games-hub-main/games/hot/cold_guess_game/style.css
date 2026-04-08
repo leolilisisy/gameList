@@ -1,0 +1,80 @@
+:root {
+    --grid-size: 10; /* 10x10 grid */
+    --cell-size: 40px;
+    --grid-dimension: calc(var(--grid-size) * var(--cell-size));
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #282c34;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#game-container {
+    padding: 20px;
+    background-color: #3b4252;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+#info-panel {
+    margin-bottom: 20px;
+}
+
+#hint-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    min-height: 1.5em; /* Prevent layout shift */
+}
+
+/* * Grid Styling
+ */
+#game-grid {
+    width: var(--grid-dimension);
+    height: var(--grid-dimension);
+    display: grid;
+    grid-template-columns: repeat(var(--grid-size), 1fr);
+    grid-template-rows: repeat(var(--grid-size), 1fr);
+    border: 3px solid #61dafb;
+    margin: 0 auto;
+}
+
+.grid-cell {
+    width: var(--cell-size);
+    height: var(--cell-size);
+    border: 1px solid #4c566a;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+}
+
+/* Visual feedback for the last guess (optional but helpful) */
+.last-guess {
+    background-color: #5e81ac !important; 
+    border: 2px solid #81a1c1 !important;
+}
+
+/* Visual feedback for the target (only shown on win) */
+.target {
+    background-color: #a3be8c !important; /* Green */
+    border: 3px dashed #bf616a !important;
+}
+
+/* * Button Styling
+ */
+#new-game-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #b48ead;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}

@@ -1,0 +1,102 @@
+:root {
+    --bg-color: #282a36; /* Dark background */
+    --text-color: #f8f8f2;
+    --accent-color: #ffb86c; /* Orange/Gold */
+    --success-color: #50fa7b; /* Green */
+    --audit-color: #ff5555; /* Red/Danger */
+}
+
+/* Base Styles */
+body {
+    font-family: 'Georgia', serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#game-container {
+    width: 90%;
+    max-width: 900px;
+    background-color: #3d3f4b;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+header {
+    text-align: center;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Resource Panel */
+#resource-panel {
+    margin-bottom: 30px;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.stat-item {
+    background-color: #44475a;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* Action and Audit Panel */
+#audit-status {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid var(--success-color);
+    background-color: #2a2c33;
+}
+
+.nominal { color: var(--success-color); }
+.warning { 
+    color: var(--audit-color);
+    font-weight: bold;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.action-controls {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    transition: opacity 0.2s;
+}
+
+/* Instruction Panel */
+#instruction-panel {
+    margin-top: 40px;
+    border-top: 1px dashed var(--text-color);
+    padding-top: 20px;
+}
+
+#instruction-panel p {
+    color: var(--accent-color);
+}

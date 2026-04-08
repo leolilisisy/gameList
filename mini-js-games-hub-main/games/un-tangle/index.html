@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un-tangle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="main-content">
+        <h1>Un-tangle</h1>
+        <p>Click and drag the nodes until no lines are crossing.</p>
+        <div id="game-container">
+            <canvas id="game-canvas" width="600" height="600"></canvas>
+            <div id="win-overlay" class="hidden">
+                <h2>Level Complete!</h2>
+                <div id="win-stats">
+                    <!-- Final stats will be populated here -->
+                </div>
+                <button id="next-level-btn">Next Level</button>
+            </div>
+        </div>
+        <div id="game-info">
+            <div id="level-display">Level: 1</div>
+            <div id="stats-display">
+                <span>Moves: <span id="moves-count">0</span></span>
+                <span>Time: <span id="timer-display">0s</span></span>
+            </div>
+            <div id="action-buttons">
+                <button id="hint-btn">💡 Hint</button>
+                <button id="restart-btn">🔄 Restart</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

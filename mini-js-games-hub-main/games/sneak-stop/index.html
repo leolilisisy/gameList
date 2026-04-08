@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sneak Stop | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1 class="title">🕵️‍♂️ Sneak Stop</h1>
+    
+    <div class="game-area">
+      <div class="guard-area">
+        <img id="guard" src="https://cdn-icons-png.flaticon.com/512/4762/4762313.png" alt="Guard">
+        <div id="light" class="light green"></div>
+      </div>
+      
+      <div class="path">
+        <div id="player"></div>
+        <div class="goal">🏁</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="pauseBtn">⏸️ Pause</button>
+      <button id="resumeBtn" disabled>▶️ Resume</button>
+      <button id="restartBtn">🔁 Restart</button>
+    </div>
+
+    <div class="status">
+      <p id="statusText">Wait for Green Light...</p>
+    </div>
+  </div>
+
+  <audio id="bg-music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
+  <audio id="alert-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_9f64a6f05b.mp3"></audio>
+  <audio id="win-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_ef8d12e715.mp3"></audio>
+  <audio id="lose-sound" src="https://cdn.pixabay.com/audio/2022/03/15/audio_47c8fdfb6e.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

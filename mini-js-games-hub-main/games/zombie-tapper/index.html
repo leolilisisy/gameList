@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zombie Tapper | Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h1>🧟‍♂️ Zombie Tapper</h1>
+    <div class="hud">
+      <p>Score: <span id="score">0</span></p>
+      <p>Lives: <span id="lives">3</span></p>
+      <p>Time: <span id="timer">60</span>s</p>
+    </div>
+    <div class="game-area" id="game-area"></div>
+    <div class="controls">
+      <button id="start-btn">▶️ Start</button>
+      <button id="pause-btn">⏸️ Pause</button>
+      <button id="restart-btn">🔁 Restart</button>
+    </div>
+    <p id="message"></p>
+  </div>
+
+  <audio id="zombie-hit" src="https://cdn.pixabay.com/audio/2022/03/15/audio_7a1e75df15.mp3"></audio>
+  <audio id="human-hit" src="https://cdn.pixabay.com/audio/2022/03/15/audio_23733db929.mp3"></audio>
+  <audio id="bg-music" src="https://cdn.pixabay.com/audio/2022/03/15/audio_1e2ef03a79.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

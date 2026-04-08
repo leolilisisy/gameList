@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transform Scramble</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>CSS Transform Scramble Puzzle</h1>
+        <p>Match the pieces back to the original image using the transform controls.</p>
+    </header>
+
+    <div id="puzzle-container">
+        <div class="piece" data-piece-id="0"></div>
+        <div class="piece" data-piece-id="1"></div>
+        <div class="piece" data-piece-id="2"></div>
+        <div class="piece" data-piece-id="3"></div>
+        <div class="piece" data-piece-id="4"></div>
+        <div class="piece" data-piece-id="5"></div>
+        <div class="piece" data-piece-id="6"></div>
+        <div class="piece" data-piece-id="7"></div>
+        <div class="piece" data-piece-id="8"></div>
+    </div>
+
+    <div id="controls">
+        <h2>Piece Controls</h2>
+        <div id="control-panel">
+            <p>Click on a piece to select it, then use the buttons below.</p>
+            <div id="piece-control-buttons" class="hidden">
+                <button id="rotate-btn">🔄 Rotate (90°)</button>
+                <button id="flipX-btn">↔️ Flip X</button>
+                <button id="flipY-btn">↕️ Flip Y</button>
+                </div>
+        </div>
+        <p id="win-message" class="hidden">🎉 **Puzzle Solved!** 🎉</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

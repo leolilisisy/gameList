@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clue Connector Word Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>🧠 Clue Connector</h1>
+
+        <div id="status-area">
+            Score: <span id="score-display">0</span> / <span id="total-rounds">0</span>
+        </div>
+
+        <div id="clue-area">
+            <h2>Clue 1:</h2>
+            <p id="clue-one">Click START to load the first puzzle!</p>
+            
+            <h2>Clue 2:</h2>
+            <p id="clue-two">Ready?</p>
+        </div>
+
+        <div id="input-area">
+            <input type="text" id="player-input" placeholder="Your connecting word..." disabled>
+            <button id="submit-button" disabled>GUESS</button>
+        </div>
+        
+        <div id="feedback-message">
+            </div>
+
+        <div id="controls">
+            <button id="start-button">START GAME</button>
+            <button id="next-button" style="display: none;">NEXT CLUE</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

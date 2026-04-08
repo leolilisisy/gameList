@@ -1,0 +1,87 @@
+:root {
+  --bg: radial-gradient(circle at center, #0ea5e9, #1e3a8a);
+  --bubble: #60a5fa;
+  --glow: #3b82f6;
+  --text: #dbeafe;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: var(--bg);
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  text-align: center;
+  width: 360px;
+}
+
+h1 {
+  color: var(--text);
+  text-shadow: 0 0 15px var(--glow);
+}
+
+#status {
+  color: #bae6fd;
+  margin-bottom: 10px;
+}
+
+#gameArea {
+  position: relative;
+  width: 320px;
+  height: 400px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  margin: 0 auto 15px;
+  box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+}
+
+.bubble {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #93c5fd, #3b82f6);
+  box-shadow: 0 0 20px var(--glow);
+  opacity: 0.8;
+  animation: floatUp 5s linear forwards;
+  cursor: pointer;
+}
+
+@keyframes floatUp {
+  from {
+    bottom: -40px;
+  }
+  to {
+    bottom: 420px;
+  }
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  color: var(--text);
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.controls button {
+  background: linear-gradient(90deg, #60a5fa, #3b82f6);
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.controls button:disabled {
+  opacity: 0.5;
+}

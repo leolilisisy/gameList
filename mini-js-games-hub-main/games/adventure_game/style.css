@@ -1,0 +1,100 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #2e3440; /* Dark background */
+    color: #eceff4; /* Light text */
+    font-family: 'Courier New', monospace; /* Monospace for classic feel */
+    font-size: 16px;
+}
+
+#game-container {
+    width: 90%;
+    max-width: 700px;
+    padding: 30px;
+    border: 2px solid #a3be8c;
+    background-color: #3b4252;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    color: #88c0d0; /* Blue header */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #4c566a;
+    margin: 20px 0;
+}
+
+/* * Status Panel
+ */
+#status-panel {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #4c566a;
+    border-radius: 5px;
+}
+
+#health {
+    color: #bf616a; /* Red for health */
+    font-weight: bold;
+}
+
+/* * Story Text
+ */
+#story-text {
+    min-height: 150px;
+    padding: 10px 0;
+    line-height: 1.6;
+    white-space: pre-wrap; /* Preserves formatting */
+}
+
+/* * Choices
+ */
+#choices-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.choice-button {
+    padding: 12px;
+    border: 1px solid #5e81ac;
+    background-color: #5e81ac; /* Button color */
+    color: #eceff4;
+    cursor: pointer;
+    text-align: left;
+    transition: background-color 0.2s, border-color 0.2s;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.choice-button:hover {
+    background-color: #81a1c1;
+    border-color: #81a1c1;
+}
+
+.choice-button:disabled {
+    background-color: #4c566a;
+    color: #d8dee9;
+    cursor: default;
+}
+
+#restart-button {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #b48ead; /* Purple/Restart color */
+    border: none;
+    color: #eceff4;
+    font-size: 1.1em;
+    cursor: pointer;
+}

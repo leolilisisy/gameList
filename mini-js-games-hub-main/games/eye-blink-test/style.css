@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at center, #0d1117, #000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+h1 {
+  margin-bottom: 10px;
+  text-shadow: 0 0 15px #00eaff, 0 0 30px #00eaff;
+}
+
+.instructions {
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+#eye-area {
+  width: 200px;
+  height: 120px;
+  background: radial-gradient(ellipse at center, #111 0%, #000 100%);
+  border: 3px solid #00eaff;
+  border-radius: 50% / 60%;
+  position: relative;
+  box-shadow: 0 0 25px #00eaff;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+#pupil {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: radial-gradient(circle, #222 20%, #000 90%);
+  border-radius: 50%;
+  top: 40px;
+  left: 80px;
+  transition: all 0.1s ease;
+}
+
+#glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 60px #00eaff;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.controls {
+  margin-top: 25px;
+}
+
+button {
+  background: #00eaff;
+  color: black;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #00b8d4;
+  transform: scale(1.05);
+}
+
+.status {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+#message {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #00eaff;
+  text-shadow: 0 0 10px #00eaff;
+}

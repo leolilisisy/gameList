@@ -1,0 +1,47 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #00111a, #000);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.controls {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+button {
+  background: rgba(0, 150, 255, 0.3);
+  border: 2px solid #00ffff;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 10px;
+  font-size: 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 8px #00ffff;
+}
+
+button:hover {
+  background: rgba(0, 200, 255, 0.6);
+  box-shadow: 0 0 15px #00ffff;
+}
+
+button:active {
+  transform: scale(0.95);
+}

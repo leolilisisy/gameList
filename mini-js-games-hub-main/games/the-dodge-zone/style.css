@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #1e1e2f, #2e2e4f);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+h1 {
+  margin-top: 10px;
+  font-size: 32px;
+  color: #ffce00;
+  letter-spacing: 1px;
+}
+
+#gameContainer {
+  position: relative;
+  margin: 30px auto;
+  width: 400px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 3px solid #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+#player {
+  position: absolute;
+  /* sit slightly above the ground line */
+  bottom: 18px;
+  left: 180px;
+  width: 40px;
+  height: 40px;
+  background: #00e6ff;
+  border-radius: 5px;
+  /* remove transition so player moves immediately (no lag) */
+  transition: none;
+  z-index: 20; /* stay above ground and blocks */
+}
+
+/* visible ground line at the bottom of the game area
+   Raised a bit so the container border and rounding don't cover it. */
+#ground {
+  position: absolute;
+  left: 8px; /* inset to avoid rounded corners clipping */
+  right: 8px;
+  bottom: 3px; /* lift above the inner edge of the container border */
+  height: 6px;
+  background: rgba(255,255,255,0.36);
+  box-shadow: 0 -1px 6px rgba(0,0,0,0.25) inset;
+  z-index: 5; /* put ground above falling blocks */
+  pointer-events: none; /* allow clicks to pass through */
+  border-radius: 4px;
+}
+
+.block {
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  background: #ff4d4d;
+  border-radius: 6px;
+  z-index: 2; /* behind ground and player */
+}
+
+#score {
+  font-size: 20px;
+  margin-top: -10px;
+}
+
+/* timer shown inside the game container at top-right */
+/* timer fixed to the page upper-right */
+#timer {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  font-size: 16px;
+  color: #bfefff;
+  background: rgba(0,0,0,0.18);
+  padding: 6px 10px;
+  border-radius: 8px;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+#message {
+  margin-top: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffce00;
+}

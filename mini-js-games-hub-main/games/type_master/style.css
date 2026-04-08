@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.test-container {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* --- Text Display Area --- */
+.text-to-type {
+    min-height: 100px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    text-align: left;
+    line-height: 1.6;
+    font-size: 1.2em;
+    color: #555;
+    background-color: #fafafa;
+}
+
+/* Styling for correct and incorrect characters */
+.correct {
+    color: #28a745; /* Green */
+}
+
+.incorrect {
+    color: #dc3545; /* Red */
+    text-decoration: underline wavy #dc3545 1px;
+}
+
+/* --- Input Area --- */
+#text-input {
+    width: 100%;
+    height: 100px;
+    padding: 15px;
+    font-size: 1.2em;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    resize: none;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+#text-input:disabled {
+    cursor: not-allowed;
+    background-color: #eee;
+    border-color: #ccc;
+}
+
+/* --- Controls and Stats --- */
+.controls-and-results {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.stats-area p {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.stats-area span {
+    color: #007bff; /* Blue for stats */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#reset-button {
+    background-color: #6c757d;
+}
+
+#reset-button:hover {
+    background-color: #5a6268;
+}
+
+/* --- Results Feedback --- */
+#results-feedback {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px solid #28a745;
+    border-radius: 8px;
+    background-color: #d4edda;
+    text-align: center;
+}
+
+#results-feedback h3 {
+    color: #155724;
+    margin-top: 0;
+}
+
+.final-wpm-display span {
+    font-size: 2em;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.final-accuracy-display span {
+    font-size: 1.5em;
+    color: #28a745;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}

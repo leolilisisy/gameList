@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Rhythm Catch — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- favicon optional -->
+</head>
+<body>
+  <div class="page">
+    <header class="rc-header">
+      <h1>Rhythm Catch</h1>
+      <p class="subtitle">Catch falling beats in perfect rhythm — arrow keys or touch to move.</p>
+    </header>
+
+    <main class="rc-main">
+      <section class="game-area">
+        <canvas id="gameCanvas" width="900" height="600" aria-label="Rhythm Catch game canvas"></canvas>
+
+        <div class="hud top-hud">
+          <div class="controls-left">
+            <button id="playBtn" class="control">▶ Play</button>
+            <button id="pauseBtn" class="control">⏸ Pause</button>
+            <button id="restartBtn" class="control">⟲ Restart</button>
+          </div>
+
+          <div class="controls-right">
+            <label class="small">Volume
+              <input id="volume" type="range" min="0" max="1" step="0.01" value="0.8">
+            </label>
+            <label class="small">BPM
+              <input id="bpm" type="range" min="60" max="180" step="1" value="120">
+              <span id="bpmVal">120</span>
+            </label>
+            <label class="small">Difficulty
+              <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="normal" selected>Normal</option>
+                <option value="hard">Hard</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="scoreboard">
+          <div class="score">Score: <span id="score">0</span></div>
+          <div class="combo">Combo: <span id="combo">0</span></div>
+          <div class="accuracy">Last: <span id="lastHit">—</span></div>
+        </div>
+
+        <div class="mobile-controls" id="mobileControls">
+          <button id="leftBtn" class="touch">◀</button>
+          <button id="rightBtn" class="touch">▶</button>
+        </div>
+      </section>
+
+      <aside class="info-panel">
+        <h2>How to Play</h2>
+        <ul>
+          <li>Move left / right with ◀ / ▶ keys or on-screen touch buttons.</li>
+          <li>Beats fall from the top — catch them in the catcher zone to score.</li>
+          <li>Timing matters: close to center = Perfect, near edges = Good, miss = Miss.</li>
+          <li>Adjust BPM, volume, and difficulty to match your skill.</li>
+        </ul>
+
+        <h3>Settings</h3>
+        <p class="note">Uses an online sample music track so everything loads in the browser.</p>
+        <div class="metadata">
+          <div>Category: <strong>Puzzle • Rhythm</strong></div>
+          <div>Controls: <strong>Keyboard & Touch</strong></div>
+        </div>
+
+        <div class="play-now">
+          <a class="play-button" href="#" id="playNowLink">Play Now</a>
+          <a class="open-new-tab" href="games/rhythm-catch/index.html" target="_blank">Open in New Tab →</a>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="rc-footer">
+      <small>Made with ♥ — Drop improvements as a PR.</small>
+    </footer>
+  </div>
+
+  <!-- Audio (online) -->
+  <!-- This is an openly available sample music file — SoundHelix example (public sample). -->
+  <audio id="track" crossorigin="anonymous" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

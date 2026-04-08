@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Chart Match Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>📊 Data Chart Match</h1>
+
+        <div id="score-area">
+            Score: <span id="score">0</span>
+        </div>
+
+        <div id="puzzle-area">
+            <div class="chart-box">
+                <h2>Target Chart:</h2>
+                <svg id="target-svg" viewBox="0 0 300 200" width="300" height="200"></svg>
+            </div>
+
+            <div class="chart-box">
+                <h2>Your Chart:</h2>
+                <svg id="player-svg" viewBox="0 0 300 200" width="300" height="200"></svg>
+            </div>
+        </div>
+        
+        <div id="input-controls">
+            <h2>Input Data:</h2>
+            <div id="data-inputs">
+                </div>
+            <button id="check-button" disabled>Check Match</button>
+        </div>
+
+        <div id="feedback-message">
+            <p>Input the correct values to make your chart match the target!</p>
+        </div>
+        
+        <div id="controls">
+            <button id="new-puzzle-button">New Puzzle</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

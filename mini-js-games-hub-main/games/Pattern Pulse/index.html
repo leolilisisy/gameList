@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pattern Pulse</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-container">
+    <h1>🎵 Pattern Pulse</h1>
+    <p id="message">Press Start to begin!</p>
+
+    <div class="pads">
+      <div class="pad" id="pad1" data-sound="261.6"></div>
+      <div class="pad" id="pad2" data-sound="329.6"></div>
+      <div class="pad" id="pad3" data-sound="392.0"></div>
+      <div class="pad" id="pad4" data-sound="523.3"></div>
+    </div>
+
+    <div class="controls">
+      <button id="startBtn">Start</button>
+      <button id="restartBtn" disabled>Restart</button>
+      <p>Score: <span id="score">0</span></p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

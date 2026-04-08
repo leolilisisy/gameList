@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dance Floor - Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💃 Dance Floor</h1>
+            <p>Follow the dance moves and hit the arrows at the right time!</p>
+        </header>
+
+        <div class="game-container">
+            <!-- Game Info -->
+            <div class="game-info">
+                <div class="score-display">
+                    <div class="score-item">
+                        <span class="score-label">Score:</span>
+                        <span id="current-score">0</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="score-label">Combo:</span>
+                        <span id="current-combo">0</span>
+                    </div>
+                    <div class="score-item">
+                        <span class="score-label">Perfect:</span>
+                        <span id="perfect-count">0</span>
+                    </div>
+                </div>
+
+                <div class="game-controls">
+                    <button id="start-btn" class="control-btn start-btn">
+                        <span class="btn-icon">▶️</span>
+                        <span class="btn-text">Start Dance</span>
+                    </button>
+                    <button id="pause-btn" class="control-btn pause-btn">
+                        <span class="btn-icon">⏸️</span>
+                        <span class="btn-text">Pause</span>
+                    </button>
+                    <button id="restart-btn" class="control-btn restart-btn">
+                        <span class="btn-icon">🔄</span>
+                        <span class="btn-text">Restart</span>
+                    </button>
+                </div>
+
+                <div class="difficulty-selector">
+                    <h4>Difficulty</h4>
+                    <div class="difficulty-buttons">
+                        <button class="difficulty-btn active" data-difficulty="easy">Easy</button>
+                        <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+                        <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+                        <button class="difficulty-btn" data-difficulty="expert">Expert</button>
+                    </div>
+                </div>
+
+                <div class="song-selector">
+                    <h4>Song</h4>
+                    <select id="song-select">
+                        <option value="upbeat">🎵 Upbeat Groove</option>
+                        <option value="electronic">🎹 Electronic Beat</option>
+                        <option value="pop">🎤 Pop Rhythm</option>
+                        <option value="rock">🎸 Rock Anthem</option>
+                        <option value="jazz">🎷 Jazz Swing</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Dance Floor -->
+            <div class="dance-floor">
+                <!-- Arrow Indicators -->
+                <div class="arrow-indicators">
+                    <div class="indicator-row">
+                        <div class="indicator up-indicator" data-direction="up">
+                            <div class="arrow up-arrow">⬆️</div>
+                            <div class="indicator-bar"></div>
+                        </div>
+                    </div>
+                    <div class="indicator-row">
+                        <div class="indicator left-indicator" data-direction="left">
+                            <div class="arrow left-arrow">⬅️</div>
+                            <div class="indicator-bar"></div>
+                        </div>
+                        <div class="indicator down-indicator" data-direction="down">
+                            <div class="arrow down-arrow">⬇️</div>
+                            <div class="indicator-bar"></div>
+                        </div>
+                        <div class="indicator right-indicator" data-direction="right">
+                            <div class="arrow right-arrow">➡️</div>
+                            <div class="indicator-bar"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dance Floor Grid -->
+                <div class="floor-grid">
+                    <div class="floor-tile up-tile" data-direction="up">
+                        <div class="tile-arrow">⬆️</div>
+                        <div class="tile-glow"></div>
+                    </div>
+                    <div class="floor-tile left-tile" data-direction="left">
+                        <div class="tile-arrow">⬅️</div>
+                        <div class="tile-glow"></div>
+                    </div>
+                    <div class="floor-tile down-tile" data-direction="down">
+                        <div class="tile-arrow">⬇️</div>
+                        <div class="tile-glow"></div>
+                    </div>
+                    <div class="floor-tile right-tile" data-direction="right">
+                        <div class="tile-arrow">➡️</div>
+                        <div class="tile-glow"></div>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="time-display">
+                        <span id="current-time">0:00</span> / <span id="total-time">0:00</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming Moves -->
+            <div class="upcoming-moves">
+                <h4>Next Moves</h4>
+                <div class="move-queue" id="move-queue">
+                    <div class="empty-queue">🎵 Start the game to see upcoming moves!</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="results-screen">
+            <div class="results-content">
+                <h2>Dance Complete! 🎉</h2>
+                <div class="final-stats">
+                    <div class="stat-row">
+                        <span class="stat-label">Final Score:</span>
+                        <span id="final-score" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Max Combo:</span>
+                        <span id="final-combo" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Perfect Moves:</span>
+                        <span id="final-perfect" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Accuracy:</span>
+                        <span id="final-accuracy" class="stat-value">0%</span>
+                    </div>
+                    <div class="stat-row">
+                        <span class="stat-label">Grade:</span>
+                        <span id="final-grade" class="stat-value">F</span>
+                    </div>
+                </div>
+                <div class="results-actions">
+                    <button id="play-again-btn" class="action-btn">🎵 Dance Again</button>
+                    <button id="change-song-btn" class="action-btn">🎼 Change Song</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions -->
+        <div class="instructions">
+            <h3>How to Play Dance Floor</h3>
+            <ul>
+                <li><strong>Start:</strong> Choose difficulty and song, then press Start</li>
+                <li><strong>Follow:</strong> Watch for arrows approaching from the top</li>
+                <li><strong>Press:</strong> Hit the corresponding arrow key when arrows reach the bottom</li>
+                <li><strong>Timing:</strong> Perfect timing gives bonus points and combo multipliers</li>
+                <li><strong>Combo:</strong> Consecutive perfect moves build your combo</li>
+                <li><strong>Controls:</strong> Arrow keys or click the floor tiles</li>
+                <li><strong>Difficulty:</strong> Harder levels have faster arrows and more complex patterns</li>
+            </ul>
+            <div class="controls-info">
+                <h4>Controls</h4>
+                <div class="control-keys">
+                    <div class="key-item">⬆️ <span>Up Arrow</span></div>
+                    <div class="key-item">⬇️ <span>Down Arrow</span></div>
+                    <div class="key-item">⬅️ <span>Left Arrow</span></div>
+                    <div class="key-item">➡️ <span>Right Arrow</span></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message Display -->
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

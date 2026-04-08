@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shadow Puzzle 2D — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Shadow Puzzle 2D</h1>
+      <p class="subtitle">Move objects or the light to match the target silhouette.</p>
+    </header>
+
+    <main class="game-area">
+      <section class="canvas-wrap">
+        <canvas id="gameCanvas" width="900" height="560" aria-label="Shadow Puzzle canvas"></canvas>
+
+        <!-- Light handle overlay (for accessibility and quick control) -->
+        <div id="light-hud" class="light-hud">
+          <div class="bulb-glow" id="bulbGlow" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <aside class="controls">
+        <div class="panel">
+          <div class="row">
+            <button id="playPauseBtn" class="btn">Pause</button>
+            <button id="restartBtn" class="btn">Restart</button>
+            <button id="resetObjectsBtn" class="btn">Reset Objects</button>
+          </div>
+
+          <div class="row">
+            <button id="prevLevelBtn" class="btn">⟵ Prev</button>
+            <span class="level-display">Level <strong id="levelNum">1</strong></span>
+            <button id="nextLevelBtn" class="btn">Next ⟶</button>
+          </div>
+
+          <div class="info">
+            <label>Target match: <strong id="matchPct">0%</strong></label>
+            <progress id="matchBar" value="0" max="100"></progress>
+          </div>
+
+          <div class="hint">
+            <p><strong>Tip:</strong> Drag the light (hold & move) or drag shapes. Use the glow slider to emphasize the light.</p>
+          </div>
+
+        </div>
+
+        <div class="audio-controls panel">
+          <label>SFX</label>
+          <input id="sfxToggle" type="checkbox" checked />
+          <label>Music (ambient)</label>
+          <input id="musicToggle" type="checkbox" checked />
+        </div>
+
+        <div class="credits panel">
+          <p>Shapes rendered procedurally. Sounds: Google Actions sound library.</p>
+          <small>Designed for Mini JS Games Hub — advanced UI + polished interactions.</small>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="app-footer">
+      <button id="openHub" class="ghost-btn">Back to Hub</button>
+      <span class="status" id="statusMsg">Ready</span>
+    </footer>
+  </div>
+
+  <!-- Sounds (online links) -->
+  <audio id="sfxClick" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg"></audio>
+  <audio id="sfxWin" src="https://actions.google.com/sounds/v1/alarms/digital_watch_alarm_long.ogg"></audio>
+  <audio id="sfxDrop" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
+  <audio id="ambience" loop src="https://actions.google.com/sounds/v1/ambiences/spring_day_forest.ogg"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

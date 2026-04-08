@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Target Zoom 🎯</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>🎯 Target Zoom</h1>
+    <div class="hud">
+      <span>Score: <span id="score">0</span></span>
+      <span>Lives: <span id="lives">3</span></span>
+    </div>
+
+    <div id="game-area"></div>
+
+    <div class="controls">
+      <button id="start-btn">Start</button>
+      <button id="pause-btn" disabled>Pause</button>
+      <button id="restart-btn" disabled>Restart</button>
+    </div>
+
+    <audio id="hit-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_03c2d3670a.mp3?filename=pop-94319.mp3"></audio>
+    <audio id="miss-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_50c1f7865e.mp3?filename=error-2-126514.mp3"></audio>
+    <audio id="gameover-sound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_13e3d03158.mp3?filename=game-over-arcade-6435.mp3"></audio>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+/* General styling and centering */
+body {
+    background-color: #1e1e2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+    color: #cdd6f4;
+}
+
+#game-container {
+    text-align: center;
+    background-color: #313244;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    color: #89b4fa;
+    margin-bottom: 10px;
+}
+
+#status-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    padding: 0 10px;
+}
+
+/* ----------------------------------- */
+/* CSS Grid and Tile Styling */
+/* ----------------------------------- */
+
+#pipe-grid {
+    display: grid;
+    /* This will be configured by JavaScript to be N x N */
+    grid-template-columns: repeat(6, 60px); 
+    grid-template-rows: repeat(6, 60px);
+    gap: 2px;
+    border: 3px solid #6c7086;
+    background-color: #45475a;
+    margin: 0 auto;
+}
+
+.tile {
+    width: 60px;
+    height: 60px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: #6c7086; /* Background color for the tile */
+    transition: transform 0.2s ease-out; /* Smooth rotation */
+    border: 1px solid #45475a;
+    position: relative; /* Needed for absolute pipe */
+}
+
+/* Pipe segment styling */
+.pipe {
+    width: 100%;
+    height: 100%;
+    /* The actual pipe visual is a child element that rotates */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Initial rotation (0 degrees) */
+    transform: rotate(var(--rotation, 0deg));
+}
+
+/* Styling for the CONNECTED path */
+.connected .pipe {
+    /* Brighter color when the pipe is part of the solution path */
+    filter: drop-shadow(0 0 5px #a6e3a1);
+}
+
+/* ----------------------------------- */
+/* Pipe Shape Visuals using background gradients */
+/* ----------------------------------- */
+.pipe-straight {
+    background: linear-gradient(to right, 
+        #6c7086 0%, #6c7086 40%, 
+        #a6e3a1 40%, #a6e3a1 60%, 
+        #6c7086 60%, #6c7086 100%);
+}
+
+.pipe-corner {
+    /* Uses a radial gradient and colors for the corner effect */
+    background: radial-gradient(circle 30px at 0% 0%, 
+        #a6e3a1 0%, #a6e3a1 60%, 
+        #6c7086 60%, #6c7086 100%);
+}
+
+.pipe-tjunction {
+    /* Combination of straight and corner ideas */
+    background: 
+        /* Vertical line */
+        linear-gradient(to right, 
+            transparent 40%, #a6e3a1 40%, #a6e3a1 60%, transparent 60%) top center / 100% 100%,
+        /* Horizontal part (right side) */
+        linear-gradient(to right, 
+            #a6e3a1 50%, transparent 50%) center right / 50% 100%;
+    background-repeat: no-repeat;
+}
+
+/* Special tiles: Start and End */
+.start-tile .pipe {
+    background-color: #f38ba8; /* Pink for start */
+    border-radius: 50%; /* Circle source */
+}
+
+.end-tile .pipe {
+    background-color: #fab387; /* Orange for end */
+    border-radius: 50%; /* Circle sink */
+}
+
+.hidden {
+    display: none;
+}

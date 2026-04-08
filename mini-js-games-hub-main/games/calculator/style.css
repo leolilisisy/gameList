@@ -1,0 +1,134 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f4f8;
+}
+
+#game-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+h1 {
+    color: #4a69bd;
+    margin-bottom: 20px;
+}
+
+/* --- Display Areas --- */
+#target-display-area, #current-display-area, #history-display-area {
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    font-size: 1.1em;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+}
+
+#target-number {
+    color: #e74c3c; /* Red for the goal */
+    font-weight: bold;
+}
+
+#current-value {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #2c3e50;
+    display: block;
+    text-align: right;
+    margin-top: 5px;
+    min-height: 1.5em;
+}
+
+#operation-history {
+    font-size: 0.9em;
+    color: #7f8c8d;
+    display: block;
+    text-align: right;
+    min-height: 1.2em;
+}
+
+/* --- Calculator Grid --- */
+#calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 15px;
+    font-size: 1.2em;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.1s;
+    font-weight: 600;
+}
+
+/* Number buttons */
+.num-button {
+    background-color: #ecf0f1; /* Light grey */
+    color: #34495e;
+}
+
+.num-button:hover:not(:disabled) {
+    background-color: #bdc3c7;
+}
+
+.num-button:disabled {
+    background-color: #95a5a6;
+    color: #ecf0f1;
+    cursor: not-allowed;
+}
+
+/* Operation buttons */
+.op-button {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.op-button:hover {
+    background-color: #7f8c8d;
+}
+
+/* Math operation buttons (+ - * /) */
+.op-math {
+    background-color: #f39c12; /* Orange for math ops */
+}
+
+.op-math:hover:not(:disabled) {
+    background-color: #e67e22;
+}
+
+/* Clear/Reset buttons */
+[data-action="clear"], [data-action="reset"] {
+    background-color: #e74c3c; /* Red */
+}
+
+[data-action="clear"]:hover, [data-action="reset"]:hover {
+    background-color: #c0392b;
+}
+
+/* --- Feedback --- */
+#feedback-message {
+    min-height: 2em;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.win {
+    color: #27ae60; /* Green */
+}
+
+.lose {
+    color: #c0392b; /* Dark red */
+}

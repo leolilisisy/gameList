@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Chain Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>🔗 Word Chain Master</h1>
+
+        <div id="status-area">
+            Words Used: <span id="word-count">0</span>
+        </div>
+
+        <div id="chain-display">
+            <p id="last-word">Welcome!</p>
+            <p id="next-letter">Your word must start with: **A**</p>
+        </div>
+
+        <div id="input-area">
+            <input type="text" id="player-input" placeholder="Enter your word..." disabled>
+            <button id="submit-button" disabled>SUBMIT</button>
+        </div>
+        
+        <div id="feedback-message">
+            <p>Click START to begin the chain!</p>
+        </div>
+
+        <div id="controls">
+            <button id="start-button">START GAME</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

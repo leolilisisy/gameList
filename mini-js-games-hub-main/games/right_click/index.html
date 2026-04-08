@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Right-Click Ritual 🖱️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-screen">
+        <div id="title-text">
+            The Right-Click Ritual
+        </div>
+
+        <div id="central-focus" title="Do not inspect this element.">
+            A faint, pulsing **light** in the center of the screen.
+        </div>
+
+        <div id="object-container">
+            <div id="strange-object" class="interactable" data-action="examine">
+                A faded **journal**.
+            </div>
+
+            <div id="locked-door" class="interactable" data-action="door">
+                An old, **locked door**.
+            </div>
+            
+            <div id="empty-frame" class="interactable" data-action="frame" alt="Look closer at the console.">
+                An empty **picture frame**.
+            </div>
+        </div>
+        
+        <div id="message-box">
+            <p>Click and right-click to interact. Find the truth.</p>
+        </div>
+    </div>
+    
+    <div id="custom-menu" class="hidden">
+        <div class="menu-item" data-option="look">👁️ Look Closer</div>
+        <div class="menu-item" data-option="touch">✋ Touch</div>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

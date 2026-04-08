@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color Rush 🎨</title>
+  
+  <link  rel="stylesheet" href="style.css" >
+  
+    
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="title-container">
+        <div class="title-icon">🎨</div>
+        <h1 class="title">Color Rush</h1>
+      </div>
+      
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-label">Catch Color</div>
+          <div class="target-color">
+            <span id="targetColor">Blue</span>
+            <div id="targetSwatch" class="target-swatch"></div>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">🏆</div>
+          <div class="stat-label">Score</div>
+          <div id="score" class="stat-value">0</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">⏱️</div>
+          <div class="stat-label">Time</div>
+          <div id="timer" class="stat-value">01:00</div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">🧺</div>
+          <div class="stat-label">Caught</div>
+          <div id="caught" class="stat-value">0</div>
+        </div>
+      </div>
+      
+      <div class="controls">
+        <button id="startBtn" class="btn">
+          <span>▶️</span> Start Game
+        </button>
+        <button id="pauseBtn" class="btn outline">
+          <span>⏸️</span> Pause
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div id="gameArea">
+        <div id="basket"></div>
+        <div class="basket-glow"></div>
+        
+        <!-- touch buttons removed (mobile drag/pointer move still works) -->
+      </div>
+    </main>
+    
+    <div id="pauseOverlay" class="pause-overlay hidden">
+      <div class="pause-card">Game Paused</div>
+    </div>
+
+    <div id="modalOverlay" class="modal hidden">
+      <div class="modal-card">
+        <h2 id="modalTitle">Time's Up!</h2>
+        <p class="modal-summary">
+          You caught <strong id="modalCaught">0</strong> balls<br>
+          Final score: <strong id="modalScore">0</strong>
+        </p>
+        <div class="modal-actions">
+          <button id="modalRestart" class="btn modal-btn">Play Again</button>
+          <button id="modalClose" class="btn outline modal-btn">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      Tip: Use arrow keys or drag inside the play area.
+    </footer>
+  </div>
+<script src="script.js"></script>
+  
+   
+</body>
+</html>

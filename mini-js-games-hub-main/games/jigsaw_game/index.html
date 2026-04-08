@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fixed Jigsaw Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="game-container">
+        <h1>🧩 Fixed Jigsaw Puzzle (4x4)</h1>
+
+        <div id="status-area">
+            Moves: <span id="moves-display">0</span> |
+            Time: <span id="time-display">0</span>s
+        </div>
+
+        <div id="puzzle-area">
+            <div id="reference-image-box">
+                <h2>Reference:</h2>
+                <div id="reference-image"></div>
+            </div>
+
+            <div id="jigsaw-grid">
+                </div>
+        </div>
+        
+        <div id="feedback-message">
+            <p>Click two pieces to swap their positions.</p>
+        </div>
+
+        <div id="controls">
+            <button id="shuffle-button">Shuffle & Restart</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

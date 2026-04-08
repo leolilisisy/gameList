@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Starlight Sequence - Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-wrap" role="region" aria-label="Starlight Sequence game container">
+    <h1>Starlight Sequence</h1>
+    <div class="difficulty-selector">
+      <button class="diff-btn active" data-diff="easy">Easy</button>
+      <button class="diff-btn" data-diff="medium">Medium</button>
+      <button class="diff-btn" data-diff="hard">Hard</button>
+    </div>
+    <div class="game-area">
+      <div class="orbs">
+        <div class="orb" data-id="0" data-color="#ff6b6b" data-freq="261.63"></div>
+        <div class="orb" data-id="1" data-color="#4ecdc4" data-freq="329.63"></div>
+        <div class="orb" data-id="2" data-color="#45b7d1" data-freq="392.00"></div>
+        <div class="orb" data-id="3" data-color="#f9ca24" data-freq="523.25"></div>
+        <div class="orb" data-id="4" data-color="#f0932b" data-freq="659.25" style="display:none"></div>
+        <div class="orb" data-id="5" data-color="#eb4d4b" data-freq="783.99" style="display:none"></div>
+      </div>
+      <div class="center-display">
+        <div id="message">Select Difficulty & Start</div>
+        <div id="sequence">Sequence: 0</div>
+      </div>
+    </div>
+    <div class="info">
+      <p id="highScore">High Score: 0</p>
+      <div class="controls">
+        <button id="startBtn">Start Game</button>
+        <button id="soundBtn">Sound: On</button>
+      </div>
+    </div>
+    <footer>Made for Mini JS Games Hub</footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

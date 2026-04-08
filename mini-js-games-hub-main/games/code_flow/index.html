@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Flow: Breakpoint Beat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Code Flow: Breakpoint Beat</h1>
+        <p>Hit the **SPACEBAR** at the precise beat to pause (breakpoint) and resume the code execution.</p>
+    </header>
+
+    <div id="game-container">
+        <div id="code-panel">
+            <h2>Execution Flow: `animateElement()`</h2>
+            <pre id="code-display">
+function animateElement() {
+    // Line 1: Initialize timer
+    let time = 0;
+    
+    // Line 2: Start animation loop
+    function loop(timestamp) {
+        // Line 3: Check for pause/breakpoint <--- TARGET BREAKPOINT
+        // if (window.isPaused) { /* PAUSE HERE */ } 
+        
+        // Line 4: Calculate movement
+        time += 0.01;
+        const x = Math.sin(time) * 100;
+        
+        // Line 5: Apply visual transform
+        window.animatedBox.style.transform = `translateX(${x}px)`;
+        
+        // Line 6: Check for rhythm beat cue
+        // if (rhythm.isBeat) { /* TRIGGER VISUAL CUE */ }
+        
+        // Line 7: Continue loop
+        requestAnimationFrame(loop);
+    }
+    // Line 8: Call first frame
+    requestAnimationFrame(loop);
+}
+            </pre>
+            <div id="line-indicator"></div>
+        </div>
+
+        <div id="animation-stage">
+            <div id="animated-box"></div>
+            <div id="rhythm-cue"></div>
+        </div>
+    </div>
+
+    <div id="dashboard">
+        <p>Timing Accuracy: <span id="accuracy-display">--ms</span></p>
+        <p>Flow Score: <span id="score-display">0</span></p>
+        <p id="feedback-message">Waiting for the beat...</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

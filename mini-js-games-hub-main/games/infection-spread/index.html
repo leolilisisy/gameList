@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Infection Spread — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- favicon (online) -->
+  <link rel="icon" href="https://images.unsplash.com/photo-1581091215367-6b63d5a7d9f7?q=80&w=48&auto=format&fit=crop&ixlib=rb-4.0.3&s=4b5b3f4d7f2dd0b7d4a8b3c3ae3b8c82" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="title">
+        <span class="logo">🧪</span>
+        <div>
+          <h1>Infection Spread</h1>
+          <p class="subtitle">Contain the outbreak — cure, quarantine, and survive!</p>
+        </div>
+      </div>
+
+      <div class="controls-top">
+        <div class="control-row">
+          <label>Tool:
+            <select id="tool-select" aria-label="Select tool">
+              <option value="cure">Cure (1 resource)</option>
+              <option value="quarantine">Quarantine (2 resources)</option>
+              <option value="barrier">Barrier (3 resources)</option>
+            </select>
+          </label>
+
+          <label>Neighbors:
+            <select id="neighbor-mode" aria-label="Neighbor mode">
+              <option value="orthogonal">Orthogonal</option>
+              <option value="diagonal">Diagonal</option>
+              <option value="both">All (8)</option>
+            </select>
+          </label>
+
+          <label>Speed:
+            <input id="speed" type="range" min="400" max="1800" step="100" value="1000">
+          </label>
+        </div>
+
+        <div class="buttons">
+          <button id="pause-btn">⏸ Pause</button>
+          <button id="restart-btn">🔄 Restart</button>
+          <button id="next-level-btn">⏭ Next Level</button>
+          <button id="toggle-sound">🔊 Sound: On</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="game-area">
+      <aside class="sidebar">
+        <div class="panel">
+          <h3>Resources</h3>
+          <div class="stat">Points: <span id="resource-count">10</span></div>
+          <div class="stat">Infected: <span id="infected-count">0</span></div>
+          <div class="stat">Cleared: <span id="cleared-count">0</span></div>
+          <div class="stat">Level: <span id="level-display">1</span></div>
+        </div>
+
+        <div class="panel">
+          <h3>Power-ups</h3>
+          <button id="power-clean" class="power">Instant Disinfect (cost 5)</button>
+          <button id="power-shield" class="power">Temp Shield (cost 4)</button>
+        </div>
+
+        <div class="panel">
+          <h3>How to Play</h3>
+          <ol>
+            <li>Click a node to apply the selected tool.</li>
+            <li>Cure removes infection, Quarantine prevents spread on that cell.</li>
+            <li>Use resources (points) to apply tools or power-ups.</li>
+            <li>Win by clearing all infections or survive X ticks.</li>
+          </ol>
+        </div>
+
+        <div class="panel small">
+          <small>Images & sounds are loaded from free online libraries.</small>
+        </div>
+      </aside>
+
+      <section class="board-wrap">
+        <div class="hud">
+          <div class="tick">Tick: <span id="tick-count">0</span></div>
+          <div id="status-message" class="status">Ready!</div>
+        </div>
+
+        <div id="svg-container" class="svg-container" aria-hidden="false">
+          <!-- SVG drawn by JS -->
+        </div>
+
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-left">Infection Spread • Mini JS Games Hub</div>
+      <div class="footer-right">
+        <button id="open-credits">Credits</button>
+      </div>
+    </footer>
+  </div>
+
+  <audio id="sfx-cure" src="https://actions.google.com/sounds/v1/alarms/beep_short.ogg" preload="auto"></audio>
+  <audio id="sfx-quarantine" src="https://actions.google.com/sounds/v1/alarms/analog_watch_alarm.ogg" preload="auto"></audio>
+  <audio id="sfx-spread" src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto"></audio>
+  <audio id="bgm" loop src="https://actions.google.com/sounds/v1/ambiences/wind_chimes.ogg"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

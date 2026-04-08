@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #00111a, #002233);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+.game-container {
+    text-align: center;
+}
+
+canvas {
+    border: 2px solid #fff;
+    border-radius: 10px;
+    background: radial-gradient(circle at center, #00111a, #003366);
+    cursor: crosshair;
+}
+
+.controls {
+    margin-top: 10px;
+}
+
+.controls button, .controls input {
+    margin: 5px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background-color: #00ccff;
+    color: #00111a;
+}

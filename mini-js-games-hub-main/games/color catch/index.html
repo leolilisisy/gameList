@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Color Catch — Reflex Speed Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎯 Color Catch</h1>
+    <p>Tap only the <strong id="targetLabel">—</strong> circles!</p>
+
+    <div class="controls">
+      <button id="startBtn">Start Game</button>
+      <div class="info">
+        <span>Score: <strong id="score">0</strong></span>
+        <span>Time: <strong id="time">30</strong>s</span>
+      </div>
+    </div>
+
+    <div class="game-area" id="gameArea" aria-label="Game area"></div>
+
+    <div id="result" class="hidden result-box">
+      <h2>Game Over!</h2>
+      <p>Your Final Score: <strong id="finalScore">0</strong></p>
+      <p>Target Color This Round:
+        <span class="target-sample" id="resultTarget"></span>
+      </p>
+      <button id="restartBtn">Play Again</button>
+    </div>
+
+    <p class="hint">Tip: Focus on the color, not the shape — circles disappear quickly!</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

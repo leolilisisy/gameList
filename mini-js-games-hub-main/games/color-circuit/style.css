@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: radial-gradient(circle, #1e1f2f, #12121f);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.circuit-container {
+    text-align: center;
+    max-width: 900px;
+    margin: 20px;
+}
+
+canvas {
+    background-color: #222;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ffff;
+    margin-top: 20px;
+}
+
+.controls {
+    margin: 15px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient(45deg,#0ff,#08f);
+    color: #000;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.controls button:hover {
+    box-shadow: 0 0 15px #0ff, 0 0 25px #0ff inset;
+}

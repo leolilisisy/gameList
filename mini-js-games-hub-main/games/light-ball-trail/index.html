@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Light Ball Trail — Mini JS Games Hub</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Favicon (small inline emoji fallback) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='14' font-size='14'%3E✨%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <main class="app">
+    <header class="app__header">
+      <h1 class="title">Light Ball Trail ✨</h1>
+      <p class="subtitle">Move a glowing ball — it leaves a beautiful fading trail. Click/touch/arrow keys/WASD to move. Avoid obstacles or bounce off them.</p>
+    </header>
+
+    <section class="canvas-wrap">
+      <canvas id="gameCanvas" width="1200" height="700" aria-label="Light Ball Trail canvas"></canvas>
+      <div class="overlay-controls" id="touch-joystick" aria-hidden="true">
+        <!-- On-screen joystick for mobile (drawn by CSS/JS) -->
+        <div class="joy-base"><div class="joy-stick"></div></div>
+      </div>
+    </section>
+
+    <section class="ui">
+      <div class="panel">
+        <div class="controls-row">
+          <button id="playPause" class="btn primary">Pause</button>
+          <button id="stepFrame" class="btn">Step</button>
+          <button id="restart" class="btn">Restart</button>
+          <button id="centerBall" class="btn">Center</button>
+          <label class="btn-check"><input id="soundToggle" type="checkbox" checked /> Sound</label>
+        </div>
+
+        <div class="sliders">
+          <label>Speed: <output id="speedVal">1.0</output>
+            <input id="speed" type="range" min="0.2" max="3.0" step="0.05" value="1.0">
+          </label>
+
+          <label>Trail length: <output id="trailVal">120</output>
+            <input id="trailLength" type="range" min="10" max="400" step="1" value="120">
+          </label>
+
+          <label>Glow: <output id="glowVal">40</output>
+            <input id="glow" type="range" min="0" max="120" step="1" value="40">
+          </label>
+
+          <label>Ball size: <output id="sizeVal">14</output>
+            <input id="ballSize" type="range" min="4" max="40" step="1" value="14">
+          </label>
+
+          <label>Color:
+            <input id="color" type="color" value="#00e5ff">
+          </label>
+        </div>
+
+        <div class="toggles">
+          <label><input id="obstaclesToggle" type="checkbox" checked> Obstacles</label>
+          <label><input id="wrapToggle" type="checkbox"> Wrap screen</label>
+        </div>
+
+        <div class="meta">
+          <span>FPS: <strong id="fps">0</strong></span>
+          <span>Particles: <strong id="particleCount">0</strong></span>
+          <span>Hits: <strong id="hits">0</strong></span>
+        </div>
+
+        <div class="footer-note">Built with Canvas API • No downloads — images & sounds are loaded from public links</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

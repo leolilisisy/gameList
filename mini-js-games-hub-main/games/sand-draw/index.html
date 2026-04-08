@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sand Draw | Mini JS Games Hub</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="game-ui">
+        <h1>Sand Draw 🎨</h1>
+        <div class="controls">
+            <button id="start-btn">Start</button>
+            <button id="pause-btn">Pause</button>
+            <button id="resume-btn">Resume</button>
+            <button id="restart-btn">Restart</button>
+            <input type="color" id="color-picker" value="#ff00ff" title="Line Color">
+            <input type="range" id="thickness" min="1" max="10" value="3" title="Line Thickness">
+        </div>
+        <canvas id="sandCanvas"></canvas>
+    </div>
+
+    <!-- Optional sound -->
+    <audio id="draw-sound" src="https://www.soundjay.com/misc/sounds/laser-01.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

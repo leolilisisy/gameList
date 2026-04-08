@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shadow Sprint</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <h1>Shadow Sprint</h1>
+      <p class="tagline">Jump the shadows — tap or press Space / ↑ to leap!</p>
+    </header>
+
+    <section class="game-area" id="gameArea" aria-label="Shadow Sprint game area">
+      <div id="ground"></div>
+      <div id="player" class="player"></div>
+      <div id="hud" class="hud">
+        <div>Score: <span id="score">0</span></div>
+        <div>High: <span id="high">0</span></div>
+      </div>
+      <div id="overlay" class="overlay hidden">
+        <div class="panel">
+          <h2 id="resultTitle">Game Over</h2>
+          <p id="resultText">Score: <span id="finalScore">0</span></p>
+          <button id="restartBtn">Restart</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="controls">
+      <button id="startBtn">Start</button>
+      <button id="muteBtn">🔊 Sound</button>
+    </section>
+
+    <footer class="footer">
+      <small>Controls: Space / Up to jump — Tap screen on mobile.</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

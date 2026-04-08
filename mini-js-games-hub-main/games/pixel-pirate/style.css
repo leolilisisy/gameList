@@ -1,0 +1,39 @@
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#game-container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ffff00;
+}
+
+#game-canvas {
+    border: 2px solid #ffff00;
+    background-color: #001100;
+    box-shadow: 0 0 20px #ffff00;
+    cursor: crosshair;
+}
+
+#score, #health {
+    font-size: 1.2em;
+    margin: 5px 0;
+    color: #00ff00;
+}
+
+#instructions {
+    font-size: 1em;
+    margin-top: 10px;
+    color: #cccccc;
+}
