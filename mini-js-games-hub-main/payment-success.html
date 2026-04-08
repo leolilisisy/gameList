@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>支付宝支付返回</title>
+    <style>
+      :root {
+        --bg: linear-gradient(180deg, #f6f7f4 0%, #fbfbfa 100%);
+        --panel: #ffffff;
+        --text: #161616;
+        --muted: #5c5c5c;
+        --line: #eceeea;
+        --primary: #1db954;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: var(--bg);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", sans-serif;
+        color: var(--text);
+      }
+      .wrap {
+        width: min(92vw, 760px);
+        display: grid;
+        gap: 14px;
+      }
+      .status {
+        background: var(--panel);
+        border-radius: 24px;
+        padding: 30px 28px;
+        box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: rgba(29, 185, 84, 0.12);
+        color: var(--primary);
+        font-size: 13px;
+        font-weight: 700;
+      }
+      h1 {
+        margin: 16px 0 10px;
+        font-size: 30px;
+        line-height: 1.2;
+      }
+      p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+      .grid {
+        display: grid;
+        gap: 12px;
+        margin-top: 18px;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        gap: 16px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--line);
+      }
+      .row:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+      .label {
+        color: var(--muted);
+        font-weight: 700;
+      }
+      .value {
+        color: var(--text);
+        word-break: break-word;
+      }
+      .notice {
+        background: var(--panel);
+        border-radius: 20px;
+        padding: 20px 22px;
+        box-shadow: 0 10px 24px rgba(0, 0, 0, 0.05);
+      }
+      .notice h2 {
+        margin: 0 0 10px;
+        font-size: 18px;
+      }
+      .notice ul {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      .actions {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px 18px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+      }
+      .primary {
+        background: var(--primary);
+        color: #fff;
+      }
+      .secondary {
+        background: #f0f2ef;
+        color: var(--text);
+      }
+      @media (max-width: 640px) {
+        .row {
+          grid-template-columns: 1fr;
+          gap: 4px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <section class="status">
+        <span class="badge">支付宝支付返回</span>
+        <h1>支付流程已返回站点</h1>
+        <p>如果你已经完成付款，请等待支付宝异步通知回调确认最终支付结果；如果中途取消付款，也可以随时回到首页再次发起支付。</p>
+
+        <div class="grid">
+          <div class="row">
+            <div class="label">订单号</div>
+            <div class="value" id="order-info">正在读取...</div>
+          </div>
+          <div class="row">
+            <div class="label">状态说明</div>
+            <div class="value">返回页仅用于展示支付流程结果，最终支付成功状态以服务端异步通知为准。</div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <a class="primary" href="./index.html">返回首页</a>
+          <a class="secondary" href="./index.html#pay-support">再次发起支付</a>
+        </div>
+      </section>
+
+      <section class="notice">
+        <h2>支付提示</h2>
+        <ul>
+          <li>当前支付为站点支持或赞助性质，不涉及实体发货。</li>
+          <li>如用于生产环境，请使用正式商户参数和公网可达的通知地址。</li>
+          <li>建议服务端保存订单并结合异步通知更新最终支付状态。</li>
+        </ul>
+      </section>
+    </div>
+
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const outTradeNo =
+        params.get("out_trade_no") ||
+        params.get("out_trade_no".toUpperCase()) ||
+        "未携带订单号";
+      document.getElementById("order-info").textContent = outTradeNo;
+    </script>
+  </body>
+</html>

@@ -155,6 +155,63 @@
         </div>
 
         <aside class="portal-sidebar">
+          <section class="panel panel--support" id="pay-support">
+            <div class="panel__header">
+              <div>
+                <p class="panel__eyebrow" data-i18n="index.supportEyebrow">支持计划</p>
+                <h2 data-i18n="index.supportTitle">支付宝支付支持</h2>
+              </div>
+              <span class="panel__badge" data-i18n="index.supportTag">支付宝</span>
+            </div>
+            <p class="panel__lead" data-i18n="index.supportLead">
+              你可以通过支付宝手机网站支付支持本站持续更新，用于内容维护、活动策划与服务器成本投入。
+            </p>
+            <div id="payment-status" class="payment-status">...</div>
+            <div class="payment-plans">
+              <article class="payment-plan">
+                <div>
+                  <strong data-i18n="index.supportPlan1">轻量支持</strong>
+                  <p data-i18n="index.supportPlan1Desc">适合日常支持，帮助站点保持稳定更新</p>
+                </div>
+                <div class="payment-plan__footer">
+                  <span class="payment-price">¥6.66</span>
+                  <a class="play-button payment-button" data-pay-plan="support_small" href="#" data-i18n="index.supportAction">立即支付</a>
+                </div>
+              </article>
+              <article class="payment-plan">
+                <div>
+                  <strong data-i18n="index.supportPlan2">内容赞助</strong>
+                  <p data-i18n="index.supportPlan2Desc">适合专题策划、活动页和内容补充支持</p>
+                </div>
+                <div class="payment-plan__footer">
+                  <span class="payment-price">¥19.90</span>
+                  <a class="play-button payment-button" data-pay-plan="support_medium" href="#" data-i18n="index.supportAction">立即支付</a>
+                </div>
+              </article>
+              <article class="payment-plan">
+                <div>
+                  <strong data-i18n="index.supportPlan3">年度支持</strong>
+                  <p data-i18n="index.supportPlan3Desc">适合长期支持，用于服务器、内容和持续运营投入</p>
+                </div>
+                <div class="payment-plan__footer">
+                  <span class="payment-price">¥99.00</span>
+                  <a class="play-button payment-button" data-pay-plan="support_yearly" href="#" data-i18n="index.supportAction">立即支付</a>
+                </div>
+              </article>
+            </div>
+            <div class="payment-benefits">
+              <p class="payment-benefits__title" data-i18n="index.supportBenefitTitle">支持说明</p>
+              <ul class="payment-benefits__list">
+                <li data-i18n="index.supportBenefit1">支付完成后将跳转返回页，便于继续浏览站点内容</li>
+                <li data-i18n="index.supportBenefit2">当前支付为站点支持性质，不涉及实体发货</li>
+                <li data-i18n="index.supportBenefit3">最终支付状态以支付宝异步通知结果为准</li>
+              </ul>
+            </div>
+            <p class="payment-hint" data-i18n="index.supportServiceHint">
+              如用于正式上线，请将 notify_url、return_url、商户参数替换为生产环境配置。
+            </p>
+          </section>
+
           <section class="panel panel--ad">
             <div class="panel__header">
               <div>

@@ -1,4 +1,5 @@
 .vscode/
 .env
+.env.alipay.local
 node_modules/
 dist/

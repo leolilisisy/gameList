@@ -1205,6 +1205,8 @@ const sourceCountTargets = document.querySelectorAll("[data-source-count]");
 const mobileCountTargets = document.querySelectorAll("[data-mobile-count]");
 const featuredCountTargets = document.querySelectorAll("[data-featured-count]");
 const proBadgesContainer = document.getElementById("pro-badges-container");
+const paymentStatusNode = document.getElementById("payment-status");
+const paymentButtons = Array.from(document.querySelectorAll("[data-pay-plan]"));
 
 const FEATURED_HUB_NAMES = new Set([
   "2048",
@@ -1681,6 +1683,44 @@ function renderAll() {
   renderFeaturedStrip();
   renderCatalog();
   renderProBadges();
+  initPaymentEntry();
+}
+
+function getPaymentApiBase() {
+  const protocol = window.location.protocol === "https:" ? "https:" : "http:";
+  return `${protocol}//${window.location.hostname}:8788`;
+}
+
+async function initPaymentEntry() {
+  if (!paymentButtons.length) return;
+
+  const paymentBase = getPaymentApiBase();
+
+  paymentButtons.forEach((button) => {
+    const plan = button.dataset.payPlan;
+    button.href = `${paymentBase}/pay-api/wap-pay?plan=${encodeURIComponent(plan)}`;
+    button.target = "_blank";
+    button.rel = "noopener noreferrer";
+  });
+
+  if (!paymentStatusNode) return;
+
+  try {
+    const response = await fetch(`${paymentBase}/pay-api/config`, { method: "GET" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const payload = await response.json();
+
+    if (payload.ready) {
+      paymentStatusNode.dataset.state = "ready";
+      paymentStatusNode.textContent = siteI18n.t("index.supportStatusReady");
+    } else {
+      paymentStatusNode.dataset.state = "missing";
+      paymentStatusNode.textContent = siteI18n.t("index.supportStatusMissing");
+    }
+  } catch (error) {
+    paymentStatusNode.dataset.state = "offline";
+    paymentStatusNode.textContent = siteI18n.t("index.supportStatusOffline");
+  }
 }
 
 filterButtons.forEach((button) => {
