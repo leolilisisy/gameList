@@ -1312,6 +1312,86 @@ function getDisplayDescription(game) {
   return getLocale() === "zh" && game.descriptionZh ? game.descriptionZh : game.description;
 }
 
+function getDisplayIcon(game) {
+  const rawIcon = String(game.icon || "").trim();
+  const numericEntityMatch = rawIcon.match(/^&#(x?[0-9a-fA-F]+);?$/);
+
+  if (numericEntityMatch) {
+    const value = numericEntityMatch[1];
+    const codePoint = value.startsWith("x") || value.startsWith("X")
+      ? parseInt(value.slice(1), 16)
+      : parseInt(value, 10);
+    if (!Number.isNaN(codePoint)) {
+      return String.fromCodePoint(codePoint);
+    }
+  }
+
+  if (rawIcon) return rawIcon;
+
+  const categoryFallbacks = {
+    Arcade: "🎮",
+    Puzzle: "🧩",
+    Action: "⚔️",
+    Strategy: "♟️",
+    Casual: "✨",
+    Music: "🎵",
+    Educational: "📘",
+    Board: "🎲",
+  };
+
+  return categoryFallbacks[game.category] || "🎮";
+}
+
+function hashText(input) {
+  let hash = 0;
+  for (let index = 0; index < input.length; index += 1) {
+    hash = (hash << 5) - hash + input.charCodeAt(index);
+    hash |= 0;
+  }
+  return Math.abs(hash);
+}
+
+function getAutoCoverDataUri(game) {
+  const palettes = [
+    ["#1a3c2f", "#1ed760", "#effaf3"],
+    ["#1d2440", "#5cd6ff", "#eef9ff"],
+    ["#3f2717", "#ffd166", "#fff7e7"],
+    ["#2e183a", "#f3727f", "#fff0f4"],
+    ["#17303f", "#78f0c6", "#effdf9"],
+    ["#2f2222", "#ff9f1c", "#fff5e8"],
+  ];
+  const [bgStart, bgEnd, textColor] = palettes[hashText(`${game.name}-${game.category}`) % palettes.length];
+  const icon = escapeXml(getDisplayIcon(game));
+  const title = escapeXml(getDisplayName(game).slice(0, 28));
+  const svg = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360" role="img" aria-label="${title}">
+      <defs>
+        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="${bgStart}" />
+          <stop offset="100%" stop-color="${bgEnd}" />
+        </linearGradient>
+      </defs>
+      <rect width="640" height="360" rx="36" fill="url(#g)" />
+      <circle cx="104" cy="102" r="42" fill="rgba(255,255,255,0.14)" />
+      <circle cx="564" cy="304" r="72" fill="rgba(255,255,255,0.08)" />
+      <circle cx="472" cy="72" r="28" fill="rgba(255,255,255,0.12)" />
+      <text x="104" y="116" text-anchor="middle" font-size="42">${icon}</text>
+      <text x="56" y="304" fill="${textColor}" opacity="0.72" font-size="18" font-weight="600" font-family="Poppins, Segoe UI, Arial, sans-serif">GAME</text>
+    </svg>
+  `.trim();
+
+  return `data:image/svg+xml;charset=UTF-8,${encodeURIComponent(svg)}`;
+}
+
+function escapeXml(input) {
+  return String(input)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
 function getFilterSet(list = allGames) {
   return list.filter((game) => {
     const searchTerm = state.search.trim().toLowerCase();
@@ -1351,17 +1431,43 @@ function getFilterSet(list = allGames) {
   });
 }
 
+function createCoverMarkup(game) {
+  const hasCover = Boolean(game.cover);
+  const fallbackCover = getAutoCoverDataUri(game);
+  const coverSrc = hasCover ? game.cover : fallbackCover;
+  const imageMarkup = hasCover
+    ? `<img src="${coverSrc}" alt="${getDisplayName(game)}" loading="lazy" data-fallback-src="${fallbackCover}" />`
+    : `<img src="${coverSrc}" alt="${getDisplayName(game)}" loading="lazy" />`;
+
+  return `
+    <div class="card-cover ${hasCover ? "" : "card-cover--placeholder"}">
+      ${imageMarkup}
+      <div class="card-cover__overlay">
+        <span class="card-cover__icon">${getDisplayIcon(game)}</span>
+        <span>${localizeCategory(game.category)}</span>
+      </div>
+    </div>
+  `;
+}
+
 function buildGameCard(game) {
   const article = document.createElement("article");
   article.className = "game-card";
   article.dataset.gameId = game.id;
   article.tabIndex = 0;
   article.innerHTML = `
+    ${createCoverMarkup(game)}
     <div class="card-content">
-      <div class="card-top">
-        <span class="card-icon-badge">${game.icon || "🎮"}</span>
-      </div>
       <h3 class="card-title">${getDisplayName(game)}</h3>
+      <div class="card-meta card-meta--hidden">
+        <span class="meta-pill">${game.source === "mobile" ? "📱" : "🧩"} ${getSourceLabel(game)}</span>
+        <span class="meta-pill">${localizePlatform(game.platform)}</span>
+      </div>
+      <div class="card-subtitle card-detail-hidden">${game.duration} · ${localizeCategory(game.category)}</div>
+      <p class="card-body card-detail-hidden">${getDisplayDescription(game)}</p>
+      <div class="card-tags card-detail-hidden">
+        ${game.tags.slice(0, 2).map((tag) => `<span>#${tag}</span>`).join("")}
+      </div>
       <div class="card-actions">
         <a class="play-button" href="${game.path}" data-track-game="${game.id}">${siteI18n.t("index.playNow")}</a>
         <a class="play-link" href="${game.path}" target="_blank" rel="noopener noreferrer" data-track-game="${game.id}">${siteI18n.t("index.openInNewTab")}</a>
@@ -1382,6 +1488,16 @@ function buildGameCard(game) {
   article.querySelectorAll("[data-track-game]").forEach((node) => {
     node.addEventListener("click", () => {
       trackGamePlay(getDisplayName(game));
+    });
+  });
+
+  article.querySelectorAll("img").forEach((imageNode) => {
+    imageNode.addEventListener("error", () => {
+      const fallbackSrc = imageNode.dataset.fallbackSrc;
+      if (fallbackSrc && imageNode.src !== fallbackSrc) {
+        imageNode.src = fallbackSrc;
+        article.querySelector(".card-cover")?.classList.add("card-cover--placeholder");
+      }
     });
   });
 
@@ -1412,7 +1528,7 @@ function renderFeaturedStrip() {
     const article = document.createElement("article");
     article.className = "featured-card";
     article.innerHTML = `
-      <div class="featured-card__cover">${game.icon || "🎮"}</div>
+      <div class="featured-card__cover">${getDisplayIcon(game)}</div>
       <div class="featured-card__content">
         <div class="featured-card__meta">
           <span class="meta-pill">${getSourceLabel(game)}</span>
