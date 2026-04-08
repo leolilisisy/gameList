@@ -1,0 +1,87 @@
+{
+  "name": "{{PROJECT_NAME}} default task pack",
+  "description": "可按 rolloutWave 注入到 scripts/ralph/prd.json 的样例任务包，演示 capability-pack / summary / closeout 三类粒度。",
+  "userStories": [
+    {
+      "id": "PACK-W1-001",
+      "title": "构建与 lint 基线校准",
+      "description": "确认项目最小构建与静态检查路径可用。",
+      "acceptanceCriteria": [
+        "{{BUILD_COMMAND}} 可执行（或 manual）",
+        "{{LINT_COMMAND}} 可执行（或 manual）"
+      ],
+      "priority": 10,
+      "rolloutWave": 1,
+      "passes": false,
+      "notes": "capability-pack：baseline build/lint。"
+    },
+    {
+      "id": "PACK-W1-002",
+      "title": "Ralph 入口文档收口",
+      "description": "保证 README/AGENTS/CLAUDE 与 scripts/ralph/README 一致。",
+      "acceptanceCriteria": [
+        "文档入口链可导航",
+        "manual: 人工检查状态真相边界"
+      ],
+      "priority": 11,
+      "rolloutWave": 1,
+      "passes": false,
+      "notes": "summary/bridge story：入口与状态边界收口。"
+    },
+    {
+      "id": "PACK-W2-001",
+      "title": "rules soft gate 基线",
+      "description": "为规则层迁移准备 typecheck 与 test 门禁。",
+      "acceptanceCriteria": [
+        "npm run typecheck:rules",
+        "npm run test:rules",
+        "若不可执行，记录替代策略"
+      ],
+      "priority": 20,
+      "rolloutWave": 2,
+      "passes": false,
+      "notes": "capability-pack：soft gate integration。"
+    },
+    {
+      "id": "PACK-W2-002",
+      "title": "验证文档资产补齐",
+      "description": "补齐 doc/validation 下最小执行与发布检查项，必要时接入 optional validation packs。",
+      "acceptanceCriteria": [
+        "execution_checklist 与 release_checklist 可执行",
+        "failure_labels 与 metrics_template 可引用",
+        "若项目启用 optional validation packs，入口文档可路由"
+      ],
+      "priority": 21,
+      "rolloutWave": 2,
+      "passes": false,
+      "notes": "summary/bridge story：validation 路由与边界收口。"
+    },
+    {
+      "id": "PACK-W3-001",
+      "title": "staged-full-auto 烟雾验证",
+      "description": "验证 auto supervisor 在目标仓库可稳定运行。",
+      "acceptanceCriteria": [
+        "./scripts/ralph/ralph-auto.sh --mode staged-full-auto --target-wave 1 可运行",
+        "状态可通过 run-state 与 runner.log 观察"
+      ],
+      "priority": 30,
+      "rolloutWave": 3,
+      "passes": false,
+      "notes": "capability-pack：auto supervisor smoke。"
+    },
+    {
+      "id": "PACK-W3-002",
+      "title": "阶段收口",
+      "description": "同步 playbook、验证文档与 remaining risks。",
+      "acceptanceCriteria": [
+        "phase playbook 状态同步",
+        "doc/validation 同步",
+        "manual: 人工检查 closeout 完整性"
+      ],
+      "priority": 31,
+      "rolloutWave": 3,
+      "passes": false,
+      "notes": "closeout story：收口状态与验证，不只更新 prd.json。"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "project": "{{PROJECT_NAME}}",
+  "branchName": "{{RALPH_BRANCH_PREFIX}}phase1-bootstrap",
+  "description": "初始可自动推进的基础设施任务（含 rolloutWave），并演示 capability-pack / summary / closeout 粒度。",
+  "userStories": [
+    {
+      "id": "US-BOOT-001",
+      "title": "构建命令可执行",
+      "description": "确保构建命令在目标环境可执行。",
+      "acceptanceCriteria": [
+        "{{BUILD_COMMAND}} 成功，或按 manual 步骤完成真实人工验证",
+        "无阻塞级错误"
+      ],
+      "priority": 1,
+      "rolloutWave": 1,
+      "passes": false,
+      "notes": "capability-pack 起点。"
+    },
+    {
+      "id": "US-BOOT-002",
+      "title": "静态检查可执行",
+      "description": "确保 lint / static check 命令可执行。",
+      "acceptanceCriteria": [
+        "{{LINT_COMMAND}} 可执行，或按 manual 步骤完成真实人工验证",
+        "无阻塞级错误"
+      ],
+      "priority": 2,
+      "rolloutWave": 1,
+      "passes": false,
+      "notes": "与构建基线一起构成 wave1 capability-pack。"
+    },
+    {
+      "id": "US-RULES-003",
+      "title": "规则层类型检查可执行",
+      "description": "为规则层任务准备 soft gate 入口。",
+      "acceptanceCriteria": [
+        "npm run typecheck:rules",
+        "npm run test:rules",
+        "若当前项目不使用 rules 层，说明替代策略"
+      ],
+      "priority": 3,
+      "rolloutWave": 2,
+      "passes": false,
+      "notes": "capability-pack：soft gate 基线。"
+    },
+    {
+      "id": "US-DOC-004",
+      "title": "Ralph 运行说明就绪",
+      "description": "确保 scripts/ralph/ 下文档可直接指导新成员运行，并包含 manual/closeout/optional-pack 语义。",
+      "acceptanceCriteria": [
+        "scripts/ralph/README.md 覆盖 run/check/status/recover",
+        "说明 manual: 验证约定",
+        "说明 closeout story 不得只改 prd.json"
+      ],
+      "priority": 4,
+      "rolloutWave": 2,
+      "passes": false,
+      "notes": "summary/bridge story：把 runner 语义与文档路由收口。"
+    },
+    {
+      "id": "US-OPS-005",
+      "title": "staged-full-auto 烟雾验证",
+      "description": "验证 ralph-auto 的分波次运行可用。",
+      "acceptanceCriteria": [
+        "./scripts/ralph/ralph-auto.sh --mode staged-full-auto --tool claude --target-wave 1 可启动",
+        "状态可在 scripts/ralph/.state/run-state.json 观察"
+      ],
+      "priority": 5,
+      "rolloutWave": 3,
+      "passes": false,
+      "notes": "capability-pack：auto supervisor smoke。"
+    },
+    {
+      "id": "US-CLOSEOUT-006",
+      "title": "phase1 bootstrap 收口",
+      "description": "同步文档状态并记录 remaining risks。",
+      "acceptanceCriteria": [
+        "memory-bank playbook 状态已同步",
+        "doc/validation 记录新增验证方式",
+        "manual: 人工检查 closeout 同步完整性"
+      ],
+      "priority": 6,
+      "rolloutWave": 3,
+      "passes": false,
+      "notes": "closeout story：同步 playbook / validation / progress，不只改 prd.json。"
+    }
+  ]
+}

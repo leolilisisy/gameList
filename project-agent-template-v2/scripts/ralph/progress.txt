@@ -1,0 +1,14 @@
+# Ralph Progress Log
+Started: (待首次运行后自动填充)
+---
+
+## Codebase Patterns
+- 项目名：{{PROJECT_NAME}}
+- 主工程目录：{{APP_ROOT}}
+- 构建命令：{{BUILD_COMMAND}}
+- 静态检查命令：{{LINT_COMMAND}}
+- 测试命令：{{TEST_COMMAND}}
+- 项目状态板：memory-bank/phase1-playbook.md, memory-bank/phase2-playbook.md
+- 任务协议：memory-bank/task-command-protocol.md
+- 架构边界文档：memory-bank/@architecture.md
+- Ralph 运行手册：scripts/ralph/README.md

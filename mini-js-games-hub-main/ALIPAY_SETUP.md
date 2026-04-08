@@ -100,3 +100,26 @@ ALIPAY_QUIT_URL=http://192.168.1.51:4173/mini-js-games-hub-main/index.html
 - 异步通知成功后的订单状态更新
 - 重复支付与幂等校验
 - 后台管理查看支付记录
+
+## 游戏点击排行与分析
+
+当前本地服务还集成了游戏点击统计能力：
+
+- 总榜接口：`/stats-api/rankings`
+- 最近点击明细：`/stats-api/recent-clicks`
+
+服务端会记录：
+
+- 游戏 ID
+- 游戏名称
+- 来源
+- 平台
+- icon
+- cover
+- 点击 IP
+- User-Agent
+- 点击时间
+
+数据库文件：
+
+- `mini-js-games-hub-main/data/game-analytics.sqlite`

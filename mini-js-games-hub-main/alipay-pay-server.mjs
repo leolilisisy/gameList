@@ -52,6 +52,10 @@ const server = http.createServer(async (req, res) => {
     return handleRankings(req, res, url);
   }
 
+  if (req.method === "GET" && url.pathname === "/stats-api/recent-clicks") {
+    return handleRecentClicks(req, res, url);
+  }
+
   if (req.method === "POST" && url.pathname === "/stats-api/track-click") {
     return handleTrackClick(req, res);
   }
@@ -140,11 +144,33 @@ async function handleTrackClick(req, res) {
     return respondJson(res, 400, { error: "gameId and gameName are required" });
   }
 
+  const requestIp = getRequestIp(req);
+  const userAgent = String(req.headers["user-agent"] || "");
+  const clickedAt = new Date().toISOString();
+
+  const eventStmt = db.prepare(`
+    INSERT INTO game_click_events (
+      game_id, game_name, source, platform, icon, cover, ip_address, user_agent, clicked_at
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `);
+
+  eventStmt.run(
+    gameId,
+    gameName,
+    String(payload.source || ""),
+    String(payload.platform || ""),
+    String(payload.icon || ""),
+    String(payload.cover || ""),
+    requestIp,
+    userAgent,
+    clickedAt
+  );
+
   const stmt = db.prepare(`
     INSERT INTO game_click_rankings (
-      game_id, game_name, source, platform, icon, cover, clicks, updated_at
+      game_id, game_name, source, platform, icon, cover, clicks, updated_at, last_ip_address, last_user_agent, last_clicked_at
     ) VALUES (
-      ?, ?, ?, ?, ?, ?, 1, ?
+      ?, ?, ?, ?, ?, ?, 1, ?, ?, ?, ?
     )
     ON CONFLICT(game_id) DO UPDATE SET
       game_name = excluded.game_name,
@@ -153,7 +179,10 @@ async function handleTrackClick(req, res) {
       icon = excluded.icon,
       cover = excluded.cover,
       clicks = game_click_rankings.clicks + 1,
-      updated_at = excluded.updated_at
+      updated_at = excluded.updated_at,
+      last_ip_address = excluded.last_ip_address,
+      last_user_agent = excluded.last_user_agent,
+      last_clicked_at = excluded.last_clicked_at
   `);
 
   stmt.run(
@@ -163,7 +192,10 @@ async function handleTrackClick(req, res) {
     String(payload.platform || ""),
     String(payload.icon || ""),
     String(payload.cover || ""),
-    new Date().toISOString()
+    clickedAt,
+    requestIp,
+    userAgent,
+    clickedAt
   );
 
   return respondJson(res, 200, { ok: true });
@@ -172,13 +204,46 @@ async function handleTrackClick(req, res) {
 function handleRankings(req, res, url) {
   const limit = Math.max(1, Math.min(20, Number(url.searchParams.get("limit") || 8)));
   const stmt = db.prepare(`
-    SELECT game_id AS gameId, game_name AS gameName, source, platform, icon, cover, clicks, updated_at AS updatedAt
+    SELECT
+      game_id AS gameId,
+      game_name AS gameName,
+      source,
+      platform,
+      icon,
+      cover,
+      clicks,
+      updated_at AS updatedAt,
+      last_ip_address AS lastIpAddress,
+      last_user_agent AS lastUserAgent,
+      last_clicked_at AS lastClickedAt
     FROM game_click_rankings
     ORDER BY clicks DESC, updated_at DESC
     LIMIT ?
   `);
   const rankings = stmt.all(limit);
   return respondJson(res, 200, { rankings });
+}
+
+function handleRecentClicks(req, res, url) {
+  const limit = Math.max(1, Math.min(100, Number(url.searchParams.get("limit") || 20)));
+  const stmt = db.prepare(`
+    SELECT
+      id,
+      game_id AS gameId,
+      game_name AS gameName,
+      source,
+      platform,
+      icon,
+      cover,
+      ip_address AS ipAddress,
+      user_agent AS userAgent,
+      clicked_at AS clickedAt
+    FROM game_click_events
+    ORDER BY clicked_at DESC
+    LIMIT ?
+  `);
+  const events = stmt.all(limit);
+  return respondJson(res, 200, { events });
 }
 
 async function handleNotify(req, res) {
@@ -231,9 +296,39 @@ function initAnalyticsDb() {
       icon TEXT DEFAULT '',
       cover TEXT DEFAULT '',
       clicks INTEGER NOT NULL DEFAULT 0,
-      updated_at TEXT NOT NULL
+      updated_at TEXT NOT NULL,
+      last_ip_address TEXT DEFAULT '',
+      last_user_agent TEXT DEFAULT '',
+      last_clicked_at TEXT DEFAULT ''
+    );
+
+    CREATE TABLE IF NOT EXISTS game_click_events (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      game_id TEXT NOT NULL,
+      game_name TEXT NOT NULL,
+      source TEXT DEFAULT '',
+      platform TEXT DEFAULT '',
+      icon TEXT DEFAULT '',
+      cover TEXT DEFAULT '',
+      ip_address TEXT DEFAULT '',
+      user_agent TEXT DEFAULT '',
+      clicked_at TEXT NOT NULL
     );
   `);
+
+  const rankingColumns = new Set(
+    db.prepare("PRAGMA table_info(game_click_rankings)").all().map((row) => row.name)
+  );
+
+  if (!rankingColumns.has("last_ip_address")) {
+    db.exec("ALTER TABLE game_click_rankings ADD COLUMN last_ip_address TEXT DEFAULT '';");
+  }
+  if (!rankingColumns.has("last_user_agent")) {
+    db.exec("ALTER TABLE game_click_rankings ADD COLUMN last_user_agent TEXT DEFAULT '';");
+  }
+  if (!rankingColumns.has("last_clicked_at")) {
+    db.exec("ALTER TABLE game_click_rankings ADD COLUMN last_clicked_at TEXT DEFAULT '';");
+  }
 }
 
 function readPemFromEnv(valueKey, pathKey) {
@@ -382,6 +477,15 @@ function readRawBody(req) {
     });
     req.on("error", reject);
   });
+}
+
+function getRequestIp(req) {
+  const forwarded = String(req.headers["x-forwarded-for"] || "").trim();
+  if (forwarded) {
+    return forwarded.split(",")[0].trim();
+  }
+  const remoteAddress = req.socket?.remoteAddress || "";
+  return remoteAddress.replace(/^::ffff:/, "");
 }
 
 function escapeHtml(input) {
