@@ -1351,51 +1351,17 @@ function getFilterSet(list = allGames) {
   });
 }
 
-function createCoverMarkup(game) {
-  const hasCover = Boolean(game.cover);
-  const imageMarkup = hasCover
-    ? `<img src="${game.cover}" alt="${getDisplayName(game)}" loading="lazy" />`
-    : "";
-  const fallbackMarkup = hasCover
-    ? ""
-    : `
-      <div class="card-cover__fallback">
-        <span class="card-cover__icon">${game.icon || "🎮"}</span>
-        <span class="card-cover__title">${getDisplayName(game)}</span>
-      </div>
-    `;
-
-  return `
-    <div class="card-cover ${hasCover ? "" : "card-cover--placeholder"}">
-      ${imageMarkup}
-      ${fallbackMarkup}
-      <div class="card-cover__overlay">
-        <span class="card-cover__icon">${game.icon || "🎮"}</span>
-        <span>${localizeCategory(game.category)}</span>
-      </div>
-    </div>
-  `;
-}
-
 function buildGameCard(game) {
   const article = document.createElement("article");
   article.className = "game-card";
   article.dataset.gameId = game.id;
   article.tabIndex = 0;
   article.innerHTML = `
-    ${createCoverMarkup(game)}
     <div class="card-content">
-      <div class="card-meta">
-        <span class="meta-pill">${game.source === "mobile" ? "📱" : "🧩"} ${getSourceLabel(game)}</span>
-        <span class="meta-pill">${localizePlatform(game.platform)}</span>
+      <div class="card-top">
+        <span class="card-icon-badge">${game.icon || "🎮"}</span>
       </div>
-      <div>
-        <h3 class="card-title">${getDisplayName(game)}</h3>
-        <div class="card-subtitle">${game.duration} · ${localizeCategory(game.category)}</div>
-      </div>
-      <div class="card-tags">
-        ${game.tags.slice(0, 2).map((tag) => `<span>#${tag}</span>`).join("")}
-      </div>
+      <h3 class="card-title">${getDisplayName(game)}</h3>
       <div class="card-actions">
         <a class="play-button" href="${game.path}" data-track-game="${game.id}">${siteI18n.t("index.playNow")}</a>
         <a class="play-link" href="${game.path}" target="_blank" rel="noopener noreferrer" data-track-game="${game.id}">${siteI18n.t("index.openInNewTab")}</a>
@@ -1416,24 +1382,6 @@ function buildGameCard(game) {
   article.querySelectorAll("[data-track-game]").forEach((node) => {
     node.addEventListener("click", () => {
       trackGamePlay(getDisplayName(game));
-    });
-  });
-
-  article.querySelectorAll("img").forEach((imageNode) => {
-    imageNode.addEventListener("error", () => {
-      imageNode.remove();
-      const coverNode = article.querySelector(".card-cover");
-      if (!coverNode || coverNode.querySelector(".card-cover__fallback")) return;
-      coverNode.classList.add("card-cover--placeholder");
-      coverNode.insertAdjacentHTML(
-        "afterbegin",
-        `
-          <div class="card-cover__fallback">
-            <span class="card-cover__icon">${game.icon || "🎮"}</span>
-            <span class="card-cover__title">${getDisplayName(game)}</span>
-          </div>
-        `
-      );
     });
   });
 
