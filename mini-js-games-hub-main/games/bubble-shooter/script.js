@@ -3,6 +3,7 @@ const ctx = canvas.getContext('2d');
 const scoreEl = document.getElementById('score-value');
 const levelEl = document.getElementById('level-value');
 const nextColorEl = document.getElementById('next-color');
+const i18n = window.SiteI18n;
 
 const colors = ['#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF', '#00FFFF'];
 const bubbleRadius = 15;
@@ -198,7 +199,7 @@ function levelComplete() {
 
 function gameOver() {
     document.getElementById('game-over').style.display = 'block';
-    document.getElementById('final-score').textContent = `Final Score: ${score}`;
+    document.getElementById('final-score').textContent = i18n.t('gameBubble.finalScore', { score });
     gameRunning = false;
 }
 
@@ -302,5 +303,11 @@ document.getElementById('next-level-btn').addEventListener('click', () => {
 function updateNextColor() {
     nextColorEl.style.backgroundColor = nextBubble.color;
 }
+
+window.addEventListener('site-language-change', () => {
+    if (document.getElementById('game-over').style.display !== 'none') {
+        document.getElementById('final-score').textContent = i18n.t('gameBubble.finalScore', { score });
+    }
+});
 
 init();

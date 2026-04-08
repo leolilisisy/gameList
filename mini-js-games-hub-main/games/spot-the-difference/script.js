@@ -14,6 +14,7 @@ const foundDisplay = document.getElementById('found');
 const totalDisplay = document.getElementById('total-diff');
 const timerDisplay = document.getElementById('timer');
 const message = document.getElementById('message');
+const i18n = window.SiteI18n;
 let timeLeft = 60;
 let timer;
 
@@ -30,7 +31,10 @@ function startTimer() {
     timerDisplay.textContent = timeLeft;
     if (timeLeft <= 0) {
       clearInterval(timer);
-      message.textContent = `⏰ Time's up! You found ${foundCount} out of ${totalDiff} differences.`;
+      message.textContent = i18n.t('gameSpot.timesUp', {
+        found: foundCount,
+        total: totalDiff,
+      });
     }
   }, 1000);
 }
@@ -62,7 +66,7 @@ img2.addEventListener('click', (e) => {
 
       if (foundCount === totalDiff) {
         clearInterval(timer);
-        message.textContent = "🎉 Congratulations! You found all differences!";
+        message.textContent = i18n.t('gameSpot.success');
       }
     }
   });

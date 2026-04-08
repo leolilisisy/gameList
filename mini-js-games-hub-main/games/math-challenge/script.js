@@ -6,6 +6,7 @@ const answerInput = document.getElementById("answer");
 const scoreEl = document.getElementById("score");
 const timerEl = document.getElementById("timer");
 const feedbackEl = document.getElementById("feedback");
+const i18n = window.SiteI18n;
 
 let score = 0;
 let time = 60;
@@ -23,7 +24,7 @@ function generateQuestion() {
         num1 = num1 * num2;
     }
 
-    questionEl.textContent = `Solve: ${num1} ${op} ${num2}`;
+    questionEl.textContent = i18n.t("gameMath.solvePrompt", { num1, op, num2 });
     switch(op) {
         case "+": currentAnswer = num1 + num2; break;
         case "-": currentAnswer = num1 - num2; break;
@@ -60,9 +61,9 @@ function submitAnswer() {
     if (!isNaN(userAnswer)) {
         if (userAnswer === currentAnswer) {
             score++;
-            feedbackEl.textContent = "✅ Correct!";
+            feedbackEl.textContent = i18n.t("gameMath.correct");
         } else {
-            feedbackEl.textContent = `❌ Wrong! The answer was ${currentAnswer}`;
+            feedbackEl.textContent = i18n.t("gameMath.wrong", { answer: currentAnswer });
         }
         scoreEl.textContent = score;
         answerInput.value = "";
@@ -71,7 +72,7 @@ function submitAnswer() {
 }
 
 function endGame() {
-    feedbackEl.textContent = `⏰ Time's up! Your final score is ${score}`;
+    feedbackEl.textContent = i18n.t("gameMath.finished", { score });
     answerInput.disabled = true;
     submitBtn.disabled = true;
     startBtn.disabled = false;
@@ -85,4 +86,10 @@ restartBtn.addEventListener("click", () => {
 });
 answerInput.addEventListener("keyup", (e) => {
     if(e.key === "Enter") submitAnswer();
+});
+
+window.addEventListener("site-language-change", () => {
+    if (!startBtn.disabled && time === 60) {
+        questionEl.textContent = i18n.t("gameMath.ready");
+    }
 });

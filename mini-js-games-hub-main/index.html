@@ -1,19 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
       data-i18n-content="index.metaDescription"
-      content="Mini JS Games Hub — Play, learn, and create JavaScript mini-games directly in your browser."
+      content="统一展示原生 HTML/CSS/JS 小游戏与移动 H5 游戏的双语游戏门户。"
     />
-    <title data-i18n="index.title">Mini JS Games Hub 🎮</title>
-    <link
-      rel="icon"
-      type="image/jpg"
-      href="https://tse1.mm.bing.net/th/id/OIP.qw9D31NVR6okgQmhEXG-DQHaHa?cb=12&rs=1&pid=ImgDetMain&o=7&rm=3"
-    />
+    <title data-i18n="index.title">游戏展厅 | Web & Mobile Arcade</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -24,255 +19,273 @@
       <span class="backdrop__orb backdrop__orb--three"></span>
     </div>
 
-    <div class="container">
-      <header class="hero" id="top">
-        <nav
-          class="hero__nav"
-          aria-label="Main navigation"
-          data-i18n-aria-label="index.mainNavigation"
+    <header class="site-header container">
+      <a
+        class="brand"
+        href="#top"
+        aria-label="Unified Game Showcase Home"
+        data-i18n-aria-label="index.logoHome"
+        id="top"
+      >
+        <span class="brand__mark">🎮</span>
+        <span class="brand__text">
+          <strong data-i18n="index.brandTitle">游戏展厅</strong>
+          <small data-i18n="index.brandSubtitle">Web & Mobile Arcade Portal</small>
+        </span>
+      </a>
+
+      <nav
+        class="site-nav"
+        aria-label="Main navigation"
+        data-i18n-aria-label="index.mainNavigation"
+      >
+        <a href="#catalog" class="ghost-button" data-i18n="index.browseGames">浏览游戏</a>
+        <a href="#ads" class="ghost-button" data-i18n="index.adZoneTitle">广告合作</a>
+        <a href="login.html" class="ghost-button" data-i18n="index.login">登录</a>
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          aria-label="Toggle theme"
+          data-i18n-aria-label="common.toggleTheme"
         >
-          <a
-            class="logo"
-            href="#top"
-            aria-label="Mini JavaScript Games Hub Home"
-            data-i18n-aria-label="index.logoHome"
-          >
-            <span class="logo__icon" aria-hidden="true">🎮</span>
-            <span class="logo__text">Mini JS Games Hub</span>
-          </a>
+          🌙
+        </button>
+        <button type="button" class="cta-button language-toggle" data-language-toggle></button>
+      </nav>
+    </header>
 
-          <div class="hero__actions">
-            <button
-              id="themeToggle"
-              class="theme-toggle"
-              aria-label="Toggle theme"
-              data-i18n-aria-label="common.toggleTheme"
-            >
-              🌙
-            </button>
-            <button type="button" class="cta-button" data-language-toggle></button>
-            <a
-              href="https://github.com/ritaban06/mini-js-games-hub"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="cta-button"
-              data-i18n="index.contribute"
-              >Contribute</a
-            >
-            <a class="cta-button" href="#games" data-i18n="index.browseGames">Browse Games</a>
-            <a class="cta-button" href="login.html" data-i18n="index.login">Login</a>
+    <main class="portal container">
+      <section class="hero">
+        <div class="hero__copy">
+          <p class="hero__eyebrow" data-i18n="index.heroEyebrow">统一入口 · 双语展示 · 广告友好</p>
+          <h1 data-i18n="index.heroTitle">把两个小游戏仓库整合成一个真正可展示、可运营的游戏网站。</h1>
+          <p class="hero__lead" data-i18n="index.heroLead">
+            现在这个入口会统一展示原生 HTML/JS 小游戏和 Cocos Creator 移动 H5 游戏，并预留广告位、推荐位、专题区和移动端布局。
+          </p>
+
+          <div class="hero__cta">
+            <a href="#catalog" class="cta-button" data-i18n="index.exploreCatalog">进入游戏目录</a>
+            <a href="#featured" class="ghost-button" data-i18n="index.browseFeatured">查看精选专区</a>
           </div>
-        </nav>
 
-        <div class="hero__content">
-          <div class="hero__copy">
-            <p class="hero__eyebrow" data-i18n="index.heroEyebrow">Open-source arcade for the web</p>
-            <h1 data-i18n="index.heroTitle">Play. Learn. Ship your next mini-game.</h1>
-            <p class="hero__lead" data-i18n="index.heroLead">
-              Explore hand-crafted JavaScript games, peek under the hood, and
-              add your own creations — all right in your browser.
-            </p>
-
-            <div class="hero__cta">
-              <a class="cta-button" href="#games" data-i18n="index.browseGames">Browse Games</a>
-              <a
-                class="cta-button"
-                href="https://github.com/ritaban06/mini-js-games-hub"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-i18n="index.viewOnGithub"
-                >View on GitHub</a
-              >
+          <dl class="hero__stats">
+            <div>
+              <dt data-i18n="index.totalGames">游戏总数</dt>
+              <dd><span data-games-count>0</span></dd>
             </div>
-
-            <p class="hero__note" data-i18n="index.heroNote">
-              Click "Play now" to open a game in this tab, or "Open in new tab
-              →" to keep this hub open.
-            </p>
-
-            <dl class="hero__stats">
-              <div>
-                <dt data-i18n="index.totalGames">Total Games</dt>
-                <dd>
-                  <span data-games-count>0</span>
-                  <span data-i18n="index.andCounting">and counting</span>
-                </dd>
-              </div>
-              <div>
-                <dt data-i18n="index.latestLaunch">Latest Launch</dt>
-                <dd><span data-latest-game>--</span></dd>
-              </div>
-              <div>
-                <dt data-i18n="index.stack">Stack</dt>
-                <dd>HTML • CSS • JS</dd>
-              </div>
-            </dl>
-          </div>
-
-          <div class="hero__preview" aria-hidden="true">
-            <div class="preview-card">
-              <span class="preview-card__label" data-i18n="index.liveLeaderboard">Live Leaderboard</span>
-              <div class="preview-card__stat">
-                <span class="preview-card__value" data-preview-count>00</span>
-                <span class="preview-card__hint" data-i18n="index.gamesReady">games ready to play</span>
-              </div>
-              <div class="preview-card__stack">
-                <span data-i18n="index.instantLoad">⚡ Instant Load</span>
-                <span data-i18n="index.noBuildTools">📦 No Build Tools</span>
-                <span data-i18n="index.browserReady">🌐 Browser Ready</span>
-              </div>
+            <div>
+              <dt data-i18n="index.sourcesConnected">已接入来源</dt>
+              <dd><span data-source-count>0</span></dd>
             </div>
-          </div>
+            <div>
+              <dt data-i18n="index.mobileReady">移动端优先内容</dt>
+              <dd><span data-mobile-count>0</span></dd>
+            </div>
+          </dl>
         </div>
-      </header>
 
-      <main class="hub" id="games">
-        <section
-          id="pro-badges"
-          class="pro-badges"
-          aria-label="Your Pro Player Badges"
-          data-i18n-aria-label="index.proBadgesLabel"
-        >
-          <h2 data-i18n="index.proBadgesTitle">Your Pro Player Badges ⭐</h2>
-          <div id="pro-badges-container" class="pro-badges-container">
-            <!-- JS will inject badges here -->
-          </div>
-        </section>
-
-        <section class="hub__controls" aria-label="Game filters" data-i18n-aria-label="index.gameFilters">
-          <div class="search">
-            <label class="sr-only" for="game-search" data-i18n="index.searchGames">Search games</label>
-            <input
-              id="game-search"
-              type="search"
-              name="search"
-              placeholder="Search games or tags"
-              data-i18n-placeholder="index.searchPlaceholder"
-              autocomplete="off"
-              spellcheck="false"
-              class="search__input"
-            />
-            <span class="search__icon" aria-hidden="true">🔍</span>
-          </div>
-
-          <div class="hub__meta">
-            <span><strong data-games-count>0</strong> <span data-i18n="index.gamesSuffix">games</span></span>
-            <span><span data-i18n="index.latestShort">Latest:</span> <strong data-latest-game>--</strong></span>
-          </div>
-        </section>
-
-        <section id="games-container" class="game-grid" aria-live="polite">
-          <!-- Game cards injected by JS -->
-        </section>
-        <section id="see-more-container" class="see-more-container" aria-live="polite">
+        <div class="hero__panel">
+          <section class="panel panel--hero" id="featured">
+            <div class="panel__header">
+              <div>
+                <p class="panel__eyebrow" data-i18n="index.curatedEyebrow">精选专题</p>
+                <h2 data-i18n="index.curatedTitle">本周推荐与高展示位内容</h2>
+              </div>
+              <span class="panel__badge" data-i18n="index.sponsoredTag">站点焦点</span>
+            </div>
+            <div id="featured-strip" class="featured-strip" aria-live="polite"></div>
           </section>
-      </main>
+        </div>
+      </section>
 
-      <footer class="site-footer">
-        <p>
-          <span data-i18n="index.footerLead">Made with ❤️ by the community —</span>
-          <a
-            href="https://github.com/ritaban06/mini-js-games-hub"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-i18n="index.footerLink"
-            >Contribute on GitHub</a
-          >
+      <section class="ad-banner ad-banner--hero" id="ads" aria-label="Hero ad zone">
+        <div class="ad-banner__meta">
+          <span class="ad-chip" data-i18n="index.adLabel">广告位</span>
+          <strong data-i18n="index.adHeadline">桌面横幅广告 / 活动合作 / 游戏联运入口</strong>
+        </div>
+        <p data-i18n="index.adCopy">
+          这里可以接入 Google AdSense、联盟广告、游戏下载推广、联运专题或品牌合作 Banner。
         </p>
-      </footer>
-    </div>
+        <div class="ad-banner__actions">
+          <a href="#catalog" class="cta-button" data-i18n="index.adCta">查看展示位</a>
+          <a href="https://github.com/ritaban06/mini-js-games-hub" target="_blank" rel="noopener noreferrer" class="ghost-button" data-i18n="index.footerLink">去 GitHub 参与贡献</a>
+        </div>
+      </section>
 
-    <!-- Scroll Buttons -->
+      <section class="overview-grid">
+        <article class="overview-card">
+          <p class="overview-card__eyebrow" data-i18n="index.unifiedSourceTitle">统一内容源</p>
+          <h2 data-i18n="index.unifiedSourceLead">同一个入口展示原生小游戏和移动 H5 构建包</h2>
+          <p data-i18n="index.unifiedSourceBody">
+            现在首页不再区分两个项目的入口页面，而是统一为一个内容目录、同一套视觉系统和筛选逻辑。
+          </p>
+        </article>
+
+        <article class="overview-card">
+          <p class="overview-card__eyebrow" data-i18n="index.localizationTitle">中文优先</p>
+          <h2 data-i18n="index.localizationLead">站点层支持中英切换，适合展示、投放和继续扩展</h2>
+          <p data-i18n="index.localizationBody">
+            首页、入口说明、专题、广告位、来源标签和按钮文案都纳入了国际化能力，后续可以继续扩展到单个游戏页面。
+          </p>
+        </article>
+
+        <article class="overview-card">
+          <p class="overview-card__eyebrow" data-i18n="index.monetizationTitle">广告与运营预留</p>
+          <h2 data-i18n="index.monetizationLead">为横幅广告、原生广告、联运推荐和活动位预留结构</h2>
+          <p data-i18n="index.monetizationBody">
+            既能像游戏展示站一样阅读和试玩，也能逐步接入广告平台和商业合作内容。
+          </p>
+        </article>
+      </section>
+
+      <section class="catalog-layout" id="catalog">
+        <div class="catalog-main">
+          <section
+            class="hub__controls"
+            aria-label="Game filters"
+            data-i18n-aria-label="index.gameFilters"
+          >
+            <div class="controls__topline">
+              <div class="search">
+                <label class="sr-only" for="game-search" data-i18n="index.searchGames">搜索游戏</label>
+                <input
+                  id="game-search"
+                  type="search"
+                  name="search"
+                  placeholder="搜索游戏或标签"
+                  data-i18n-placeholder="index.searchPlaceholder"
+                  autocomplete="off"
+                  spellcheck="false"
+                  class="search__input"
+                />
+                <span class="search__icon" aria-hidden="true">🔍</span>
+              </div>
+
+              <div class="hub__meta">
+                <span><strong data-games-count>0</strong> <span data-i18n="index.gamesSuffix">款游戏</span></span>
+                <span><strong data-featured-count>0</strong> <span data-i18n="index.featuredSuffix">个精选位</span></span>
+              </div>
+            </div>
+
+            <div class="filter-bar" role="tablist" aria-label="Catalog quick filters">
+              <button type="button" class="filter-chip is-active" data-filter-type="source" data-filter-value="all" data-i18n="index.filterAll">全部</button>
+              <button type="button" class="filter-chip" data-filter-type="source" data-filter-value="featured" data-i18n="index.filterFeatured">精选</button>
+              <button type="button" class="filter-chip" data-filter-type="source" data-filter-value="mini" data-i18n="index.filterMiniSource">原生 JS</button>
+              <button type="button" class="filter-chip" data-filter-type="source" data-filter-value="mobile" data-i18n="index.filterMobileSource">移动 H5</button>
+              <button type="button" class="filter-chip" data-filter-type="category" data-filter-value="Arcade" data-i18n="index.filterArcade">街机</button>
+              <button type="button" class="filter-chip" data-filter-type="category" data-filter-value="Puzzle" data-i18n="index.filterPuzzle">益智</button>
+              <button type="button" class="filter-chip" data-filter-type="platform" data-filter-value="mobile" data-i18n="index.filterMobileFriendly">移动优先</button>
+            </div>
+          </section>
+
+          <section class="panel panel--catalog">
+            <div class="panel__header">
+              <div>
+                <p class="panel__eyebrow" data-i18n="index.catalogEyebrow">统一目录</p>
+                <h2 data-i18n="index.catalogTitle">统一游戏展示入口</h2>
+              </div>
+              <span class="panel__badge" data-i18n="index.catalogBadge">支持广告位与推荐位</span>
+            </div>
+            <p class="panel__lead" data-i18n="index.catalogLead">
+              下方卡片会统一展示两个仓库里的游戏来源、平台信息、简介、标签和跳转入口。
+            </p>
+            <div id="games-container" class="game-grid" aria-live="polite"></div>
+            <div id="see-more-container" class="see-more-container" aria-live="polite"></div>
+            <section id="empty-state" class="empty" hidden>
+              <h2 data-i18n="index.emptyTitle">暂时没有匹配结果</h2>
+              <p data-i18n="index.emptyBody">可以清空搜索词，或切换到其他来源和分类筛选。</p>
+              <button id="reset-filters" type="button" data-i18n="index.resetFilters">重置筛选</button>
+            </section>
+          </section>
+        </div>
+
+        <aside class="portal-sidebar">
+          <section class="panel">
+            <div class="panel__header">
+              <div>
+                <p class="panel__eyebrow" data-i18n="index.proBadgesLabel">游玩徽章</p>
+                <h2 data-i18n="index.proBadgesTitle">你的高手徽章</h2>
+              </div>
+            </div>
+            <div id="pro-badges-container" class="pro-badges-container"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel__header">
+              <div>
+                <p class="panel__eyebrow" data-i18n="index.sourceBreakdownEyebrow">来源分析</p>
+                <h2 data-i18n="index.sourceBreakdownTitle">内容来源与接入结构</h2>
+              </div>
+            </div>
+            <div id="source-breakdown" class="source-breakdown"></div>
+          </section>
+
+          <section class="panel panel--ad">
+            <div class="panel__header">
+              <div>
+                <p class="panel__eyebrow" data-i18n="index.adZoneEyebrow">商业化</p>
+                <h2 data-i18n="index.adZoneTitle">侧边广告位</h2>
+              </div>
+              <span class="panel__badge" data-i18n="index.adLabel">广告位</span>
+            </div>
+            <div class="ad-stack">
+              <article class="ad-card">
+                <strong data-i18n="index.sidebarAdTitle">300x250 展示广告</strong>
+                <p data-i18n="index.sidebarAdBody">适合放置 AdSense、自有推广位、联运专题卡片或活动入口。</p>
+              </article>
+              <article class="ad-card ad-card--native">
+                <strong data-i18n="index.nativeAdTitle">原生推荐广告</strong>
+                <p data-i18n="index.nativeAdBody">可替换为“猜你喜欢”“热门下载”“专题推荐”等原生内容流广告。</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel__header">
+              <div>
+                <p class="panel__eyebrow" data-i18n="index.mobileHighlightsEyebrow">移动优先</p>
+                <h2 data-i18n="index.mobileHighlightsTitle">移动 H5 推荐</h2>
+              </div>
+            </div>
+            <div id="mobile-highlights" class="mini-list"></div>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>
+        <span data-i18n="index.footerLead">适合做游戏展示、专题推荐和广告承载的统一 Web 门户。</span>
+        <a
+          href="https://github.com/ritaban06/mini-js-games-hub"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-i18n="index.footerLink"
+        >
+          去 GitHub 参与贡献
+        </a>
+      </p>
+    </footer>
+
     <button
       id="scroll-top"
       class="scroll-btn"
       aria-label="Scroll to top"
       data-i18n-aria-label="common.scrollToTop"
     >
-      <svg
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-        <path
-          d="M6 15l6-6 6 6"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+      ↑
     </button>
-
     <button
       id="scroll-bottom"
       class="scroll-btn"
       aria-label="Scroll to bottom"
       data-i18n-aria-label="common.scrollToBottom"
     >
-      <svg
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-hidden="true"
-      >
-        <path
-          d="M18 9l-6 6-6-6"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        />
-      </svg>
+      ↓
     </button>
 
     <script src="site-i18n.js"></script>
+    <script src="mobile-games.js"></script>
     <script src="script.js"></script>
-    <script>
-      const i18n = window.SiteI18n;
-      const proBadgesContainer = document.getElementById("pro-badges-container");
-      const playData = JSON.parse(localStorage.getItem("gamePlays") || "{}");
-
-      function renderProBadges() {
-        proBadgesContainer.innerHTML = "";
-        const proGames = Object.keys(playData)
-          .filter((key) => playData[key].plays >= 5)
-          .sort((a, b) => playData[b].plays - playData[a].plays);
-
-        if (proGames.length === 0) {
-          proBadgesContainer.innerHTML = `<p>${i18n.t("index.noBadges")}</p>`;
-          return;
-        }
-
-        proGames.forEach((gameName) => {
-          const badge = document.createElement("div");
-          badge.className = "pro-badge";
-          badge.innerHTML = `
-            <span class="pro-badge__icon">⭐</span>
-            <span class="pro-badge__name">${gameName}</span>
-            <span class="pro-badge__count">${i18n.t("index.playsCount", {
-              count: playData[gameName].plays,
-            })}</span>
-          `;
-          proBadgesContainer.appendChild(badge);
-        });
-      }
-
-      renderProBadges();
-      window.addEventListener("site-language-change", renderProBadges);
-
-      function trackGamePlay(gameName) {
-        if (!playData[gameName])
-          playData[gameName] = { plays: 0, success: 0 };
-        playData[gameName].plays += 1;
-        localStorage.setItem("gamePlays", JSON.stringify(playData));
-        renderProBadges();
-      }
-    </script>
   </body>
 </html>

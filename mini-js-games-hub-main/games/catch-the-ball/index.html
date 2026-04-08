@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Catch the Ball 🎯</title>
+  <title data-i18n="gameCatch.title">Catch the Ball</title>
+  <link rel="stylesheet" href="../shared/game-ui.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Catch the Ball 🎯</h1>
+  <div class="game-page-toolbar">
+    <button type="button" class="language-toggle-game" data-language-toggle></button>
+  </div>
+  <h1><span data-i18n="gameCatch.title">Catch the Ball</span> 🎯</h1>
   <div id="game-area"></div>
-  <div id="scoreboard">Score: <span id="score">0</span></div>
-  <button id="start-btn">Start Game</button>
+  <div id="scoreboard"><span data-i18n="gameCatch.score">Score</span>: <span id="score">0</span></div>
+  <button id="start-btn" data-i18n="gameCatch.start">Start Game</button>
 
+  <script src="../../site-i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -2,6 +2,7 @@
 
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+const i18n = window.SiteI18n;
 let scoreEl = document.getElementById('score');
 // defensive: if the span is missing for any reason, try to find/create it inside the HUD
 if (!scoreEl) {
@@ -115,8 +116,8 @@ function draw(){
 
   if (!running) {
     ctx.fillStyle = 'rgba(0,0,0,0.6)'; ctx.fillRect(0, H/2-60, W, 120);
-    ctx.fillStyle = '#fff'; ctx.font = '28px serif'; ctx.textAlign = 'center'; ctx.fillText('Game Over', W/2, H/2-8);
-    ctx.font = '16px serif'; ctx.fillText('Press Restart to play again', W/2, H/2+24);
+    ctx.fillStyle = '#fff'; ctx.font = '28px serif'; ctx.textAlign = 'center'; ctx.fillText(i18n.t('gameSpace.gameOver'), W/2, H/2-8);
+    ctx.font = '16px serif'; ctx.fillText(i18n.t('gameSpace.restartHint'), W/2, H/2+24);
   }
 }
 

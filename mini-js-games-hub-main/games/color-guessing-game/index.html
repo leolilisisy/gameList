@@ -3,25 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Color Guessing Game 🎨</title>
+  <title data-i18n="gameColorGuess.title">Color Guessing Game</title>
+  <link rel="stylesheet" href="../shared/game-ui.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Color Guessing Game <span class="emoji">🎨</span></h1>
-      <p class="target-color">Target Color: <span id="targetRGB"></span></p>
+      <div class="game-page-toolbar">
+        <button type="button" class="language-toggle-game" data-language-toggle></button>
+      </div>
+      <h1><span data-i18n="gameColorGuess.title">Color Guessing Game</span> <span class="emoji">🎨</span></h1>
+      <p class="target-color"><span data-i18n="gameColorGuess.targetColor">Target Color</span>: <span id="targetRGB"></span></p>
     </header>
 
     <div class="game-controls">
-      <button id="easyBtn" class="mode-btn active">Easy (3)</button>
-      <button id="hardBtn" class="mode-btn">Hard (6)</button>
-      <button id="newColors">🎯 New Colors</button>
+      <button id="easyBtn" class="mode-btn active" data-i18n="gameColorGuess.easy">Easy (3)</button>
+      <button id="hardBtn" class="mode-btn" data-i18n="gameColorGuess.hard">Hard (6)</button>
+      <button id="newColors" data-i18n="gameColorGuess.newColors">🎯 New Colors</button>
     </div>
 
     <div class="scoreboard">
-      <p>Score: <span id="score">0</span></p>
-      <p>Time Left: <span id="timer">30</span>s</p>
+      <p><span data-i18n="gameColorGuess.score">Score</span>: <span id="score">0</span></p>
+      <p><span data-i18n="gameColorGuess.timeLeft">Time Left</span>: <span id="timer">30</span>s</p>
     </div>
 
     <div id="message" class="message"></div>
@@ -29,10 +33,11 @@
     <div class="tiles-container" id="tiles"></div>
 
     <footer>
-      <button id="playAgain">🔁 Play Again</button>
+      <button id="playAgain" data-i18n="gameColorGuess.playAgain">🔁 Play Again</button>
     </footer>
   </div>
 
+  <script src="../../site-i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

@@ -3,23 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Endless Runner | Mini JS Games Hub</title>
+  <title data-i18n="gameRunner.title">Endless Runner</title>
+  <link rel="stylesheet" href="../shared/game-ui.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="game-container">
-    <h1 class="title">🏃‍♂️ Endless Runner</h1>
+    <div class="game-page-toolbar">
+      <button type="button" class="language-toggle-game" data-language-toggle></button>
+    </div>
+    <h1 class="title">🏃‍♂️ <span data-i18n="gameRunner.title">Endless Runner</span></h1>
+    <p class="hint" data-i18n="gameRunner.hint">Press Space or Arrow Up to jump, Arrow Down to slide.</p>
     <canvas id="gameCanvas" width="800" height="400"></canvas>
     <div class="scoreboard">
-      <p>Score: <span id="score">0</span></p>
-      <p>High Score: <span id="highScore">0</span></p>
+      <p><span data-i18n="gameRunner.score">Score</span>: <span id="score">0</span></p>
+      <p><span data-i18n="gameRunner.highScore">High Score</span>: <span id="highScore">0</span></p>
     </div>
-    <button id="restartBtn" class="hidden">Restart</button>
+    <button id="restartBtn" class="hidden" data-i18n="gameRunner.restart">Restart</button>
   </div>
 
   <audio id="jumpSound" src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_b7a06d7b7d.mp3?filename=jump-coin-113097.mp3"></audio>
   <audio id="hitSound" src="https://cdn.pixabay.com/download/audio/2021/09/08/audio_3d94b9ad0c.mp3?filename=hit-2-112154.mp3"></audio>
 
+  <script src="../../site-i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

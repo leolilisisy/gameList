@@ -10,6 +10,7 @@ const WIN_COUNT = 4;
 const boardEl = document.getElementById('board');
 const turnIndicator = document.getElementById('turn-indicator');
 const resetButton = document.getElementById('reset-button');
+const i18n = window.SiteI18n;
 
 // --- Game State Variables ---
 let board = [];
@@ -62,11 +63,11 @@ function updateUI() {
     }
 
     if (currentPlayer === PLAYER1) {
-        turnIndicator.textContent = "Player 1's Turn (Red)";
+        turnIndicator.textContent = i18n.t("gameConnect.player1Turn");
         turnIndicator.style.color = 'var(--player1-color)';
         boardEl.classList.remove('player2-turn');
     } else {
-        turnIndicator.textContent = "Player 2's Turn (Yellow)";
+        turnIndicator.textContent = i18n.t("gameConnect.player2Turn");
         turnIndicator.style.color = 'var(--player2-color)';
         boardEl.classList.add('player2-turn');
     }
@@ -92,7 +93,7 @@ function dropDisc(col) {
 
     // If the column is full, do nothing
     if (row === -1) {
-        alert("Column is full!");
+        alert(i18n.t("gameConnect.columnFull"));
         return;
     }
 
@@ -106,12 +107,12 @@ function dropDisc(col) {
     // 3. Check for win condition
     if (checkWin(row, col)) {
         gameOver = true;
-        turnIndicator.textContent = `Player ${currentPlayer} Wins! 🎉`;
+        turnIndicator.textContent = i18n.t("gameConnect.win", { player: currentPlayer });
         turnIndicator.style.color = currentPlayer === PLAYER1 ? 'var(--player1-color)' : 'var(--player2-color)';
         boardEl.classList.add('game-over');
     } else if (isBoardFull()) {
         gameOver = true;
-        turnIndicator.textContent = "It's a Draw! 🤝";
+        turnIndicator.textContent = i18n.t("gameConnect.draw");
         turnIndicator.style.color = 'black';
         boardEl.classList.add('game-over');
     } else {

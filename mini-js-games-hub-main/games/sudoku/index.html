@@ -3,12 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sudoku Game</title>
+  <title data-i18n="gameSudoku.title">Sudoku</title>
+  <link rel="stylesheet" href="../shared/game-ui.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Sudoku</h1>
+  <div class="game-page-toolbar">
+    <button type="button" class="language-toggle-game" data-language-toggle></button>
+  </div>
+  <h1 data-i18n="gameSudoku.title">Sudoku</h1>
   <div id="sudoku-board"></div>
+  <script src="../../site-i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

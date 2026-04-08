@@ -1,6 +1,7 @@
 const gameArea = document.getElementById("game-area");
 const scoreDisplay = document.getElementById("score");
 const startBtn = document.getElementById("start-btn");
+const i18n = window.SiteI18n;
 
 let score = 0;
 let playing = false;
@@ -30,34 +31,34 @@ function createBall() {
 }
 
 function spawnBall() {
-  if (playing) {
-    createBall();
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      const balls = document.querySelectorAll(".ball");
-      if (balls.length) balls.forEach(b => b.remove());
-      spawnBall();
-    }, 1000);
-  }
+  if (!playing) return;
+
+  createBall();
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    const balls = document.querySelectorAll(".ball");
+    balls.forEach((ball) => ball.remove());
+    spawnBall();
+  }, 1000);
 }
 
 startBtn.addEventListener("click", () => {
   if (playing) return;
+
   score = 0;
   scoreDisplay.textContent = score;
   playing = true;
-  startBtn.textContent = "Playing...";
+  startBtn.textContent = i18n.t("gameCatch.playing");
   startBtn.disabled = true;
 
   spawnBall();
 
-  // End game after 30 seconds
   setTimeout(() => {
     playing = false;
     clearTimeout(timer);
-    document.querySelectorAll(".ball").forEach(b => b.remove());
-    alert(`Game Over! Your final score is ${score}.`);
-    startBtn.textContent = "Start Game";
+    document.querySelectorAll(".ball").forEach((ball) => ball.remove());
+    alert(i18n.t("gameCatch.gameOver", { score }));
+    startBtn.textContent = i18n.t("gameCatch.start");
     startBtn.disabled = false;
   }, 30000);
 });

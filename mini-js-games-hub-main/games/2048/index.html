@@ -4,14 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title data-i18n="game2048.title">2048</title>
+  <link rel="stylesheet" href="../shared/game-ui.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="game">
     <header>
+      <div class="game-page-toolbar">
+        <button type="button" class="language-toggle-game" data-language-toggle></button>
+      </div>
       <h1 data-i18n="game2048.title">2048</h1>
       <div class="controls">
-        <button type="button" class="language-toggle-game" data-language-toggle></button>
         <div class="score"><span data-i18n="game2048.score">Score</span>: <span id="score">0</span></div>
         <button id="new-game" data-i18n="game2048.newGame">New Game</button>
       </div>

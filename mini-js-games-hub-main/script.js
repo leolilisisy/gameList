@@ -1188,25 +1188,41 @@ const games = [
   },
 ];
 
-const container = document.getElementById("games-container");
-const searchInput = document.getElementById("game-search");
-const emptyState = document.getElementById("empty-state");
-const clearSearchButton = document.getElementById("clear-search");
-const countTargets = document.querySelectorAll("[data-games-count]");
-const latestTargets = document.querySelectorAll("[data-latest-game]");
-const previewCount = document.querySelector("[data-preview-count]");
-const seeMoreContainer = document.getElementById("see-more-container");
 const siteI18n = window.SiteI18n || {
+  getLocale: () => "zh",
   t: (key) => key,
 };
 
-//Sorting the game array alphabetically for consistent order
-games.sort((a, b) => a.name.localeCompare(b.name));
+const catalogContainer = document.getElementById("games-container");
+const featuredStrip = document.getElementById("featured-strip");
+const sourceBreakdown = document.getElementById("source-breakdown");
+const mobileHighlights = document.getElementById("mobile-highlights");
+const searchInput = document.getElementById("game-search");
+const emptyState = document.getElementById("empty-state");
+const seeMoreContainer = document.getElementById("see-more-container");
+const resetFiltersButton = document.getElementById("reset-filters");
+const filterButtons = Array.from(document.querySelectorAll(".filter-chip"));
+const countTargets = document.querySelectorAll("[data-games-count]");
+const sourceCountTargets = document.querySelectorAll("[data-source-count]");
+const mobileCountTargets = document.querySelectorAll("[data-mobile-count]");
+const featuredCountTargets = document.querySelectorAll("[data-featured-count]");
+const proBadgesContainer = document.getElementById("pro-badges-container");
 
-const INIT_GAMES_LIMIT = 9;
-const SEE_MORE_INCREMENT = 15;
-let displayedGamesCount = 0;
-let currGameList = games;
+const FEATURED_HUB_NAMES = new Set([
+  "2048",
+  "Snake Game",
+  "Memory Game",
+  "Pong",
+  "Brick Breaker",
+  "Space Shooter",
+  "Reaction Timer",
+  "Quick Math Battle Quiz",
+  "Spot the Difference",
+  "Whack-a-Mole",
+]);
+
+const PAGE_SIZE = 12;
+const PAGE_INCREMENT = 12;
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -1216,179 +1232,404 @@ const observer = new IntersectionObserver(
       observer.unobserve(entry.target);
     });
   },
-  { threshold: 0.1 }
+  { threshold: 0.12 }
 );
 
-const latestGameName = games.length ? games[games.length - 1].name : "--";
-countTargets.forEach((el) => {
-  el.textContent = String(games.length);
-});
-latestTargets.forEach((el) => {
-  el.textContent = latestGameName;
-});
-
-if (previewCount) {
-  animateCount(previewCount, games.length, 920);
+function normalizeHubGames(list) {
+  return list.map((game, index) => ({
+    ...game,
+    id: `mini-${index}`,
+    source: "mini",
+    platform: "browser",
+    featured: FEATURED_HUB_NAMES.has(game.name),
+    cover: null,
+  }));
 }
 
-renderGames(games);
+const mobileCatalog = (window.MobileGamesCatalog || []).map((game, index) => ({
+  ...game,
+  id: game.id || `mobile-${index}`,
+}));
 
-if (searchInput) {
-  searchInput.addEventListener("input", () => {
-    renderGames(filterGames(searchInput.value));
+const allGames = [...normalizeHubGames(games), ...mobileCatalog].sort((left, right) => {
+  if (left.featured !== right.featured) return left.featured ? -1 : 1;
+  return left.name.localeCompare(right.name);
+});
+
+const playData = readPlayData();
+
+const state = {
+  search: "",
+  filterType: "source",
+  filterValue: "all",
+  visibleCount: PAGE_SIZE,
+};
+
+function getLocale() {
+  return siteI18n.getLocale();
+}
+
+function localizeCategory(category) {
+  const keyMap = {
+    Arcade: "index.categoryArcade",
+    Puzzle: "index.categoryPuzzle",
+    Action: "index.categoryAction",
+    Strategy: "index.categoryStrategy",
+    Casual: "index.categoryCasual",
+    Music: "index.categoryMusic",
+    Educational: "index.categoryEducational",
+    Board: "index.categoryBoard",
+  };
+
+  return keyMap[category] ? siteI18n.t(keyMap[category]) : category;
+}
+
+function localizePlatform(platform) {
+  const keyMap = {
+    browser: "index.platformBrowser",
+    mobile: "index.platformMobile",
+    cross: "index.platformCross",
+  };
+
+  return keyMap[platform] ? siteI18n.t(keyMap[platform]) : platform;
+}
+
+function getSourceLabel(game) {
+  return game.source === "mobile"
+    ? siteI18n.t("index.sourceMobile")
+    : siteI18n.t("index.sourceMini");
+}
+
+function getSourceBody(game) {
+  return game.source === "mobile"
+    ? siteI18n.t("index.sourceMobileBody")
+    : siteI18n.t("index.sourceMiniBody");
+}
+
+function getDisplayName(game) {
+  return getLocale() === "zh" && game.nameZh ? game.nameZh : game.name;
+}
+
+function getDisplayDescription(game) {
+  return getLocale() === "zh" && game.descriptionZh ? game.descriptionZh : game.description;
+}
+
+function getFilterSet(list = allGames) {
+  return list.filter((game) => {
+    const searchTerm = state.search.trim().toLowerCase();
+    if (searchTerm) {
+      const haystack = [
+        game.name,
+        game.nameZh,
+        getDisplayName(game),
+        game.description,
+        game.descriptionZh,
+        game.category,
+        game.duration,
+        ...game.tags,
+      ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+
+      if (!haystack.includes(searchTerm)) return false;
+    }
+
+    if (state.filterType === "source") {
+      if (state.filterValue === "featured" && !game.featured) return false;
+      if (state.filterValue === "mini" && game.source !== "mini") return false;
+      if (state.filterValue === "mobile" && game.source !== "mobile") return false;
+    }
+
+    if (state.filterType === "category" && game.category !== state.filterValue) {
+      return false;
+    }
+
+    if (state.filterType === "platform" && game.platform !== state.filterValue) {
+      return false;
+    }
+
+    return true;
   });
 }
 
-if (clearSearchButton) {
-  clearSearchButton.addEventListener("click", () => {
-    if (!searchInput) return;
-    searchInput.value = "";
-    searchInput.focus();
-    renderGames(games);
+function createCoverMarkup(game) {
+  const imageMarkup = game.cover
+    ? `<img src="${game.cover}" alt="${getDisplayName(game)}" loading="lazy" />`
+    : "";
+
+  return `
+    <div class="card-cover">
+      ${imageMarkup}
+      <div class="card-cover__overlay">
+        <span class="card-cover__icon">${game.icon || "🎮"}</span>
+        <span>${localizeCategory(game.category)}</span>
+      </div>
+    </div>
+  `;
+}
+
+function buildGameCard(game) {
+  const article = document.createElement("article");
+  article.className = "game-card";
+  article.dataset.gameId = game.id;
+  article.tabIndex = 0;
+  article.innerHTML = `
+    ${createCoverMarkup(game)}
+    <div class="card-content">
+      <div class="card-meta">
+        <span class="meta-pill">${game.source === "mobile" ? "📱" : "🧩"} ${getSourceLabel(game)}</span>
+        <span class="meta-pill">${localizePlatform(game.platform)}</span>
+      </div>
+      <div>
+        <h3 class="card-title">${getDisplayName(game)}</h3>
+        <div class="card-subtitle">${game.duration} · ${localizeCategory(game.category)}</div>
+      </div>
+      <p class="card-body">${getDisplayDescription(game)}</p>
+      <div class="card-tags">
+        ${game.tags.slice(0, 4).map((tag) => `<span>#${tag}</span>`).join("")}
+      </div>
+      <div class="card-actions">
+        <a class="play-button" href="${game.path}" data-track-game="${game.id}">${siteI18n.t("index.playNow")}</a>
+        <a class="play-link" href="${game.path}" target="_blank" rel="noopener noreferrer" data-track-game="${game.id}">${siteI18n.t("index.openInNewTab")}</a>
+      </div>
+    </div>
+  `;
+
+  article.addEventListener("pointermove", handleCardTilt);
+  article.addEventListener("pointerleave", resetCardTilt);
+  article.addEventListener("focusout", resetCardTilt);
+  article.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    trackGamePlay(getDisplayName(game));
+    window.open(game.path, "_blank", "noopener,noreferrer");
+  });
+
+  article.querySelectorAll("[data-track-game]").forEach((node) => {
+    node.addEventListener("click", () => {
+      trackGamePlay(getDisplayName(game));
+    });
+  });
+
+  observer.observe(article);
+  return article;
+}
+
+function createInlineAdCard() {
+  const article = document.createElement("article");
+  article.className = "inline-ad-card";
+  article.innerHTML = `
+    <span class="meta-pill">AD</span>
+    <strong>${siteI18n.t("index.inlineAdTitle")}</strong>
+    <p>${siteI18n.t("index.inlineAdBody")}</p>
+    <div class="card-actions">
+      <a class="play-link" href="#ads">${siteI18n.t("index.adZoneTitle")}</a>
+    </div>
+  `;
+  return article;
+}
+
+function renderFeaturedStrip() {
+  if (!featuredStrip) return;
+  const featuredGames = allGames.filter((game) => game.featured).slice(0, 4);
+  featuredStrip.innerHTML = "";
+
+  featuredGames.forEach((game) => {
+    const article = document.createElement("article");
+    article.className = "featured-card";
+    article.innerHTML = `
+      <div class="featured-card__cover">${game.icon || "🎮"}</div>
+      <div class="featured-card__content">
+        <div class="featured-card__meta">
+          <span class="meta-pill">${getSourceLabel(game)}</span>
+          <span class="meta-pill">${localizePlatform(game.platform)}</span>
+        </div>
+        <h3>${getDisplayName(game)}</h3>
+        <p>${getDisplayDescription(game)}</p>
+        <div class="card-actions">
+          <a class="play-button" href="${game.path}" data-track-featured="${game.id}">${siteI18n.t("index.playNow")}</a>
+        </div>
+      </div>
+    `;
+    article.querySelector("[data-track-featured]")?.addEventListener("click", () => {
+      trackGamePlay(getDisplayName(game));
+    });
+    featuredStrip.appendChild(article);
   });
 }
 
-function renderGames(list) {
-  container.innerHTML = "";
+function renderSourceBreakdown() {
+  if (!sourceBreakdown) return;
+  const sourceStats = [
+    {
+      source: "mini",
+      count: allGames.filter((game) => game.source === "mini").length,
+    },
+    {
+      source: "mobile",
+      count: allGames.filter((game) => game.source === "mobile").length,
+    },
+  ];
 
-  if (!list.length && displayedGamesCount === 0) {
-    if (emptyState) emptyState.hidden = false;
-    if (seeMoreContainer) seeMoreContainer.innerHTML = "";
+  sourceBreakdown.innerHTML = "";
+  sourceStats.forEach((entry) => {
+    const sample = allGames.find((game) => game.source === entry.source);
+    if (!sample) return;
+    const pill = document.createElement("article");
+    pill.className = "source-pill";
+    pill.innerHTML = `
+      <div>
+        <strong>${getSourceLabel(sample)}</strong>
+        <small>${getSourceBody(sample)}</small>
+      </div>
+      <strong>${entry.count}</strong>
+    `;
+    sourceBreakdown.appendChild(pill);
+  });
+}
+
+function renderMobileHighlights() {
+  if (!mobileHighlights) return;
+  const entries = allGames
+    .filter((game) => game.source === "mobile")
+    .slice(0, 4);
+  mobileHighlights.innerHTML = "";
+
+  entries.forEach((game) => {
+    const article = document.createElement("article");
+    article.className = "mini-entry";
+    article.innerHTML = `
+      <div class="mini-entry__top">
+        <h3>${getDisplayName(game)}</h3>
+        <span class="meta-pill">${game.icon || "🎮"}</span>
+      </div>
+      <p>${getDisplayDescription(game)}</p>
+      <a class="play-link" href="${game.path}" target="_blank" rel="noopener noreferrer">${siteI18n.t("index.openInNewTab")}</a>
+    `;
+    mobileHighlights.appendChild(article);
+  });
+}
+
+function updateCounts(filteredGames) {
+  const mobileCount = allGames.filter((game) => game.platform === "mobile").length;
+  const featuredCount = filteredGames.filter((game) => game.featured).length;
+  countTargets.forEach((node) => {
+    node.textContent = String(filteredGames.length);
+  });
+  sourceCountTargets.forEach((node) => {
+    node.textContent = "2";
+  });
+  mobileCountTargets.forEach((node) => {
+    node.textContent = String(mobileCount);
+  });
+  featuredCountTargets.forEach((node) => {
+    node.textContent = String(featuredCount);
+  });
+}
+
+function updateSeeMore(totalCount) {
+  if (!seeMoreContainer) return;
+  seeMoreContainer.innerHTML = "";
+  if (state.visibleCount >= totalCount) return;
+
+  const button = document.createElement("button");
+  button.className = "cta-button";
+  button.textContent = siteI18n.t("index.seeMoreGames");
+  button.addEventListener("click", () => {
+    state.visibleCount += PAGE_INCREMENT;
+    renderCatalog();
+  });
+  seeMoreContainer.appendChild(button);
+}
+
+function renderCatalog() {
+  if (!catalogContainer) return;
+  const filteredGames = getFilterSet();
+  const visibleGames = filteredGames.slice(0, state.visibleCount);
+  catalogContainer.innerHTML = "";
+
+  if (emptyState) {
+    emptyState.hidden = filteredGames.length > 0;
+  }
+
+  if (!filteredGames.length) {
+    updateCounts(filteredGames);
+    updateSeeMore(0);
     return;
   }
 
-  if (emptyState) emptyState.hidden = true;
-
   const fragment = document.createDocumentFragment();
-
-  list.forEach((game, index) => {
-    const card = document.createElement("article");
-    card.className = "game-card";
-    card.tabIndex = 0;
-    card.dataset.name = game.name.toLowerCase();
-    card.style.setProperty(
-      "--stagger",
-      `${(displayedGamesCount + index) * 30}ms`
-    );
-
-    card.innerHTML = `
-      <div class="card-header">
-        <span class="card-pill">${game.icon} ${game.category}</span>
-        <span class="card-timing">${game.duration}</span>
-      </div>
-      <h3 class="card-title"><span>${game.icon}</span>${game.name}</h3>
-      <p class="card-body">${game.description}</p>
-      <div class="card-tags">
-        ${game.tags.map((tag) => `<span>#${tag}</span>`).join("")}
-      </div>
-      <div class="card-actions">
-        <a class="play-button" href="${game.path}">${siteI18n.t(
-          "index.playNow"
-        )}</a>
-        <a class="play-link" href="${
-          game.path
-        }" target="_blank" rel="noopener noreferrer">${siteI18n.t(
-          "index.openInNewTab"
-        )}</a>
-      </div>
-    `;
-
-    card.addEventListener("pointermove", handleCardTilt);
-    card.addEventListener("pointerleave", resetCardTilt);
-    card.addEventListener("focusout", resetCardTilt);
-    card.addEventListener("keydown", (event) => {
-      if (event.key !== "Enter" && event.key !== " ") return;
-      event.preventDefault();
-      const gameName = card
-        .querySelector(".card-title")
-        ?.textContent.replace(game.icon, "")
-        .trim();
-      trackGamePlay(gameName);
-      window.open(game.path, "_blank", "noopener,noreferrer");
-    });
-    card.querySelector(".play-button")?.addEventListener("click", () => {
-      const gameName = card
-        .querySelector(".card-title")
-        ?.textContent.replace(game.icon, "")
-        .trim();
-      trackGamePlay(gameName);
-    });
-
-    fragment.appendChild(card);
-    observer.observe(card);
-  });
-  container.appendChild(fragment);
-
-  displayedGamesCount += list.length;
-  updateSeeMore(list);
-}
-
-function displayGames(reset = false) {
-  if (reset) {
-    container.innerHTML = "";
-    displayedGamesCount = 0;
-  }
-  const nextGames = currGameList.slice(
-    displayedGamesCount,
-    displayedGamesCount === 0
-      ? INIT_GAMES_LIMIT
-      : displayedGamesCount + SEE_MORE_INCREMENT
-  );
-  renderGames(nextGames);
-}
-
-function updateSeeMore() {
-  if (seeMoreContainer) {
-    seeMoreContainer.innerHTML = "";
-    if (displayedGamesCount < currGameList.length) {
-      const btn = document.createElement("button");
-      btn.className = "cta-button see-more-button";
-      btn.textContent = siteI18n.t("index.seeMoreGames");
-      btn.id = "see-more-btn";
-      btn.addEventListener("click", () => {
-        displayGames(false);
-      });
-      seeMoreContainer.appendChild(btn);
+  visibleGames.forEach((game, index) => {
+    fragment.appendChild(buildGameCard(game));
+    if ((index + 1) % 8 === 0 && index !== visibleGames.length - 1) {
+      fragment.appendChild(createInlineAdCard());
     }
+  });
+
+  catalogContainer.appendChild(fragment);
+  updateCounts(filteredGames);
+  updateSeeMore(filteredGames.length);
+}
+
+function renderProBadges() {
+  if (!proBadgesContainer) return;
+  proBadgesContainer.innerHTML = "";
+  const proGames = Object.keys(playData)
+    .filter((key) => playData[key]?.plays >= 3)
+    .sort((left, right) => playData[right].plays - playData[left].plays);
+
+  if (!proGames.length) {
+    proBadgesContainer.innerHTML = `<p>${siteI18n.t("index.noBadges")}</p>`;
+    return;
+  }
+
+  proGames.slice(0, 6).forEach((gameName) => {
+    const badge = document.createElement("div");
+    badge.className = "pro-badge";
+    badge.innerHTML = `
+      <div class="pro-badge__left">
+        <span class="pro-badge__icon">⭐</span>
+        <strong>${gameName}</strong>
+      </div>
+      <span class="pro-badge__count">${siteI18n.t("index.playsCount", {
+        count: playData[gameName].plays,
+      })}</span>
+    `;
+    proBadgesContainer.appendChild(badge);
+  });
+}
+
+function readPlayData() {
+  try {
+    return JSON.parse(localStorage.getItem("gamePlays") || "{}");
+  } catch (error) {
+    return {};
   }
 }
 
-if (searchInput) {
-  searchInput.addEventListener("input", () => {
-    currGameList = filterGames(searchInput.value);
-    displayGames(true);
-  });
+function trackGamePlay(gameName) {
+  if (!playData[gameName]) {
+    playData[gameName] = { plays: 0 };
+  }
+  playData[gameName].plays += 1;
+  try {
+    localStorage.setItem("gamePlays", JSON.stringify(playData));
+  } catch (error) {
+    return;
+  }
+  renderProBadges();
 }
 
-currGameList = games;
-displayGames(true);
-
-window.addEventListener("site-language-change", () => {
-  const visibleCount = displayedGamesCount || INIT_GAMES_LIMIT;
-  container.innerHTML = "";
-  displayedGamesCount = 0;
-  renderGames(currGameList.slice(0, Math.min(visibleCount, currGameList.length)));
-});
-
-function filterGames(rawTerm) {
-  const term = rawTerm.trim().toLowerCase();
-  if (!term) return games;
-
-  return games.filter((game) => {
-    const haystack = [game.name, game.category, game.description, ...game.tags]
-      .join(" ")
-      .toLowerCase();
-    return haystack.includes(term);
-  });
-}
+window.trackGamePlay = trackGamePlay;
 
 function handleCardTilt(event) {
   const card = event.currentTarget;
   const rect = card.getBoundingClientRect();
   const relativeX = (event.clientX - rect.left) / rect.width;
   const relativeY = (event.clientY - rect.top) / rect.height;
-  const tiltX = (0.5 - relativeY) * 8;
-  const tiltY = (relativeX - 0.5) * 8;
+  const tiltX = (0.5 - relativeY) * 5;
+  const tiltY = (relativeX - 0.5) * 5;
   card.style.setProperty("--tiltX", `${tiltX.toFixed(2)}deg`);
   card.style.setProperty("--tiltY", `${tiltY.toFixed(2)}deg`);
 }
@@ -1399,45 +1640,74 @@ function resetCardTilt(event) {
   card.style.setProperty("--tiltY", "0deg");
 }
 
-function animateCount(node, target, duration) {
-  const start = Number(node.textContent) || 0;
-  const startTime = performance.now();
-
-  const tick = (now) => {
-    const elapsed = now - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = easeOutCubic(progress);
-    const value = Math.round(start + (target - start) * eased);
-    node.textContent = value.toString().padStart(2, "0");
-    if (progress < 1) requestAnimationFrame(tick);
-  };
-
-  requestAnimationFrame(tick);
+function renderAll() {
+  renderFeaturedStrip();
+  renderSourceBreakdown();
+  renderMobileHighlights();
+  renderCatalog();
+  renderProBadges();
 }
 
-function easeOutCubic(t) {
-  return 1 - Math.pow(1 - t, 3);
+filterButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    filterButtons.forEach((node) => node.classList.remove("is-active"));
+    button.classList.add("is-active");
+    state.filterType = button.dataset.filterType || "source";
+    state.filterValue = button.dataset.filterValue || "all";
+    state.visibleCount = PAGE_SIZE;
+    renderCatalog();
+  });
+});
+
+if (searchInput) {
+  searchInput.addEventListener("input", () => {
+    state.search = searchInput.value;
+    state.visibleCount = PAGE_SIZE;
+    renderCatalog();
+  });
 }
 
-// Theme Toggle Logic
+if (resetFiltersButton) {
+  resetFiltersButton.addEventListener("click", () => {
+    state.search = "";
+    state.filterType = "source";
+    state.filterValue = "all";
+    state.visibleCount = PAGE_SIZE;
+    if (searchInput) searchInput.value = "";
+    filterButtons.forEach((node) => {
+      node.classList.toggle(
+        "is-active",
+        node.dataset.filterType === "source" && node.dataset.filterValue === "all"
+      );
+    });
+    renderCatalog();
+  });
+}
+
+window.addEventListener("site-language-change", () => {
+  renderAll();
+});
+
+renderAll();
+
 const themeToggleBtn = document.getElementById("themeToggle");
 const appBody = document.body;
 const themeKey = "theme-preference";
 
 function applyTheme(theme) {
   appBody.classList.toggle("light-theme", theme === "light");
-
   if (themeToggleBtn) {
     themeToggleBtn.innerHTML = theme === "light" ? "☀️" : "🌙";
   }
 
   try {
     localStorage.setItem(themeKey, theme);
-  } catch (e) {
-    console.warn("Could not save theme preference to localStorage.");
+  } catch (error) {
+    return;
   }
 }
-const savedTheme = localStorage.getItem(themeKey) || "dark"; // Default to dark
+
+const savedTheme = localStorage.getItem(themeKey) || "dark";
 applyTheme(savedTheme);
 
 if (themeToggleBtn) {
@@ -1447,25 +1717,24 @@ if (themeToggleBtn) {
   });
 }
 
-// Scroll Button Logic
 const scrollTopBtn = document.getElementById("scroll-top");
 const scrollBottomBtn = document.getElementById("scroll-bottom");
-let lastScrollTop = 0;
 
 window.addEventListener(
   "scroll",
   () => {
-    const st = window.pageYOffset || document.documentElement.scrollTop;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     const scrollHeight = document.documentElement.scrollHeight;
     const clientHeight = document.documentElement.clientHeight;
 
-    // Show/Hide buttons based on scroll position
-    if (scrollTopBtn) scrollTopBtn.style.display = st > 100 ? "block" : "none";
-    if (scrollBottomBtn)
-      scrollBottomBtn.style.display =
-        st + clientHeight < scrollHeight - 100 ? "block" : "none";
+    if (scrollTopBtn) {
+      scrollTopBtn.style.display = scrollTop > 120 ? "grid" : "none";
+    }
 
-    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    if (scrollBottomBtn) {
+      scrollBottomBtn.style.display =
+        scrollTop + clientHeight < scrollHeight - 160 ? "grid" : "none";
+    }
   },
   false
 );

@@ -5,6 +5,7 @@ const ctx = canvas.getContext('2d');
 // --- DOM Elements ---
 const messageEl = document.getElementById('message');
 const newGameBtn = document.getElementById('new-game-btn');
+const i18n = window.SiteI18n;
 
 // --- Game Constants ---
 const CELL_SIZE = 30; // Size of each cell in the maze
@@ -317,7 +318,7 @@ function gameLoop() {
 
     // 2. Check game conditions
     if (checkGoalCollision()) {
-        messageEl.textContent = "You reached the exit! 🎉";
+        messageEl.textContent = i18n.t("gameMaze.win");
         messageEl.style.color = GOAL_COLOR;
         gameActive = false;
         newGameBtn.textContent = "Play Again";
@@ -332,7 +333,7 @@ function gameLoop() {
 function newGame() {
     generateMaze();
     gameActive = true;
-    messageEl.textContent = "Use Arrow Keys to move. Find the green exit!";
+    messageEl.textContent = i18n.t("gameMaze.hint");
     messageEl.style.color = 'black';
     newGameBtn.textContent = "New Maze";
     cancelAnimationFrame(gameLoopId); // Stop any existing loop

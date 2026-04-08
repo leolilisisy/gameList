@@ -3,29 +3,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quiz Game (MCQ) | Mini JS Games Hub</title>
+  <title data-i18n="gameQuiz.title">Quiz Game (MCQ)</title>
+  <link rel="stylesheet" href="../shared/game-ui.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="quiz-container">
-    <h1 class="quiz-title">🧠 Quiz Game (MCQ)</h1>
+    <div class="game-page-toolbar">
+      <button type="button" class="language-toggle-game" data-language-toggle></button>
+    </div>
+    <h1 class="quiz-title">🧠 <span data-i18n="gameQuiz.title">Quiz Game (MCQ)</span></h1>
     <div id="quiz-box" class="quiz-box">
       <div class="quiz-header">
         <div class="question-number" id="question-number">Question 1 of 5</div>
         <div class="score" id="score">Score: 0</div>
       </div>
-      <h2 id="question-text" class="question-text">Loading question...</h2>
+      <h2 id="question-text" class="question-text" data-i18n="gameQuiz.loading">Loading question...</h2>
       <div class="options" id="options"></div>
-      <button id="next-btn" class="next-btn" disabled>Next →</button>
+      <button id="next-btn" class="next-btn" disabled data-i18n="gameQuiz.next">Next →</button>
     </div>
 
     <div id="result-box" class="result-box hidden">
-      <h2>🎯 Quiz Completed!</h2>
+      <h2 data-i18n="gameQuiz.completed">🎯 Quiz Completed!</h2>
       <p id="final-score"></p>
-      <button id="restart-btn" class="restart-btn">Play Again 🔁</button>
+      <button id="restart-btn" class="restart-btn" data-i18n="gameQuiz.playAgain">Play Again 🔁</button>
     </div>
   </div>
 
+  <script src="../../site-i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

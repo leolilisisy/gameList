@@ -4,22 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whack-a-Mole</title>
+    <title data-i18n="gameWhack.title">Whack-a-Mole</title>
+    <link rel="stylesheet" href="../shared/game-ui.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <main class="wrapper">
-        <h1>Whack-a-Mole</h1>
-        <p class="intro">Hit the mole as soon as it pops up. You have 30 seconds!</p>
+        <div class="game-page-toolbar">
+            <button type="button" class="language-toggle-game" data-language-toggle></button>
+        </div>
+        <h1 data-i18n="gameWhack.title">Whack-a-Mole</h1>
+        <p class="intro" data-i18n="gameWhack.intro">Hit the mole as soon as it pops up. You have 30 seconds!</p>
 
         <div class="hud">
             <span id="timer" aria-live="polite">⏱️ Time: 30</span>
             <span id="score" aria-live="polite">🏆 Score: 0</span>
-            <button id="start-button" type="button">Start Game</button>
+            <button id="start-button" type="button" data-i18n="gameWhack.start">Start Game</button>
         </div>
 
-        <div class="grid" role="grid" aria-label="Game board">
+        <div class="grid" role="grid" aria-label="Game board" data-i18n-aria-label="gameWhack.boardLabel">
             <button class="hole" data-hole="0" type="button" role="gridcell" aria-label="Hole 1"></button>
             <button class="hole" data-hole="1" type="button" role="gridcell" aria-label="Hole 2"></button>
             <button class="hole" data-hole="2" type="button" role="gridcell" aria-label="Hole 3"></button>
@@ -34,6 +38,7 @@
         <p id="status" role="status" aria-live="polite"></p>
     </main>
 
+    <script src="../../site-i18n.js"></script>
     <script src="script.js"></script>
 </body>
 

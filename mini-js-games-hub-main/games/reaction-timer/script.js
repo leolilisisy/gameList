@@ -4,6 +4,7 @@ const prompt = document.getElementById("prompt");
 const currentDisplay = document.getElementById("current");
 const bestDisplay = document.getElementById("best");
 const historyList = document.getElementById("history-list");
+const i18n = window.SiteI18n;
 
 let state = "idle"; // idle | waiting | ready
 let readyTimeout;
@@ -14,11 +15,25 @@ const recentTimes = [];
 startButton.addEventListener("click", beginRound);
 pad.addEventListener("click", handlePadClick);
 
+function formatTime(value) {
+  return `${value} ms`;
+}
+
+function updateStatDisplays(currentValue = null) {
+  const currentText =
+    currentValue === null ? i18n.t("gameReaction.notAvailable") : formatTime(currentValue);
+  const bestText =
+    bestTime === Infinity ? i18n.t("gameReaction.notAvailable") : formatTime(bestTime);
+
+  currentDisplay.textContent = i18n.t("gameReaction.current", { value: currentText });
+  bestDisplay.textContent = i18n.t("gameReaction.best", { value: bestText });
+}
+
 function beginRound() {
   if (state !== "idle") return;
 
   state = "waiting";
-  prompt.textContent = "Wait for green...";
+  prompt.textContent = i18n.t("gameReaction.waitGreen");
   pad.classList.remove("ready");
   pad.classList.add("waiting");
   startButton.disabled = true;
@@ -30,7 +45,7 @@ function beginRound() {
 
     pad.classList.remove("waiting");
     pad.classList.add("ready");
-    prompt.textContent = "Tap! Tap! Tap!";
+    prompt.textContent = i18n.t("gameReaction.tapNow");
   }, delay);
 }
 
@@ -38,7 +53,6 @@ function handlePadClick() {
   if (state === "idle") return;
 
   if (state === "waiting") {
-    // False start penalty encourages patience.
     registerResult(0, true);
     return;
   }
@@ -56,21 +70,19 @@ function registerResult(time, isPenalty) {
   pad.classList.remove("waiting", "ready");
 
   const displayTime = isPenalty ? time + 250 : time;
-  const message = isPenalty ? `False start! +250 ms penalty (Total: ${displayTime} ms)` : `Your reaction: ${displayTime} ms`;
-  prompt.textContent = message;
+  const timeText = formatTime(displayTime);
 
-  currentDisplay.textContent = `Current: ${displayTime} ms`;
+  prompt.textContent = isPenalty
+    ? i18n.t("gameReaction.falseStart", { value: timeText })
+    : i18n.t("gameReaction.reactionResult", { value: timeText });
 
   if (!isPenalty && displayTime < bestTime) {
     bestTime = displayTime;
-    bestDisplay.textContent = `Best: ${bestTime} ms`;
   }
 
-  if (isPenalty && bestTime === Infinity) {
-    bestDisplay.textContent = "Best: --";
-  }
+  updateStatDisplays(displayTime);
 
-  recentTimes.unshift(isPenalty ? `False start (${displayTime} ms)` : `${displayTime} ms`);
+  recentTimes.unshift({ value: displayTime, isPenalty });
   if (recentTimes.length > 5) recentTimes.pop();
   renderHistory();
 
@@ -85,7 +97,9 @@ function renderHistory() {
   historyList.innerHTML = "";
   recentTimes.forEach((entry) => {
     const item = document.createElement("li");
-    item.textContent = entry;
+    item.textContent = entry.isPenalty
+      ? i18n.t("gameReaction.falseStart", { value: formatTime(entry.value) })
+      : i18n.t("gameReaction.reactionResult", { value: formatTime(entry.value) });
     historyList.appendChild(item);
   });
 }
@@ -96,6 +110,16 @@ window.addEventListener("blur", () => {
     state = "idle";
     startButton.disabled = false;
     pad.classList.remove("waiting");
-    prompt.textContent = "Paused because the window lost focus.";
+    prompt.textContent = i18n.t("gameReaction.paused");
   }
 });
+
+window.addEventListener("site-language-change", () => {
+  updateStatDisplays();
+  renderHistory();
+  if (state === "idle" && recentTimes.length === 0) {
+    prompt.textContent = i18n.t("gameReaction.placeholder");
+  }
+});
+
+updateStatDisplays();

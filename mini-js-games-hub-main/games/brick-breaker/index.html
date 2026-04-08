@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brick Breaker Game</title>
+    <title data-i18n="gameBrick.title">Brick Breaker</title>
+    <link rel="stylesheet" href="../shared/game-ui.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="game-container">
-        <h1>Brick Breaker</h1>
+        <div class="game-page-toolbar">
+            <button type="button" class="language-toggle-game" data-language-toggle></button>
+        </div>
+        <h1 data-i18n="gameBrick.title">Brick Breaker</h1>
         <div id="status">
-            <div id="score-display">Score: <span id="score">0</span></div>
-            <div id="lives-display">Lives: <span id="lives">3</span></div>
+            <div id="score-display"><span data-i18n="gameBrick.score">Score</span>: <span id="score">0</span></div>
+            <div id="lives-display"><span data-i18n="gameBrick.lives">Lives</span>: <span id="lives">3</span></div>
         </div>
         
         <canvas id="gameCanvas" width="400" height="600"></canvas>
 
-        <button id="start-button">Start Game</button>
-        <div id="game-message">Press Start to Play!</div>
+        <button id="start-button" data-i18n="gameBrick.start">Start Game</button>
+        <div id="game-message" data-i18n="gameBrick.ready">Press Start to Play!</div>
     </div>
     
+    <script src="../../site-i18n.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

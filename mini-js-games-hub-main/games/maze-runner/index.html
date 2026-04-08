@@ -3,21 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maze Runner</title>
+    <title data-i18n="gameMaze.title">Maze Runner</title>
+    <link rel="stylesheet" href="../shared/game-ui.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="game-container">
-        <h1>Maze Runner</h1>
+        <div class="game-page-toolbar">
+            <button type="button" class="language-toggle-game" data-language-toggle></button>
+        </div>
+        <h1 data-i18n="gameMaze.title">Maze Runner</h1>
         
         <canvas id="gameCanvas" width="600" height="600"></canvas>
         
         <div id="game-info">
-            <p id="message">Use Arrow Keys to move. Find the green exit!</p>
-            <button id="new-game-btn">New Maze</button>
+            <p id="message" data-i18n="gameMaze.hint">Use Arrow Keys to move. Find the green exit!</p>
+            <button id="new-game-btn" data-i18n="gameMaze.newMaze">New Maze</button>
         </div>
     </div>
 
+    <script src="../../site-i18n.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

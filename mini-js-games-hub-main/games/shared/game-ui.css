@@ -1,0 +1,27 @@
+.game-page-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.75rem;
+}
+
+.language-toggle-game {
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(8, 16, 30, 0.78);
+  color: #f6fbff;
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.language-toggle-game:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+body.light-theme .language-toggle-game {
+  background: rgba(255, 255, 255, 0.94);
+  color: #13233c;
+  border-color: rgba(19, 35, 60, 0.12);
+}

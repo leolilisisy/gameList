@@ -3,26 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Spot the Difference | Mini JS Games Hub</title>
+  <title data-i18n="gameSpot.title">Spot the Difference</title>
+  <link rel="stylesheet" href="../shared/game-ui.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="game-container">
-    <h1>Spot the Difference</h1>
-    <p>Find all <span id="total-diff"></span> differences! <span id="found">0</span> found.</p>
+    <div class="game-page-toolbar">
+      <button type="button" class="language-toggle-game" data-language-toggle></button>
+    </div>
+    <h1 data-i18n="gameSpot.title">Spot the Difference</h1>
+    <p><span data-i18n="gameSpot.findAll">Find all</span> <span id="total-diff"></span> <span data-i18n="gameSpot.differences">differences</span>! <span id="found">0</span> <span data-i18n="gameSpot.found">found</span>.</p>
     <div class="images-container">
       <div class="image-wrapper">
-        <img id="img1" src="image1.jpg" alt="Original Image">
+        <img id="img1" src="image1.jpg" alt="Original Image" data-i18n-aria-label="gameSpot.originalAlt">
       </div>
       <div class="image-wrapper">
-        <img id="img2" src="image2.jpg" alt="Differences Image">
+        <img id="img2" src="image2.jpg" alt="Differences Image" data-i18n-aria-label="gameSpot.diffAlt">
       </div>
     </div>
-    <p class="timer">Time Left: <span id="timer">60</span>s</p>
-    <button id="restart">Restart</button>
+    <p class="timer"><span data-i18n="gameSpot.timeLeft">Time Left</span>: <span id="timer">60</span>s</p>
+    <button id="restart" data-i18n="gameSpot.restart">Restart</button>
     <p id="message"></p>
   </div>
 
+  <script src="../../site-i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

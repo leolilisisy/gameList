@@ -1,4 +1,5 @@
 const board = document.getElementById("sudoku-board");
+const i18n = window.SiteI18n;
 
 // Sample puzzle (0 = empty)
 const puzzle = [
@@ -39,3 +40,7 @@ function createBoard() {
 }
 
 createBoard();
+
+window.addEventListener("site-language-change", () => {
+  document.title = i18n.t("gameSudoku.title");
+});

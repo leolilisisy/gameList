@@ -3,16 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reaction Timer</title>
+  <title data-i18n="gameReaction.title">Reaction Timer</title>
+  <link rel="stylesheet" href="../shared/game-ui.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="wrapper">
-    <h1>Reaction Timer</h1>
-    <p class="intro">Test how fast you can respond when the screen flashes green. False starts add a 250&nbsp;ms penalty.</p>
+    <div class="game-page-toolbar">
+      <button type="button" class="language-toggle-game" data-language-toggle></button>
+    </div>
+    <h1 data-i18n="gameReaction.title">Reaction Timer</h1>
+    <p class="intro" data-i18n="gameReaction.intro">Test how fast you can respond when the screen flashes green. False starts add a 250&nbsp;ms penalty.</p>
 
     <section class="controls">
-      <button id="start-button" type="button">Start Round</button>
+      <button id="start-button" type="button" data-i18n="gameReaction.startRound">Start Round</button>
       <div class="stats">
         <span id="current" aria-live="polite">Current: --</span>
         <span id="best" aria-live="polite">Best: --</span>
@@ -20,15 +24,16 @@
     </section>
 
     <button id="reaction-pad" type="button" aria-live="polite">
-      <span id="prompt">Tap start to begin</span>
+      <span id="prompt" data-i18n="gameReaction.placeholder">Tap start to begin</span>
     </button>
 
     <section class="history" aria-live="polite">
-      <h2>Recent Times</h2>
+      <h2 data-i18n="gameReaction.recentTimes">Recent Times</h2>
       <ol id="history-list"></ol>
     </section>
   </main>
 
+  <script src="../../site-i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

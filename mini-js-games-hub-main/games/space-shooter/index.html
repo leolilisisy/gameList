@@ -4,24 +4,29 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Space Shooter</title>
+    <title data-i18n="gameSpace.title">Space Shooter</title>
+    <link rel="stylesheet" href="../shared/game-ui.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <main class="shooter">
         <header class="shooter__header">
-            <h1>Space Shooter</h1>
-            <div class="hud">Score: <span id="score" aria-live="polite">0</span></div>
+            <div class="game-page-toolbar">
+                <button type="button" class="language-toggle-game" data-language-toggle></button>
+            </div>
+            <h1 data-i18n="gameSpace.title">Space Shooter</h1>
+            <div class="hud"><span data-i18n="gameSpace.score">Score</span>: <span id="score" aria-live="polite">0</span></div>
         </header>
 
-        <canvas id="canvas" width="480" height="640" aria-label="Space shooter game"></canvas>
+        <canvas id="canvas" width="480" height="640" aria-label="Space shooter game" data-i18n-aria-label="gameSpace.canvasLabel"></canvas>
 
         <footer class="controls">
-            <div>Move: ← → or A/D — Shoot: Space</div>
-            <button id="restart">Restart</button>
+            <div data-i18n="gameSpace.controls">Move: ← → or A/D — Shoot: Space</div>
+            <button id="restart" data-i18n="gameSpace.restart">Restart</button>
         </footer>
 
+        <script src="../../site-i18n.js"></script>
         <script src="script.js"></script>
     </main>
 </body>

@@ -3,26 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minesweeper | Mini JS Games Hub</title>
+  <title data-i18n="gameMines.title">Minesweeper</title>
+  <link rel="stylesheet" href="../shared/game-ui.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="minesweeper-container">
-    <h1>Minesweeper</h1>
+    <div class="game-page-toolbar">
+      <button type="button" class="language-toggle-game" data-language-toggle></button>
+    </div>
+    <h1 data-i18n="gameMines.title">Minesweeper</h1>
     <div class="controls">
-      <label for="rows">Rows:</label>
+      <label for="rows" data-i18n="gameMines.rows">Rows:</label>
       <input type="number" id="rows" value="10" min="5" max="20">
-      <label for="cols">Cols:</label>
+      <label for="cols" data-i18n="gameMines.cols">Cols:</label>
       <input type="number" id="cols" value="10" min="5" max="20">
-      <label for="mines">Mines:</label>
+      <label for="mines" data-i18n="gameMines.mines">Mines:</label>
       <input type="number" id="mines" value="15" min="1">
-      <button id="start-btn">Start Game</button>
-      <button id="restart-btn">Restart</button>
+      <button id="start-btn" data-i18n="gameMines.start">Start Game</button>
+      <button id="restart-btn" data-i18n="gameMines.restart">Restart</button>
     </div>
     <p id="message"></p>
     <div id="grid" class="grid"></div>
   </div>
 
+  <script src="../../site-i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

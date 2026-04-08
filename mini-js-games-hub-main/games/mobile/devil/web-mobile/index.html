@@ -22,7 +22,7 @@
   <!-- 添加基础路径配置 -->
   <script>
     // 修正基础路径，确保包含 web-mobile
-    window.DEPLOY_BASE_PATH = 'https://leolilisisy.github.io/gameList/game_mobile_list/devil/web-mobile/';
+    window.DEPLOY_BASE_PATH = new URL('./', window.location.href).href;
     
     // 添加一个专门的引擎文件路径
     window.COCOS_JS_PATH = window.DEPLOY_BASE_PATH + 'cocos-js/';

@@ -4,6 +4,7 @@ const SIZE = 4;
 const board = document.getElementById('board');
 const shuffleBtn = document.getElementById('shuffle');
 const solveBtn = document.getElementById('solve');
+const i18n = window.SiteI18n;
 
 let state = [];
 
@@ -41,7 +42,7 @@ function onTileClick(e){
   const empty = state.indexOf(0);
   [state[i], state[empty]] = [state[empty], state[i]];
   render();
-  if (isSolved()) setTimeout(()=> alert('Solved!'), 120);
+  if (isSolved()) setTimeout(()=> alert(i18n.t('game15Puzzle.solved')), 120);
 }
 
 function shuffle() {
@@ -86,7 +87,7 @@ window.addEventListener('keydown', e=>{
   } else if (e.key === 'ArrowRight' && ec > 0) {
     const idx = er*SIZE + (ec-1); [state[empty], state[idx]] = [state[idx], state[empty]]; moved=true;
   }
-  if (moved) { render(); if (isSolved()) setTimeout(()=> alert('Solved!'), 120); }
+  if (moved) { render(); if (isSolved()) setTimeout(()=> alert(i18n.t('game15Puzzle.solved')), 120); }
 });
 
 // init

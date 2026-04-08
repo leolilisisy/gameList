@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect Four</title>
+    <title data-i18n="gameConnect.title">Connect Four</title>
+    <link rel="stylesheet" href="../shared/game-ui.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="game-container">
-        <h1>Connect Four</h1>
+        <div class="game-page-toolbar">
+            <button type="button" class="language-toggle-game" data-language-toggle></button>
+        </div>
+        <h1 data-i18n="gameConnect.title">Connect Four</h1>
         
         <div id="status-area">
-            <p id="turn-indicator">Player 1's Turn (Red)</p>
-            <button id="reset-button">New Game</button>
+            <p id="turn-indicator" data-i18n="gameConnect.player1Turn">Player 1's Turn (Red)</p>
+            <button id="reset-button" data-i18n="gameConnect.newGame">New Game</button>
         </div>
 
         <div id="board">
             </div>
     </div>
 
+    <script src="../../site-i18n.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

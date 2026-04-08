@@ -3,6 +3,7 @@ const scoreDisplay = document.getElementById("score");
 const timerDisplay = document.getElementById("timer");
 const statusDisplay = document.getElementById("status");
 const holes = Array.from(document.querySelectorAll(".hole"));
+const i18n = window.SiteI18n;
 
 let score = 0;
 let timeLeft = 30;
@@ -13,6 +14,9 @@ let countdownInterval;
 
 startButton.addEventListener("click", startGame);
 holes.forEach((hole) => hole.addEventListener("click", handleHit));
+holes.forEach((hole, index) => {
+  hole.setAttribute("aria-label", i18n.t("gameWhack.hole", { index: index + 1 }));
+});
 
 function startGame() {
   if (playing) return;
@@ -22,7 +26,7 @@ function startGame() {
   timeLeft = 30;
   updateScore();
   updateTimer();
-  statusDisplay.textContent = "Go! Whack as many moles as you can.";
+  statusDisplay.textContent = i18n.t("gameWhack.startPrompt");
 
   startButton.disabled = true;
   spawnMole();
@@ -66,7 +70,7 @@ function handleHit(event) {
   hole.classList.add("hit");
   setTimeout(() => hole.classList.remove("hit"), 200);
 
-  statusDisplay.textContent = "Nice hit!";
+  statusDisplay.textContent = i18n.t("gameWhack.niceHit");
 
   clearTimeout(moleTimeout);
   spawnMole();
@@ -80,8 +84,8 @@ function endGame() {
   clearTimeout(moleTimeout);
   clearActiveHole();
 
-  timerDisplay.textContent = "⏱️ Time: 0";
-  statusDisplay.textContent = `Time's up! Final score: ${score}.`;
+  timerDisplay.textContent = `⏱️ ${i18n.t("gameWhack.time")}: 0`;
+  statusDisplay.textContent = i18n.t("gameWhack.finished", { score });
 }
 
 function clearActiveHole() {
@@ -91,17 +95,28 @@ function clearActiveHole() {
 }
 
 function updateScore() {
-  scoreDisplay.textContent = `🏆 Score: ${score}`;
+  scoreDisplay.textContent = `🏆 ${i18n.t("gameWhack.score")}: ${score}`;
 }
 
 function updateTimer() {
   const displayTime = Math.max(timeLeft, 0);
-  timerDisplay.textContent = `⏱️ Time: ${displayTime}`;
+  timerDisplay.textContent = `⏱️ ${i18n.t("gameWhack.time")}: ${displayTime}`;
 }
 
 // Ensure the board is cleared if the player leaves mid-game.
 window.addEventListener("blur", () => {
   if (!playing) return;
   endGame();
-  statusDisplay.textContent = "Game paused because the window lost focus.";
+  statusDisplay.textContent = i18n.t("gameWhack.paused");
 });
+
+window.addEventListener("site-language-change", () => {
+  updateScore();
+  updateTimer();
+  holes.forEach((hole, index) => {
+    hole.setAttribute("aria-label", i18n.t("gameWhack.hole", { index: index + 1 }));
+  });
+});
+
+updateScore();
+updateTimer();

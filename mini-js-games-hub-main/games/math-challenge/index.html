@@ -3,27 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Challenge | Mini JS Games Hub</title>
+    <title data-i18n="gameMath.title">Math Challenge</title>
+    <link rel="stylesheet" href="../shared/game-ui.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="math-container">
-        <h1>Math Challenge 🧮</h1>
+        <div class="game-page-toolbar">
+            <button type="button" class="language-toggle-game" data-language-toggle></button>
+        </div>
+        <h1><span data-i18n="gameMath.title">Math Challenge</span> 🧮</h1>
         <div class="stats">
-            <p>Score: <span id="score">0</span></p>
-            <p>Time Left: <span id="timer">60</span>s</p>
+            <p><span data-i18n="gameMath.score">Score</span>: <span id="score">0</span></p>
+            <p><span data-i18n="gameMath.timeLeft">Time Left</span>: <span id="timer">60</span>s</p>
         </div>
         <div class="question-container">
-            <p id="question">Press "Start" to begin!</p>
+            <p id="question" data-i18n="gameMath.ready">Press "Start Game" to begin!</p>
         </div>
-        <input type="number" id="answer" placeholder="Enter your answer" disabled>
+        <input type="number" id="answer" placeholder="Enter your answer" data-i18n-placeholder="gameMath.answerPlaceholder" disabled>
         <div class="controls">
-            <button id="start-btn">Start Game</button>
-            <button id="submit-btn" disabled>Submit Answer</button>
-            <button id="restart-btn">Restart</button>
+            <button id="start-btn" data-i18n="gameMath.start">Start Game</button>
+            <button id="submit-btn" disabled data-i18n="gameMath.submit">Submit Answer</button>
+            <button id="restart-btn" data-i18n="gameMath.restart">Restart</button>
         </div>
         <p id="feedback"></p>
     </div>
+    <script src="../../site-i18n.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
