@@ -40,7 +40,6 @@
         data-i18n-aria-label="index.mainNavigation"
       >
         <a href="#catalog" class="ghost-button" data-i18n="index.browseGames">浏览游戏</a>
-        <a href="#ads" class="ghost-button" data-i18n="index.adZoneTitle">广告合作</a>
         <a href="login.html" class="ghost-button" data-i18n="index.login">登录</a>
         <button
           id="themeToggle"
@@ -65,7 +64,7 @@
 
           <div class="hero__cta">
             <a href="#catalog" class="cta-button" data-i18n="index.exploreCatalog">进入游戏目录</a>
-            <a href="#featured" class="ghost-button" data-i18n="index.browseFeatured">查看精选专区</a>
+            <a href="#ads" class="ghost-button" data-i18n="index.adZoneTitle">广告合作</a>
           </div>
 
           <dl class="hero__stats">
@@ -91,51 +90,11 @@
                 <p class="panel__eyebrow" data-i18n="index.curatedEyebrow">精选专题</p>
                 <h2 data-i18n="index.curatedTitle">本周推荐与高展示位内容</h2>
               </div>
-              <span class="panel__badge" data-i18n="index.sponsoredTag">站点焦点</span>
+              <span class="panel__badge" data-i18n="index.filterFeatured">精选</span>
             </div>
             <div id="featured-strip" class="featured-strip" aria-live="polite"></div>
           </section>
         </div>
-      </section>
-
-      <section class="ad-banner ad-banner--hero" id="ads" aria-label="Hero ad zone">
-        <div class="ad-banner__meta">
-          <span class="ad-chip" data-i18n="index.adLabel">广告位</span>
-          <strong data-i18n="index.adHeadline">桌面横幅广告 / 活动合作 / 游戏联运入口</strong>
-        </div>
-        <p data-i18n="index.adCopy">
-          这里可以接入 Google AdSense、联盟广告、游戏下载推广、联运专题或品牌合作 Banner。
-        </p>
-        <div class="ad-banner__actions">
-          <a href="#catalog" class="cta-button" data-i18n="index.adCta">查看展示位</a>
-          <a href="https://github.com/ritaban06/mini-js-games-hub" target="_blank" rel="noopener noreferrer" class="ghost-button" data-i18n="index.footerLink">去 GitHub 参与贡献</a>
-        </div>
-      </section>
-
-      <section class="overview-grid">
-        <article class="overview-card">
-          <p class="overview-card__eyebrow" data-i18n="index.unifiedSourceTitle">统一内容源</p>
-          <h2 data-i18n="index.unifiedSourceLead">同一个入口展示原生小游戏和移动 H5 构建包</h2>
-          <p data-i18n="index.unifiedSourceBody">
-            现在首页不再区分两个项目的入口页面，而是统一为一个内容目录、同一套视觉系统和筛选逻辑。
-          </p>
-        </article>
-
-        <article class="overview-card">
-          <p class="overview-card__eyebrow" data-i18n="index.localizationTitle">中文优先</p>
-          <h2 data-i18n="index.localizationLead">站点层支持中英切换，适合展示、投放和继续扩展</h2>
-          <p data-i18n="index.localizationBody">
-            首页、入口说明、专题、广告位、来源标签和按钮文案都纳入了国际化能力，后续可以继续扩展到单个游戏页面。
-          </p>
-        </article>
-
-        <article class="overview-card">
-          <p class="overview-card__eyebrow" data-i18n="index.monetizationTitle">广告与运营预留</p>
-          <h2 data-i18n="index.monetizationLead">为横幅广告、原生广告、联运推荐和活动位预留结构</h2>
-          <p data-i18n="index.monetizationBody">
-            既能像游戏展示站一样阅读和试玩，也能逐步接入广告平台和商业合作内容。
-          </p>
-        </article>
       </section>
 
       <section class="catalog-layout" id="catalog">
@@ -184,11 +143,7 @@
                 <p class="panel__eyebrow" data-i18n="index.catalogEyebrow">统一目录</p>
                 <h2 data-i18n="index.catalogTitle">统一游戏展示入口</h2>
               </div>
-              <span class="panel__badge" data-i18n="index.catalogBadge">支持广告位与推荐位</span>
             </div>
-            <p class="panel__lead" data-i18n="index.catalogLead">
-              下方卡片会统一展示两个仓库里的游戏来源、平台信息、简介、标签和跳转入口。
-            </p>
             <div id="games-container" class="game-grid" aria-live="polite"></div>
             <div id="see-more-container" class="see-more-container" aria-live="polite"></div>
             <section id="empty-state" class="empty" hidden>
@@ -200,26 +155,6 @@
         </div>
 
         <aside class="portal-sidebar">
-          <section class="panel">
-            <div class="panel__header">
-              <div>
-                <p class="panel__eyebrow" data-i18n="index.proBadgesLabel">游玩徽章</p>
-                <h2 data-i18n="index.proBadgesTitle">你的高手徽章</h2>
-              </div>
-            </div>
-            <div id="pro-badges-container" class="pro-badges-container"></div>
-          </section>
-
-          <section class="panel">
-            <div class="panel__header">
-              <div>
-                <p class="panel__eyebrow" data-i18n="index.sourceBreakdownEyebrow">来源分析</p>
-                <h2 data-i18n="index.sourceBreakdownTitle">内容来源与接入结构</h2>
-              </div>
-            </div>
-            <div id="source-breakdown" class="source-breakdown"></div>
-          </section>
-
           <section class="panel panel--ad">
             <div class="panel__header">
               <div>
@@ -243,11 +178,11 @@
           <section class="panel">
             <div class="panel__header">
               <div>
-                <p class="panel__eyebrow" data-i18n="index.mobileHighlightsEyebrow">移动优先</p>
-                <h2 data-i18n="index.mobileHighlightsTitle">移动 H5 推荐</h2>
+                <p class="panel__eyebrow" data-i18n="index.proBadgesLabel">游玩徽章</p>
+                <h2 data-i18n="index.proBadgesTitle">你的高手徽章</h2>
               </div>
             </div>
-            <div id="mobile-highlights" class="mini-list"></div>
+            <div id="pro-badges-container" class="pro-badges-container"></div>
           </section>
         </aside>
       </section>

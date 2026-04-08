@@ -751,7 +751,7 @@
   function updateLanguageToggle() {
     const locale = getLocale();
     document.querySelectorAll("[data-language-toggle]").forEach((button) => {
-      button.textContent = locale === "en" ? "中文" : "EN";
+      button.textContent = locale === "en" ? "EN" : "中文";
       button.setAttribute(
         "aria-label",
         locale === "en" ? t("common.switchToChinese") : t("common.switchToEnglish")
