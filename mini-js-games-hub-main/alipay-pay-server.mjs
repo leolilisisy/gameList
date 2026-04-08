@@ -4,6 +4,7 @@ import http from "node:http";
 import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { StringDecoder } from "node:string_decoder";
+import { DatabaseSync } from "node:sqlite";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -13,6 +14,11 @@ const PORT = Number(process.env.ALIPAY_PAY_PORT || 8788);
 const ALIPAY_GATEWAY = process.env.ALIPAY_GATEWAY || "https://openapi.alipay.com/gateway.do";
 const SITE_BASE_URL = process.env.SITE_BASE_URL || "http://127.0.0.1:4173/mini-js-games-hub-main";
 const SERVER_BASE_URL = process.env.SERVER_BASE_URL || `http://127.0.0.1:${PORT}`;
+const DATA_DIR = path.join(__dirname, "data");
+fs.mkdirSync(DATA_DIR, { recursive: true });
+const ANALYTICS_DB_PATH = path.join(DATA_DIR, "game-analytics.sqlite");
+const db = new DatabaseSync(ANALYTICS_DB_PATH);
+initAnalyticsDb();
 
 const PLAN_MAP = {
   support_small: {
@@ -40,6 +46,14 @@ const server = http.createServer(async (req, res) => {
       ready: Boolean(getConfig().ready),
       missing: getConfig().missing,
     });
+  }
+
+  if (req.method === "GET" && url.pathname === "/stats-api/rankings") {
+    return handleRankings(req, res, url);
+  }
+
+  if (req.method === "POST" && url.pathname === "/stats-api/track-click") {
+    return handleTrackClick(req, res);
   }
 
   if (req.method === "GET" && url.pathname === "/pay-api/wap-pay") {
@@ -109,6 +123,64 @@ function handleWapPay(req, res, url) {
   );
 }
 
+async function handleTrackClick(req, res) {
+  const rawBody = await readRawBody(req);
+  let payload = {};
+
+  try {
+    payload = JSON.parse(rawBody || "{}");
+  } catch (error) {
+    return respondJson(res, 400, { error: "Invalid JSON body" });
+  }
+
+  const gameId = String(payload.gameId || "").trim();
+  const gameName = String(payload.gameName || "").trim();
+
+  if (!gameId || !gameName) {
+    return respondJson(res, 400, { error: "gameId and gameName are required" });
+  }
+
+  const stmt = db.prepare(`
+    INSERT INTO game_click_rankings (
+      game_id, game_name, source, platform, icon, cover, clicks, updated_at
+    ) VALUES (
+      ?, ?, ?, ?, ?, ?, 1, ?
+    )
+    ON CONFLICT(game_id) DO UPDATE SET
+      game_name = excluded.game_name,
+      source = excluded.source,
+      platform = excluded.platform,
+      icon = excluded.icon,
+      cover = excluded.cover,
+      clicks = game_click_rankings.clicks + 1,
+      updated_at = excluded.updated_at
+  `);
+
+  stmt.run(
+    gameId,
+    gameName,
+    String(payload.source || ""),
+    String(payload.platform || ""),
+    String(payload.icon || ""),
+    String(payload.cover || ""),
+    new Date().toISOString()
+  );
+
+  return respondJson(res, 200, { ok: true });
+}
+
+function handleRankings(req, res, url) {
+  const limit = Math.max(1, Math.min(20, Number(url.searchParams.get("limit") || 8)));
+  const stmt = db.prepare(`
+    SELECT game_id AS gameId, game_name AS gameName, source, platform, icon, cover, clicks, updated_at AS updatedAt
+    FROM game_click_rankings
+    ORDER BY clicks DESC, updated_at DESC
+    LIMIT ?
+  `);
+  const rankings = stmt.all(limit);
+  return respondJson(res, 200, { rankings });
+}
+
 async function handleNotify(req, res) {
   const config = getConfig();
   const rawBody = await readRawBody(req);
@@ -149,12 +221,31 @@ function getConfig() {
   };
 }
 
+function initAnalyticsDb() {
+  db.exec(`
+    CREATE TABLE IF NOT EXISTS game_click_rankings (
+      game_id TEXT PRIMARY KEY,
+      game_name TEXT NOT NULL,
+      source TEXT DEFAULT '',
+      platform TEXT DEFAULT '',
+      icon TEXT DEFAULT '',
+      cover TEXT DEFAULT '',
+      clicks INTEGER NOT NULL DEFAULT 0,
+      updated_at TEXT NOT NULL
+    );
+  `);
+}
+
 function readPemFromEnv(valueKey, pathKey) {
   if (process.env[valueKey]) {
     return process.env[valueKey].replace(/\\n/g, "\n");
   }
   if (process.env[pathKey]) {
-    return fs.readFileSync(path.resolve(process.env[pathKey]), "utf8");
+    const resolvedPath = path.resolve(process.env[pathKey]);
+    if (fs.existsSync(resolvedPath)) {
+      return fs.readFileSync(resolvedPath, "utf8");
+    }
+    return "";
   }
   return "";
 }

@@ -1207,6 +1207,7 @@ const featuredCountTargets = document.querySelectorAll("[data-featured-count]");
 const proBadgesContainer = document.getElementById("pro-badges-container");
 const paymentStatusNode = document.getElementById("payment-status");
 const paymentButtons = Array.from(document.querySelectorAll("[data-pay-plan]"));
+let rankingsRefreshTimer = null;
 
 const FEATURED_HUB_NAMES = new Set([
   "2048",
@@ -1483,13 +1484,13 @@ function buildGameCard(game) {
   article.addEventListener("keydown", (event) => {
     if (event.key !== "Enter" && event.key !== " ") return;
     event.preventDefault();
-    trackGamePlay(getDisplayName(game));
+    trackGamePlay(game);
     window.open(game.path, "_blank", "noopener,noreferrer");
   });
 
   article.querySelectorAll("[data-track-game]").forEach((node) => {
     node.addEventListener("click", () => {
-      trackGamePlay(getDisplayName(game));
+      trackGamePlay(game);
     });
   });
 
@@ -1544,7 +1545,7 @@ function renderFeaturedStrip() {
       </div>
     `;
     article.querySelector("[data-track-featured]")?.addEventListener("click", () => {
-      trackGamePlay(getDisplayName(game));
+      trackGamePlay(game);
     });
     featuredStrip.appendChild(article);
   });
@@ -1615,7 +1616,7 @@ function renderProBadges() {
   if (!proBadgesContainer) return;
   proBadgesContainer.innerHTML = "";
   const proGames = Object.keys(playData)
-    .filter((key) => playData[key]?.plays >= 3)
+    .filter((key) => playData[key]?.plays >= 1)
     .sort((left, right) => playData[right].plays - playData[left].plays);
 
   if (!proGames.length) {
@@ -1628,10 +1629,10 @@ function renderProBadges() {
     badge.className = "pro-badge";
     badge.innerHTML = `
       <div class="pro-badge__left">
-        <span class="pro-badge__icon">⭐</span>
+        <span class="pro-badge__icon">#</span>
         <strong>${gameName}</strong>
       </div>
-      <span class="pro-badge__count">${siteI18n.t("index.playsCount", {
+      <span class="pro-badge__count">${siteI18n.t("index.rankingClicks", {
         count: playData[gameName].plays,
       })}</span>
     `;
@@ -1647,7 +1648,13 @@ function readPlayData() {
   }
 }
 
-function trackGamePlay(gameName) {
+function getStatsApiBase() {
+  const protocol = window.location.protocol === "https:" ? "https:" : "http:";
+  return `${protocol}//${window.location.hostname}:8788`;
+}
+
+function trackGamePlay(gameOrName) {
+  const gameName = typeof gameOrName === "string" ? gameOrName : getDisplayName(gameOrName);
   if (!playData[gameName]) {
     playData[gameName] = { plays: 0 };
   }
@@ -1658,6 +1665,12 @@ function trackGamePlay(gameName) {
     return;
   }
   renderProBadges();
+
+  if (typeof gameOrName !== "string") {
+    reportGameClick(gameOrName).catch(() => {
+      // Keep the site resilient when the local stats service is offline.
+    });
+  }
 }
 
 window.trackGamePlay = trackGamePlay;
@@ -1684,6 +1697,9 @@ function renderAll() {
   renderCatalog();
   renderProBadges();
   initPaymentEntry();
+  loadServerRankings().catch(() => {
+    // The local fallback is already rendered by renderProBadges.
+  });
 }
 
 function getPaymentApiBase() {
@@ -1721,6 +1737,73 @@ async function initPaymentEntry() {
     paymentStatusNode.dataset.state = "offline";
     paymentStatusNode.textContent = siteI18n.t("index.supportStatusOffline");
   }
+}
+
+async function reportGameClick(game) {
+  const payload = {
+    gameId: game.id,
+    gameName: getDisplayName(game),
+    source: game.source,
+    platform: game.platform,
+    icon: getDisplayIcon(game),
+    cover: game.cover || "",
+  };
+
+  await fetch(`${getStatsApiBase()}/stats-api/track-click`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  });
+
+  queueRankingRefresh();
+}
+
+function queueRankingRefresh() {
+  if (rankingsRefreshTimer) {
+    window.clearTimeout(rankingsRefreshTimer);
+  }
+  rankingsRefreshTimer = window.setTimeout(() => {
+    loadServerRankings().catch(() => {
+      // Fallback stays on local data.
+    });
+  }, 350);
+}
+
+async function loadServerRankings() {
+  if (!proBadgesContainer) return;
+  if (!proBadgesContainer.childElementCount) {
+    proBadgesContainer.innerHTML = `<p>${siteI18n.t("index.rankingLoading")}</p>`;
+  }
+
+  const response = await fetch(`${getStatsApiBase()}/stats-api/rankings?limit=8`, {
+    method: "GET",
+  });
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  const payload = await response.json();
+  const rankings = Array.isArray(payload.rankings) ? payload.rankings : [];
+
+  if (!rankings.length) {
+    renderProBadges();
+    return;
+  }
+
+  proBadgesContainer.innerHTML = "";
+  rankings.forEach((item, index) => {
+    const badge = document.createElement("div");
+    badge.className = "pro-badge";
+    badge.innerHTML = `
+      <div class="pro-badge__left">
+        <span class="pro-badge__icon">${index + 1}</span>
+        <strong>${item.gameName}</strong>
+      </div>
+      <span class="pro-badge__count">${siteI18n.t("index.rankingClicks", {
+        count: item.clicks,
+      })}</span>
+    `;
+    proBadgesContainer.appendChild(badge);
+  });
 }
 
 filterButtons.forEach((button) => {
